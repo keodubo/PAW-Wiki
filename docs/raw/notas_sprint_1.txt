@@ -1,0 +1,45 @@
+- Notas sprint
+	- necesita masividad. recomiendan más que sean los usuarios los que agregan restaurantes. a alejo no le gustó mucho que sea centralizado
+		- si vos creas la pagina del restaurant, el restaurant no tiene acceso al sistema de reserva
+		- nico había recomendado un servicio (maitre? meitre?) para esto. probar?
+		- según nico está buena la dualidad de un restaurant pueda incorporarse y tener su sistema de reserva ó que un usuario pueda incorporar un restaurant y este inicialmente no tiene sistema de reserva.
+	- la página es de ancho fijo para la paginación
+		- es decir, las páginas (de reviews) son siempre de 5. el usuario debería poder elegir cuántos elementos quiere ver.
+		- dio como ejemplo cuando hace un curl: si yo me quiero traer 500 reviews no necesariamente deberían ser 100 páginas
+		- esto por lo general es un parámetro, similar a `&page=2`
+	- que los filtros sean ordenables
+		- por ejemplo, que pueda ordenar por el de menor precio de entre todos los de mediterránea
+		- también quiere que se pueda invertir el orden de puntajes (osea, por menor puntaje)
+	- en plane las tareas están bien planteadas pero no están en un ciclo
+	- tampoco están puntuadas las tareas
+	- agregar un ciclo nuevo y agregar las tareas completadas ahí
+	- agregar una planning para el siguiente ciclo (osea agregar las tareas que planeamos para la siguiente sprint)
+	- en pagina admin comprimir navbar para no perder funcionalidad
+	- se pueden dejar reseñas con texto vacío y se muestra ese comentario vacío
+		- las reseñas sin comentarios no deberían tener las comillas
+	- el comentario no tiene un break duro, es decir, puede poner una palabra larga sin breaks y va a expandir la ventana
+	- el boton de favoritos no está completamente a la derecha cuando se agranda el ancho de la ventana
+		- seguramente el bloque no sea del ancho de la ventana, tenga un máximo
+	- los errores son default, se preferiría uno customizado
+		- puntualmente el de exceso de caracteres de comentario de reseña
+	- falta un call to action al mail
+	- cuando se busca un texto no dice en ningún lado qué es lo que está buscando
+		- osea, si busco "asd", en el menú no dice algo del estilo "resultados para "asd""
+	- las queries y filtros no son compatibles: cuando busco algo pierdo el filtro, y cuando pongo un filtro pierdo la búsqueda
+	- para el final: tener un '/api/autocomplete' no le gusta a sotuyo
+	- el segundo actor esta medio medio.
+	- "el mail tiene que ser ante una acción que no realizo yo"
+		- "dejaron una review en tu restaurant"
+	- hacer que los filtros no sean drop down sino que sean los primeros x que más resultados tengan y un botón de "mostrar más"
+		- ejemplo: que en cocina aparezca "argentina (52) / mediterránea (35) / etc. / mostrar más"
+	- por ahí es mejor UX que en el form de agregar restaurant, sea un combobox sin escritura para los barrios
+	- volvieron a recomendar separar en distintas páginas el formulario y el menú de todos los restaurantes
+		- porque no vas a estar mirando las dos al mismo tiempo
+	- el chequeo de imagen deberia ser también en server-side
+		- además el botón de cancelar es verde y eso no les gusta
+	- no le gusta mucho que si hay dos con el mismo nombre sea "-2" (osea la cantidad que hay con ese nombre), pero tampoco dio una buena alternativa xd
+		- se puede hacer nombre-id, por ejemplo
+	- "yo creo que este sprint debería ser para profundizar en el lado transaccional, hacer reservas, reservar pedido (logística) o la parte social (que el restoran pueda tomar control, hacer promos, mostrar el menú, nuevos, ver quién fue a donde y su pedido)"
+	- menú debería ser categorías, platos en cada categoría, nombre, precio, en futuro promociones
+	- reservas: el restoran debe tomar control, una persona puede manejar más de un local (podemos reutilizar la admin page como admin de varios restorans)
+		- cuantas mesas tiene, de que tamaño son, horarios para las mesas

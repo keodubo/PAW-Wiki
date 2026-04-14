@@ -1,0 +1,25 @@
+# System files
+.DS_Store
+Thumbs.db
+
+# IDEs
+.idea/
+*.iml
+.vscode/
+.settings/
+.project
+.classpath
+
+# Logs
+*.log
+docs/log.md.tmp
+
+# Backup files
+*.bak
+*~
+*.swp
+
+# OS generated
+.DS_Store?
+ehthumbs.db
+Icon?
