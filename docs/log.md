@@ -4,6 +4,13 @@ Registro cronologico de actividad del wiki.
 
 ---
 
+## [2026-04-15] ingest | spec funcional de reservas + plan de implementacion
+
+- Guardado `raw/reservas/spec-funcional-reservas.md` con el spec consolidado entregado por el usuario (sin modificaciones sobre el texto fuente)
+- Creada `wiki/resumen-spec-reservas.md` como fuente estructurada: idea central, ejes, casos borde, fuera de alcance, relacion con `raw/diagrama_bd.md` y ambiguedades a confirmar
+- Creada `wiki/plan-implementacion-reservas.md` como sintesis con 10 fases (schema, configuracion, disponibilidad, flujo usuario, admin, scheduler, emails, reviews, hardening, verificacion) y orden sugerido de branches
+- Actualizado `index.md`: nueva entrada en Fuentes, nueva entrada en Sintesis y nuevo estado de fuente raw bajo `raw/reservas/`
+
 ## [2026-04-13] synth | AOP reclasificado como soporte de TP1
 
 - Actualizadas `wiki/resumen-apuntes.md`, `wiki/spring-aop.md` y `wiki/tp1-vs-tpe2-final.md` para dejar explicito que la unidad 8 si entra en TP1 como soporte de implementacion

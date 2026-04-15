@@ -14,6 +14,7 @@ Catalogo de todas las paginas del wiki, organizado por categoria.
 | [[resumen-notas]] | Notas de clase con walkthroughs practicos y advertencias del profesor | `raw/notas.txt` + `raw/pdfs/Notas clases PAW.pdf` |
 | [[resumen-notas-sprint-1]] | Feedback puntual del sprint 1 sobre producto, UX, filtros y direccion del proyecto | `raw/notas_sprint_1.txt` |
 | [[resumen-transcripciones-clases-2-a-4]] | Revision cautelosa de transcripciones VTT; clases 2-3 como apoyo y clase reciente sobre agentes/formularios | `raw/audio_transcript/*.VTT` |
+| [[resumen-spec-reservas]] | Ingesta del spec funcional consolidado del sistema de reservas; reglas, modalidades, slots, estados y ambiguedades a resolver | `raw/reservas/spec-funcional-reservas.md` + `raw/diagrama_bd.md` |
 
 ## Conceptos
 
@@ -64,6 +65,7 @@ Catalogo de todas las paginas del wiki, organizado por categoria.
 | [[remediacion-violaciones-paw]] | Estado actual de las violaciones detectadas y pendientes reales en el repo |
 | [[auditoria-extrema-cumplimiento-paw]] | Baseline historico de la auditoria extrema levantada el 2026-04-13; conserva hallazgos originalmente detectados, varios ya remediados en el repo actual |
 | [[plan-ejecucion-remediacion-auditoria]] | Plan secuencial historico de remediacion; su tabla interna de estados ya no coincide por completo con el repo actual y debe leerse junto a `[[2026-04-13_auditoria-repo-docs_v1]]` |
+| [[plan-implementacion-reservas]] | Plan operativo por fases para implementar el sistema de reservas: modelo, configuracion, disponibilidad, flujos, scheduler, emails, reviews y hardening |
 
 ## Comparaciones
 
@@ -93,3 +95,4 @@ Catalogo de todas las paginas del wiki, organizado por categoria.
 - [ ] `raw/2026-04-12_paw-remediacion-plan-audit_v1.md` -- Documento de trabajo presente en `raw/`, todavia sin ingesta canonica en `wiki/`
 - [ ] `raw/2026-04-12_paw-remediacion-plan-secuencial_v1.md` -- Documento de trabajo presente en `raw/`, todavia sin ingesta canonica en `wiki/`
 - [x] `raw/2026-04-13_paw-remediacion-hallazgos-secuencial_v1.md` -- Documento de trabajo ya absorbido por `[[auditoria-extrema-cumplimiento-paw]]`; queda como antecedente historico
+- [x] `raw/reservas/spec-funcional-reservas.md` -- Spec funcional consolidado del sistema de reservas; procesado en `[[resumen-spec-reservas]]` y traducido a plan en `[[plan-implementacion-reservas]]`
