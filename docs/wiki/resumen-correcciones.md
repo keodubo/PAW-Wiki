@@ -3,7 +3,7 @@ titulo: Resumen de Correcciones Previas
 tipo: fuente
 fuentes: [raw/correcciones.md]
 creado: 2026-04-09
-actualizado: 2026-04-13
+actualizado: 2026-04-17
 ---
 
 # Resumen de Correcciones Previas
@@ -275,8 +275,20 @@ Segunda pasada exhaustiva sobre `raw/correcciones.md`. Esta pagina busca conserv
 - Buen manejo de carga de imagenes filtrando extensiones no genuinas desde `Multipart`.
 - Views e i18n con CTAs, zero states amigables, redirecciones 404/403 cuidadas y jerarquias de roles bien manejadas.
 
+## Resolución y Hardening (Fase 10)
+
+Al 2026-04-17 se ha completado una pasada de remediación exhaustiva centrada en el sistema de reservas pero extendida a toda la arquitectura web:
+
+- **Seguridad**: Se migró a un modelo 100% declarativo en `WebAuthConfig`. Se eliminó `@PreAuthorize` de los controllers nuevos y se centralizó el bypass de `ROLE_ADMIN` en `AccessHelper`.
+- **Manejo de Errores**: Se implementó un `ErrorController` real para manejar forwards de Spring Security (`/error/403`, etc.), asegurando que las excepciones de seguridad se integren con el flujo MVC y los tests de integración.
+- **XSS y Salida**: Se auditó el uso de `<c:out>` en todas las vistas nuevas, protegiendo campos de texto libre como comentarios de reservas y links externos.
+- **i18n**: Se implementó pluralización dinámica (`ChoiceFormat`) y se garantizó la simetría entre `messages_en.properties` y `messages_es.properties` mediante tests automáticos.
+- **Logging**: Se estandarizó el uso de SLF4J en la capa de servicios, eliminando salidas por consola remanentes.
+- **Estabilidad de Tests**: Se estabilizó la suite de 140 tests de `webapp`, resolviendo problemas de flushing de contexto y orden de filtros.
+
 ## Ver tambien
 
+- [[plan-implementacion-reservas]]
 - [[tp1-vs-tpe2-final]]
 - [[auth-flows]]
 - [[java-style]]

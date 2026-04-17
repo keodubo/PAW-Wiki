@@ -4,6 +4,16 @@ Registro cronologico de actividad del wiki.
 
 ---
 
+## [2026-04-17] synth | hardening, estabilización de tests y cierre de reservas
+
+- **Seguridad**: Se completó la migración a un modelo de seguridad declarativo en `WebAuthConfig`. Se eliminó el uso de `AccessDeniedHandler` manual que puenteaba el `DispatcherServlet`, reemplazándolo por `.accessDeniedPage("/error/403")`.
+- **Manejo de Errores**: Implementación de `ErrorController.java` para resolver las vistas de error (`/error/403`, `/error/404`, `/error/500`) asegurando compatibilidad con redirecciones de Spring Security y `MockMvc`.
+- **Estabilización de Tests**: Corrección de regresiones en `SecurityMvcTest` causadas por el cambio en el ruteo de errores. Auditoría y validación de `InlineValidationMvcTest`, `OwnerDashboardControllerMvcTest` y `OwnerReservationControllerMvcTest` contra el modelo de datos actualizado y las nuevas reglas de negocio de la Fase 10.
+- **Cierre de Implementación**: Marcado de todas las fases del `plan-implementacion-reservas.md` como completado. Actualizada la wiki con el reporte de resolución de hallazgos en `resumen-correcciones.md`.
+- **Nuevo Log**: Creado `wiki/2026-04-17_cierre-implementacion-reservas_v1.md` como documento de cierre operativo.
+- **Lint del Wiki**: Auditoría de salud del wiki, corrección de enlaces huérfanos y broken links. Actualización de `index.md`, `log.md` y `tree.txt`.
+
+
 ## [2026-04-16] lint | auditoria del plan de reservas contra reglas del wiki
 
 - Auditoria cruzada del plan `wiki/plan-implementacion-reservas.md` contra las ~24 paginas de reglas del wiki y el estado actual del repo. Resultado: dos hallazgos criticos, cuatro ambiguedades del spec resueltas por el usuario y seis mejoras menores aplicadas

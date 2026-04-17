@@ -65,7 +65,8 @@ Catalogo de todas las paginas del wiki, organizado por categoria.
 | [[remediacion-violaciones-paw]] | Estado actual de las violaciones detectadas y pendientes reales en el repo |
 | [[auditoria-extrema-cumplimiento-paw]] | Baseline historico de la auditoria extrema levantada el 2026-04-13; conserva hallazgos originalmente detectados, varios ya remediados en el repo actual |
 | [[plan-ejecucion-remediacion-auditoria]] | Plan secuencial historico de remediacion; su tabla interna de estados ya no coincide por completo con el repo actual y debe leerse junto a `[[2026-04-13_auditoria-repo-docs_v1]]` |
-| [[plan-implementacion-reservas]] | Plan operativo por fases para implementar el sistema de reservas: modelo, configuracion, disponibilidad, flujos, scheduler, emails, reviews y hardening. Auditado 2026-04-16 contra las reglas del wiki (mail templates en `services/`, JOINs explicitos en listados, rechazo de reservas con slot vencido, recordatorio solo a confirmed, reassignacion sin restriccion de direccion, pluralizacion i18n, scheduler desactivado en tests) |
+| [[plan-implementacion-reservas]] | Plan operativo por fases para implementar el sistema de reservas: modelo, configuracion, disponibilidad, flujos, scheduler, emails, reviews y hardening. Auditado 2026-04-17 contra las reglas del wiki (mail templates en `services/`, JOINs explicitos en listados, rechazo de reservas con slot vencido, recordatorio solo a confirmed, reassignacion sin restriccion de direccion, pluralizacion i18n, scheduler desactivado en tests) |
+| [[2026-04-17_cierre-implementacion-reservas_v1]] | Registro de cierre de la implementación del sistema de reservas; resume el estado final, hardening realizado y estabilización del test suite |
 
 ## Comparaciones
 
