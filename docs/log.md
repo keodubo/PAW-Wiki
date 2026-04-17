@@ -4,6 +4,97 @@ Registro cronologico de actividad del wiki.
 
 ---
 
+## [2026-04-16] lint | auditoria del plan de reservas contra reglas del wiki
+
+- Auditoria cruzada del plan `wiki/plan-implementacion-reservas.md` contra las ~24 paginas de reglas del wiki y el estado actual del repo. Resultado: dos hallazgos criticos, cuatro ambiguedades del spec resueltas por el usuario y seis mejoras menores aplicadas
+- **Critico C1 (violacion de [[modelo-capas]] y [[mailing]])**: el plan ubicaba los templates de mail en `webapp/src/main/resources/mail-templates/`. El repo los tiene en `services/src/main/resources/mail-templates/` (`ServicesConfig.java:52` define el prefijo) y la regla es explicita: `MailService` vive en `services` y no puede conocer rutas de `webapp`. Corregido en el mapa de archivos (seccion `services/ — mailing`), en los archivos de Fase 8 y en Fase 8.1
+- **Critico C2 (N+1 latente)**: las queries de `listUserReservations` y `listReservationsByRestaurant` no declaraban `JOIN` explicito para traer `restaurant.name`/`slug` y `user.display_name`/`slug` y `restaurant_tables.capacity`/`table_number`. Cualquier implementacion que cargue ids y resuelva nombres fila por fila en Java viola [[n-plus-1-joins-java]]. Agregadas notas explicitas en Fase 5.5 (JOIN a `restaurants`) y Fase 6.3d (JOIN a `users` + `restaurant_tables`) con el contrato de `RowMapper` enriquecido y un test `rowMapperResolvesUserNameAndTableTypeViaJoinInSql_notViaExtraQueriesInJava` que cuenta queries con `StatementCountingDataSource`. `SELECT` columnas explicitas (sin `SELECT *`)
+- **S1 (link externo "dato sensible", §4.2)**: resuelto como **escapado XSS estricto** (`<c:out>` + validador rechaza `javascript:`/`data:`, solo `http(s)://`). No hay requisito adicional de logging, cifrado u ocultamiento. Es dato publico en la pagina del restaurante. Nueva fila en Decisiones lockeadas y bullet en `resumen-spec-reservas`
+- **S2 (reserva para hoy con `slot_start` vencido)**: **se rechaza en la creacion** con 400 + error in-line. Nueva excepcion `SlotAlreadyPastException` en `service-contracts/`, chequeo temporal como paso 1 del algoritmo en Fase 4.2, tres tests nuevos en Fase 4.1 (`throwsSlotAlreadyPastWhenReservationIsTodayAndSlotStartIsInThePast`, `createsReservationWhenReservationIsTodayAndSlotStartIsInTheFuture`, `createsReservationWhenReservationIsTomorrow_regardlessOfClockTime`), un test MVC en 4.5 y mapeo en `ErrorHandlingAdvice` (Fase 10.2). Se prefiere validacion en servicio sobre `@Future` del form porque `@Future` opera sobre `reservation_date` y no distingue slots del dia mismo
+- **S3 (recordatorio 11:00 AM)**: **solo reservas `confirmed`** reciben el mail `REMINDER`. Las `pending` no — si el owner no confirma, la reserva muere sin recordatorio. Tests de Fase 8.5 reescritos: renombrado a `sendsReminderForConfirmedReservationsOfTodayCreatedBefore11AM`, agregados `skipsPendingReservations`, `skipsCancelledReservations`, `skipsCompletedReservations`, `skipsReservationsForOtherDays`. Fase 8.6 actualizada con el filtro SQL `status = 'confirmed'` y `LEFT JOIN reservation_notifications` para idempotencia
+- **S4 (direccion de reassignacion, §5.2)**: el owner puede reassignar a **cualquier** mesa con `capacity >= people_count` y libre en el slot, sin restriccion de direccion. Puede ir hacia abajo (mesa mas chica) o hacia arriba. Nunca a mesa con `capacity < people_count` (3 comensales jamas caen en mesa de 1 o 2). La prosa "de menos comensales a una para mas" se interpreta como ambigua. Nuevos tests en Fase 6.3b (`excludesTablesSmallerThanPartySize`, `includesTablesSmallerThanOriginallyAssigned_whenStillFitsPartySize`) y en Fase 6.3c (`confirmsAndReassignsToSmallerTable_whenStillFitsPartySize`)
+- **Mejoras menores aplicadas**:
+  - M1 pluralizacion: Fase 10.1 ahora exige sintaxis `ChoiceFormat`/`{0,plural,...}` para contadores; prohibido concatenar numero con texto en Java/JSP. Las tres ramas `0/1/>1` deben existir en ES y EN
+  - M2 scheduler en tests: Fase 7.4 concretada con `@Profile("!test")` sobre `@EnableScheduling`/`@EnableAsync` en `ServicesConfig`; los tests de scheduler invocan `tick()`/`sendDailyReminders()` como metodos comunes sin depender del cron de Spring
+  - M3 `Review.reservationId` nullable: Fase 1.8 explicita que el campo es `Long` boxed (nunca `long` primitivo) para representar reviews legacy con `reservation_id = NULL`
+  - M4 auditoria de endpoints de review: Fase 9.5 reemplazada con tres `grep` concretos (`@RequestMapping`, `@PostMapping`/`@DeleteMapping`, `reviewService\.update|delete`) y requisito de documentar hallazgos en el PR; prohibido asumir sin evidencia
+  - M5 fixture de Fase 1.9: horario fijado en `19:00–23:00` todos los dias para que sirva directo al `SlotCatalogTest`; fechas relativas (`CURRENT_DATE + INTERVAL '7 days'`) para que la fixture nunca vencie
+  - M6 `SlotAlreadyPastException` mapeada en el advice (10.2, ya contemplado en S2)
+- Actualizado `wiki/resumen-spec-reservas.md` con las 4 resoluciones nuevas en la seccion "Ambiguedades v2 — resoluciones aplicadas" y el frontmatter `actualizado` reflejando el scope del cambio
+- No se toco `raw/` (inmutable); no se toco codigo del repo (solo wiki)
+
+## [2026-04-16] synth | filtros y focus en la vista del owner de reservas
+
+- Tres decisiones nuevas del usuario propagadas a `wiki/plan-implementacion-reservas.md`
+- **Botones contextuales por estado** en `/mis-restaurantes/{id}/reservas`: `pending` muestra "Confirmar" + "Rechazar"; `confirmed` muestra "Cancelar"; `completed`/`cancelled` no muestran acciones. "Rechazar" y "Cancelar" comparten endpoint y side-effect (reserva a `cancelled` + `reservation_notifications(type='CANCELLED')`); el label es UX puro segun el estado previo
+- **Paginacion con `?focus={reservationId}`**: el controller computa via servicio en que pagina cae la reserva bajo el sort vigente y hace `redirect` a esa pagina resaltando la fila. Reserva ajena o inexistente silencia el param. Nuevo metodo `findPageContainingReservation(restaurantId, reservationId, pageSize, sort)` con una sola query SQL (COUNT filas precedentes, sin traer la lista a Java). Tests en Fase 6.3e
+- **Filtros nuevos en la vista del owner**: (1) sort por fecha `?sort=recent|oldest` con `recent` default, propagado al `ORDER BY` en SQL — tests en Fase 6.3d; (2) selector de restaurante poblado con `RestaurantService.getRestaurantsByOwner(userId)`. El bypass ADMIN **no** expande el selector a restaurantes ajenos: el ADMIN ve sus propios restaurantes owned, pero igual puede acceder a la URL de cualquier restaurante
+- Nuevo enum `ReservationSort {DATE_DESC, DATE_ASC}` en `models/` con helper `fromQueryParam` (fallback a `DATE_DESC` si el valor es invalido o ausente — evita 400 ante query params malformados)
+- Agregadas 3 filas a la tabla "Decisiones lockeadas" (labels de botones, resolucion de `?focus`, filtros de sort + restaurant selector)
+- Fase 6 ampliada: Fase 6.3d y 6.3e (tests de sort y `findPageContainingReservation`), Fase 6.5 con 11 MVC tests nuevos (sort, focus en pagina 2, focus ajeno, selector en owner single/multi, admin sin expansion del selector, redirect post-accion preservando contexto), Fase 6.6 con flujo explicito de resolucion de `focus` y preservacion de `sort`/`page` tras POST, Fase 6.7 con zonas UI detalladas (botones por estado, toggle de sort que resetea a `page=0`, dropdown de restaurantes, highlight con scroll, zero state que preserva selectores)
+- Mapa de archivos: agregado `ReservationSort.java` en `models/` y los dos metodos nuevos documentados en la entrada de `ReservationService.java`
+
+## [2026-04-16] synth | cierre de dudas residuales v2
+
+- Dudas residuales resueltas por el usuario y propagadas a `wiki/plan-implementacion-reservas.md`
+- **Regla de gap sin excepciones**: un solo comensal en mesa de 2 (ratio 2) cae en `pending`. Se agrega fila en Decisiones lockeadas documentandolo
+- **CTA del email pending-owner**: redirige a la vista de gestion (`/mis-restaurantes/{id}/reservas?focus={reservationId}`), no ofrece acciones directas desde el email. El owner decide ahi. Clarificado en Decisiones lockeadas y Fase 8.1
+- **Concurrencia en reassignacion**: se resuelve con re-chequeo dentro del mismo `@Transactional` de `confirmAsOwner`; no se agrega optimistic locking ni columna `version`. Nuevo test `reChecksTableAvailabilityBeforeUpdate_concurrencyGuard` en Fase 6.3c
+- **Cambio de modalidad con pendings vivos**: las pendings preexistentes no se re-evaluan; la regla aplica solo a reservas nuevas. Nuevo test `changingConfirmationMode_doesNotReEvaluateExistingPendings` en Fase 2.5b
+- **Persistencia de `accepts_reservations`**: confirmado `VARCHAR(16) NULL` + `CHECK`; se descarta ENUM nativo de Postgres por compatibilidad con HSQLDB. Documentado en Decisiones lockeadas
+
+## [2026-04-16] synth | cierre de dudas v2 y descarte de no_show
+
+- v2-Q1 resuelto (gap grande): ratio `assigned_table.type / people_count >= 2` degrada a `pending` aun en modalidad `automatic`. Ejemplo locked: 2 personas + mesa de 4 = ratio 2 -> pending. Aplicado como decision lockeada, tests de Fase 4.1 reformulados, algoritmo del servicio reescrito en 4.2
+- v2-Q2 resuelto (email pending-para-owner): template unico `reservation-pending-owner.html` disparado sobre **todo** `pending` recien creado (sea por `manual` o por gap). Agregado al mapa de archivos (Fase 8.1/8.2) y al contrato `MailService.sendReservationPendingToOwner`. Idempotencia via `reservation_notifications(type='PENDING_FOR_OWNER')`. Tests MVC de Fase 8.7 actualizados con los 4 contratos de notificacion (automatic small gap, automatic big gap, manual, owner confirm)
+- v2-Q3 resuelto (reassignacion por el owner): aplica a cualquier `pending`; es opcional; mesas elegibles son libres en el slot con `capacity >= people_count`. Agregados `TableNotAvailableForSlotException`, service methods `listReassignableTables` y `confirmAsOwner(reservationId, Optional<Long>)`, endpoint con `tableId` opcional en el POST confirm, select server-side en `owner/reservations.jsp`, mapeo 409 en `ErrorHandlingAdvice` (10.2), y tests en 6.3b, 6.3c y 6.5
+- v2-Q4 resuelto (enum vs boolean): se elige **enum** `AcceptsReservationsStatus {NOT_DEFINED, DISABLED, ENABLED}` persistido como `VARCHAR(16) NULL`. Agregado al `models/`, Fase 1.1 SQL actualizado, 1.7 actualizado con los 5 enums. Motivo explicito: el usuario planea sumar mas estados sin migracion disruptiva
+- v2-Q5 y v2-Q6 descartados: el usuario decide **no implementar** `no_show`. Removidas las menciones que v2 habia mandado reintroducir (columna en `reservations`, test `markNoShow`, endpoint `/no-show`, badge en owner JSP, filtro en scheduler, test de review). Queda `no_show` como feature ausente del plan, documentada como descartada en Decisiones lockeadas y en el resumen de v2
+- Nueva fila en Decisiones lockeadas del plan: aviso visual de gap en la vista del owner (`owner.reservations.gap.warning` con argumentos `tableType` y `peopleCount`) por pedido explicito del spec v2 §7.2
+- Actualizado `wiki/resumen-spec-reservas.md` reemplazando la seccion de ambiguedades pendientes por una de "Ambiguedades v2 resueltas"
+
+## [2026-04-16] ingest | spec funcional de reservas v2
+
+- Nueva fuente raw en `raw/specs_reserva_v2.txt` provista por el usuario; supera a `raw/reservas/spec-funcional-reservas.md` (v1 queda como antecedente historico)
+- Actualizado `wiki/resumen-spec-reservas.md`: fuentes ahora incluyen v2, nueva seccion "Cambios v2 vs v1" y seccion de ambiguedades v2 pendientes de decidir
+- Cambios principales detectados respecto a v1:
+  - `no_show` vuelve a ser obligatorio (campo en Reserva, accion "marcar no_show" del owner, regla consolidada §22.7)
+  - Nueva regla §7.2: en modalidad `automatic`, si la mesa asignada difiere "por mucho" del `people_count`, la reserva **no se aprueba automaticamente** y se notifica al restaurante
+  - Nueva regla §5.2: el restaurant admin puede elegir que mesa asignar al confirmar una `pending` cuando la mesa es mas grande que lo solicitado
+  - §3.1 pide que `accepts_reservations` sea un enum (manteniendo valores null/false/true)
+- Ingesta dispara re-apertura de dudas: umbral del gap, forma de la notificacion al restaurante, alcance de la reassignacion, enum vs boolean para `accepts_reservations`, visibilidad de `no_show` en perfil del usuario, efecto de `no_show` sobre transicion a `completed`
+- Actualizado `index.md` con el nuevo archivo raw
+- Plan `wiki/plan-implementacion-reservas.md` readaptado: restaurados los puntos de `no_show` que v2 mandata; agregada seccion "Dudas v2 pendientes" al tope con las preguntas bloqueantes para las reglas de gap/reassignacion/enum antes de codear
+
+## [2026-04-16] synth | cierre de 3 dudas abiertas en el plan de reservas
+
+- Dudas resueltas tras consulta con el usuario y aplicadas a `wiki/plan-implementacion-reservas.md`
+- **1. Horarios de slots**: los slots se derivan directamente de `restaurant_hours`; no se soportan turnos que crucen medianoche. Reemplazado el chequeo condicional previo por un supuesto explicito en la Fase 1
+- **2. Duracion de slots (locked)**: los slots duran **exactamente** `d` minutos (`d in {60, 90, 120}`); si el siguiente slot no entra completo antes de `close_time`, se descarta (no se acorta). Reescrita la "Regla de slot catalog" en Fase 3 con ejemplo `19:00-23:00 / d=90 -> 19:00-20:30 + 20:30-22:00`; tambien ajustada la fila "Generacion de slots" de la tabla de decisiones lockeadas
+- **3. Admin bypass para gestion de reservas**: `ROLE_ADMIN` puede ver y operar sobre cualquier vista de gestion (`/perfil/{slug}/reservas` y `/mis-restaurantes/{id}/reservas`) y cancelar reservas ajenas. Implementado declarativamente en `AccessHelper` (nuevos metodos con bypass explicito de admin, nunca replicado en controllers/services)
+- Fase 5 reestructurada: agregado `canViewUserReservations(auth, slug)`, cambio de `authenticated()` a `.access(...)` sobre GET `/perfil/*/reservas`, nuevos tests de acceso (admin ve slug ajeno, slug inexistente -> 404, admin cancela reserva ajena)
+- Fase 6 reforzada: MVC tests explicitos para admin en GET/confirm/cancel; `canManageRestaurantReservations` documenta bypass admin
+- Fase 10.5 actualizada con las rutas nuevas y la verificacion de admin bypass en `SecurityMvcTest`
+
+## [2026-04-16] synth | eliminacion del feature no_show del plan de reservas
+
+- Eliminadas todas las referencias a `no_show` del plan `wiki/plan-implementacion-reservas.md` (17 ocurrencias en 13 secciones): tabla de decisiones, mapa de archivos, tasks 1.2/1.15, test de Fase 4, Fase 6 entera (servicio, controller, JSP, criterio de cierre), scheduler y Fase 10.4
+- Renumeradas las tasks de Fase 1 (ahora 1.1 a 1.15) y Fase 6 (ahora 6.1 a 6.9) para mantener consistencia
+- Se conserva el cambio del campo `reservation_id` en `reviews`, la tabla `reservation_notifications` y el resto del flujo sin alteraciones
+- El contador `users.no_show_count` y los endpoints `/no-show` / `/unmark-no-show` quedan fuera del alcance del sistema de reservas
+
+## [2026-04-16] synth | ajuste del plan de reservas contra reglas del wiki
+
+- Auditoria del plan `wiki/plan-implementacion-reservas.md` contra las paginas canonicas de reglas y correcciones; cerrados 7 gaps que chocaban con reglas del wiki
+- Fase 3: `listAvailableSlots` pasa de iterar slots (N+1) a una sola query SQL con tabla virtual `VALUES` + `CROSS JOIN` + `NOT EXISTS`; agregado test `issuesExactlyOneQueryRegardlessOfSlotCount` para prevenir regresion; alineacion con [[n-plus-1-joins-java]]
+- Fase 3.3: sumados tests de caso borde del spec (`roundsUpToNextCapacityWhenExactSizeUnavailable` para 7 -> 8; `allowsMultipleSimultaneousReservationsForSameUser`)
+- Fase 5.9 / 6.8: zero states i18n con CTA para listados vacios (elogio explicito de [[buenas-practicas]])
+- Fase 8.1: layout HTML comun `_layout.html` con header/footer y CTA como boton estilizado (alineacion con [[mailing]])
+- Fase 10.2: mapeo explicito de `DataIntegrityViolationException` a 400 en `ErrorHandlingAdvice` (cierra regresion documentada en `resumen-correcciones`)
+- Fase 10.5: paso explicito de verificacion del orden de `antMatchers` para evitar que el catch-all `/**.authenticated()` anule reglas por rol/expression
+- Clarificada contradiccion interna sobre `accepts_reservations = null`: owner dashboard muestra badge "no definido"; pagina publica oculta el bloque
+- Actualizado frontmatter `actualizado: 2026-04-16`
+
 ## [2026-04-15] ingest | spec funcional de reservas + plan de implementacion
 
 - Guardado `raw/reservas/spec-funcional-reservas.md` con el spec consolidado entregado por el usuario (sin modificaciones sobre el texto fuente)

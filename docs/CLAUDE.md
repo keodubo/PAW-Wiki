@@ -6,13 +6,19 @@ Este archivo define las convenciones, estructura y flujos de trabajo para el wik
 
 ```
 docs/
-  raw/            <- Fuentes inmutables. El LLM lee pero NUNCA modifica.
-    pdfs/         <- PDFs originales de la catedra
-    assets/       <- Imagenes descargadas localmente
-  wiki/           <- Paginas generadas y mantenidas por el LLM
-  index.md        <- Indice maestro del wiki (categorizado)
-  log.md          <- Registro cronologico de actividad
-  CLAUDE.md       <- Este archivo (schema)
+  raw/                     <- Fuentes inmutables. El LLM lee pero NUNCA modifica.
+    pdfs/                  <- PDFs originales de la catedra (enunciado, apuntes, notas)
+    audio_transcript/      <- Transcripciones VTT de clases (fuente auxiliar de baja confianza)
+    reservas/              <- Spec funcional historica de reservas
+    2026-*_paw-*.md        <- Planes y auditorias versionados en raiz de raw/
+    *.txt / *.md           <- Apuntes, correcciones, enunciado, notas, specs de reservas
+    diagrama_bd.{md,puml}  <- Modelo de datos de referencia
+  wiki/                    <- Paginas generadas y mantenidas por el LLM
+  superpowers/plans/       <- Planes de ejecucion largos (salida de /superpowers:writing-plans)
+  index.md                 <- Indice maestro del wiki (categorizado)
+  log.md                   <- Registro cronologico de actividad
+  tree.txt                 <- Snapshot plano del arbol de docs/
+  CLAUDE.md                <- Este archivo (schema)
 ```
 
 ## Convenciones de Paginas
