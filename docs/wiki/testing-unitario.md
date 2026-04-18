@@ -3,7 +3,7 @@ titulo: Testing Unitario — Criterios de Evaluacion
 tipo: concepto
 fuentes: [raw/correcciones.md, raw/enunciado.txt, raw/apuntes.txt, raw/notas.txt]
 creado: 2026-04-09
-actualizado: 2026-04-13
+actualizado: 2026-04-17
 ---
 
 # Testing Unitario — Criterios de Evaluacion
@@ -125,3 +125,5 @@ En apuntes tambien se explica que `mock()` crea un "nice mock":
 - [[resumen-apuntes]]
 - [[resumen-notas]]
 - [[remediacion-violaciones-paw]]
+
+- [[plan-implementacion-reservas]]

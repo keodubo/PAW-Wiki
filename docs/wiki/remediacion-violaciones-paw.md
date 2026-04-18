@@ -3,7 +3,7 @@ titulo: Remediación de Violaciones PAW
 tipo: sintesis
 fuentes: [raw/correcciones.md, raw/apuntes.txt, raw/notas.txt, raw/enunciado.txt]
 creado: 2026-04-10
-actualizado: 2026-04-13
+actualizado: 2026-04-17
 ---
 
 # Remediación de Violaciones PAW
@@ -41,3 +41,6 @@ La unica deuda residual de este plan queda en la fase 1: decidir si el despliegu
 - [[internacionalizacion]]
 - [[persistencia-jdbc]]
 - [[testing-unitario]]
+
+- [[auditoria-extrema-cumplimiento-paw]]
+- [[plan-ejecucion-remediacion-auditoria]]

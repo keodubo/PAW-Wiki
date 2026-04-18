@@ -3,7 +3,7 @@ titulo: Validacion de Formularios — Bean Validation y Custom Validators
 tipo: concepto
 fuentes: [raw/correcciones.md, raw/apuntes.txt, raw/notas.txt]
 creado: 2026-04-09
-actualizado: 2026-04-13
+actualizado: 2026-04-17
 ---
 
 # Validacion de Formularios — Bean Validation y Custom Validators
@@ -87,3 +87,6 @@ Tambien se elogio:
 - [[resumen-apuntes]]
 - [[resumen-notas]]
 - [[resumen-notas-sprint-1]]
+
+- [[plan-implementacion-reservas]]
+- [[resumen-spec-reservas]]

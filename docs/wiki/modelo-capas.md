@@ -3,7 +3,7 @@ titulo: Modelo de Capas y Separacion de Responsabilidades
 tipo: concepto
 fuentes: [raw/apuntes.txt, raw/correcciones.md]
 creado: 2026-04-09
-actualizado: 2026-04-09
+actualizado: 2026-04-17
 ---
 
 # Modelo de Capas y Separacion de Responsabilidades
@@ -70,3 +70,5 @@ Si webapp depende de services en `compile`, podria accidentalmente usar clases d
 - [[spring-web-mvc]]
 - [[spring-security]]
 - [[resumen-apuntes]]
+
+- [[plan-implementacion-reservas]]

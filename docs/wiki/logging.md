@@ -3,7 +3,7 @@ titulo: Logging — Requisitos y Errores
 tipo: concepto
 fuentes: [raw/correcciones.md, raw/apuntes.txt, raw/notas.txt]
 creado: 2026-04-09
-actualizado: 2026-04-13
+actualizado: 2026-04-17
 ---
 
 # Logging — Requisitos y Errores
@@ -81,3 +81,5 @@ El logging adecuado es un requerimiento core. `System.out` y `printStackTrace()`
 - [[resumen-correcciones]]
 - [[resumen-apuntes]]
 - [[resumen-notas]]
+
+- [[plan-implementacion-reservas]]

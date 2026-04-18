@@ -3,7 +3,7 @@ titulo: Anti-patron — N+1 Queries y Joins en Java
 tipo: concepto
 fuentes: [raw/correcciones.md]
 creado: 2026-04-09
-actualizado: 2026-04-09
+actualizado: 2026-04-17
 ---
 
 # Anti-patron — N+1 Queries y Joins en Java
@@ -41,3 +41,5 @@ Se nota directamente en la velocidad de la pagina. Un listado que deberia tardar
 - [[transactional]]
 - [[resumen-enunciado]]
 - [[resumen-correcciones]]
+
+- [[plan-implementacion-reservas]]

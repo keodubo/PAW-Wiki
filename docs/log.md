@@ -4,6 +4,13 @@ Registro cronologico de actividad del wiki.
 
 ---
 
+## [2026-04-17] lint | normalizacion estructural del wiki
+
+- Corregido el contrato editorial de `wiki/2026-04-17_cierre-implementacion-reservas_v1.md`: `tipo` valido, `fuentes` explicitas y link al `README` sin `file://` absoluto
+- Cerrados los backlinks recíprocos faltantes detectados por el lint en páginas de auditoría, remediación, reservas y conceptos transversales (`spring-security`, `mailing`, `persistencia-jdbc`, `validacion-formularios`, entre otras)
+- La página de cierre de reservas dejó de quedar huérfana al enlazarse desde `[[plan-implementacion-reservas]]` y `[[resumen-correcciones]]`
+- Residuales no destructivos detectados: `.DS_Store` locales dentro de `docs/`; se reportan pero no se eliminan en esta pasada
+
 ## [2026-04-17] synth | hardening, estabilización de tests y cierre de reservas
 
 - **Seguridad**: Se completó la migración a un modelo de seguridad declarativo en `WebAuthConfig`. Se eliminó el uso de `AccessDeniedHandler` manual que puenteaba el `DispatcherServlet`, reemplazándolo por `.accessDeniedPage("/error/403")`.

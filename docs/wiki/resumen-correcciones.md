@@ -317,3 +317,5 @@ Al 2026-04-17 se ha completado una pasada de remediación exhaustiva centrada en
 - [[resumen-enunciado]]
 - [[criterios-evaluacion]]
 - [[remediacion-violaciones-paw]]
+
+- [[2026-04-17_cierre-implementacion-reservas_v1]]

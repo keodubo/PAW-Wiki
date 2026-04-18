@@ -3,7 +3,7 @@ titulo: Buenas Practicas Elogiadas por la Catedra
 tipo: sintesis
 fuentes: [raw/correcciones.md]
 creado: 2026-04-09
-actualizado: 2026-04-13
+actualizado: 2026-04-17
 ---
 
 # Buenas Practicas Elogiadas por la Catedra
@@ -77,3 +77,5 @@ Abstraer validaciones en anotaciones `@Constraint`:
 - [[criterios-evaluacion]]
 - [[resumen-correcciones]]
 - [[resumen-notas-sprint-1]]
+
+- [[plan-implementacion-reservas]]

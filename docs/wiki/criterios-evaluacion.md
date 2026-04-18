@@ -3,7 +3,7 @@ titulo: Criterios de Evaluacion y Penalizaciones
 tipo: concepto
 fuentes: [raw/enunciado.txt]
 creado: 2026-04-09
-actualizado: 2026-04-13
+actualizado: 2026-04-17
 ---
 
 # Criterios de Evaluacion y Penalizaciones
@@ -60,3 +60,6 @@ Basado en el peso de penalizaciones, el orden de prioridad es:
 - [[buenas-practicas]]
 - [[comparacion-seguridad-web]]
 - [[comparacion-testing-servicios-y-daos]]
+
+- [[auditoria-extrema-cumplimiento-paw]]
+- [[plan-implementacion-reservas]]

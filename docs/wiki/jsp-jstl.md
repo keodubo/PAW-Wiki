@@ -3,7 +3,7 @@ titulo: JSP, JSTL y Tags de Spring
 tipo: concepto
 fuentes: [raw/apuntes.txt, raw/correcciones.md]
 creado: 2026-04-09
-actualizado: 2026-04-13
+actualizado: 2026-04-17
 ---
 
 # JSP, JSTL y Tags de Spring
@@ -142,3 +142,6 @@ Resuelve desde MessageSource. (ver: [[internacionalizacion]])
 - [[ux-flows]]
 - [[validacion-formularios]]
 - [[resumen-apuntes]]
+
+- [[auditoria-extrema-cumplimiento-paw]]
+- [[plan-implementacion-reservas]]

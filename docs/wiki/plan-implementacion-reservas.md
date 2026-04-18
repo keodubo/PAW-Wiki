@@ -781,3 +781,8 @@ Cada branch entra a `dev` con PR independiente, MVC tests verdes y recorrido man
 - [[internacionalizacion]]
 - [[testing-unitario]]
 - [[criterios-evaluacion]]
+
+## Ver tambien
+
+- [[2026-04-17_cierre-implementacion-reservas_v1]]
+- [[resumen-correcciones]]

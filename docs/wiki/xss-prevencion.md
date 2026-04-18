@@ -3,7 +3,7 @@ titulo: Prevencion de XSS y Sanitizacion
 tipo: concepto
 fuentes: [raw/correcciones.md]
 creado: 2026-04-09
-actualizado: 2026-04-10
+actualizado: 2026-04-17
 ---
 
 # Prevencion de XSS y Sanitizacion
@@ -52,3 +52,5 @@ Grupos que escaparon correctamente fueron **elogiados explicitamente**.
 - [[persistencia-jdbc]]
 - [[resumen-correcciones]]
 - [[remediacion-violaciones-paw]]
+
+- [[plan-implementacion-reservas]]

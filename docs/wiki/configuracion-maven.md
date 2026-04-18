@@ -3,7 +3,7 @@ titulo: Configuracion Maven Multi-Modulo
 tipo: concepto
 fuentes: [raw/correcciones.md, raw/enunciado.txt, raw/apuntes.txt]
 creado: 2026-04-09
-actualizado: 2026-04-13
+actualizado: 2026-04-17
 ---
 
 # Configuracion Maven Multi-Modulo
@@ -76,3 +76,7 @@ El proyecto debe ser multi-modulo con separacion estricta por responsabilidades.
 - [[resumen-notas]]
 - [[criterios-evaluacion]]
 - [[resumen-enunciado]]
+
+- [[2026-04-13_auditoria-repo-docs_v1]]
+- [[auditoria-extrema-cumplimiento-paw]]
+- [[plan-ejecucion-remediacion-auditoria]]

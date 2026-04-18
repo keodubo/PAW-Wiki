@@ -3,7 +3,7 @@ titulo: Anti-patron — Logica de Negocio en Controllers
 tipo: concepto
 fuentes: [raw/correcciones.md, raw/notas.txt]
 creado: 2026-04-09
-actualizado: 2026-04-13
+actualizado: 2026-04-17
 ---
 
 # Anti-patron — Logica de Negocio en Controllers
@@ -65,3 +65,5 @@ ControllerAdvice:
 - [[transactional]]
 - [[resumen-correcciones]]
 - [[resumen-notas]]
+
+- [[plan-implementacion-reservas]]

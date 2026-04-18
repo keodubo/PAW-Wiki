@@ -3,7 +3,7 @@ titulo: Manejo de Excepciones
 tipo: concepto
 fuentes: [raw/correcciones.md, raw/notas.txt]
 creado: 2026-04-09
-actualizado: 2026-04-13
+actualizado: 2026-04-17
 ---
 
 # Manejo de Excepciones
@@ -54,3 +54,5 @@ Las excepciones deben manejarse de forma centralizada via `@ControllerAdvice`, n
 - [[transactional]]
 - [[resumen-correcciones]]
 - [[resumen-notas]]
+
+- [[plan-implementacion-reservas]]

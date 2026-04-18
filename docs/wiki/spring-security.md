@@ -3,7 +3,7 @@ titulo: Spring Security — Control de Acceso Declarativo
 tipo: concepto
 fuentes: [raw/correcciones.md, raw/apuntes.txt, raw/notas.txt]
 creado: 2026-04-09
-actualizado: 2026-04-13
+actualizado: 2026-04-17
 ---
 
 # Spring Security — Control de Acceso Declarativo
@@ -127,3 +127,8 @@ Estos chequeos duplican logica, usan magic strings para roles, y son fragiles.
 - [[resumen-correcciones]]
 - [[resumen-apuntes]]
 - [[resumen-notas]]
+
+- [[auditoria-extrema-cumplimiento-paw]]
+- [[plan-ejecucion-remediacion-auditoria]]
+- [[plan-implementacion-reservas]]
+- [[resumen-spec-reservas]]

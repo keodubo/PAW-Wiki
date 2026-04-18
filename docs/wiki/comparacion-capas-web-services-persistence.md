@@ -3,7 +3,7 @@ titulo: Comparacion — Capas Web, Services y Persistence
 tipo: comparacion
 fuentes: [raw/correcciones.md, raw/apuntes.txt, raw/notas.txt, raw/enunciado.txt]
 creado: 2026-04-09
-actualizado: 2026-04-13
+actualizado: 2026-04-17
 ---
 
 # Comparacion — Capas Web, Services y Persistence
@@ -49,3 +49,6 @@ Si un cambio te obliga a tocar JSP, reglas de negocio y SQL en el mismo metodo, 
 - [[persistencia-jdbc]]
 - [[inyeccion-dependencias]]
 - [[resumen-correcciones]]
+
+- [[auditoria-extrema-cumplimiento-paw]]
+- [[plan-ejecucion-remediacion-auditoria]]

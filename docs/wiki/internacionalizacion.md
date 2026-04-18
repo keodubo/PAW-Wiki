@@ -3,7 +3,7 @@ titulo: Internacionalizacion (i18n)
 tipo: concepto
 fuentes: [raw/correcciones.md, raw/apuntes.txt, raw/notas.txt]
 creado: 2026-04-09
-actualizado: 2026-04-13
+actualizado: 2026-04-17
 ---
 
 # Internacionalizacion (i18n)
@@ -73,3 +73,6 @@ La internacionalizacion nativa y completa es un requerimiento core obligatorio.
 - [[resumen-apuntes]]
 - [[resumen-notas]]
 - [[remediacion-violaciones-paw]]
+
+- [[auditoria-extrema-cumplimiento-paw]]
+- [[plan-implementacion-reservas]]

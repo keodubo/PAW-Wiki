@@ -3,7 +3,7 @@ titulo: Mailing — Patrones y Errores
 tipo: concepto
 fuentes: [raw/correcciones.md, raw/apuntes.txt]
 creado: 2026-04-09
-actualizado: 2026-04-13
+actualizado: 2026-04-17
 ---
 
 # Mailing — Patrones y Errores
@@ -59,3 +59,7 @@ Grupos con buen mailing fueron elogiados:
 - [[resumen-notas-sprint-1]]
 - [[resumen-apuntes]]
 - [[ux-flows]]
+
+- [[auditoria-extrema-cumplimiento-paw]]
+- [[plan-implementacion-reservas]]
+- [[resumen-spec-reservas]]
