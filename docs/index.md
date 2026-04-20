@@ -13,6 +13,7 @@ Catalogo de todas las paginas del wiki, organizado por categoria.
 | [[resumen-apuntes]] | Apuntes completos de la materia (11 unidades; 1-7 como base TP1 y 8 como soporte de implementacion) | `raw/apuntes.txt` + `raw/pdfs/PAW - Apuntes.pdf` |
 | [[resumen-notas]] | Notas de clase con walkthroughs practicos y advertencias del profesor | `raw/notas.txt` + `raw/pdfs/Notas clases PAW.pdf` |
 | [[resumen-notas-sprint-1]] | Feedback puntual del sprint 1 sobre producto, UX, filtros y direccion del proyecto | `raw/notas_sprint_1.txt` |
+| [[resumen-notas-sprint-2]] | Checklist de cierre del sprint 2: auth, owner/admin, UX, correcciones ya resueltas y checks manuales remanentes | `raw/notas_para_sprint_2.txt` |
 | [[resumen-transcripciones-clases-2-a-4]] | Revision cautelosa de transcripciones VTT; clases 2-3 como apoyo y clase reciente sobre agentes/formularios | `raw/audio_transcript/*.VTT` |
 | [[resumen-spec-reservas]] | Ingesta del spec funcional del sistema de reservas v2 (vigente) con diff frente a v1, reglas, modalidades, slots, estados y resoluciones completas de ambiguedades v2 | `raw/specs_reserva_v2.txt` + `raw/reservas/spec-funcional-reservas.md` (historico) + `raw/diagrama_bd.md` |
 
@@ -87,6 +88,7 @@ Catalogo de todas las paginas del wiki, organizado por categoria.
 - [x] `raw/pdfs/PAW - Apuntes.pdf` -- PDF original validado contra `raw/apuntes.txt`; pasadas editoriales ya cubren unidades 1-11, tratando la 8 como soporte de TP1 y manteniendo 9-11 fuera de foco
 - [x] `raw/notas.txt` -- Notas de clases (~175KB)
 - [x] `raw/notas_sprint_1.txt` -- Procesado en `[[resumen-notas-sprint-1]]`
+- [x] `raw/notas_para_sprint_2.txt` -- Checklist de cierre del sprint 2 procesado en `[[resumen-notas-sprint-2]]`
 - [x] `raw/pdfs/Enunciado_TPE1.pdf` -- PDF original validado contra `raw/enunciado.txt`
 - [x] `raw/pdfs/Notas clases PAW.pdf` -- PDF original validado contra `raw/notas.txt`
 - [x] `raw/audio_transcript/audio_transcript clase 2.VTT` -- Revisado con cautela; solo uso auxiliar

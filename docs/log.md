@@ -4,6 +4,20 @@ Registro cronologico de actividad del wiki.
 
 ---
 
+## [2026-04-19] ingest | notas de sprint 2 y cierre documental del checklist
+
+- Movida la copia viva de `notas_para_sprint_2.txt` desde la raiz del repo a `docs/raw/notas_para_sprint_2.txt` para dejar una unica fuente operativa en el wiki
+- Creada `wiki/resumen-notas-sprint-2.md` como pagina `fuente` para registrar el checklist del sprint 2
+- La pagina nueva no solo resume pedidos originales: tambien deja asentadas las decisiones posteriores que redefinen el cierre (roles separados, filtro de explore no reabierto, form de registro fuera de esta pasada y tags reales/seed como follow-up tecnico)
+- Actualizado `index.md` para registrar la nueva fuente y marcar `raw/notas_para_sprint_2.txt` como procesado
+- Quedan visibles como seguimiento operativo los checks manuales de auth/reservas; la deuda tecnica de `verify`/`spy` quedo cerrada en el repo en esta misma pasada
+
+## [2026-04-19] fix | seed de tags alineado al catalogo vigente
+
+- Cerrado el follow-up tecnico que habia quedado abierto en `[[resumen-notas-sprint-2]]`: `persistence/src/main/resources/seed.sql` ahora backfillea tags para los restaurantes seed existentes
+- La cobertura se alinea al conjunto vigente expuesto por `RestaurantCatalog.getSuggestedTags()` y garantiza que todos los tags hoy validos aparezcan al menos una vez en la base sembrada
+- La decision de producto queda asentada como estable: los tags historicos pasaron a tratarse como tags reales editables y ya no quedan pendientes exclusivos de seed para la promocion a prod
+
 ## [2026-04-17] lint | normalizacion estructural del wiki
 
 - Corregido el contrato editorial de `wiki/2026-04-17_cierre-implementacion-reservas_v1.md`: `tipo` valido, `fuentes` explicitas y link al `README` sin `file://` absoluto

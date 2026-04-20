@@ -1,22 +1,16 @@
 Cosas a mostrar y pedir correccion:
 
-	[ ] Flujo auth (registrarse como reviewer, restaurante, claimear una cuenta, olvide mi contrasena restablecer contrasena)
+	[x] Flujo auth (registrarse como reviewer, restaurante, claimear una cuenta, olvide mi contrasena restablecer contrasena)
 		Cambiar para que el registro sea unico y darle al user la opcion de crear restaurantes	
 
-	[ ] Filtro de restaurantes en /explorar, en /admin/restaurants y en perfil/{id-x} 
-		Esta bien, talvez moverlo al lado izquierdo en la vista de explorar
-
-	[ ] Menu de restaurantes, en creacion/edicion y como usuario reviewer
+	[x] Menu de restaurantes, en creacion/edicion y como usuario reviewer
 		Esta bastante feo, mejorar la vista del menu, agregarle fotos, agregarle descripcion, inspirarse en pedidosya o paginas del estilo
 
 	[x] Pagina de admin nueva
 		Esta bien
 
-	[ ] Pagina de restaurant owner
+	[x] Pagina de restaurant owner
 		Esta bien en general, para modificar el menu no deberiamos modificar todo el restaruratne, que sea un vista separada, lo mismo para reservas
-
-	[ ] ¿Deberia poder una cuenta de restaurante tener los compartamientos de un reviewer? o sea ademas de administrar sus restaurante puede actuar como reviewer.
-	segun alejo podemos hacer que solo haya un tipo de usuario y que le demos la opcion de crear sus restaurantes.
 
 	[x] ¿Conviene “aplanar” el form de creacion/edicion de restaurante?
 		No hace falta.
@@ -24,10 +18,10 @@ Cosas a mostrar y pedir correccion:
 	[x] ¿Para el calendario a la hora de hacer reservas deberiamos crear a mano como un componente “calendario”?
 		Podemos usar una libreria o crearlo nosotros
 
-	[ ] Pregunta boluda: ¿los nombres de la url deberia seguir una convencion fija y ser todas en espanol o todas en ingles no?
+	[x] Pregunta boluda: ¿los nombres de la url deberia seguir una convencion fija y ser todas en espanol o todas en ingles no?
 		Si, conviene usar la convencion en ingles		
 
-	[ ] ¿Con el flujo actual de restablecer contrasena, en un futuro (proximo sprint) deberiamos agregar una pagina de configuracion de perfil o mismo dentro de perfil la forma de cambiar contrasena o deberiamos hacerlo para este print y asumir que forma parte del flujo auth?
+	[x] ¿Con el flujo actual de restablecer contrasena, en un futuro (proximo sprint) deberiamos agregar una pagina de configuracion de perfil o mismo dentro de perfil la forma de cambiar contrasena o deberiamos hacerlo para este print y asumir que forma parte del flujo auth?
 		Dentro del perfil agregar al opcion de cambiar contrasena
 
 	[x] Asignacion de restaurantes “huerfanos” via admin
@@ -36,59 +30,54 @@ Cosas a mostrar y pedir correccion:
 	[x] No entendi esta correccion que nos hiciceron en el primer sprint “Las paginas de reviews tienen tamaño fijo (5). El usuario deberia poder elegir cuantos elementos ver (parametro &pageSize=N)”
 		Agregar opciones para mostrar 5, 10, 15, etc cantidad de vsitas en la paginacion, o sea darle la opcion de elegir al ususario, pero las opciones las fijamos nosotros.
 
-	
-
 Cosas a resolver:
 
-	[ ] Al rechazar un restaurante sigue quedando en pendientes en /admin/restaurant y no llega el mail de rechazo, se deberia sacar de pendientes y al restaurant owner mostrar Rechazado. El restaurant owner puede editar nuevamente el restaurante rechazado para que se vuelva a enviar a pendientes.
+	[x] Al rechazar un restaurante sigue quedando en pendientes en /admin/restaurant y no llega el mail de rechazo, se deberia sacar de pendientes y al restaurant owner mostrar Rechazado. El restaurant owner puede editar nuevamente el restaurante rechazado para que se vuelva a enviar a pendientes.
 
-	[ ] Arreglar drift de tags reales y tags legacy, para eso crear todos los tags legacy dentro de la carpeta de tags reales y borrar los tags legacy de la db, no seedear los restaurantes con los tags nuevos, no pasa nada si se pierde el dato del tag viejo en los restaurantes, los agrego manualmente a traves de la cuenta de admin luego.
+	[x] Arreglar drift de tags reales y tags legacy, para eso crear todos los tags legacy dentro de la carpeta de tags reales y borrar los tags legacy de la db, no seedear los restaurantes con los tags nuevos, no pasa nada si se pierde el dato del tag viejo en los restaurantes, los agrego manualmente a traves de la cuenta de admin luego.
 
-	[ ] En el mail que le llega al restaurante cuando se hace una review deberia tener un CTA que lo lleve a la pagina de ese restaurante en especifico.
+	[x] En el mail que le llega al restaurante cuando se hace una review deberia tener un CTA que lo lleve a la pagina de ese restaurante en especifico.
 
 	[x] Cambio de UX en filtros: en vez de dropdowns, mostrar los primeros X con mas resultados y un boton "mostrar mas".
 		Ejemplo: Argentina (52) / Mediterranea (35) / ... / Mostrar mas
 
 	[x] Busqueda sin indicador: si busco "asd", la pagina no muestra "Resultados para 'asd'". 
 	
-	[ ] Boton de favoritos y de reserva: no estan completamente a la derecha cuando se agranda la ventana (probable max-width faltante en el contenedor).
+	[x] Boton de favoritos y de reserva: no estan completamente a la derecha cuando se agranda la ventana (probable max-width faltante en el contenedor).
 
-	[ ] Boton cancelar: deberia estar coloreado de rojo para notarse que es uyna accion de borrado
+	[x] Boton cancelar: deberia estar coloreado de rojo para notarse que es uyna accion de borrado
 
-	[ ] Cambiar en la pagina /login "¿Ya existías en la base y querés activar tu cuenta?" a "¿Ya hiciste una review? Reclama tu cuenta" 
+		[x] Cambiar en la pagina /login "¿Ya existías en la base y querés activar tu cuenta?" a "¿Ya hiciste una review? Reclama tu cuenta"
 
-	[ ] Cambiar en la pagina /claim "Ingresá tu email. Si corresponde a un reviewer legacy, te enviaremos un enlace para activar tu usuario." a "Ingresá tu email y te enviaremos un enlace para activar tu usuario."
+	[x] Cambiar en la pagina /claim "Ingresá tu email. Si corresponde a un reviewer legacy, te enviaremos un enlace para activar tu usuario." a "Ingresá tu email y te enviaremos un enlace para activar tu usuario."
 
-	[ ] Menu de edicion/creacion de restaurantes debe ser mas corto, para ello podemos usar cards en js para ir pidiendo datos de a poco (todo en una misma url). O sea dividir en cards de pasos la creacion/edicion de menu. Mover el flujo de reservas a otra url por si solo se quiere modificar esa configuracion, lo mismo con el menu. Sacar del form el input "Mail del restaurante" ya que no sirve de nada y no se muestra Para las cards hay que ver como dividir "Nombre del restaurante" "Descripción" "Tipo de cocina" "Ubicación" "Dirección" "Teléfono" "Rango de precio" "Imagen de portada" "URL de imagen externa (opcional)" "Horario (L-D)". Mover tags dentro del menu.
+	[x] Menu de edicion/creacion de restaurantes debe ser mas corto, para ello podemos usar cards en js para ir pidiendo datos de a poco (todo en una misma url). O sea dividir en cards de pasos la creacion/edicion de menu. Mover el flujo de reservas a otra url por si solo se quiere modificar esa configuracion, lo mismo con el menu. Sacar del form el input "Mail del restaurante" ya que no sirve de nada y no se muestra Para las cards hay que ver como dividir "Nombre del restaurante" "Descripción" "Tipo de cocina" "Ubicación" "Dirección" "Teléfono" "Rango de precio" "Imagen de portada" "URL de imagen externa (opcional)" "Horario (L-D)". Mover tags dentro del menu.
 
-	[ ] El form de registro es muy largo verticalmente, poner los inputs en una misma
+	[x] El form de registro es muy largo verticalmente, poner los inputs en una misma
 
-	[ ] Esta con un padding cuando se escribe en los los inputs de registro, de inicio de sesion, de reclamar y de restablecer contrasena es como si tuviese sangria, la escritura deberia empezar al principio de la caja
+	[x] Esta con un padding cuando se escribe en los los inputs de registro, de inicio de sesion, de reclamar y de restablecer contrasena es como si tuviese sangria, la escritura deberia empezar al principio de la caja
 
 	[x] Cuando pide para iniciar seion cuando se hace una review luego te deberia redirigir a ese mismo restaurante donde se pidio el inicio de sesion. Por ejemplo estoy como reviewer anonimo y entro a /restaurantes/{id} y toco iniciar sesion una vez que inicio sesion me debe redirigir a /restaurantes/{id}
 
-	[ ] Agregar la foto con la letra en la pagina de /restaurantes/{id} para los perfiles, actualmente tienen un redondel gris sin nada, en vez de usar eso usar el mismo default que tiene la vista de /perfil para los usuarios sin foto.
+	[x] Agregar la foto con la letra en la pagina de /restaurantes/{id} para los perfiles, actualmente tienen un redondel gris sin nada, en vez de usar eso usar el mismo default que tiene la vista de /perfil para los usuarios sin foto.
 
-	[ ] En la vista de /restaurantes/{id} agregar la direccion del restaurante antes del barrio, de modo que quede: {direccion} | {barrio} | abierto/cerrrado
+	[x] En la vista de /restaurantes/{id} agregar la direccion del restaurante antes del barrio, de modo que quede: {direccion} | {barrio} | abierto/cerrrado
 
-	[ ] Agregar validacion de cuenta mediante correo. Una vez que el usuario clickea en el cta del correo se le deberia dar autologin al redireccionarlo a la pagina. O sea al registrarse debe mandarlo a una pagina de confirmacion que diga entra a tu mail y confirmalo o algo del estilo, al tocar el cta lo redirige a la nuestra pagina con el autologin ya hecho. 
+		[x] Agregar validacion de cuenta mediante correo. Una vez que el usuario clickea en el cta del correo se le deberia dar autologin al redireccionarlo a la pagina. O sea al registrarse debe mandarlo a una pagina de confirmacion que diga entra a tu mail y confirmalo o algo del estilo, al tocar el cta lo redirige a la nuestra pagina con el autologin ya hecho.
 
-	[ ] Chequear que no se hagan tests con verify o spy
 
 	[x] Cambiar las reviews para que las reviews hechas luego de una reserva tengan un tic de verified (indica que un usuario fue al restaurante confirmado por la app, o sea que si o si fue al restaurante)
 
 	[x] Cambio de UX en filtros: en vez de dropdowns, mostrar los primeros X con mas resultados y un boton "mostrar mas". Ejemplo: Argentina (52) / Mediterranea (35) / ... / Mostrar mas
 	
-	[ ] Hay forms que les falta padding
+	[x] Hay forms que les falta padding arriba, o sea la navbar tapa el inicio del form, por ejemplo en /my-restaurants/new pedirle a la ia que chequee donde falta padding en la parte superior.
+
+	[x] Implementar que los usaurios puedan guardar restaurantes en una lista a la cual pueden acceder mediante un boton en el perfil
+
+	Cosas a chequear:
 	
 	[ ] Testear todo el flujo de reserva para ver si hay bugs
 
 	[ ] Testear todo el flujo auth para ver si hay bugs
 
-
-
-
-
-
-
-
+	[ ] Chequear que no se hagan tests con verify o spy
