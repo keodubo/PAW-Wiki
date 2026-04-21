@@ -75,4 +75,5 @@ La catedra no corrige solo funcionalidad: tambien mira experiencia de uso, clari
 - [[scrum-metodologia]]
 - [[buenas-practicas]]
 - [[resumen-correcciones]]
+- [[resumen-notas-sprint-2]]
 - [[resumen-apuntes]]

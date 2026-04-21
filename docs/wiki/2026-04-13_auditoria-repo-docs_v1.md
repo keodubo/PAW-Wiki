@@ -178,4 +178,5 @@ No se confirmó una regresión nueva de código fuera de los mismatches anterior
 - [[auditoria-extrema-cumplimiento-paw]]
 - [[plan-ejecucion-remediacion-auditoria]]
 - [[remediacion-violaciones-paw]]
+- [[2026-04-12_auditoria-y-plan-remediacion_v1]]
 - [[configuracion-maven]]

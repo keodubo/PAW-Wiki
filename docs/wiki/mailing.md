@@ -57,6 +57,7 @@ Grupos con buen mailing fueron elogiados:
 - [[resumen-enunciado]]
 - [[resumen-correcciones]]
 - [[resumen-notas-sprint-1]]
+- [[resumen-notas-sprint-2]]
 - [[resumen-apuntes]]
 - [[ux-flows]]
 

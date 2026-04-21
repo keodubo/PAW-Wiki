@@ -43,3 +43,5 @@ El sistema de reservas se considera **Production-Ready** bajo los estándares de
 
 - [[plan-implementacion-reservas]]
 - [[resumen-correcciones]]
+- [[resumen-notas-sprint-2]]
+- [[2026-04-19_informe-implementaciones-desde-f81eb49_v1]]

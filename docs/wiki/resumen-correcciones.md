@@ -314,6 +314,7 @@ Al 2026-04-17 se ha completado una pasada de remediación exhaustiva centrada en
 - [[resumen-apuntes]]
 - [[resumen-notas]]
 - [[resumen-notas-sprint-1]]
+- [[resumen-notas-sprint-2]]
 - [[resumen-enunciado]]
 - [[criterios-evaluacion]]
 - [[remediacion-violaciones-paw]]

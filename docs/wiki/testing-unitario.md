@@ -124,6 +124,7 @@ En apuntes tambien se explica que `mock()` crea un "nice mock":
 - [[resumen-enunciado]]
 - [[resumen-apuntes]]
 - [[resumen-notas]]
+- [[resumen-notas-sprint-2]]
 - [[remediacion-violaciones-paw]]
 
 - [[plan-implementacion-reservas]]

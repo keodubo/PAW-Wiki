@@ -1,9 +1,9 @@
 ---
 titulo: Remediación de Violaciones PAW
 tipo: sintesis
-fuentes: [raw/correcciones.md, raw/apuntes.txt, raw/notas.txt, raw/enunciado.txt]
+fuentes: [raw/2026-04-10_paw-violaciones-plan_v1.md, raw/correcciones.md, raw/apuntes.txt, raw/notas.txt, raw/enunciado.txt]
 creado: 2026-04-10
-actualizado: 2026-04-17
+actualizado: 2026-04-20
 ---
 
 # Remediación de Violaciones PAW
@@ -12,7 +12,7 @@ actualizado: 2026-04-17
 >
 > Referencia vigente: [[2026-04-13_auditoria-repo-docs_v1]]
 
-Esta sintesis cruza los criterios de correccion de PAW con una revision puntual del repo y queda retenida como registro historico de una remediacion previa. Su unico pendiente residual documentado es la compatibilidad legacy de `day_of_week`.
+Esta sintesis cruza los criterios de correccion de PAW con una revision puntual del repo y queda retenida como registro historico de una remediacion previa. Absorbe el documento de trabajo `raw/2026-04-10_paw-violaciones-plan_v1.md`, dejando visible solo el estado historico neteado tras las pasadas posteriores del wiki. Su unico pendiente residual documentado es la compatibilidad legacy de `day_of_week`.
 
 ## Estado historico por fase
 
@@ -44,3 +44,4 @@ La unica deuda residual de este plan queda en la fase 1: decidir si el despliegu
 
 - [[auditoria-extrema-cumplimiento-paw]]
 - [[plan-ejecucion-remediacion-auditoria]]
+- [[2026-04-12_auditoria-y-plan-remediacion_v1]]

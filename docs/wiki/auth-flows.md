@@ -73,3 +73,4 @@ Las correcciones de PAW no evaluan solo si "hay login". Tambien miran si los flu
 - [[ux-flows]]
 - [[resumen-apuntes]]
 - [[resumen-correcciones]]
+- [[resumen-notas-sprint-2]]

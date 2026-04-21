@@ -40,6 +40,7 @@ Checklist operativo del sprint 2 con foco en cierre funcional, UX y hardening de
 ## Cierre tecnico aplicado despues de la nota
 
 - **Tests sin `verify` / `spy`**: el repo quedo alineado con `[[testing-unitario]]` en la pasada del `2026-04-19`, reemplazando las ultimas aserciones de interaccion por capturas observables y asserts de estado.
+- **Cluster postcierre de deploy**: al dia siguiente se absorbio aparte `[[2026-04-20_bugs-deploy-lote-0-y-plan-remediacion_v1]]`, que no contradice este checklist sino que documenta el backlog de bugs concretos detectado luego del cierre de sprint y del informe tecnico.
 
 ## Lectura util para el equipo
 
@@ -60,3 +61,5 @@ Checklist operativo del sprint 2 con foco en cierre funcional, UX y hardening de
 - [[mailing]]
 - [[testing-unitario]]
 - [[2026-04-17_cierre-implementacion-reservas_v1]]
+- [[2026-04-19_informe-implementaciones-desde-f81eb49_v1]]
+- [[2026-04-20_bugs-deploy-lote-0-y-plan-remediacion_v1]]

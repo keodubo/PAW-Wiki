@@ -58,16 +58,31 @@ Catalogo de todas las paginas del wiki, organizado por categoria.
 
 ## Sintesis
 
+### Ruta de estudio y patrones
+
 | Pagina | Descripcion |
 |--------|-------------|
-| [[2026-04-13_auditoria-repo-docs_v1]] | Auditoria de cumplimiento del repo contra el canon actual de `docs/`; clasifica reglas verificadas, mismatches activos, deuda legacy y ambiguedades documentales vigentes | 
 | [[tp1-vs-tpe2-final]] | Ruta de estudio para distinguir material prioritario de TP1, AOP como soporte de implementacion y temas para TPE2/final |
-| [[buenas-practicas]] | Patrones elogiados por la catedra para replicar |
-| [[remediacion-violaciones-paw]] | Estado actual de las violaciones detectadas y pendientes reales en el repo |
-| [[auditoria-extrema-cumplimiento-paw]] | Baseline historico de la auditoria extrema levantada el 2026-04-13; conserva hallazgos originalmente detectados, varios ya remediados en el repo actual |
-| [[plan-ejecucion-remediacion-auditoria]] | Plan secuencial historico de remediacion; su tabla interna de estados ya no coincide por completo con el repo actual y debe leerse junto a `[[2026-04-13_auditoria-repo-docs_v1]]` |
+| [[buenas-practicas]] | Inventario de patrones elogiados por la catedra para reutilizar como checklist positivo al implementar o auditar |
+
+### Auditorias y remediacion historica
+
+| Pagina | Descripcion |
+|--------|-------------|
+| [[2026-04-13_auditoria-repo-docs_v1]] | Contraste canonico entre `docs/` y el repo auditado al `2026-04-13`; sigue siendo la referencia vigente para leer el cluster historico de remediacion |
+| [[2026-04-12_auditoria-y-plan-remediacion_v1]] | Absorcion historica del par auditoria + plan secuencial del `2026-04-12`; deja trazado el puente entre los documentos de trabajo previos y el canon posterior del wiki |
+| [[2026-04-20_bugs-deploy-lote-0-y-plan-remediacion_v1]] | Absorbe el backlog crudo de `20` bugs de deploy, la auditoria corta del lote 0 y el plan secuencial por lotes del `2026-04-20`; sirve como nodo historico de postcierre |
+| [[auditoria-extrema-cumplimiento-paw]] | Baseline historico inicial de la auditoria extrema del `2026-04-13`; util para reconstruir hallazgos originales, no para leer estado actual sin contraste |
+| [[plan-ejecucion-remediacion-auditoria]] | Orden historico de ejecucion de la remediacion; varias fases quedaron desactualizadas frente al repo actual y deben leerse junto a `[[2026-04-13_auditoria-repo-docs_v1]]` |
+| [[remediacion-violaciones-paw]] | Recorte historico/parcial del plan de violaciones; hoy sirve sobre todo para seguir la deuda legacy de `day_of_week` |
+
+### Reservas, cierre e informe tecnico
+
+| Pagina | Descripcion |
+|--------|-------------|
 | [[plan-implementacion-reservas]] | Plan operativo por fases para implementar el sistema de reservas: modelo, configuracion, disponibilidad, flujos, scheduler, emails, reviews y hardening. Auditado 2026-04-17 contra las reglas del wiki (mail templates en `services/`, JOINs explicitos en listados, rechazo de reservas con slot vencido, recordatorio solo a confirmed, reassignacion sin restriccion de direccion, pluralizacion i18n, scheduler desactivado en tests) |
 | [[2026-04-17_cierre-implementacion-reservas_v1]] | Registro de cierre de la implementación del sistema de reservas; resume el estado final, hardening realizado y estabilización del test suite |
+| [[2026-04-19_informe-implementaciones-desde-f81eb49_v1]] | Nodo de navegacion del informe tecnico shareable del `2026-04-19`; conecta `tex`/`pdf`, QA manual y las epicas funcionales ya cerradas en el wiki |
 
 ## Comparaciones
 
@@ -94,9 +109,21 @@ Catalogo de todas las paginas del wiki, organizado por categoria.
 - [x] `raw/audio_transcript/audio_transcript clase 2.VTT` -- Revisado con cautela; solo uso auxiliar
 - [x] `raw/audio_transcript/audio_transcript clase 3.VTT` -- Revisado con cautela; solo uso auxiliar
 - [x] `raw/audio_transcript/audio_transcript clase 4.VTT` -- Revisado con cautela; clase reciente sobre agentes y formularios, afectada por errores de ASR
-- [ ] `raw/2026-04-10_paw-violaciones-plan_v1.md` -- Documento de trabajo presente en `raw/`, todavia sin ingesta canonica en `wiki/`
-- [ ] `raw/2026-04-12_paw-remediacion-plan-audit_v1.md` -- Documento de trabajo presente en `raw/`, todavia sin ingesta canonica en `wiki/`
-- [ ] `raw/2026-04-12_paw-remediacion-plan-secuencial_v1.md` -- Documento de trabajo presente en `raw/`, todavia sin ingesta canonica en `wiki/`
+- [x] `raw/2026-04-10_paw-violaciones-plan_v1.md` -- Documento de trabajo absorbido por `[[remediacion-violaciones-paw]]` como antecedente historico del plan de violaciones
+- [x] `raw/2026-04-12_paw-remediacion-plan-audit_v1.md` -- Documento de trabajo absorbido por `[[2026-04-12_auditoria-y-plan-remediacion_v1]]`
+- [x] `raw/2026-04-12_paw-remediacion-plan-secuencial_v1.md` -- Documento de trabajo absorbido por `[[2026-04-12_auditoria-y-plan-remediacion_v1]]`
 - [x] `raw/2026-04-13_paw-remediacion-hallazgos-secuencial_v1.md` -- Documento de trabajo ya absorbido por `[[auditoria-extrema-cumplimiento-paw]]`; queda como antecedente historico
+- [x] `raw/2026-04-20_deploy-bugs-lote-0-audit_v1.md` -- Auditoria corta del cluster de deploy; absorbida por `[[2026-04-20_bugs-deploy-lote-0-y-plan-remediacion_v1]]`
+- [x] `raw/2026-04-20_deploy-bugs-remediation-plan_v1.md` -- Plan secuencial del mismo cluster; absorbido por `[[2026-04-20_bugs-deploy-lote-0-y-plan-remediacion_v1]]`
+- [x] `raw/todo.md` -- Lista fuente original de `20` bugs de deploy; absorbida por `[[2026-04-20_bugs-deploy-lote-0-y-plan-remediacion_v1]]`
 - [x] `raw/reservas/spec-funcional-reservas.md` -- Spec v1 del sistema de reservas; conservado como antecedente historico, superado por v2
 - [x] `raw/specs_reserva_v2.txt` -- Spec v2 del sistema de reservas (vigente); procesado en `[[resumen-spec-reservas]]` y siendo propagado a `[[plan-implementacion-reservas]]`
+- [x] `raw/diagrama_bd.md` -- Version narrativa del diagrama de reservas; absorbida por `[[resumen-spec-reservas]]`
+- [x] `raw/diagrama_bd.puml` -- Fuente editable del mismo diagrama; registrada como soporte de `[[resumen-spec-reservas]]`
+
+### Estado de reportes
+
+- [x] `reports/2026-04-19_informe-implementaciones-desde-f81eb49_v1.tex` -- Fuente editable del informe tecnico, enlazada desde `[[2026-04-19_informe-implementaciones-desde-f81eb49_v1]]`
+- [x] `reports/2026-04-19_informe-implementaciones-desde-f81eb49_v1.pdf` -- Render final del mismo informe
+- [x] Cleanup `2026-04-20` -- Eliminados `reports/2026-04-19_informe-implementaciones-desde-f81eb49_v1.aux`, `reports/2026-04-19_informe-implementaciones-desde-f81eb49_v1.log`, `reports/2026-04-19_informe-implementaciones-desde-f81eb49_v1.out` y `reports/2026-04-19_informe-implementaciones-desde-f81eb49_v1.toc` por ser artefactos derivados no canónicos
+- [x] `reports/assets/manual-qa/` -- Capturas de apoyo del QA manual documentado en el informe

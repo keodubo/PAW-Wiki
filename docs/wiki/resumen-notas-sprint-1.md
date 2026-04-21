@@ -78,5 +78,6 @@ El profesor sugiere profundizar en uno de dos ejes:
 - [[validacion-formularios]]
 - [[persistencia-jdbc]]
 - [[mailing]]
+- [[resumen-notas-sprint-2]]
 - [[buenas-practicas]]
 - [[manejo-imagenes]]

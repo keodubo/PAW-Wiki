@@ -93,6 +93,7 @@ Esta pagina consolida el plan secuencial que se uso para resolver los hallazgos 
 
 - [[auditoria-extrema-cumplimiento-paw]]
 - [[remediacion-violaciones-paw]]
+- [[2026-04-12_auditoria-y-plan-remediacion_v1]]
 - [[comparacion-capas-web-services-persistence]]
 - [[spring-security]]
 - [[configuracion-maven]]

@@ -4,6 +4,30 @@ Registro cronologico de actividad del wiki.
 
 ---
 
+## [2026-04-20] ingest | absorcion canonica del cluster de bugs de deploy
+
+- Creada `wiki/2026-04-20_bugs-deploy-lote-0-y-plan-remediacion_v1.md` para absorber `raw/todo.md`, `raw/2026-04-20_deploy-bugs-lote-0-audit_v1.md` y `raw/2026-04-20_deploy-bugs-remediation-plan_v1.md` en un unico nodo historico navegable
+- Reescrito `index.md` para registrar el nodo nuevo dentro del bloque de auditorias/remediacion historica y marcar esas tres fuentes raw como absorbidas, no solo preservadas
+- Enlazado el nodo nuevo con `wiki/resumen-notas-sprint-2.md` y `wiki/2026-04-19_informe-implementaciones-desde-f81eb49_v1.md` para dejar visible el puente entre cierre de sprint, informe tecnico y backlog postcierre
+- Actualizado `tree.txt` para reflejar la nueva pagina wiki
+
+## [2026-04-20] archive | cierre documental del plan de bugs deploy
+
+- Copiadas al repo separado del wiki las fuentes `raw/2026-04-20_deploy-bugs-remediation-plan_v1.md`, `raw/2026-04-20_deploy-bugs-lote-0-audit_v1.md` y `raw/todo.md` para conservar el rastro documental del cierre de remediacion de deploy
+- Eliminados del repo principal `2026-04-20_deploy-bugs-remediation-plan_v1.md`, `2026-04-20_deploy-bugs-lote-0-audit_v1.md` y `todo.md` para que dejen de quedar trackeados fuera del wiki
+- Actualizados `index.md` y `tree.txt` para registrar las nuevas fuentes raw historicas
+
+## [2026-04-20] lint | absorcion historica de fuentes y consolidacion de reportes
+
+- Cerrada la orfandad de `wiki/resumen-notas-sprint-2.md` y normalizados sus backlinks recíprocos con `auth-flows`, `mailing`, `ux-flows`, `testing-unitario`, `resumen-correcciones`, `resumen-notas-sprint-1` y `2026-04-17_cierre-implementacion-reservas_v1`
+- `raw/2026-04-10_paw-violaciones-plan_v1.md` queda absorbido explícitamente por `wiki/remediacion-violaciones-paw.md`
+- Creada `wiki/2026-04-12_auditoria-y-plan-remediacion_v1.md` para absorber el par `raw/2026-04-12_paw-remediacion-plan-audit_v1.md` + `raw/2026-04-12_paw-remediacion-plan-secuencial_v1.md`
+- Registrado `raw/diagrama_bd.puml` como fuente editable del diagrama de reservas dentro de `wiki/resumen-spec-reservas.md`
+- Creada `wiki/2026-04-19_informe-implementaciones-desde-f81eb49_v1.md` para conectar `docs/reports/` al wiki y distinguir `tex/pdf` canónicos de sus artefactos `.aux/.log/.out/.toc`
+- Eliminados el `.DS_Store` residual de la raiz de `PAW-Wiki` y los derivados LaTeX `.aux/.log/.out/.toc` del informe tecnico por ser artefactos no canónicos
+- Reordenado `index.md` para separar el cluster de estudio/patrones del cluster historico de auditorías/remediación y del bloque de reservas/informe tecnico
+- Actualizados `index.md` y `tree.txt` para reflejar las nuevas absorciones, el cleanup físico y los nodos de navegación
+
 ## [2026-04-19] ingest | notas de sprint 2 y cierre documental del checklist
 
 - Movida la copia viva de `notas_para_sprint_2.txt` desde la raiz del repo a `docs/raw/notas_para_sprint_2.txt` para dejar una unica fuente operativa en el wiki
