@@ -1,11 +1,35 @@
 # Plan de Remediacion de Auditoria Actual PAW
 
+> Estado: resuelto/cerrado. Esta pagina queda como registro del plan ejecutado el `2026-04-20`, no como backlog pendiente.
+
 - Fecha: `2026-04-20`
-- Estado: `Listo para ejecutar`
+- Estado: `Resuelto`
 - Objetivo: cerrar los hallazgos vigentes de la auditoria actual y dejar repo, wiki operativa y bootstrap local alineados entre si.
 - Canon usado: `PAW-Wiki/docs/wiki/*`, `CLAUDE.md` del repo y la auditoria manual del checkout actual.
 - Alcance: README/bootstrap, seed operativa por rol, scheduler de reservas, higiene JDBC y ejemplos de configuracion.
 - Fuera de alcance: deuda historica ya cerrada, redisenos UI y cambios funcionales que no ayuden a resolver estos 5 hallazgos.
+
+## Cierre del plan
+
+### Estado final de los hallazgos
+
+| Hallazgo | Estado final | Nota de cierre |
+| --- | --- | --- |
+| `README.md` desalineado con rutas/flujos reales | Resuelto | README reescrito contra los controllers y redirects reales. |
+| Credenciales reviewer/owner no reproducibles con el bootstrap versionado | Resuelto por alineacion operativa/documental | Se documentaron credenciales demo/QA reales y se dejo explicito que el bootstrap automatico solo garantiza el admin; por decision de alcance no se seedearon reviewer/owner/restaurantes en `schema-postgres.sql`. |
+| `ReservationSchedulerImpl` fuera del patron de la wiki | Resuelto | El scheduler queda fino y delega en `ReservationService`; la logica transaccional y de notificaciones vive en el service. |
+| `SELECT *` residuales en DAOs | Resuelto | Se reemplazaron por listas explicitas de columnas en los DAOs versionados afectados. |
+| `.example` obsoletos | Resuelto | `mail.properties.example` y `database.properties.example` se alinearon con el wiring Spring real. |
+
+### Verificacion final registrada
+
+- `mvn clean test`
+- `mvn -pl webapp -am package -DskipTests`
+- Smoke manual en `localhost:8080`:
+  - login reviewer, owner y admin;
+  - navegacion por rutas documentadas en README;
+  - perfil reviewer, ficha de restaurante e imagenes;
+  - creacion de reserva, confirmacion owner y tick real del scheduler.
 
 ## Hallazgos de entrada
 
@@ -285,9 +309,9 @@ mvn -pl webapp -am package -DskipTests
 | 3 | `mvn -pl persistence test` y luego suite completa |
 | 4 | suite completa + WAR + smoke final |
 
-## Next actions
+## Estado final
 
-- [ ] Confirmar la decision de scheduler: **recomendada** = alinear codigo a wiki.
-- [ ] Ejecutar Fase 1 primero; es la que mas valor operativo destraba con menos riesgo.
-- [ ] No mezclar la Fase 2 con cleanup docs: hacer el refactor del scheduler en su propio commit.
-- [ ] Cerrar con README, examples y smoke manual, no solo con `mvn test`.
+- [x] Confirmada la decision de scheduler: alinear codigo a wiki.
+- [x] Ejecutada Fase 1 con cierre documental/operativo del hallazgo de bootstrap.
+- [x] Ejecutada Fase 2 sin mezclarla conceptualmente con el cleanup de docs/examples.
+- [x] Cerrada la pasada con README, examples, tests, package y smoke manual.

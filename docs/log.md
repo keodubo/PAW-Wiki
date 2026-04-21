@@ -4,6 +4,12 @@ Registro cronologico de actividad del wiki.
 
 ---
 
+## [2026-04-20] close | plan de remediacion de auditoria actual marcado como resuelto
+
+- Actualizada `docs/superpowers/plans/2026-04-20_paw-plan-remediacion-auditoria-actual_v1.md` para dejarla en estado `resuelto/cerrado` y convertirla en registro de cierre, no en backlog abierto
+- Agregado resumen de cierre por hallazgo con una aclaracion explicita sobre el punto de bootstrap: se considera resuelto por alineacion operativa/documental, sin seedear reviewer/owner/restaurantes en `schema-postgres.sql`
+- Registrada la verificacion final usada para darlo por cerrado: `mvn clean test`, `mvn -pl webapp -am package -DskipTests` y smoke manual en `localhost:8080`
+
 ## [2026-04-20] ingest | absorcion canonica del cluster de bugs de deploy
 
 - Creada `wiki/2026-04-20_bugs-deploy-lote-0-y-plan-remediacion_v1.md` para absorber `raw/todo.md`, `raw/2026-04-20_deploy-bugs-lote-0-audit_v1.md` y `raw/2026-04-20_deploy-bugs-remediation-plan_v1.md` en un unico nodo historico navegable
