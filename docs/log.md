@@ -4,6 +4,33 @@ Registro cronologico de actividad del wiki.
 
 ---
 
+## [2026-04-24] move | correcciones sprint 2 sin ingesta
+
+- Movido `docs/raw/2026-04-24_correcciones-sprint-2_v1.md` a `docs/wiki/2026-04-24_correcciones-sprint-2_v1.md` para que funcione como tracker operativo editable
+- Agregado frontmatter minimo de wiki y nota editorial explicita: no se hizo ingesta ni resumen, se conserva el detalle completo del plan/checklist
+- Actualizados backlinks manuales desde `index.md`, `wiki/resumen-notas-sprint-2.md`, `wiki/2026-04-20_bugs-deploy-lote-0-y-plan-remediacion_v1.md` y `wiki/2026-04-24_auditoria-implementacion-contra-wiki_v1.md`
+
+## [2026-04-24] plan | remediacion secuencial de cumplimiento contra wiki
+
+- Creado `superpowers/plans/2026-04-24_paw-remediacion-cumplimiento-wiki_v1.md` como plan ejecutable por fases para cerrar los hallazgos reales de la auditoria del `2026-04-24`
+- Incorporadas las dos decisiones confirmadas por el usuario: properties reales dentro del WAR quedan aceptadas por requisito del servidor de catedra y `/PAW-Wiki` ignorado queda aceptado porque se trackea en git privado separado
+- El plan ordena la remediacion en fases reversibles: locale sin side effect en GET, batch para mesas reasignables, cambio de contrasena con password actual, link documental de `LegacySchemaGuard`, limpieza de estilos inline, decision/migracion de contextos Spring y verificacion final
+- No se modifico codigo productivo; solo se agrego el plan y se actualizo el snapshot de `tree.txt`
+
+## [2026-04-24] audit | implementacion actual contrastada contra PAW-Wiki
+
+- Creada `wiki/2026-04-24_auditoria-implementacion-contra-wiki_v1.md` como auditoria exhaustiva del repo actual contra el canon del wiki, el enunciado y las convenciones de cursada
+- Verificado `mvn clean test` y `mvn clean package` con BUILD SUCCESS; el reporte distingue el build verde de las brechas de cumplimiento que los tests actuales no cubren
+- Hallazgos priorizados: `GET /lang/{language}` persiste locale en DB, N+1 en mesas reasignables de reservas owner, properties reales empaquetadas en el WAR, cambio de contrasena sin contrasena actual, `WebConfig` en root context, estilos inline masivos, link documental roto y riesgo de `PAW-Wiki/` ignorado por git
+- Actualizados `index.md` y `tree.txt`; no se modifico `raw/` ni codigo productivo
+
+## [2026-04-22] ingest | PDF crudo del informe tecnico absorbido en la pagina canonica
+
+- Reescrita `wiki/2026-04-19_informe-implementaciones-desde-f81eb49_v1.md` para convertirla de nodo de navegacion a ingesta estructurada del informe: ahora deja explicitos alcance, bloques funcionales, QA manual, matriz de stories y limites de atribucion del documento
+- Actualizado `index.md` para registrar `raw/2026-04-19_informe-implementaciones-desde-f81eb49_v1.pdf` como fuente absorbida y aclarar su relacion con `reports/2026-04-19_informe-implementaciones-desde-f81eb49_v1.{tex,pdf}`
+- Verificado que el PDF en `raw/` y el PDF en `reports/` coinciden byte a byte; la fuente `raw/` sigue inmutable y `reports/assets/manual-qa/` queda como evidencia visual de soporte del QA documentado
+- Sin cambios en `tree.txt`: la ingesta fue editorial sobre paginas ya existentes, no implico altas ni bajas de archivos dentro de `docs/`
+
 ## [2026-04-20] close | plan de remediacion de auditoria actual marcado como resuelto
 
 - Actualizada `docs/superpowers/plans/2026-04-20_paw-plan-remediacion-auditoria-actual_v1.md` para dejarla en estado `resuelto/cerrado` y convertirla en registro de cierre, no en backlog abierto

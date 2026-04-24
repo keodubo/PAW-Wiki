@@ -50,6 +50,7 @@ PAW-Wiki/docs/reports/assets/manual-qa/reviewer-verified-review-published.png
 PAW-Wiki/docs/superpowers
 PAW-Wiki/docs/superpowers/plans
 PAW-Wiki/docs/superpowers/plans/2026-04-20_paw-plan-remediacion-auditoria-actual_v1.md
+PAW-Wiki/docs/superpowers/plans/2026-04-24_paw-remediacion-cumplimiento-wiki_v1.md
 PAW-Wiki/docs/tree.txt
 PAW-Wiki/docs/wiki
 PAW-Wiki/docs/wiki/2026-04-12_auditoria-y-plan-remediacion_v1.md
@@ -57,6 +58,7 @@ PAW-Wiki/docs/wiki/2026-04-13_auditoria-repo-docs_v1.md
 PAW-Wiki/docs/wiki/2026-04-17_cierre-implementacion-reservas_v1.md
 PAW-Wiki/docs/wiki/2026-04-19_informe-implementaciones-desde-f81eb49_v1.md
 PAW-Wiki/docs/wiki/2026-04-20_bugs-deploy-lote-0-y-plan-remediacion_v1.md
+PAW-Wiki/docs/wiki/2026-04-24_auditoria-implementacion-contra-wiki_v1.md
 PAW-Wiki/docs/wiki/api-rest.md
 PAW-Wiki/docs/wiki/auditoria-extrema-cumplimiento-paw.md
 PAW-Wiki/docs/wiki/auth-flows.md

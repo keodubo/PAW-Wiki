@@ -72,6 +72,8 @@ Catalogo de todas las paginas del wiki, organizado por categoria.
 | [[2026-04-13_auditoria-repo-docs_v1]] | Contraste canonico entre `docs/` y el repo auditado al `2026-04-13`; sigue siendo la referencia vigente para leer el cluster historico de remediacion |
 | [[2026-04-12_auditoria-y-plan-remediacion_v1]] | Absorcion historica del par auditoria + plan secuencial del `2026-04-12`; deja trazado el puente entre los documentos de trabajo previos y el canon posterior del wiki |
 | [[2026-04-20_bugs-deploy-lote-0-y-plan-remediacion_v1]] | Absorbe el backlog crudo de `20` bugs de deploy, la auditoria corta del lote 0 y el plan secuencial por lotes del `2026-04-20`; sirve como nodo historico de postcierre |
+| [[2026-04-24_auditoria-implementacion-contra-wiki_v1]] | Auditoria exhaustiva del estado actual del repo contra PAW-Wiki y reglas de cursada; registra build/package verde, fortalezas y brechas priorizadas de idioma, reservas, configuracion sensible, auth, contextos Spring, JSP/CSS y workflow wiki |
+| [[2026-04-24_correcciones-sprint-2_v1]] | Plan/checklist secuencial para ejecutar correcciones de demo del Sprint 2 sin ingesta resumida; conserva los items completos y los ordena por bloques verificables |
 | [[auditoria-extrema-cumplimiento-paw]] | Baseline historico inicial de la auditoria extrema del `2026-04-13`; util para reconstruir hallazgos originales, no para leer estado actual sin contraste |
 | [[plan-ejecucion-remediacion-auditoria]] | Orden historico de ejecucion de la remediacion; varias fases quedaron desactualizadas frente al repo actual y deben leerse junto a `[[2026-04-13_auditoria-repo-docs_v1]]` |
 | [[remediacion-violaciones-paw]] | Recorte historico/parcial del plan de violaciones; hoy sirve sobre todo para seguir la deuda legacy de `day_of_week` |
@@ -82,7 +84,7 @@ Catalogo de todas las paginas del wiki, organizado por categoria.
 |--------|-------------|
 | [[plan-implementacion-reservas]] | Plan operativo por fases para implementar el sistema de reservas: modelo, configuracion, disponibilidad, flujos, scheduler, emails, reviews y hardening. Auditado 2026-04-17 contra las reglas del wiki (mail templates en `services/`, JOINs explicitos en listados, rechazo de reservas con slot vencido, recordatorio solo a confirmed, reassignacion sin restriccion de direccion, pluralizacion i18n, scheduler desactivado en tests) |
 | [[2026-04-17_cierre-implementacion-reservas_v1]] | Registro de cierre de la implementación del sistema de reservas; resume el estado final, hardening realizado y estabilización del test suite |
-| [[2026-04-19_informe-implementaciones-desde-f81eb49_v1]] | Nodo de navegacion del informe tecnico shareable del `2026-04-19`; conecta `tex`/`pdf`, QA manual y las epicas funcionales ya cerradas en el wiki |
+| [[2026-04-19_informe-implementaciones-desde-f81eb49_v1]] | Ingesta estructurada del informe tecnico shareable del `2026-04-19`; deja alcance, epicas, QA manual, matriz de stories y la relacion entre la copia cruda en `raw/` y el `tex/pdf` canonico |
 
 ## Comparaciones
 
@@ -113,6 +115,7 @@ Catalogo de todas las paginas del wiki, organizado por categoria.
 - [x] `raw/2026-04-12_paw-remediacion-plan-audit_v1.md` -- Documento de trabajo absorbido por `[[2026-04-12_auditoria-y-plan-remediacion_v1]]`
 - [x] `raw/2026-04-12_paw-remediacion-plan-secuencial_v1.md` -- Documento de trabajo absorbido por `[[2026-04-12_auditoria-y-plan-remediacion_v1]]`
 - [x] `raw/2026-04-13_paw-remediacion-hallazgos-secuencial_v1.md` -- Documento de trabajo ya absorbido por `[[auditoria-extrema-cumplimiento-paw]]`; queda como antecedente historico
+- [x] `raw/2026-04-19_informe-implementaciones-desde-f81eb49_v1.pdf` -- Copia inmutable del informe tecnico del `2026-04-19`; absorbida por `[[2026-04-19_informe-implementaciones-desde-f81eb49_v1]]` y validada byte a byte contra `reports/2026-04-19_informe-implementaciones-desde-f81eb49_v1.pdf`
 - [x] `raw/2026-04-20_deploy-bugs-lote-0-audit_v1.md` -- Auditoria corta del cluster de deploy; absorbida por `[[2026-04-20_bugs-deploy-lote-0-y-plan-remediacion_v1]]`
 - [x] `raw/2026-04-20_deploy-bugs-remediation-plan_v1.md` -- Plan secuencial del mismo cluster; absorbido por `[[2026-04-20_bugs-deploy-lote-0-y-plan-remediacion_v1]]`
 - [x] `raw/todo.md` -- Lista fuente original de `20` bugs de deploy; absorbida por `[[2026-04-20_bugs-deploy-lote-0-y-plan-remediacion_v1]]`
@@ -124,6 +127,6 @@ Catalogo de todas las paginas del wiki, organizado por categoria.
 ### Estado de reportes
 
 - [x] `reports/2026-04-19_informe-implementaciones-desde-f81eb49_v1.tex` -- Fuente editable del informe tecnico, enlazada desde `[[2026-04-19_informe-implementaciones-desde-f81eb49_v1]]`
-- [x] `reports/2026-04-19_informe-implementaciones-desde-f81eb49_v1.pdf` -- Render final del mismo informe
+- [x] `reports/2026-04-19_informe-implementaciones-desde-f81eb49_v1.pdf` -- Render final shareable del mismo informe; coincide byte a byte con `raw/2026-04-19_informe-implementaciones-desde-f81eb49_v1.pdf`
 - [x] Cleanup `2026-04-20` -- Eliminados `reports/2026-04-19_informe-implementaciones-desde-f81eb49_v1.aux`, `reports/2026-04-19_informe-implementaciones-desde-f81eb49_v1.log`, `reports/2026-04-19_informe-implementaciones-desde-f81eb49_v1.out` y `reports/2026-04-19_informe-implementaciones-desde-f81eb49_v1.toc` por ser artefactos derivados no canónicos
 - [x] `reports/assets/manual-qa/` -- Capturas de apoyo del QA manual documentado en el informe

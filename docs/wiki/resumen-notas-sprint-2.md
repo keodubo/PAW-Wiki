@@ -63,3 +63,4 @@ Checklist operativo del sprint 2 con foco en cierre funcional, UX y hardening de
 - [[2026-04-17_cierre-implementacion-reservas_v1]]
 - [[2026-04-19_informe-implementaciones-desde-f81eb49_v1]]
 - [[2026-04-20_bugs-deploy-lote-0-y-plan-remediacion_v1]]
+- [[2026-04-24_correcciones-sprint-2_v1]]

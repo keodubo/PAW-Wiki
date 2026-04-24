@@ -51,3 +51,4 @@ Esta sintesis absorbe el cluster documental del `2026-04-20` sobre bugs detectad
 
 - [[2026-04-19_informe-implementaciones-desde-f81eb49_v1]]
 - [[resumen-notas-sprint-2]]
+- [[2026-04-24_correcciones-sprint-2_v1]]
