@@ -8,7 +8,7 @@ actualizado: 2026-04-13
 
 # Hibernate, JPA y ORM
 
-Esta pagina resume la **unidad 9**. Es material relevante para TPE2/final, pero **fuera del foco de TP1**.
+Esta pagina resume la **unidad 9**. Es material relevante para TPE2, pero **fuera del foco de TP1**.
 
 ## ORM, JPA e Hibernate
 

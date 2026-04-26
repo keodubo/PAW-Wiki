@@ -14,6 +14,9 @@ Thumbs.db
 *.log
 docs/log.md.tmp
 
+# Superpowers local plans
+docs/superpowers/plans/
+
 # Backup files
 *.bak
 *~
