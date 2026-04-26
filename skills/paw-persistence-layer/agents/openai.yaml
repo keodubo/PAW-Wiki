@@ -1,0 +1,4 @@
+interface:
+  display_name: "PAW Persistence Layer"
+  short_description: "Guia JDBC, SQL y DAO tests PAW"
+  default_prompt: "Use $paw-persistence-layer to implement PAW JDBC, schema, migrations, and DAO tests."

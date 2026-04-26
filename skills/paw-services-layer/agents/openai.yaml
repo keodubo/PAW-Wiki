@@ -1,0 +1,4 @@
+interface:
+  display_name: "PAW Services Layer"
+  short_description: "Guia servicios transaccionales PAW"
+  default_prompt: "Use $paw-services-layer to implement PAW business logic, transactions, mail, and schedulers."

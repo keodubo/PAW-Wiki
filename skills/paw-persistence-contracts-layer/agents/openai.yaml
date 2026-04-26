@@ -1,0 +1,4 @@
+interface:
+  display_name: "PAW Persistence Contracts"
+  short_description: "Guia contratos DAO de PAW"
+  default_prompt: "Use $paw-persistence-contracts-layer to design PAW DAO contracts before JDBC implementation."

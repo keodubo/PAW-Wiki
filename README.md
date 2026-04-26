@@ -17,12 +17,16 @@ docs/
 ├── index.md        # 📖 Índice Maestro (Vista categorizada de todas las páginas)
 ├── log.md          # 📜 Registro de Actividad (Récord cronológico de actualizaciones)
 └── CLAUDE.md       # ⚙️ Esquema y convenciones de flujo de trabajo
+
+skills/
+└── paw-*           # Skills instalables para Codex basadas en la wiki y las capas del proyecto
 ```
 
 ### Componentes Clave
 - **`raw/`**: La fuente de verdad. Documentos originales de la cátedra o manuales técnicos.
 - **`wiki/`**: El cerebro. Archivos Markdown que utilizan metadatos frontmatter y enlaces de estilo Obsidian `[[como-este]]`.
 - **`index.md`**: El faro. Siempre actualizado para reflejar el estado actual del wiki.
+- **`skills/`**: Skills reutilizables para que Codex implemente features siguiendo la wiki, el stack PAW y la separación por capas.
 
 ---
 
@@ -62,6 +66,30 @@ Este repositorio está diseñado para ser "Nativo para IA". Si eres un asistente
 1. Agrega nuevas fuentes a `docs/raw/`.
 2. Ejecuta un flujo de ingesta con un asistente de IA para procesar la nueva información.
 3. Verifica que el `index.md` y el `log.md` se actualicen correctamente.
+
+### Para Instalar las Skills en Codex, Claude u otros asistentes
+
+Desde la raíz de este repositorio:
+
+```bash
+mkdir -p "${CODEX_HOME:-$HOME/.codex}/skills"
+cp -R skills/paw-* "${CODEX_HOME:-$HOME/.codex}/skills/"
+```
+
+Para Claude Code:
+
+```bash
+mkdir -p "$HOME/.claude/skills"
+cp -R skills/paw-* "$HOME/.claude/skills/"
+```
+
+Después abrí una conversación nueva y usa:
+
+```text
+Usa $paw-feature-master para planificar esta feature de Forkd según la wiki y las capas.
+```
+
+Más detalles para otros asistentes compatibles en [skills/README.md](skills/README.md).
 
 ---
 

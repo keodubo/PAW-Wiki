@@ -1,0 +1,4 @@
+interface:
+  display_name: "PAW Service Contracts"
+  short_description: "Guia contratos de servicios PAW"
+  default_prompt: "Use $paw-service-contracts-layer to define PAW service APIs, DTOs, and domain exceptions."

@@ -1,0 +1,4 @@
+interface:
+  display_name: "PAW Models Layer"
+  short_description: "Guia modelos y value objects PAW"
+  default_prompt: "Use $paw-models-layer to change PAW domain models without leaking infrastructure concerns."

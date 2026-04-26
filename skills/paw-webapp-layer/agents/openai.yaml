@@ -1,0 +1,4 @@
+interface:
+  display_name: "PAW Webapp Layer"
+  short_description: "Guia controllers, JSP y seguridad PAW"
+  default_prompt: "Use $paw-webapp-layer to implement PAW controllers, forms, JSP, i18n, and Spring Security routes."
