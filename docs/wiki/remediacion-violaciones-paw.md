@@ -1,7 +1,7 @@
 ---
 titulo: Remediación de Violaciones PAW
 tipo: sintesis
-fuentes: [raw/2026-04-10_paw-violaciones-plan_v1.md, raw/correcciones.md, raw/apuntes.txt, raw/notas.txt, raw/enunciado.txt]
+fuentes: [fuente historica no incluida (raw/2026-04-10_paw-violaciones-plan_v1.md), raw/correcciones_tp1.md, raw/apuntes.txt, raw/notas.txt, raw/enunciado.txt]
 creado: 2026-04-10
 actualizado: 2026-04-20
 ---
@@ -12,7 +12,7 @@ actualizado: 2026-04-20
 >
 > Referencia vigente: [[2026-04-13_auditoria-repo-docs_v1]]
 
-Esta sintesis cruza los criterios de correccion de PAW con una revision puntual del repo y queda retenida como registro historico de una remediacion previa. Absorbe el documento de trabajo `raw/2026-04-10_paw-violaciones-plan_v1.md`, dejando visible solo el estado historico neteado tras las pasadas posteriores del wiki. Su unico pendiente residual documentado es la compatibilidad legacy de `day_of_week`.
+Esta sintesis cruza los criterios de correccion de PAW con una revision puntual del repo y queda retenida como registro historico de una remediacion previa. Absorbe el documento de trabajo `fuente historica no incluida (raw/2026-04-10_paw-violaciones-plan_v1.md)`, dejando visible solo el estado historico neteado tras las pasadas posteriores del wiki. Su unico pendiente residual documentado es la compatibilidad legacy de `day_of_week`.
 
 ## Estado historico por fase
 

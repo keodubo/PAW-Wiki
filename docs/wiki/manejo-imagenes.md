@@ -1,7 +1,7 @@
 ---
 titulo: Manejo de Imagenes
 tipo: concepto
-fuentes: [raw/apuntes.txt, raw/correcciones.md]
+fuentes: [raw/apuntes.txt, raw/correcciones_tp1.md]
 creado: 2026-04-09
 actualizado: 2026-04-13
 ---

@@ -2,20 +2,22 @@
 
 Catalogo de todas las paginas del wiki, organizado por categoria.
 
+Nota de distribucion liviana: las entradas marcadas como `fuente historica no incluida (...)` fueron fuentes usadas para crear o auditar el wiki, pero ya no viajan en este repositorio. La pagina sintetica queda como referencia; no se debe esperar que exista el archivo crudo indicado entre parentesis.
+
 ---
 
 ## Fuentes
 
 | Pagina | Descripcion | Origen |
 |--------|-------------|--------|
-| [[resumen-correcciones]] | Ingesta exhaustiva de errores, aciertos y observaciones recurrentes de correcciones previas | `raw/correcciones.md` |
+| [[resumen-correcciones]] | Ingesta exhaustiva de errores, aciertos y observaciones recurrentes de correcciones previas | `raw/correcciones_tp1.md` |
 | [[resumen-enunciado]] | Especificacion oficial del TPE1: stack, requerimientos, entrega | `raw/enunciado.txt` + `raw/pdfs/Enunciado_TPE1.pdf` |
 | [[resumen-apuntes]] | Apuntes completos de la materia (11 unidades; 1-7 como base TP1 y 8 como soporte de implementacion) | `raw/apuntes.txt` + `raw/pdfs/PAW - Apuntes.pdf` |
 | [[resumen-notas]] | Notas de clase con walkthroughs practicos y advertencias del profesor | `raw/notas.txt` + `raw/pdfs/Notas clases PAW.pdf` |
 | [[resumen-notas-sprint-1]] | Feedback puntual del sprint 1 sobre producto, UX, filtros y direccion del proyecto | `raw/notas_sprint_1.txt` |
 | [[resumen-notas-sprint-2]] | Checklist de cierre del sprint 2: auth, owner/admin, UX, correcciones ya resueltas y checks manuales remanentes | `raw/notas_para_sprint_2.txt` |
-| [[resumen-transcripciones-clases-2-a-4]] | Revision cautelosa de transcripciones VTT; clases 2-3 como apoyo y clase reciente sobre agentes/formularios | `raw/audio_transcript/*.VTT` |
-| [[resumen-spec-reservas]] | Ingesta del spec funcional del sistema de reservas v2 (vigente) con diff frente a v1, reglas, modalidades, slots, estados y resoluciones completas de ambiguedades v2 | `raw/specs_reserva_v2.txt` + `raw/reservas/spec-funcional-reservas.md` (historico) + `raw/diagrama_bd.md` |
+| [[resumen-transcripciones-clases-2-a-4]] | Revision cautelosa de transcripciones VTT; clases 2-3 como apoyo y clase reciente sobre agentes/formularios | `fuente historica no incluida (raw/audio_transcript/*.VTT)` |
+| [[resumen-spec-reservas]] | Ingesta del spec funcional del sistema de reservas v2 (vigente) con diff frente a v1, reglas, modalidades, slots, estados y resoluciones completas de ambiguedades v2 | `raw/specs_reserva_v2.txt` + `fuente historica no incluida (raw/reservas/spec-funcional-reservas.md)` (historico) + `fuente historica no incluida (raw/diagrama_bd.md)` |
 
 ## Conceptos
 
@@ -99,7 +101,7 @@ Catalogo de todas las paginas del wiki, organizado por categoria.
 
 ### Estado de fuentes raw
 
-- [x] `raw/correcciones.md` -- Errores y aciertos recopilados de correcciones previas (~26KB)
+- [x] `raw/correcciones_tp1.md` -- Errores y aciertos recopilados de correcciones previas (~26KB)
 - [x] `raw/enunciado.txt` -- Enunciado oficial del TPE1
 - [x] `raw/apuntes.txt` -- Apuntes de la materia (~143KB, 21K lineas)
 - [x] `raw/pdfs/PAW - Apuntes.pdf` -- PDF original validado contra `raw/apuntes.txt`; pasadas editoriales ya cubren unidades 1-11, tratando la 8 como soporte de TP1 y manteniendo 9-11 fuera de foco
@@ -108,25 +110,25 @@ Catalogo de todas las paginas del wiki, organizado por categoria.
 - [x] `raw/notas_para_sprint_2.txt` -- Checklist de cierre del sprint 2 procesado en `[[resumen-notas-sprint-2]]`
 - [x] `raw/pdfs/Enunciado_TPE1.pdf` -- PDF original validado contra `raw/enunciado.txt`
 - [x] `raw/pdfs/Notas clases PAW.pdf` -- PDF original validado contra `raw/notas.txt`
-- [x] `raw/audio_transcript/audio_transcript clase 2.VTT` -- Revisado con cautela; solo uso auxiliar
-- [x] `raw/audio_transcript/audio_transcript clase 3.VTT` -- Revisado con cautela; solo uso auxiliar
-- [x] `raw/audio_transcript/audio_transcript clase 4.VTT` -- Revisado con cautela; clase reciente sobre agentes y formularios, afectada por errores de ASR
-- [x] `raw/2026-04-10_paw-violaciones-plan_v1.md` -- Documento de trabajo absorbido por `[[remediacion-violaciones-paw]]` como antecedente historico del plan de violaciones
-- [x] `raw/2026-04-12_paw-remediacion-plan-audit_v1.md` -- Documento de trabajo absorbido por `[[2026-04-12_auditoria-y-plan-remediacion_v1]]`
-- [x] `raw/2026-04-12_paw-remediacion-plan-secuencial_v1.md` -- Documento de trabajo absorbido por `[[2026-04-12_auditoria-y-plan-remediacion_v1]]`
-- [x] `raw/2026-04-13_paw-remediacion-hallazgos-secuencial_v1.md` -- Documento de trabajo ya absorbido por `[[auditoria-extrema-cumplimiento-paw]]`; queda como antecedente historico
-- [x] `raw/2026-04-19_informe-implementaciones-desde-f81eb49_v1.pdf` -- Copia inmutable del informe tecnico del `2026-04-19`; absorbida por `[[2026-04-19_informe-implementaciones-desde-f81eb49_v1]]` y validada byte a byte contra `reports/2026-04-19_informe-implementaciones-desde-f81eb49_v1.pdf`
-- [x] `raw/2026-04-20_deploy-bugs-lote-0-audit_v1.md` -- Auditoria corta del cluster de deploy; absorbida por `[[2026-04-20_bugs-deploy-lote-0-y-plan-remediacion_v1]]`
-- [x] `raw/2026-04-20_deploy-bugs-remediation-plan_v1.md` -- Plan secuencial del mismo cluster; absorbido por `[[2026-04-20_bugs-deploy-lote-0-y-plan-remediacion_v1]]`
-- [x] `raw/todo.md` -- Lista fuente original de `20` bugs de deploy; absorbida por `[[2026-04-20_bugs-deploy-lote-0-y-plan-remediacion_v1]]`
-- [x] `raw/reservas/spec-funcional-reservas.md` -- Spec v1 del sistema de reservas; conservado como antecedente historico, superado por v2
+- [x] `fuente historica no incluida (raw/audio_transcript/audio_transcript clase 2.VTT)` -- Revisado con cautela; solo uso auxiliar
+- [x] `fuente historica no incluida (raw/audio_transcript/audio_transcript clase 3.VTT)` -- Revisado con cautela; solo uso auxiliar
+- [x] `fuente historica no incluida (raw/audio_transcript/audio_transcript clase 4.VTT)` -- Revisado con cautela; clase reciente sobre agentes y formularios, afectada por errores de ASR
+- [x] `fuente historica no incluida (raw/2026-04-10_paw-violaciones-plan_v1.md)` -- Documento de trabajo absorbido por `[[remediacion-violaciones-paw]]` como antecedente historico del plan de violaciones
+- [x] `fuente historica no incluida (raw/2026-04-12_paw-remediacion-plan-audit_v1.md)` -- Documento de trabajo absorbido por `[[2026-04-12_auditoria-y-plan-remediacion_v1]]`
+- [x] `fuente historica no incluida (raw/2026-04-12_paw-remediacion-plan-secuencial_v1.md)` -- Documento de trabajo absorbido por `[[2026-04-12_auditoria-y-plan-remediacion_v1]]`
+- [x] `fuente historica no incluida (raw/2026-04-13_paw-remediacion-hallazgos-secuencial_v1.md)` -- Documento de trabajo ya absorbido por `[[auditoria-extrema-cumplimiento-paw]]`; queda como antecedente historico
+- [x] `fuente historica no incluida (raw/2026-04-19_informe-implementaciones-desde-f81eb49_v1.pdf)` -- Copia inmutable del informe tecnico del `2026-04-19`; absorbida por `[[2026-04-19_informe-implementaciones-desde-f81eb49_v1]]` y validada byte a byte contra `fuente historica no incluida (reports/2026-04-19_informe-implementaciones-desde-f81eb49_v1.pdf)`
+- [x] `fuente historica no incluida (raw/2026-04-20_deploy-bugs-lote-0-audit_v1.md)` -- Auditoria corta del cluster de deploy; absorbida por `[[2026-04-20_bugs-deploy-lote-0-y-plan-remediacion_v1]]`
+- [x] `fuente historica no incluida (raw/2026-04-20_deploy-bugs-remediation-plan_v1.md)` -- Plan secuencial del mismo cluster; absorbido por `[[2026-04-20_bugs-deploy-lote-0-y-plan-remediacion_v1]]`
+- [x] `fuente historica no incluida (raw/todo.md)` -- Lista fuente original de `20` bugs de deploy; absorbida por `[[2026-04-20_bugs-deploy-lote-0-y-plan-remediacion_v1]]`
+- [x] `fuente historica no incluida (raw/reservas/spec-funcional-reservas.md)` -- Spec v1 del sistema de reservas; conservado como antecedente historico, superado por v2
 - [x] `raw/specs_reserva_v2.txt` -- Spec v2 del sistema de reservas (vigente); procesado en `[[resumen-spec-reservas]]` y siendo propagado a `[[plan-implementacion-reservas]]`
-- [x] `raw/diagrama_bd.md` -- Version narrativa del diagrama de reservas; absorbida por `[[resumen-spec-reservas]]`
+- [x] `fuente historica no incluida (raw/diagrama_bd.md)` -- Version narrativa del diagrama de reservas; absorbida por `[[resumen-spec-reservas]]`
 - [x] `raw/diagrama_bd.puml` -- Fuente editable del mismo diagrama; registrada como soporte de `[[resumen-spec-reservas]]`
 
 ### Estado de reportes
 
-- [x] `reports/2026-04-19_informe-implementaciones-desde-f81eb49_v1.tex` -- Fuente editable del informe tecnico, enlazada desde `[[2026-04-19_informe-implementaciones-desde-f81eb49_v1]]`
-- [x] `reports/2026-04-19_informe-implementaciones-desde-f81eb49_v1.pdf` -- Render final shareable del mismo informe; coincide byte a byte con `raw/2026-04-19_informe-implementaciones-desde-f81eb49_v1.pdf`
-- [x] Cleanup `2026-04-20` -- Eliminados `reports/2026-04-19_informe-implementaciones-desde-f81eb49_v1.aux`, `reports/2026-04-19_informe-implementaciones-desde-f81eb49_v1.log`, `reports/2026-04-19_informe-implementaciones-desde-f81eb49_v1.out` y `reports/2026-04-19_informe-implementaciones-desde-f81eb49_v1.toc` por ser artefactos derivados no canónicos
-- [x] `reports/assets/manual-qa/` -- Capturas de apoyo del QA manual documentado en el informe
+- [x] `fuente historica no incluida (reports/2026-04-19_informe-implementaciones-desde-f81eb49_v1.tex)` -- Fuente editable del informe tecnico, enlazada desde `[[2026-04-19_informe-implementaciones-desde-f81eb49_v1]]`
+- [x] `fuente historica no incluida (reports/2026-04-19_informe-implementaciones-desde-f81eb49_v1.pdf)` -- Render final shareable del mismo informe; coincide byte a byte con `fuente historica no incluida (raw/2026-04-19_informe-implementaciones-desde-f81eb49_v1.pdf)`
+- [x] Cleanup `2026-04-20` -- Eliminados `fuente historica no incluida (reports/2026-04-19_informe-implementaciones-desde-f81eb49_v1.aux)`, `fuente historica no incluida (reports/2026-04-19_informe-implementaciones-desde-f81eb49_v1.log)`, `fuente historica no incluida (reports/2026-04-19_informe-implementaciones-desde-f81eb49_v1.out)` y `fuente historica no incluida (reports/2026-04-19_informe-implementaciones-desde-f81eb49_v1.toc)` por ser artefactos derivados no canónicos
+- [x] `fuente historica no incluida (reports/assets/manual-qa/)` -- Capturas de apoyo del QA manual documentado en el informe

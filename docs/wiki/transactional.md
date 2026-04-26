@@ -1,7 +1,7 @@
 ---
 titulo: Uso de @Transactional
 tipo: concepto
-fuentes: [raw/correcciones.md, raw/notas.txt, raw/apuntes.txt]
+fuentes: [raw/correcciones_tp1.md, raw/notas.txt, raw/apuntes.txt]
 creado: 2026-04-09
 actualizado: 2026-04-17
 ---

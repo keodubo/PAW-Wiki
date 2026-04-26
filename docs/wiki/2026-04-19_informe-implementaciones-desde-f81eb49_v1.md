@@ -1,14 +1,14 @@
 ---
 titulo: Informe Tecnico de Implementaciones desde f81eb49
 tipo: fuente
-fuentes: [raw/2026-04-19_informe-implementaciones-desde-f81eb49_v1.pdf, reports/2026-04-19_informe-implementaciones-desde-f81eb49_v1.tex, reports/2026-04-19_informe-implementaciones-desde-f81eb49_v1.pdf]
+fuentes: [fuente historica no incluida (raw/2026-04-19_informe-implementaciones-desde-f81eb49_v1.pdf), fuente historica no incluida (reports/2026-04-19_informe-implementaciones-desde-f81eb49_v1.tex), fuente historica no incluida (reports/2026-04-19_informe-implementaciones-desde-f81eb49_v1.pdf)]
 creado: 2026-04-20
 actualizado: 2026-04-22
 ---
 
 # Informe Tecnico de Implementaciones desde f81eb49
 
-Ingesta estructurada del informe tecnico shareable generado el `2026-04-19`. La copia inmutable en `raw/` y el PDF publicado en `reports/` son el mismo archivo byte a byte; el `.tex` conserva la fuente editable del reporte. El valor de esta pagina no es solo enlazar artefactos, sino dejar fijado que cuenta el informe y como conviene leerlo dentro del wiki.
+Ingesta estructurada del informe tecnico shareable generado el `2026-04-19`. En este repositorio liviano, los artefactos originales quedan marcados como `fuente historica no incluida`; esta pagina conserva la sintesis, la procedencia y como conviene leer el informe dentro del wiki.
 
 ## Alcance y criterio de lectura
 
@@ -45,10 +45,10 @@ Ingesta estructurada del informe tecnico shareable generado el `2026-04-19`. La 
 
 ## Artefactos y procedencia
 
-- `raw/2026-04-19_informe-implementaciones-desde-f81eb49_v1.pdf` es la copia inmutable usada para esta ingesta.
-- `reports/2026-04-19_informe-implementaciones-desde-f81eb49_v1.pdf` es el render shareable del mismo documento y coincide byte a byte con el PDF crudo de `raw/`.
-- `reports/2026-04-19_informe-implementaciones-desde-f81eb49_v1.tex` es la fuente editable que mejor preserva la estructura del informe para futuras relecturas o regeneracion.
-- `reports/assets/manual-qa/` conserva las capturas usadas como evidencia visual del QA manual documentado por el propio reporte.
+- `fuente historica no incluida (raw/2026-04-19_informe-implementaciones-desde-f81eb49_v1.pdf)` es la copia inmutable usada para esta ingesta.
+- `fuente historica no incluida (reports/2026-04-19_informe-implementaciones-desde-f81eb49_v1.pdf)` es el render shareable del mismo documento y coincide byte a byte con el PDF crudo de `raw/`.
+- `fuente historica no incluida (reports/2026-04-19_informe-implementaciones-desde-f81eb49_v1.tex)` es la fuente editable que mejor preserva la estructura del informe para futuras relecturas o regeneracion.
+- `fuente historica no incluida (reports/assets/manual-qa/)` conserva las capturas usadas como evidencia visual del QA manual documentado por el propio reporte.
 - Los derivados `.aux`, `.log`, `.out` y `.toc` no eran fuentes de conocimiento independientes y quedaron eliminados en el cleanup del `2026-04-20`.
 
 ## Como conviene leer este nodo hoy

@@ -1,7 +1,7 @@
 ---
 titulo: UX Flows y Calidad de Interfaz
 tipo: concepto
-fuentes: [raw/correcciones.md, raw/apuntes.txt]
+fuentes: [raw/correcciones_tp1.md, raw/apuntes.txt]
 creado: 2026-04-13
 actualizado: 2026-04-13
 ---

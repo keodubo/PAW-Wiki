@@ -1,7 +1,7 @@
 ---
 titulo: Plan de Implementación del Sistema de Reservas
 tipo: sintesis
-fuentes: [raw/reservas/spec-funcional-reservas.md, raw/diagrama_bd.md]
+fuentes: [fuente historica no incluida (raw/reservas/spec-funcional-reservas.md), fuente historica no incluida (raw/diagrama_bd.md)]
 creado: 2026-04-15
 actualizado: 2026-04-17
 ---
@@ -786,3 +786,4 @@ Cada branch entra a `dev` con PR independiente, MVC tests verdes y recorrido man
 
 - [[2026-04-17_cierre-implementacion-reservas_v1]]
 - [[resumen-correcciones]]
+- [[2026-04-24_auditoria-implementacion-contra-wiki_v1]]

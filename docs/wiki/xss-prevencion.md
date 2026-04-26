@@ -1,7 +1,7 @@
 ---
 titulo: Prevencion de XSS y Sanitizacion
 tipo: concepto
-fuentes: [raw/correcciones.md]
+fuentes: [raw/correcciones_tp1.md]
 creado: 2026-04-09
 actualizado: 2026-04-17
 ---

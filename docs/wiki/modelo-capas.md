@@ -1,7 +1,7 @@
 ---
 titulo: Modelo de Capas y Separacion de Responsabilidades
 tipo: concepto
-fuentes: [raw/apuntes.txt, raw/correcciones.md]
+fuentes: [raw/apuntes.txt, raw/correcciones_tp1.md]
 creado: 2026-04-09
 actualizado: 2026-04-17
 ---
@@ -72,3 +72,4 @@ Si webapp depende de services en `compile`, podria accidentalmente usar clases d
 - [[resumen-apuntes]]
 
 - [[plan-implementacion-reservas]]
+- [[2026-04-24_auditoria-implementacion-contra-wiki_v1]]

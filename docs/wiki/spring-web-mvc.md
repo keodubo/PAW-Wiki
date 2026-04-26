@@ -61,3 +61,4 @@ La parte mas operativa de la unidad 4 no es "usar Spring" en abstracto, sino ent
 - [[tp1-vs-tpe2-final]]
 - [[resumen-notas]]
 - [[resumen-apuntes]]
+- [[2026-04-24_auditoria-implementacion-contra-wiki_v1]]

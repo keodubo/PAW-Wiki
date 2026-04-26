@@ -1,64 +1,25 @@
-PAW-Wiki/docs
 PAW-Wiki/docs/CLAUDE.md
 PAW-Wiki/docs/index.md
 PAW-Wiki/docs/log.md
-PAW-Wiki/docs/raw
-PAW-Wiki/docs/raw/2026-04-10_paw-violaciones-plan_v1.md
-PAW-Wiki/docs/raw/2026-04-12_paw-remediacion-plan-audit_v1.md
-PAW-Wiki/docs/raw/2026-04-12_paw-remediacion-plan-secuencial_v1.md
-PAW-Wiki/docs/raw/2026-04-13_paw-remediacion-hallazgos-secuencial_v1.md
-PAW-Wiki/docs/raw/2026-04-20_deploy-bugs-lote-0-audit_v1.md
-PAW-Wiki/docs/raw/2026-04-20_deploy-bugs-remediation-plan_v1.md
 PAW-Wiki/docs/raw/apuntes.txt
-PAW-Wiki/docs/raw/audio_transcript
-PAW-Wiki/docs/raw/audio_transcript/audio_transcript clase 2.VTT
-PAW-Wiki/docs/raw/audio_transcript/audio_transcript clase 3.VTT
-PAW-Wiki/docs/raw/audio_transcript/audio_transcript clase 4.VTT
-PAW-Wiki/docs/raw/correcciones.md
-PAW-Wiki/docs/raw/diagrama_bd.md
+PAW-Wiki/docs/raw/correcciones_tp1.md
 PAW-Wiki/docs/raw/diagrama_bd.puml
 PAW-Wiki/docs/raw/enunciado.txt
 PAW-Wiki/docs/raw/notas.txt
 PAW-Wiki/docs/raw/notas_para_sprint_2.txt
 PAW-Wiki/docs/raw/notas_sprint_1.txt
-PAW-Wiki/docs/raw/pdfs
 PAW-Wiki/docs/raw/pdfs/Enunciado_TPE1.pdf
 PAW-Wiki/docs/raw/pdfs/Notas clases PAW.pdf
 PAW-Wiki/docs/raw/pdfs/PAW - Apuntes.pdf
-PAW-Wiki/docs/raw/reservas
-PAW-Wiki/docs/raw/reservas/spec-funcional-reservas.md
 PAW-Wiki/docs/raw/specs_reserva_v2.txt
-PAW-Wiki/docs/raw/todo.md
-PAW-Wiki/docs/reports
-PAW-Wiki/docs/reports/2026-04-19_informe-implementaciones-desde-f81eb49_v1.pdf
-PAW-Wiki/docs/reports/2026-04-19_informe-implementaciones-desde-f81eb49_v1.tex
-PAW-Wiki/docs/reports/assets
-PAW-Wiki/docs/reports/assets/manual-qa
-PAW-Wiki/docs/reports/assets/manual-qa/admin-pending-approval.png
-PAW-Wiki/docs/reports/assets/manual-qa/admin-pending-approved.png
-PAW-Wiki/docs/reports/assets/manual-qa/owner-dashboard-empty.png
-PAW-Wiki/docs/reports/assets/manual-qa/owner-reservations-pending.png
-PAW-Wiki/docs/reports/assets/manual-qa/owner-restaurant-wizard-hours.png
-PAW-Wiki/docs/reports/assets/manual-qa/register-owner-form.png
-PAW-Wiki/docs/reports/assets/manual-qa/register-reviewer-form.png
-PAW-Wiki/docs/reports/assets/manual-qa/register-reviewer-pending.png
-PAW-Wiki/docs/reports/assets/manual-qa/reviewer-confirmed-autologin-home.png
-PAW-Wiki/docs/reports/assets/manual-qa/reviewer-reservation-created.png
-PAW-Wiki/docs/reports/assets/manual-qa/reviewer-saved-restaurant.png
-PAW-Wiki/docs/reports/assets/manual-qa/reviewer-verified-review-form.png
-PAW-Wiki/docs/reports/assets/manual-qa/reviewer-verified-review-published.png
-PAW-Wiki/docs/superpowers
-PAW-Wiki/docs/superpowers/plans
-PAW-Wiki/docs/superpowers/plans/2026-04-20_paw-plan-remediacion-auditoria-actual_v1.md
-PAW-Wiki/docs/superpowers/plans/2026-04-24_paw-remediacion-cumplimiento-wiki_v1.md
 PAW-Wiki/docs/tree.txt
-PAW-Wiki/docs/wiki
 PAW-Wiki/docs/wiki/2026-04-12_auditoria-y-plan-remediacion_v1.md
 PAW-Wiki/docs/wiki/2026-04-13_auditoria-repo-docs_v1.md
 PAW-Wiki/docs/wiki/2026-04-17_cierre-implementacion-reservas_v1.md
 PAW-Wiki/docs/wiki/2026-04-19_informe-implementaciones-desde-f81eb49_v1.md
 PAW-Wiki/docs/wiki/2026-04-20_bugs-deploy-lote-0-y-plan-remediacion_v1.md
 PAW-Wiki/docs/wiki/2026-04-24_auditoria-implementacion-contra-wiki_v1.md
+PAW-Wiki/docs/wiki/2026-04-24_correcciones-sprint-2_v1.md
 PAW-Wiki/docs/wiki/api-rest.md
 PAW-Wiki/docs/wiki/auditoria-extrema-cumplimiento-paw.md
 PAW-Wiki/docs/wiki/auth-flows.md

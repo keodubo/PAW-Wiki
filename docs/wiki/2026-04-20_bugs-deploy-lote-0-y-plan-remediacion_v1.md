@@ -1,22 +1,22 @@
 ---
 titulo: Bugs de Deploy - Lote 0 y Plan de Remediacion
 tipo: sintesis
-fuentes: [raw/todo.md, raw/2026-04-20_deploy-bugs-lote-0-audit_v1.md, raw/2026-04-20_deploy-bugs-remediation-plan_v1.md]
+fuentes: [fuente historica no incluida (raw/todo.md), fuente historica no incluida (raw/2026-04-20_deploy-bugs-lote-0-audit_v1.md), fuente historica no incluida (raw/2026-04-20_deploy-bugs-remediation-plan_v1.md)]
 creado: 2026-04-20
 actualizado: 2026-04-20
 ---
 
 # Bugs de Deploy - Lote 0 y Plan de Remediacion
 
-Esta sintesis absorbe el cluster documental del `2026-04-20` sobre bugs detectados o reportados contra el deploy: la lista cruda original de `20` items (`raw/todo.md`), la auditoria corta que separa checkout vs deploy (`raw/2026-04-20_deploy-bugs-lote-0-audit_v1.md`) y el plan secuencial por lotes (`raw/2026-04-20_deploy-bugs-remediation-plan_v1.md`). Conviene leerla como backlog historico de postcierre, no como foto vigente del repo.
+Esta sintesis absorbe el cluster documental del `2026-04-20` sobre bugs detectados o reportados contra el deploy: la lista cruda original de `20` items (`fuente historica no incluida (raw/todo.md)`), la auditoria corta que separa checkout vs deploy (`fuente historica no incluida (raw/2026-04-20_deploy-bugs-lote-0-audit_v1.md)`) y el plan secuencial por lotes (`fuente historica no incluida (raw/2026-04-20_deploy-bugs-remediation-plan_v1.md)`). Conviene leerla como backlog historico de postcierre, no como foto vigente del repo.
 
 ## Que aporta cada fuente
 
 | Fuente | Rol dentro del cluster |
 | --- | --- |
-| `raw/todo.md` | Inventario original de `20` bugs expresados como backlog crudo por el usuario. |
-| `raw/2026-04-20_deploy-bugs-lote-0-audit_v1.md` | Corte diagnostico: separa pendientes reales, parciales, cerrados, infra y casos que todavia requerian QA visual/runtime. |
-| `raw/2026-04-20_deploy-bugs-remediation-plan_v1.md` | Orden de ejecucion recomendado por seam compartido para evitar retrabajo y mezclar fixes de app con temas de deploy. |
+| `fuente historica no incluida (raw/todo.md)` | Inventario original de `20` bugs expresados como backlog crudo por el usuario. |
+| `fuente historica no incluida (raw/2026-04-20_deploy-bugs-lote-0-audit_v1.md)` | Corte diagnostico: separa pendientes reales, parciales, cerrados, infra y casos que todavia requerian QA visual/runtime. |
+| `fuente historica no incluida (raw/2026-04-20_deploy-bugs-remediation-plan_v1.md)` | Orden de ejecucion recomendado por seam compartido para evitar retrabajo y mezclar fixes de app con temas de deploy. |
 
 ## Reencuadre que dejo fijo la auditoria
 

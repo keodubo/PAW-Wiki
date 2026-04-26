@@ -1,7 +1,7 @@
 ---
 titulo: Estilo Java y Consistencia de API
 tipo: concepto
-fuentes: [raw/correcciones.md]
+fuentes: [raw/correcciones_tp1.md]
 creado: 2026-04-13
 actualizado: 2026-04-13
 ---

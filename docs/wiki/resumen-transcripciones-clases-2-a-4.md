@@ -1,7 +1,7 @@
 ---
 titulo: Resumen Cauteloso de Transcripciones de Clases 2 a 4
 tipo: fuente
-fuentes: [raw/audio_transcript/audio_transcript clase 2.VTT, raw/audio_transcript/audio_transcript clase 3.VTT, raw/audio_transcript/audio_transcript clase 4.VTT]
+fuentes: [fuente historica no incluida (raw/audio_transcript/audio_transcript clase 2.VTT), fuente historica no incluida (raw/audio_transcript/audio_transcript clase 3.VTT), fuente historica no incluida (raw/audio_transcript/audio_transcript clase 4.VTT)]
 creado: 2026-04-09
 actualizado: 2026-04-13
 ---

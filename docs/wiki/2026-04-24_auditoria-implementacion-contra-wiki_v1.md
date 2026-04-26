@@ -1,7 +1,7 @@
 ---
 titulo: Auditoria de Implementacion contra PAW-Wiki
 tipo: sintesis
-fuentes: [raw/enunciado.txt, raw/correcciones.md, raw/apuntes.txt, raw/specs_reserva_v2.txt, CLAUDE.md, README.md, pom.xml]
+fuentes: [raw/enunciado.txt, raw/correcciones_tp1.md, raw/apuntes.txt, raw/specs_reserva_v2.txt, CLAUDE.md, README.md, pom.xml]
 creado: 2026-04-24
 actualizado: 2026-04-24
 ---

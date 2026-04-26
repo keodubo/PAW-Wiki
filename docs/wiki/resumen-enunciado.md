@@ -88,3 +88,4 @@ Perdida de informacion se penaliza con **2 puntos**.
 - [[resumen-notas]]
 - [[resumen-notas-sprint-1]]
 - [[resumen-correcciones]]
+- [[2026-04-24_auditoria-implementacion-contra-wiki_v1]]

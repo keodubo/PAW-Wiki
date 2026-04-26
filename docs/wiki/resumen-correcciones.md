@@ -1,14 +1,14 @@
 ---
 titulo: Resumen de Correcciones Previas
 tipo: fuente
-fuentes: [raw/correcciones.md]
+fuentes: [raw/correcciones_tp1.md]
 creado: 2026-04-09
 actualizado: 2026-04-17
 ---
 
 # Resumen de Correcciones Previas
 
-Segunda pasada exhaustiva sobre `raw/correcciones.md`. Esta pagina busca conservar todos los hallazgos relevantes del fuente, reorganizados por dominio para que no se pierdan entre paginas tematicas mas chicas.
+Segunda pasada exhaustiva sobre `raw/correcciones_tp1.md`. Esta pagina busca conservar todos los hallazgos relevantes del fuente, reorganizados por dominio para que no se pierdan entre paginas tematicas mas chicas.
 
 ## Hallazgos recurrentes
 

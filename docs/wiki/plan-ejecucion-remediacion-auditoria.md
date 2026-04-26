@@ -1,7 +1,7 @@
 ---
 titulo: Plan de Ejecucion de Remediacion de Auditoria PAW
 tipo: sintesis
-fuentes: [wiki/auditoria-extrema-cumplimiento-paw.md, raw/2026-04-13_paw-remediacion-hallazgos-secuencial_v1.md]
+fuentes: [wiki/auditoria-extrema-cumplimiento-paw.md, fuente historica no incluida (raw/2026-04-13_paw-remediacion-hallazgos-secuencial_v1.md)]
 creado: 2026-04-13
 actualizado: 2026-04-13
 ---

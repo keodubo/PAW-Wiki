@@ -1,7 +1,7 @@
 ---
 titulo: Auth Flows y Ciclo de Cuenta
 tipo: concepto
-fuentes: [raw/correcciones.md]
+fuentes: [raw/correcciones_tp1.md]
 creado: 2026-04-13
 actualizado: 2026-04-13
 ---
@@ -74,3 +74,4 @@ Las correcciones de PAW no evaluan solo si "hay login". Tambien miran si los flu
 - [[resumen-apuntes]]
 - [[resumen-correcciones]]
 - [[resumen-notas-sprint-2]]
+- [[2026-04-24_auditoria-implementacion-contra-wiki_v1]]

@@ -2,6 +2,8 @@
 
 Este archivo define las convenciones, estructura y flujos de trabajo para el wiki de conocimiento del proyecto PAW (TPE1). El LLM mantiene el wiki; el usuario cura fuentes y dirige el analisis.
 
+Nota de distribucion liviana: algunas paginas pueden conservar referencias a `fuente historica no incluida (...)`. Eso significa que la fuente cruda se uso para generar o auditar el wiki, pero no viaja en el repositorio Git actual. En esos casos, usar la pagina sintetica como referencia y no asumir que el archivo original existe localmente.
+
 ## Arquitectura
 
 ```

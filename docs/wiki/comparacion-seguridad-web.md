@@ -1,7 +1,7 @@
 ---
 titulo: Comparacion — Seguridad Web
 tipo: comparacion
-fuentes: [raw/correcciones.md, raw/apuntes.txt, raw/notas.txt, raw/enunciado.txt]
+fuentes: [raw/correcciones_tp1.md, raw/apuntes.txt, raw/notas.txt, raw/enunciado.txt]
 creado: 2026-04-09
 actualizado: 2026-04-09
 ---

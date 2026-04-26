@@ -1,7 +1,7 @@
 ---
 titulo: Auditoría y Plan de Remediación - Abril 2026
 tipo: sintesis
-fuentes: [raw/2026-04-12_paw-remediacion-plan-audit_v1.md, raw/2026-04-12_paw-remediacion-plan-secuencial_v1.md]
+fuentes: [fuente historica no incluida (raw/2026-04-12_paw-remediacion-plan-audit_v1.md), fuente historica no incluida (raw/2026-04-12_paw-remediacion-plan-secuencial_v1.md)]
 creado: 2026-04-20
 actualizado: 2026-04-20
 ---

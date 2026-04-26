@@ -1,7 +1,7 @@
 ---
 titulo: Auditoria Extrema de Cumplimiento PAW
 tipo: sintesis
-fuentes: [raw/2026-04-13_paw-remediacion-hallazgos-secuencial_v1.md, raw/correcciones.md, raw/enunciado.txt, raw/apuntes.txt, raw/notas.txt]
+fuentes: [fuente historica no incluida (raw/2026-04-13_paw-remediacion-hallazgos-secuencial_v1.md), raw/correcciones_tp1.md, raw/enunciado.txt, raw/apuntes.txt, raw/notas.txt]
 creado: 2026-04-13
 actualizado: 2026-04-13
 ---
@@ -12,7 +12,7 @@ actualizado: 2026-04-13
 >
 > Referencia vigente: [[2026-04-13_auditoria-repo-docs_v1]]
 
-Esta pagina queda como baseline historico de la auditoria extrema levantada el `2026-04-13`. Reemplaza operativamente al documento de trabajo en `raw/2026-04-13_paw-remediacion-hallazgos-secuencial_v1.md`, que queda solo como antecedente historico y no vuelve a modificarse.
+Esta pagina queda como baseline historico de la auditoria extrema levantada el `2026-04-13`. Reemplaza operativamente al documento de trabajo en `fuente historica no incluida (raw/2026-04-13_paw-remediacion-hallazgos-secuencial_v1.md)`, que queda solo como antecedente historico y no vuelve a modificarse.
 
 El plan secuencial historico asociado vive en [[plan-ejecucion-remediacion-auditoria]], pero el contraste vigente entre documentacion e implementacion vive en [[2026-04-13_auditoria-repo-docs_v1]].
 

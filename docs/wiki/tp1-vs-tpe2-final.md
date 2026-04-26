@@ -1,7 +1,7 @@
 ---
 titulo: TP1 vs TPE2 Final — Ruta de Estudio
 tipo: sintesis
-fuentes: [raw/apuntes.txt, raw/notas.txt, raw/audio_transcript/audio_transcript clase 2.VTT, raw/audio_transcript/audio_transcript clase 3.VTT, raw/audio_transcript/audio_transcript clase 4.VTT]
+fuentes: [raw/apuntes.txt, raw/notas.txt, fuente historica no incluida (raw/audio_transcript/audio_transcript clase 2.VTT), fuente historica no incluida (raw/audio_transcript/audio_transcript clase 3.VTT), fuente historica no incluida (raw/audio_transcript/audio_transcript clase 4.VTT)]
 creado: 2026-04-13
 actualizado: 2026-04-13
 ---
