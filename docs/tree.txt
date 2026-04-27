@@ -1,4 +1,9 @@
 PAW-Wiki/docs/CLAUDE.md
+PAW-Wiki/docs/examples/README.md
+PAW-Wiki/docs/examples/consulta-wiki.md
+PAW-Wiki/docs/examples/ingesta-publica.md
+PAW-Wiki/docs/examples/second-brain-privado.md
+PAW-Wiki/docs/examples/uso-con-agente.md
 PAW-Wiki/docs/index.md
 PAW-Wiki/docs/log.md
 PAW-Wiki/docs/raw/apuntes.txt

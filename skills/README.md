@@ -71,7 +71,7 @@ Estructura esperada:
 Si el asistente no reconoce skills automaticamente, podes usar el repo como prompt manual:
 
 ```text
-Lee skills/paw-feature-master/SKILL.md y seguí sus instrucciones. Cuando una tarea toque tests, lee tambien skills/paw-testing-layer/SKILL.md.
+Lee skills/paw-feature-master/SKILL.md y segui sus instrucciones. Cuando una tarea toque tests, lee tambien skills/paw-testing-layer/SKILL.md.
 ```
 
 ## Uso recomendado
@@ -114,6 +114,23 @@ $PAW_APP_REPO/PAW-Wiki/docs/index.md
 ```
 
 Si usas este wiki como repo separado, indica en el prompt donde esta la app y donde esta este wiki.
+
+Ejemplo:
+
+```text
+App PAW: /ruta/a/paw-2026a-01
+Wiki PAW: /ruta/a/PAW-Wiki
+Reglas: lee README.md, docs/CLAUDE.md, docs/index.md y el ejemplo docs/examples/uso-con-agente.md antes de proponer cambios.
+```
+
+## Ejemplos de uso de la wiki
+
+Antes de usar una skill, revisa los ejemplos publicos del wiki:
+
+- `docs/examples/uso-con-agente.md`: prompt base para agentes.
+- `docs/examples/consulta-wiki.md`: como responder usando paginas wiki.
+- `docs/examples/ingesta-publica.md`: como convertir una fuente en conocimiento publico.
+- `docs/examples/second-brain-privado.md`: como mantener material personal fuera de Git.
 
 ## Dependencia recomendada
 

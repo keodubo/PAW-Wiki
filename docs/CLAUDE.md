@@ -7,21 +7,25 @@ Nota de distribucion liviana: algunas paginas pueden conservar referencias a `fu
 ## Arquitectura
 
 ```
+README.md                 <- Guia humana principal.
+obsidian-graph-view.png   <- Captura de referencia de la vista de grafo.
 docs/
+  examples/                <- Ejemplos de prompts, flujos y checklists de uso.
   raw/                     <- Fuentes inmutables. El LLM lee pero NUNCA modifica.
-    pdfs/                  <- PDFs originales de la catedra (enunciado, apuntes, notas)
-    audio_transcript/      <- Transcripciones VTT de clases (fuente auxiliar de baja confianza)
-    reservas/              <- Spec funcional historica de reservas
-    2026-*_paw-*.md        <- Planes y auditorias versionados en raiz de raw/
-    *.txt / *.md           <- Apuntes, correcciones, enunciado, notas, specs de reservas
-    diagrama_bd.{md,puml}  <- Modelo de datos de referencia
+    pdfs/                  <- PDFs originales de la catedra cuando se distribuyen.
+    *.txt / *.md / *.puml  <- Apuntes, correcciones, enunciados, specs y diagramas.
   wiki/                    <- Paginas generadas y mantenidas por el LLM
   superpowers/plans/       <- Planes de ejecucion largos (salida de /superpowers:writing-plans)
+  private/                 <- Carpeta local ignorada por Git para material personal.
   index.md                 <- Indice maestro del wiki (categorizado)
   log.md                   <- Registro cronologico de actividad
   tree.txt                 <- Snapshot plano del arbol de docs/
   CLAUDE.md                <- Este archivo (schema)
+skills/
+  paw-*                    <- Skills instalables para agentes que trabajan con PAW.
 ```
+
+`docs/private/` no debe trackearse. Si aparece en `git status` como ignored, esta bien; si aparece como tracked, detenerse y corregir antes de publicar.
 
 ## Convenciones de Paginas
 
@@ -62,8 +66,8 @@ Contenido de la pagina...
 
 ### Links internos
 
-- Usar formato Obsidian: `[[nombre-archivo]]` (sin extension .md)
-- Para secciones especificas: `[[nombre-archivo#seccion]]`
+- Usar formato Obsidian: `\[\[nombre-archivo\]\]` (sin extension .md)
+- Para secciones especificas: `\[\[nombre-archivo#seccion\]\]`
 
 ## Flujos de Trabajo
 
@@ -77,10 +81,13 @@ Cuando el usuario dice "ingesta esto" o agrega un archivo a `raw/`:
 4. Crear o actualizar paginas de conceptos/entidades relevantes
 5. Actualizar `index.md` con las paginas nuevas/modificadas
 6. Agregar entrada en `log.md`
+7. Actualizar `tree.txt` si cambia el arbol bajo `docs/`
 
 Si una fuente muestra una evolucion de setup (ej: ejemplo inicial y luego version final recomendada), documentar explicitamente el estado final y aclarar la transicion para no dejar contradicciones internas.
 Si existe una dupla `PDF original + txt extraido` con contenido equivalente, no duplicar paginas fuente: usar el `.txt` para trabajar y registrar el PDF original como fuente validada en frontmatter, `index.md` y `log.md`.
 Si la fuente es una transcripcion de audio (`.vtt`, `.srt`, etc.), tratarla como **fuente auxiliar de baja confianza**: solo integrar afirmaciones corroboradas por fuentes mas confiables o por pasajes muy claros; lo dudoso debe quedar aislado como nota de incertidumbre y no contaminar paginas conceptuales existentes.
+
+Ejemplo completo: ver [examples/ingesta-publica.md](examples/ingesta-publica.md).
 
 ### 2. Consultar (`query`)
 
@@ -91,6 +98,8 @@ Cuando el usuario hace una pregunta sobre el wiki:
 3. Sintetizar respuesta con citas a paginas wiki
 4. Si la respuesta genera conocimiento valioso, ofrecerla como nueva pagina wiki
 
+Ejemplo completo: ver [examples/consulta-wiki.md](examples/consulta-wiki.md).
+
 ### 3. Auditar (`lint`)
 
 Cuando el usuario pide una revision de salud del wiki:
@@ -100,6 +109,39 @@ Cuando el usuario pide una revision de salud del wiki:
 3. Detectar conceptos mencionados sin pagina propia
 4. Proponer fuentes adicionales a buscar
 5. Verificar que el indice este completo
+6. Verificar que `docs/tree.txt` refleje los archivos bajo `docs/`
+7. Verificar que `docs/private/` no quede trackeado
+
+Comandos utiles:
+
+```bash
+git status --short --ignored=matching
+git ls-files docs/private
+find docs -path docs/private -prune -o -type f ! -name '.DS_Store' -print | sort
+```
+
+### 4. Trabajar con agentes
+
+Cuando un agente use este repositorio, debe leer en este orden:
+
+1. `README.md`
+2. `docs/CLAUDE.md`
+3. `docs/index.md`
+4. El ejemplo de `docs/examples/` que coincida con la tarea
+5. Las paginas concretas de `docs/wiki/`
+
+Ejemplo completo: ver [examples/uso-con-agente.md](examples/uso-con-agente.md).
+
+### 5. Usar material privado
+
+Si el usuario trae fuentes personales, specs de su webapp, capturas, auditorias locales o planes que no deben publicarse:
+
+1. Guardarlas bajo `docs/private/<proyecto>/raw/`
+2. Sintetizarlas bajo `docs/private/<proyecto>/wiki/`
+3. Conectarlas con la wiki publica desde un nexo privado
+4. No actualizar `docs/index.md` ni `docs/log.md` salvo que se cree una version publica y generica
+
+Ejemplo completo: ver [examples/second-brain-privado.md](examples/second-brain-privado.md).
 
 ## Dominio: PAW TPE1
 
@@ -116,9 +158,11 @@ Este wiki esta enfocado en el desarrollo del Trabajo Practico Especial 1 de la m
 
 - Todo el contenido del wiki se escribe en **espanol**
 - Las fuentes en `raw/` son **inmutables** -- nunca modificarlas
-- Cada ingesta debe tocar `index.md` y `log.md`
+- Cada ingesta publica debe tocar `index.md` y `log.md`
+- Si se agregan, mueven o eliminan archivos bajo `docs/`, actualizar `tree.txt`
 - Preferir paginas cortas y enfocadas sobre paginas largas y genericas
 - Links bidireccionales: si A referencia B, B debe referenciar A en "Ver tambien"
 - Citar fuentes especificas: `(ver: [[resumen-correcciones]], seccion Seguridad)`
 - No inventar nombres de modulos, paquetes o clases si la fuente no los define explicitamente; usar la nomenclatura real del material
 - Si dos pasajes parecen contradecirse, priorizar el setup final recomendado por la catedra y dejar nota de la evolucion
+- No commitear `docs/private/`

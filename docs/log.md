@@ -4,6 +4,13 @@ Registro cronologico de actividad del wiki.
 
 ---
 
+## [2026-04-27] docs | README, CLAUDE y examples actualizados
+
+- Actualizados `README.md`, `docs/CLAUDE.md` y `skills/README.md` para reflejar la estructura actual del wiki.
+- Agregada `docs/examples/` con ejemplos de ingesta publica, consulta, uso con agentes y second brain privado.
+- Enlazados los examples desde `docs/index.md` como guias operativas no canonicas.
+- Eliminados emojis de los README/CLAUDE publicos y actualizado el arbol de `docs/tree.txt`.
+
 ## [2026-04-27] docs | imagen del grafo de Obsidian
 
 - Reemplazada la captura `image-1.png` por `obsidian-graph-view.png` en la raiz del wiki.

@@ -6,6 +6,18 @@ Nota de distribucion liviana: las entradas marcadas como `fuente historica no in
 
 ---
 
+## Examples operativos
+
+Estos archivos no son paginas wiki canonicas; son guias de uso para humanos y agentes.
+
+| Archivo | Uso |
+|--------|-----|
+| [examples/README.md](examples/README.md) | Indice de ejemplos de uso de la wiki |
+| [examples/ingesta-publica.md](examples/ingesta-publica.md) | Flujo para convertir una fuente publica en paginas wiki |
+| [examples/consulta-wiki.md](examples/consulta-wiki.md) | Flujo para responder preguntas usando el indice y paginas canonicas |
+| [examples/uso-con-agente.md](examples/uso-con-agente.md) | Prompt base para Codex, Claude u otros agentes |
+| [examples/second-brain-privado.md](examples/second-brain-privado.md) | Flujo para mantener material personal en `docs/private/` |
+
 ## Fuentes
 
 | Pagina | Descripcion | Origen |
