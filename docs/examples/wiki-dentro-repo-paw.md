@@ -4,6 +4,8 @@ La forma recomendada de usar PAW-Wiki durante el desarrollo es tenerla dentro de
 
 Asi el agente puede encontrar la wiki al lado del codigo, pero no subis documentos auxiliares, planes, grafo de Obsidian ni archivos personales al `main` del proyecto de la materia.
 
+Desde la ingesta de las clases `PAW*`, este flujo tambien sirve para que el agente resuelva la etapa (`TP1`, `TP2` o `TP final`) leyendo `PAW-Wiki/docs/wiki/resumen-clases-paw-2026.md` y `PAW-Wiki/docs/wiki/tp1-vs-tpe2-final.md` junto al checkout real de la app.
+
 ## Estructura esperada
 
 ```text
@@ -38,6 +40,8 @@ En el repo de la app, `PAW-Wiki/` deberia aparecer como ignorado:
 ```text
 !! PAW-Wiki/
 ```
+
+Cuando vuelvas a usar la wiki, actualizala desde la raiz de la app con el flujo de [actualizar-wiki.md](actualizar-wiki.md). Un agente puede ejecutar `git -C PAW-Wiki fetch origin`, revisar `HEAD..origin/main` y hacer `git -C PAW-Wiki pull --ff-only` si no hay cambios locales.
 
 ## Opcion B: forkear primero y clonar tu fork
 
@@ -97,4 +101,15 @@ Desde la wiki:
 
 ```bash
 git -C PAW-Wiki status --short --branch
+```
+
+Prompt minimo para un agente trabajando desde la app:
+
+```text
+Usa $paw-feature-master.
+App PAW: este checkout.
+Wiki PAW: ./PAW-Wiki.
+Etapa: TP1/TP2/TP final.
+Antes de usar la wiki, ejecuta el flujo de PAW-Wiki/docs/examples/actualizar-wiki.md.
+Lee PAW-Wiki/docs/CLAUDE.md, PAW-Wiki/docs/index.md, PAW-Wiki/docs/wiki/resumen-clases-paw-2026.md y PAW-Wiki/docs/wiki/tp1-vs-tpe2-final.md antes de proponer cambios.
 ```

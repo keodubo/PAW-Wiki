@@ -3,7 +3,7 @@ titulo: Uso de @Transactional
 tipo: concepto
 fuentes: [raw/correcciones_tp1.md, raw/notas.txt, raw/apuntes.txt]
 creado: 2026-04-09
-actualizado: 2026-04-17
+actualizado: 2026-04-27
 ---
 
 # Uso de @Transactional
@@ -63,6 +63,7 @@ Sin `@Transactional`, multiples operaciones de escritura no son atomicas. Si una
 - [[spring-aop]]
 - [[hibernate-jpa]]
 - [[testing-unitario]]
+- [[resumen-clases-paw-2026]]
 - [[resumen-apuntes]]
 - [[resumen-correcciones]]
 - [[resumen-notas]]

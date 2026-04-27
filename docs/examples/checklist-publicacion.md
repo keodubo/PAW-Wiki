@@ -48,6 +48,17 @@ La raiz de la app deberia tener una regla como esta en `.gitignore`:
 /PAW-Wiki/
 ```
 
+Antes de usar la wiki desde un agente, revisar si hay cambios remotos:
+
+```bash
+git -C PAW-Wiki fetch origin
+git -C PAW-Wiki status --short --branch
+git -C PAW-Wiki status --porcelain
+git -C PAW-Wiki log --oneline HEAD..origin/main
+```
+
+Si `PAW-Wiki` esta limpia y hay commits nuevos, actualizar con `git -C PAW-Wiki pull --ff-only`. Si hay cambios locales, seguir [actualizar-wiki.md](actualizar-wiki.md).
+
 ## 3. Links Markdown
 
 ```bash
@@ -72,13 +83,23 @@ print('ok')
 PY
 ```
 
-## 4. Formato
+## 4. Guias por etapa
+
+Si el cambio toca stack, skills, ingesta de clases o migraciones, revisar que las guias sigan nombrando `TP1`, `TP2` y `TP final` donde corresponde:
+
+```bash
+rg -n "TP1|TP2|TP final|paw-tp2-migration|paw-tp-final-migration|resumen-clases-paw-2026|tp1-vs-tpe2-final" README.md docs/CLAUDE.md docs/examples skills/README.md
+```
+
+Como minimo, `README.md`, `docs/CLAUDE.md`, `docs/examples/README.md`, `docs/examples/instalar-skills.md`, `docs/examples/uso-con-agente.md` y `skills/README.md` deben quedar alineados si cambian las reglas de etapa.
+
+## 5. Formato
 
 ```bash
 git diff --check
 ```
 
-## 5. Tree
+## 6. Tree
 
 Si agregaste, moviste o borraste archivos bajo `docs/`, actualizar:
 
@@ -86,7 +107,7 @@ Si agregaste, moviste o borraste archivos bajo `docs/`, actualizar:
 find docs -path docs/private -prune -o -type f ! -name '.DS_Store' -print | sort | sed 's#^#PAW-Wiki/#' > docs/tree.txt
 ```
 
-## 6. Commit y push
+## 7. Commit y push
 
 ```bash
 git add <archivos>

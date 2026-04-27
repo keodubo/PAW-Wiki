@@ -1,6 +1,6 @@
 ---
 name: paw-persistence-contracts-layer
-description: Use when creating, changing, auditing, or reviewing PAW Forkd DAO interfaces and persistence-facing contracts in the persistence-contracts Maven module.
+description: Use when creating, changing, auditing, or reviewing PAW Forkd DAO interfaces and persistence-facing contracts in the persistence-contracts Maven module, including TP1 JDBC contracts and TP2 JPA-backed contract preservation.
 ---
 
 # Paw Persistence Contracts Layer
@@ -14,11 +14,12 @@ Read `references/layer-rules.md` before changing DAO contracts.
 ## Workflow
 
 1. Inspect existing DAO interfaces in `persistence-contracts/src/main/java/ar/edu/itba/paw/persistence`.
-2. Define the contract from the service use case, not from a planned SQL implementation.
-3. Keep signatures free of `java.sql`, `JdbcTemplate`, row mappers, servlet/web types, and implementation classes.
-4. Prefer `PageRequest`, sort/filter domain objects, and domain return types over loose offset/limit or raw maps.
-5. Add batch contracts when a web/service flow would otherwise call a DAO once per row.
-6. Update persistence implementation and tests in the same feature slice unless the user explicitly asks for contracts only.
+2. Resolve stage: TP1 contracts must be implementable with JDBC SQL; TP2 contracts may be implemented by JPA but still must not leak ORM details.
+3. Define the contract from the service use case, not from a planned SQL/JPA implementation.
+4. Keep signatures free of `java.sql`, `JdbcTemplate`, row mappers, `EntityManager`, JPQL strings, servlet/web types, and implementation classes.
+5. Prefer `PageRequest`, sort/filter domain objects, and domain return types over loose offset/limit or raw maps.
+6. Add batch contracts when a web/service flow would otherwise call a DAO once per row.
+7. Update persistence implementation and tests in the same feature slice unless the user explicitly asks for contracts only.
 
 ## Contract Rules
 

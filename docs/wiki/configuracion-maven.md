@@ -3,7 +3,7 @@ titulo: Configuracion Maven Multi-Modulo
 tipo: concepto
 fuentes: [raw/correcciones_tp1.md, raw/enunciado.txt, raw/apuntes.txt]
 creado: 2026-04-09
-actualizado: 2026-04-17
+actualizado: 2026-04-27
 ---
 
 # Configuracion Maven Multi-Modulo
@@ -67,6 +67,7 @@ El proyecto debe ser multi-modulo con separacion estricta por responsabilidades.
 - [[modelo-capas]]
 - [[inyeccion-dependencias]]
 - [[spring-web-mvc]]
+- [[resumen-clases-paw-2026]]
 - [[resumen-transcripciones-clases-2-a-4]]
 - [[java-style]]
 - [[persistencia-jdbc]]

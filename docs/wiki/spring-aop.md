@@ -3,7 +3,7 @@ titulo: Spring AOP y Cross-Cutting Concerns
 tipo: concepto
 fuentes: [raw/apuntes.txt, raw/notas.txt]
 creado: 2026-04-13
-actualizado: 2026-04-13
+actualizado: 2026-04-27
 ---
 
 # Spring AOP y Cross-Cutting Concerns
@@ -64,6 +64,7 @@ Esta pagina resume la **unidad 8**. No es un bloque funcional central del TP1, p
 ## Ver tambien
 
 - [[tp1-vs-tpe2-final]]
+- [[resumen-clases-paw-2026]]
 - [[transactional]]
 - [[manejo-excepciones]]
 - [[logging]]

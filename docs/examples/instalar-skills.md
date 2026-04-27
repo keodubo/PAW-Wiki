@@ -13,13 +13,15 @@ cp -R skills/paw-* "${CODEX_HOME:-$HOME/.codex}/skills/"
 
 Despues abri una conversacion nueva de Codex.
 
+Si `PAW-Wiki` esta dentro de tu app PAW y pudo quedar viejo, primero actualizalo con [actualizar-wiki.md](actualizar-wiki.md). Si el pull cambia `skills/`, repeti la copia de carpetas `paw-*`.
+
 ## Como usarlas despues de instalar
 
 La regla practica es simple: para trabajo real, empezá por `$paw-feature-master`.
 
-`$paw-feature-master` es la skill orquestadora. Primero lee el checkout, la wiki y el contexto; despues decide si necesita llamar a subskills como `$paw-webapp-layer`, `$paw-services-layer`, `$paw-persistence-layer` o `$paw-testing-layer`.
+`$paw-feature-master` es la skill orquestadora. Primero lee el checkout, la wiki y el contexto; despues decide si necesita llamar a subskills como `$paw-webapp-layer`, `$paw-services-layer`, `$paw-persistence-layer`, `$paw-testing-layer`, `$paw-tp2-migration` o `$paw-tp-final-migration`.
 
-No hace falta que vos adivines todas las capas de entrada. Pedile a `$paw-feature-master` que haga ese ruteo.
+No hace falta que vos adivines todas las capas de entrada. Pedile a `$paw-feature-master` que haga ese ruteo. Si el trabajo depende de etapa, indicá `TP1`, `TP2` o `TP final`.
 
 Prompt recomendado:
 
@@ -29,15 +31,19 @@ Usa $paw-feature-master para trabajar esta tarea de mi app PAW.
 Contexto:
 - App PAW: /ruta/a/mi-app-paw
 - Wiki PAW: /ruta/a/PAW-Wiki
+- Etapa: TP1 / TP2 / TP final
 
 Primero:
-1. Lee CLAUDE.md de la app.
-2. Lee PAW-Wiki/docs/CLAUDE.md.
-3. Lee PAW-Wiki/docs/index.md.
-4. Revisa el codigo y tests afectados.
+1. Si PAW-Wiki esta clonada localmente, revisa si hay cambios remotos con PAW-Wiki/docs/examples/actualizar-wiki.md.
+2. Lee CLAUDE.md de la app.
+3. Lee PAW-Wiki/docs/CLAUDE.md.
+4. Lee PAW-Wiki/docs/index.md.
+5. Revisa el codigo y tests afectados.
 
 Despues:
 - decidí que subskills de capa hacen falta;
+- usa $paw-tp2-migration si la etapa es TP2 y hay migracion JDBC -> JPA/Hibernate;
+- usa $paw-tp-final-migration si la etapa es TP final y hay REST API + SPA;
 - usa solo las subskills necesarias;
 - mostra un plan corto antes de editar si toca mas de una capa;
 - verifica antes de decir que esta terminado.
@@ -56,6 +62,8 @@ Usa subskills directas solo si el alcance es obvio y de una sola capa.
 | Solo logica de negocio/mail/scheduler | `$paw-services-layer` |
 | Solo controller/form/JSP/i18n/CSS | `$paw-webapp-layer` |
 | Solo tests o estrategia de verificacion | `$paw-testing-layer` |
+| Migracion TP2 JDBC -> JPA/Hibernate | `$paw-tp2-migration` |
+| Migracion TP final REST API + SPA | `$paw-tp-final-migration` |
 
 Si no estas seguro, no elijas una subskill: usa `$paw-feature-master`.
 
@@ -87,6 +95,8 @@ Deberias ver archivos como:
 
 ```text
 skills/paw-feature-master/SKILL.md
+skills/paw-tp2-migration/SKILL.md
+skills/paw-tp-final-migration/SKILL.md
 skills/paw-testing-layer/SKILL.md
 skills/paw-webapp-layer/SKILL.md
 ```

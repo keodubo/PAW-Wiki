@@ -4,9 +4,26 @@ Esta carpeta distribuye skills para trabajar con una app PAW usando la wiki como
 
 Las skills nacieron del proyecto Forkd, pero se pueden adaptar a cualquier webapp de la materia si le indicas al agente donde esta tu checkout y que dominio estas implementando.
 
+Canon de contexto para cualquier skill:
+
+- `README.md`
+- `docs/CLAUDE.md`
+- `docs/index.md`
+- `docs/wiki/resumen-clases-paw-2026.md`
+- `docs/wiki/tp1-vs-tpe2-final.md`
+
+Las versiones de dependencias mencionadas en PDFs antiguos son historicas. Las skills deben usar el checkout/enunciado actual como fuente para versiones concretas.
+
 ## Regla principal de uso
 
-Usa siempre `$paw-feature-master` como entrada para trabajo real sobre una app PAW.
+Usa siempre `$paw-feature-master` como entrada para trabajo real sobre una app PAW e indicá la etapa cuando sea relevante: `TP1`, `TP2` o `TP final`.
+
+Si no conoces la etapa, pedile al agente que la resuelva con evidencia antes de proponer cambios de stack:
+
+```text
+Usa $paw-feature-master.
+No estoy seguro de la etapa: primero resolvela leyendo PAW-Wiki/docs/index.md, resumen-clases-paw-2026 y el checkout actual. Si queda ambiguo, preguntame antes de migrar stack.
+```
 
 `$paw-feature-master` es la skill orquestadora. Su trabajo es:
 
@@ -14,10 +31,11 @@ Usa siempre `$paw-feature-master` como entrada para trabajo real sobre una app P
 2. Leer `CLAUDE.md` de la app.
 3. Leer `PAW-Wiki/docs/CLAUDE.md` y `PAW-Wiki/docs/index.md`.
 4. Revisar el codigo y tests afectados antes de confiar en planes viejos.
-5. Decidir que subskills de capa hacen falta.
-6. Activar solo las subskills necesarias.
-7. Ordenar el trabajo por dependencias de capa.
-8. Cerrar con verificaciones.
+5. Resolver la etapa del proyecto.
+6. Decidir que subskills de capa o migracion hacen falta.
+7. Activar solo las subskills necesarias.
+8. Ordenar el trabajo por dependencias de capa.
+9. Cerrar con verificaciones.
 
 No empieces con `$paw-webapp-layer`, `$paw-services-layer` o `$paw-persistence-layer` salvo que la tarea sea estrictamente de una sola capa y ya tengas claro el scope. Para features, bugs, auditorias o planes mixtos, el prompt inicial debe nombrar `$paw-feature-master`.
 
@@ -26,7 +44,8 @@ Prompt base:
 ```text
 Usa $paw-feature-master para trabajar esta tarea de mi app PAW.
 Primero ubica el checkout, lee CLAUDE.md, PAW-Wiki/docs/CLAUDE.md y PAW-Wiki/docs/index.md.
-Despues decide que subskills de capa hacen falta y usalas solo cuando correspondan.
+Estoy en etapa TP1/TP2/TP final.
+Despues decide que subskills de capa o migracion hacen falta y usalas solo cuando correspondan.
 Mostrame un plan corto antes de editar si la tarea toca mas de una capa.
 ```
 
@@ -42,10 +61,14 @@ Mostrame un plan corto antes de editar si la tarea toca mas de una capa.
 | `paw-services-layer` | Logica de negocio, transacciones, mail, schedulers y tests de servicios. |
 | `paw-webapp-layer` | Controllers, forms, validators, JSP/JSTL, i18n, Spring Security, CSS/JS y tests MVC. |
 | `paw-testing-layer` | Tests, fixtures, HSQLDB, Maven gates, MVC/security/template checks y revisiones de calidad. |
+| `paw-tp2-migration` | Migracion TP2 de JDBC a JPA/Hibernate: entidades, EntityManager, mappings, fetch/cascade, SQL generado y tests. |
+| `paw-tp-final-migration` | Migracion TP final a REST API + SPA: recursos, DTOs, auth stateless, frontend build, routing, estado, cache y packaging. |
 
 ## Instalacion
 
 Las skills son carpetas completas. Copia siempre cada directorio `paw-*` con su `SKILL.md`, `references/` y `agents/`.
+
+Si instalas desde una copia local de `PAW-Wiki`, primero actualiza la wiki con `docs/examples/actualizar-wiki.md`. Si el pull modifica `skills/`, copia de nuevo las carpetas `paw-*` y abre una conversacion nueva del agente.
 
 ### Codex
 
@@ -121,6 +144,8 @@ La skill orquestadora decide si necesita subskills. Ejemplos de ruteo:
 | Logica de negocio, transacciones, mails, schedulers | `$paw-services-layer` |
 | Controllers, forms, validators, JSP, i18n, seguridad web, CSS | `$paw-webapp-layer` |
 | Tests, fixtures, fallas Maven, estrategia de verificacion | `$paw-testing-layer` |
+| Migracion TP2 JDBC -> JPA/Hibernate | `$paw-tp2-migration` |
+| Migracion TP final REST + SPA | `$paw-tp-final-migration` |
 
 Para una capa puntual y acotada, podes nombrar la subskill directamente:
 
@@ -139,6 +164,26 @@ Usa $paw-testing-layer para definir los tests correctos segun la wiki antes de i
 ```
 
 Si no estas seguro de que capa toca, usa `$paw-feature-master`.
+
+## Etapas
+
+| Etapa | Default recomendado |
+| --- | --- |
+| TP1 | Mantener Spring MVC + JSP/JSTL + JDBC. No introducir JPA/SPA por accidente. |
+| TP2 | Usar `$paw-tp2-migration` para migrar persistencia a JPA/Hibernate sin cambiar producto innecesariamente. |
+| TP final | Usar `$paw-tp-final-migration` para planificar REST API + SPA, build frontend, auth stateless y cache. |
+
+Prompts especificos:
+
+```text
+Usa $paw-feature-master. Estamos en TP2.
+Si el cambio toca persistencia, usa $paw-tp2-migration para planificar entidades, mappings, EntityManager, transacciones y tests antes de editar.
+```
+
+```text
+Usa $paw-feature-master. Estamos en TP final.
+Si el cambio toca API, SPA, auth stateless, build frontend, cache o packaging, usa $paw-tp-final-migration antes de las subskills de capa.
+```
 
 ## Relacion con Superpowers
 
@@ -185,6 +230,7 @@ Reglas: lee README.md, docs/CLAUDE.md, docs/index.md y el ejemplo docs/examples/
 Antes de usar una skill, revisa los ejemplos publicos del wiki:
 
 - `docs/examples/setup-local.md`: como clonar y abrir la wiki.
+- `docs/examples/actualizar-wiki.md`: como revisar `origin/main` y hacer `pull --ff-only` si la wiki local esta limpia.
 - `docs/examples/instalar-skills.md`: instalacion paso a paso de skills.
 - `docs/examples/uso-con-agente.md`: prompt base para agentes.
 - `docs/examples/consulta-wiki.md`: como responder usando paginas wiki.

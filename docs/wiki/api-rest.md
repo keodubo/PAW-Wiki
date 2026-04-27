@@ -1,20 +1,24 @@
 ---
 titulo: API REST
 tipo: concepto
-fuentes: [raw/apuntes.txt]
+fuentes: [raw/apuntes.txt, raw/PAW - clases 9 y 10 (TP final).pdf]
 creado: 2026-04-13
-actualizado: 2026-04-13
+actualizado: 2026-04-27
 ---
 
 # API REST
 
-Esta pagina resume la **unidad 11**. Es material de TPE2/final y **fuera del foco de TP1**.
+Esta pagina resume la API REST para **TP final**. Es material fuera del foco de TP1 y distinto de la migracion TP2 a JPA.
+
+Nota: la clase menciona dependencias Jersey/JAX-RS historicas. El criterio vigente es el diseno REST y la integracion con el stack actual, no copiar versiones viejas.
 
 ## REST no es "CRUD en JSON"
 
 - REST significa **Representational State Transfer**.
 - La API ya no entrega presentacion; entrega informacion y el cliente decide como mostrarla.
 - El diseno se apoya fuerte en HTTP: statelessness, verbs, headers, content negotiation y status codes.
+- Para la entrega final, la API aparece porque una SPA necesita un contrato HTTP consumible por un cliente separado.
+- La API tambien abre integraciones con terceros o mobile; por eso no debe depender de detalles de JSP/server-side views.
 
 ## Recursos y URNs
 
@@ -68,6 +72,15 @@ Esta pagina resume la **unidad 11**. Es material de TPE2/final y **fuera del foc
 - La autenticacion viaja por metadata HTTP, por ejemplo `Authorization`.
 - Los apuntes introducen JWT en headers para requests posteriores.
 - La idea central es mantener el modelo stateless tambien en la autenticacion.
+- La clase contrasta tokens por header con cookies: cookies se mandan automaticamente y pueden agregar overhead/riesgo; localStorage tambien tiene riesgo ante XSS. La decision final debe explicitar trade-offs.
+
+## Jersey/JAX-RS en la clase
+
+- Jersey reemplaza controllers Spring MVC para los recursos REST, pero Spring puede seguir resolviendo seguridad, servicios y persistencia.
+- El filtro Jersey debe ordenarse detras de Spring Security y, si aplica JPA, del filtro que mantiene contexto de persistencia.
+- Recursos usan `@Path`, verbos como `@GET`/`@POST`/`@DELETE`, DTOs y `Response`.
+- Creaciones deberian devolver `201 Created` con header `Location`.
+- Deletes exitosos sin body deberian devolver `204 No Content`.
 
 ## Casos practicos de clase
 
@@ -78,6 +91,7 @@ Esta pagina resume la **unidad 11**. Es material de TPE2/final y **fuera del foc
 ## Ver tambien
 
 - [[http-y-sesiones]]
+- [[resumen-clases-paw-2026]]
 - [[single-page-applications]]
 - [[tp1-vs-tpe2-final]]
 - [[manejo-imagenes]]

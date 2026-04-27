@@ -3,7 +3,7 @@ titulo: Resumen de Notas de Clase
 tipo: fuente
 fuentes: [raw/notas.txt, raw/pdfs/Notas clases PAW.pdf]
 creado: 2026-04-09
-actualizado: 2026-04-13
+actualizado: 2026-04-27
 ---
 
 # Resumen de Notas de Clase
@@ -130,6 +130,7 @@ Nota de fuente: el `.txt` usado para trabajar coincide con el PDF original al no
 - [[comparacion-testing-servicios-y-daos]]
 - [[comparacion-jsp-formularios-e-i18n]]
 - [[resumen-apuntes]]
+- [[resumen-clases-paw-2026]]
 - [[resumen-correcciones]]
 - [[resumen-enunciado]]
 - [[resumen-transcripciones-clases-2-a-4]]

@@ -3,7 +3,7 @@ titulo: Persistencia JDBC — Patrones y Errores
 tipo: concepto
 fuentes: [raw/correcciones_tp1.md, raw/apuntes.txt, raw/notas.txt]
 creado: 2026-04-09
-actualizado: 2026-04-17
+actualizado: 2026-04-27
 ---
 
 # Persistencia JDBC — Patrones y Errores
@@ -76,6 +76,7 @@ La capa de persistencia opera via JDBC puro. Los detalles de `java.sql` deben qu
 - [[modelo-capas]]
 - [[testing-unitario]]
 - [[resumen-correcciones]]
+- [[resumen-clases-paw-2026]]
 - [[resumen-notas-sprint-1]]
 - [[resumen-apuntes]]
 - [[resumen-notas]]

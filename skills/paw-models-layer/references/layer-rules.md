@@ -7,6 +7,8 @@ Read current code plus:
 - `PAW-Wiki/docs/wiki/modelo-capas.md`
 - `PAW-Wiki/docs/wiki/java-style.md`
 - `PAW-Wiki/docs/wiki/persistencia-jdbc.md`
+- `PAW-Wiki/docs/wiki/resumen-clases-paw-2026.md`
+- `PAW-Wiki/docs/wiki/hibernate-jpa.md` when stage is TP2 or TP final.
 - `PAW-Wiki/docs/wiki/resumen-enunciado.md`
 - Feature-specific plan/spec pages when changing an existing flow.
 
@@ -23,6 +25,12 @@ Read current code plus:
 - Web validation rules that belong to form beans.
 - Magic strings for finite product states when an enum fits.
 - Sentinel IDs (`-1`, `0`) to represent absence when the schema/domain is nullable.
+
+## Stage Rules
+
+- TP1: keep models as plain domain types without JPA annotations; persistence mapping belongs to JDBC DAOs.
+- TP2: JPA annotations may live on entities only after `$paw-tp2-migration` establishes the migration shape. Do not add them opportunistically during a TP1 feature.
+- TP final: do not reuse domain models as REST payload DTOs by default; keep API representation decisions in service/web contracts unless the repo already chose otherwise.
 
 ## Type Conventions
 

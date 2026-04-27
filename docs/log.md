@@ -4,6 +4,29 @@ Registro cronologico de actividad del wiki.
 
 ---
 
+## [2026-04-27] docs | onboarding con actualizacion automatizable de wiki
+
+- Agregada `docs/examples/actualizar-wiki.md` para que un agente revise `origin/main`, compare `HEAD..origin/main` y haga `git pull --ff-only` solo si `PAW-Wiki` esta limpia.
+- Actualizados `README.md`, `docs/CLAUDE.md`, `docs/index.md`, `docs/examples/README.md`, `setup-local`, `wiki-dentro-repo-paw`, `uso-con-agente`, `instalar-skills`, `checklist-publicacion`, `troubleshooting` y `skills/README.md` para hacer explicito el flujo recomendado: clonar dentro del repo PAW, ignorar `/PAW-Wiki/`, revisar actualizaciones remotas antes de usar la wiki y reinstalar skills si `skills/` cambio.
+- Regla operativa nueva: un agente puede actualizar automaticamente con `git pull --ff-only` solo si no hay cambios locales; si hay cambios, debe mostrar `git status`/`git diff` y pedir decision.
+
+## [2026-04-27] docs | README y CLAUDE alineados por etapa
+
+- Actualizados `README.md`, `docs/CLAUDE.md`, `docs/examples/*.md` y `skills/README.md` para reflejar que la wiki trabaja por etapa: TP1, TP2 y TP final.
+- Reforzado que `[[resumen-clases-paw-2026]]` y `[[tp1-vs-tpe2-final]]` son lecturas base para stack, migraciones y uso de agentes.
+- Documentado en guias publicas que las versiones de dependencias en PDFs viejos son historicas y no deben tratarse como recomendacion vigente sin contrastar el checkout/enunciado actual.
+- Sin cambios en `docs/raw/`; esta fue una sincronizacion documental posterior a la ingesta de clases.
+
+## [2026-04-27] ingest | clases PAW nuevas por etapa
+
+- Ingeridos 11 PDFs nuevos de `docs/raw/` que comienzan con `PAW`, separados en TP1, TP2 y TP final.
+- Creada `wiki/resumen-clases-paw-2026.md` como fuente detallada clase por clase: Spring MVC/Maven, JSP/JSTL, JDBC/testing, forms/i18n, security/logging, AOP, JPA/Hibernate, REST/Jersey y SPA/frontend.
+- Actualizado `docs/CLAUDE.md` para que futuros agentes traten PAW por etapa: TP1, TP2 y TP final.
+- Actualizadas paginas canonicas relacionadas (`tp1-vs-tpe2-final`, `hibernate-jpa`, `api-rest`, `single-page-applications` y backlinks de conceptos TP1) para que apunten a la nueva fuente.
+- Actualizados ejemplos de uso/instalacion de skills para pedir etapa y enrutar migraciones por `$paw-tp2-migration` o `$paw-tp-final-migration`.
+- Normalizadas referencias editoriales a fuentes raw historicas que ya no estan en el arbol publico (`notas_sprint_1`, `notas_para_sprint_2`, `specs_reserva_v2`, `diagrama_bd.puml`) como `fuente historica no incluida`.
+- Nota editorial: las versiones de dependencias presentes en PDFs viejos quedan tratadas como historicas, no como recomendacion vigente.
+
 ## [2026-04-27] docs | wiki dentro del repo PAW
 
 - Documentado el flujo recomendado para clonar o forkear PAW-Wiki dentro del repo de la app PAW.

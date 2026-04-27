@@ -63,6 +63,25 @@ git ls-files PAW-Wiki
 
 `git ls-files PAW-Wiki` no deberia imprimir nada.
 
+## 2.1 Actualizar la wiki cuando ya estaba clonada
+
+Antes de usar una wiki local que pudo quedar vieja:
+
+```bash
+git -C PAW-Wiki fetch origin
+git -C PAW-Wiki status --short --branch
+git -C PAW-Wiki status --porcelain
+git -C PAW-Wiki log --oneline HEAD..origin/main
+```
+
+Si `PAW-Wiki` esta limpia y hay commits nuevos:
+
+```bash
+git -C PAW-Wiki pull --ff-only
+```
+
+Si hay cambios locales, no los pises. Usa [actualizar-wiki.md](actualizar-wiki.md).
+
 ## 3. Abrir en Obsidian
 
 1. Abrir Obsidian.
@@ -92,8 +111,13 @@ Orden recomendado:
 1. `README.md`
 2. `docs/CLAUDE.md`
 3. `docs/index.md`
-4. Una pagina concreta de `docs/wiki/`
-5. Un example de `docs/examples/`
+4. `docs/examples/actualizar-wiki.md`
+5. `docs/wiki/resumen-clases-paw-2026.md`
+6. `docs/wiki/tp1-vs-tpe2-final.md`
+7. Una pagina concreta de `docs/wiki/`
+8. Un example de `docs/examples/`
+
+Si vas a usar un agente sobre una app PAW, indicarle siempre la etapa de trabajo (`TP1`, `TP2` o `TP final`) o pedirle que la resuelva antes de tocar stack/migraciones.
 
 ## 6. Verificar que no vas a subir privado
 

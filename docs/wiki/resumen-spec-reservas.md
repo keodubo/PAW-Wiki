@@ -1,14 +1,14 @@
 ---
 titulo: Resumen del Spec Funcional de Reservas
 tipo: fuente
-fuentes: [raw/specs_reserva_v2.txt, fuente historica no incluida (raw/reservas/spec-funcional-reservas.md), fuente historica no incluida (raw/diagrama_bd.md), raw/diagrama_bd.puml]
+fuentes: [fuente historica no incluida (raw/specs_reserva_v2.txt), fuente historica no incluida (raw/reservas/spec-funcional-reservas.md), fuente historica no incluida (raw/diagrama_bd.md), fuente historica no incluida (raw/diagrama_bd.puml)]
 creado: 2026-04-15
 actualizado: 2026-04-20 (resoluciones v2 previas + inventario de fuentes del diagrama de reservas)
 ---
 
 # Resumen del Spec Funcional de Reservas
 
-Versión vigente: **v2** (`raw/specs_reserva_v2.txt`, ingresada 2026-04-16). Supera a `fuente historica no incluida (raw/reservas/spec-funcional-reservas.md)` (v1, 2026-04-15). La v1 se conserva como antecedente histórico; cualquier contradicción entre ambas se resuelve a favor de v2. El diagrama en `fuente historica no incluida (raw/diagrama_bd.md)` sigue siendo la referencia del esquema de tablas y `raw/diagrama_bd.puml` conserva su fuente editable.
+Versión vigente: **v2** (`fuente historica no incluida (raw/specs_reserva_v2.txt)`, ingresada 2026-04-16). Supera a `fuente historica no incluida (raw/reservas/spec-funcional-reservas.md)` (v1, 2026-04-15). La v1 se conserva como antecedente histórico; cualquier contradicción entre ambas se resuelve a favor de v2. El diagrama en `fuente historica no incluida (raw/diagrama_bd.md)` sigue siendo la referencia del esquema de tablas y `fuente historica no incluida (raw/diagrama_bd.puml)` conserva su fuente editable.
 
 ## Idea central
 
@@ -57,7 +57,7 @@ Cada restaurante elige uno de tres estados sobre `accepts_reservations`: `NOT_DE
 
 ## Relación con el modelo de datos
 
-El modelo de `fuente historica no incluida (raw/diagrama_bd.md)` cubre las tablas necesarias: extensiones en `restaurants`, nuevas tablas `restaurant_tables`, `reservations`, `reservation_notifications`, y la FK única `reservation_id` en `reviews`. `raw/diagrama_bd.puml` conserva la misma estructura en formato editable para futuras iteraciones del esquema. Nombres ligeramente distintos entre spec y diagrama: `reservation_disabled_reason` (spec) vs `reservation_disabled_mode` (diagrama, y nombre elegido por el plan); `reservation_slot_duration` (spec) vs `reservation_slot_duration_minutes` (diagrama). El plan actual usa los nombres del diagrama.
+El modelo de `fuente historica no incluida (raw/diagrama_bd.md)` cubre las tablas necesarias: extensiones en `restaurants`, nuevas tablas `restaurant_tables`, `reservations`, `reservation_notifications`, y la FK única `reservation_id` en `reviews`. `fuente historica no incluida (raw/diagrama_bd.puml)` conserva la misma estructura en formato editable para futuras iteraciones del esquema. Nombres ligeramente distintos entre spec y diagrama: `reservation_disabled_reason` (spec) vs `reservation_disabled_mode` (diagrama, y nombre elegido por el plan); `reservation_slot_duration` (spec) vs `reservation_slot_duration_minutes` (diagrama). El plan actual usa los nombres del diagrama.
 
 ## Ambigüedades v2 — resoluciones aplicadas
 

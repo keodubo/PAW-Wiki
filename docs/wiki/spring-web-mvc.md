@@ -3,7 +3,7 @@ titulo: Spring Web MVC y DispatcherServlet
 tipo: concepto
 fuentes: [raw/apuntes.txt]
 creado: 2026-04-13
-actualizado: 2026-04-13
+actualizado: 2026-04-27
 ---
 
 # Spring Web MVC y DispatcherServlet
@@ -58,6 +58,7 @@ La parte mas operativa de la unidad 4 no es "usar Spring" en abstracto, sino ent
 - [[modelo-capas]]
 - [[jsp-jstl]]
 - [[resumen-transcripciones-clases-2-a-4]]
+- [[resumen-clases-paw-2026]]
 - [[tp1-vs-tpe2-final]]
 - [[resumen-notas]]
 - [[resumen-apuntes]]

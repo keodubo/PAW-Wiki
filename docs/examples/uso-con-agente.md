@@ -11,7 +11,8 @@ Antes de editar:
 1. Lee README.md.
 2. Lee docs/CLAUDE.md.
 3. Lee docs/index.md.
-4. Lee el ejemplo de docs/examples/ que corresponda a la tarea.
+4. Si hay acceso a Git remoto, lee docs/examples/actualizar-wiki.md y verifica si hay cambios nuevos antes de usar la wiki.
+5. Lee el ejemplo de docs/examples/ que corresponda a la tarea.
 
 Reglas:
 - docs/raw/ es inmutable;
@@ -71,15 +72,21 @@ Usa $paw-feature-master para trabajar esta tarea de mi app PAW.
 Rutas:
 - App PAW: /ruta/a/mi-app-paw
 - Wiki PAW: /ruta/a/PAW-Wiki
+- Etapa: TP1 / TP2 / TP final
 
 Primero:
 1. Resolve el checkout de la app.
-2. Lee CLAUDE.md de la app.
-3. Lee PAW-Wiki/docs/CLAUDE.md.
-4. Lee PAW-Wiki/docs/index.md.
-5. Revisa el codigo y tests afectados.
+2. Verifica si PAW-Wiki tiene cambios remotos con PAW-Wiki/docs/examples/actualizar-wiki.md.
+3. Lee CLAUDE.md de la app.
+4. Lee PAW-Wiki/docs/CLAUDE.md.
+5. Lee PAW-Wiki/docs/index.md.
+6. Lee PAW-Wiki/docs/wiki/resumen-clases-paw-2026.md si la etapa o el stack importan.
+7. Revisa el codigo y tests afectados.
 
 Despues:
+- identifica si la tarea toca TP1, TP2 o TP final;
+- si es TP2, usa $paw-tp2-migration para migracion JDBC -> JPA/Hibernate;
+- si es TP final, usa $paw-tp-final-migration para REST API + SPA;
 - identifica si la tarea toca models, persistence contracts, persistence, service contracts, services, webapp o tests;
 - invoca solo las subskills necesarias;
 - si toca mas de una capa, trabaja en orden de dependencias;
@@ -100,6 +107,8 @@ Despues:
 | Business logic, transactions, mail, schedulers | `$paw-services-layer` |
 | Controllers, forms, validators, JSP/JSTL, i18n, Spring Security, CSS | `$paw-webapp-layer` |
 | Tests, fixtures, Maven gates, fallas de test | `$paw-testing-layer` |
+| Migracion TP2 JDBC -> JPA/Hibernate | `$paw-tp2-migration` |
+| Migracion TP final REST API + SPA | `$paw-tp-final-migration` |
 
 Si la tarea es una feature completa, un bug que cruza capas o una auditoria, no empieces por una subskill: empezá por `$paw-feature-master`.
 
@@ -109,8 +118,27 @@ Feature mixta:
 
 ```text
 Usa $paw-feature-master para implementar esta feature.
-Primero lee el checkout, PAW-Wiki y tests afectados.
+Etapa: TP1.
+Primero revisa si PAW-Wiki debe actualizarse, lee el checkout, PAW-Wiki y tests afectados.
 Decidi que subskills hacen falta y mostrame un plan por capas antes de editar.
+```
+
+Migracion TP2:
+
+```text
+Usa $paw-feature-master para planificar esta migracion.
+Etapa: TP2.
+Si toca persistencia, usa $paw-tp2-migration antes de subskills de capa.
+No copies versiones viejas de dependencias desde los PDFs; revisa el checkout y el enunciado actual.
+```
+
+Migracion TP final:
+
+```text
+Usa $paw-feature-master para planificar esta migracion.
+Etapa: TP final.
+Si toca API, SPA, frontend build, auth stateless o cache, usa $paw-tp-final-migration.
+Primero separa contrato REST, servicios backend, frontend y packaging.
 ```
 
 Auditoria:

@@ -1,0 +1,4 @@
+interface:
+  display_name: "PAW TP Final Migration"
+  short_description: "Guia REST y SPA PAW final"
+  default_prompt: "Use $paw-tp-final-migration to plan a PAW final migration to REST API and SPA."

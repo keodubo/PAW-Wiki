@@ -7,6 +7,8 @@ Read current DAO interfaces plus:
 - `PAW-Wiki/docs/wiki/modelo-capas.md`
 - `PAW-Wiki/docs/wiki/comparacion-capas-web-services-persistence.md`
 - `PAW-Wiki/docs/wiki/persistencia-jdbc.md`
+- `PAW-Wiki/docs/wiki/resumen-clases-paw-2026.md`
+- `PAW-Wiki/docs/wiki/hibernate-jpa.md` when stage is TP2.
 - `PAW-Wiki/docs/wiki/n-plus-1-joins-java.md`
 - `PAW-Wiki/docs/wiki/configuracion-maven.md`
 
@@ -19,6 +21,7 @@ Read current DAO interfaces plus:
 ## Forbidden In Contracts
 
 - `JdbcTemplate`, `DataSource`, `ResultSet`, `RowMapper`, SQL strings, `java.sql.*`, concrete DAO classes.
+- `EntityManager`, Hibernate session APIs, JPQL/HQL strings, fetch graph details, or other ORM implementation details.
 - Web/session/security/JSP types.
 - Service use-case orchestration.
 
@@ -29,6 +32,7 @@ Read current DAO interfaces plus:
 - For list pages, expose count and page queries where the UI needs pagination metadata.
 - Add batch methods when an existing flow would query inside a loop.
 - Keep writes owned by the DAO responsible for that table.
+- In TP2, preserve the same service-facing intent while changing the implementation behind it; do not let lazy loading requirements leak into the contract.
 
 ## Existing Examples To Inspect
 

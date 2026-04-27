@@ -5,11 +5,14 @@
 Read current code plus:
 
 - `PAW-Wiki/docs/wiki/testing-unitario.md`
+- `PAW-Wiki/docs/wiki/resumen-clases-paw-2026.md`
 - `PAW-Wiki/docs/wiki/comparacion-testing-servicios-y-daos.md`
 - `PAW-Wiki/docs/wiki/transactional.md`
 - `PAW-Wiki/docs/wiki/spring-aop.md`
 - `PAW-Wiki/docs/wiki/persistencia-jdbc.md`
 - `PAW-Wiki/docs/wiki/criterios-evaluacion.md`
+- `PAW-Wiki/docs/wiki/hibernate-jpa.md` when stage is TP2.
+- `PAW-Wiki/docs/wiki/api-rest.md` and `PAW-Wiki/docs/wiki/single-page-applications.md` when stage is TP final.
 
 ## PAW-Wiki Rules
 
@@ -32,6 +35,9 @@ Read current code plus:
 | MVC/security | Controller route and web contract | Mock services/security context | status, redirect, model, binding errors, access | business logic assertions |
 | Template/i18n | JSP/message bundle safety | file scan or view test | no scriptlets, escaping, keys present | treating bundle symmetry as wording audit |
 | Context/runtime | Spring wiring/AOP/startup | Spring context or Jetty | proxy/wiring/startup behavior | service unit test as proxy proof |
+| TP2 JPA persistence | Entity mapping/fetch/cascade/dirty checking | JPA context + test DB | persisted state, generated SQL shape, lazy/fetch behavior | assuming compile proves mapping safety |
+| TP final API | REST resource contract | MockMvc/Jersey test + service fakes | status, headers, DTO body, auth errors | returning domain objects directly |
+| TP final frontend | SPA state/component/forms | frontend test runner when present | state transitions, validation, render contract | relying only on backend tests |
 
 ## Repo-Specific Maven Notes
 

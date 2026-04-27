@@ -6,6 +6,9 @@ Read current services/tests plus:
 
 - `PAW-Wiki/docs/wiki/transactional.md`
 - `PAW-Wiki/docs/wiki/spring-aop.md`
+- `PAW-Wiki/docs/wiki/resumen-clases-paw-2026.md`
+- `PAW-Wiki/docs/wiki/hibernate-jpa.md` when stage is TP2.
+- `PAW-Wiki/docs/wiki/api-rest.md` when stage is TP final.
 - `PAW-Wiki/docs/wiki/logica-en-controllers.md`
 - `PAW-Wiki/docs/wiki/mailing.md`
 - `PAW-Wiki/docs/wiki/manejo-excepciones.md`
@@ -26,6 +29,7 @@ Read current services/tests plus:
 - Public service methods should be annotated with `@Transactional`.
 - Read methods use `@Transactional(readOnly = true)`.
 - Do not expect `@Transactional` to work on private methods or self-invocation.
+- In TP2, transaction boundaries also define JPA persistence context lifetime. Be explicit about where managed entities are loaded and changed.
 - Scheduler entrypoints should delegate to transactional services.
 - Mail-only async classes do not get class-level transactions unless they intentionally use DB state.
 
@@ -33,6 +37,7 @@ Read current services/tests plus:
 
 - Services can create/modify domain models and call DAOs.
 - Services must not know JSP templates as web paths, controllers, request/response, redirects, or SQL mechanics.
+- Services must not know `EntityManager`, Hibernate sessions, lazy proxy mechanics, REST serialization annotations, frontend stores, or router state.
 - Services should not perform route authorization that belongs in Spring Security/AccessHelper, but they should enforce product invariants such as self-follow rejection or invalid state transition.
 - Mail uses recipient locale/preferred language, not sender locale or `LocaleContextHolder`.
 

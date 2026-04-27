@@ -57,7 +57,36 @@ cp -R skills/paw-* "${CODEX_HOME:-$HOME/.codex}/skills/"
 
 ```text
 Lee skills/paw-feature-master/SKILL.md y segui esas reglas.
+Estoy en etapa TP1/TP2/TP final.
 ```
+
+Si el problema es que una migracion no se enruta bien, verificar que existan tambien:
+
+```bash
+ls skills/paw-tp2-migration/SKILL.md skills/paw-tp-final-migration/SKILL.md
+```
+
+Para TP2, el prompt debe mencionar `$paw-tp2-migration` si toca persistencia. Para TP final, debe mencionar `$paw-tp-final-migration` si toca API, SPA, auth stateless, build frontend o cache.
+
+## PAW-Wiki quedo desactualizada
+
+Desde la raiz de la app PAW:
+
+```bash
+git -C PAW-Wiki fetch origin
+git -C PAW-Wiki status --short --branch
+git -C PAW-Wiki status --porcelain
+git -C PAW-Wiki log --oneline HEAD..origin/main
+git -C PAW-Wiki diff --stat HEAD..origin/main
+```
+
+Si `status --short` no muestra cambios locales y hay commits nuevos:
+
+```bash
+git -C PAW-Wiki pull --ff-only
+```
+
+Si hay cambios locales, no uses `reset --hard`: revisa [actualizar-wiki.md](actualizar-wiki.md).
 
 ## docs/private aparece en git status
 

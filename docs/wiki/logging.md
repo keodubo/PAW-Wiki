@@ -3,7 +3,7 @@ titulo: Logging — Requisitos y Errores
 tipo: concepto
 fuentes: [raw/correcciones_tp1.md, raw/apuntes.txt, raw/notas.txt]
 creado: 2026-04-09
-actualizado: 2026-04-17
+actualizado: 2026-04-27
 ---
 
 # Logging — Requisitos y Errores
@@ -76,6 +76,7 @@ El logging adecuado es un requerimiento core. `System.out` y `printStackTrace()`
 ## Ver tambien
 - [[configuracion-maven]]
 - [[spring-aop]]
+- [[resumen-clases-paw-2026]]
 - [[spring-security]]
 - [[resumen-enunciado]]
 - [[resumen-correcciones]]

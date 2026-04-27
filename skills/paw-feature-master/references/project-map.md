@@ -9,7 +9,17 @@
 
 ## Stack And Modules
 
-The repo is Java 21, Spring Web MVC classic, Spring Security, JSP/JSTL, JDBC, PostgreSQL, Maven, WAR packaging. Do not migrate to Spring Boot, React/Next/Vue/Thymeleaf for web views, JPA/Hibernate for TP1 persistence, or a new frontend build pipeline unless the user explicitly asks.
+For TP1, the repo is Java 21, Spring Web MVC classic, Spring Security, JSP/JSTL, JDBC, PostgreSQL, Maven, WAR packaging. Do not migrate to Spring Boot, React/Next/Vue/Thymeleaf for web views, JPA/Hibernate for TP1 persistence, or a new frontend build pipeline unless the user explicitly asks.
+
+## Stage Map
+
+| Stage | Allowed default stack | Migration skill | Main risk |
+| --- | --- | --- | --- |
+| `TP1` | Spring MVC + JSP/JSTL + JDBC + HSQLDB + Spring Security + Logback | none by default | Accidentally introducing later-stage tools |
+| `TP2` | JPA/Hibernate persistence with Spring ORM over the existing service/web shape | `$paw-tp2-migration` | Bad mappings, hidden N+1, unsafe schema generation, dirty checking surprises |
+| `TP final` | REST API + SPA/frontend build served by the WAR | `$paw-tp-final-migration` | Leaky API contracts, duplicated business logic, auth storage risk, broken packaging/cache |
+
+Ask or confirm stage before stack-changing work. Class PDFs in `resumen-clases-paw-2026.md` are important stage guidance, but their dependency versions are historical and not an implementation recommendation.
 
 Real modules:
 
@@ -34,6 +44,9 @@ Always start from `PAW-Wiki/docs/index.md`, then load only relevant pages:
 - Persistence: `persistencia-jdbc.md`, `n-plus-1-joins-java.md`, `comparacion-testing-servicios-y-daos.md`.
 - Services: `transactional.md`, `spring-aop.md`, `mailing.md`, `manejo-excepciones.md`, `logging.md`.
 - Quality: `testing-unitario.md`, `java-style.md`, `buenas-practicas.md`, `criterios-evaluacion.md`.
+- Stage source: `resumen-clases-paw-2026.md`, `tp1-vs-tpe2-final.md`.
+- TP2 migration: `hibernate-jpa.md`, plus `persistencia-jdbc.md`, `transactional.md`, `testing-unitario.md`.
+- TP final migration: `api-rest.md`, `single-page-applications.md`, `internacionalizacion.md`, `ux-flows.md`, `spring-security.md`.
 - Current large features: `plan-implementacion-reservas.md`, `resumen-spec-reservas.md`, `PAW-Wiki/docs/superpowers/plans/2026-04-26_social-forkd-plan_v1.md`.
 - Current compliance findings: `2026-04-24_auditoria-implementacion-contra-wiki_v1.md`, `PAW-Wiki/docs/superpowers/plans/2026-04-24_paw-remediacion-cumplimiento-wiki_v1.md`.
 
@@ -84,6 +97,22 @@ Testing skill: use `$paw-testing-layer` for recording fakes, scheduler state ass
 Order: read `PAW-Wiki/docs/CLAUDE.md` -> read index -> edit/create wiki page -> update index/log/tree if required.
 
 Checks: raw sources untouched, bidirectional links, uncertainty marked when sources are weak.
+
+### TP2 persistence migration
+
+Use `$paw-tp2-migration`.
+
+Order: baseline DAO/schema/tests -> entity mapping plan -> Spring ORM config -> DAO implementation -> service transaction audit -> tests -> generated SQL/fetch review.
+
+Checks: no destructive schema generation without approval, no `EntityManager` leaking to services/webapp, fetch/cascade choices reviewed, current JDBC behavior preserved unless intentionally changed.
+
+### TP final REST + SPA migration
+
+Use `$paw-tp-final-migration`.
+
+Order: API contract/DTOs -> service boundary review -> REST resources/security/errors -> frontend app/routing/state/forms -> Maven packaging/static hosting -> cache/file revving.
+
+Checks: API is stateless, backend remains source of truth, frontend validates for UX only, `mvn package` still produces a usable WAR, root HTML is not cached as immutable.
 
 ## Verification Gates
 

@@ -5,11 +5,13 @@
 Read current service contracts plus:
 
 - `PAW-Wiki/docs/wiki/modelo-capas.md`
+- `PAW-Wiki/docs/wiki/resumen-clases-paw-2026.md`
 - `PAW-Wiki/docs/wiki/comparacion-capas-web-services-persistence.md`
 - `PAW-Wiki/docs/wiki/logica-en-controllers.md`
 - `PAW-Wiki/docs/wiki/transactional.md`
 - `PAW-Wiki/docs/wiki/manejo-excepciones.md`
 - `PAW-Wiki/docs/wiki/mailing.md`
+- `PAW-Wiki/docs/wiki/api-rest.md` when stage is TP final.
 
 ## Allowed Responsibilities
 
@@ -22,6 +24,7 @@ Read current service contracts plus:
 
 - JSP names, redirect targets, servlet/session/request/response types.
 - DAO implementation classes or JDBC details.
+- JPA `EntityManager`/Hibernate details or frontend framework state.
 - Async vs sync implementation distinction in public API unless the product behavior itself depends on it.
 - Controller form beans as service API.
 
@@ -31,6 +34,7 @@ Read current service contracts plus:
 - Use domain types/enums from `models` for validated concepts.
 - Keep DTO names tied to use cases: `SaveRestaurantData`, `CreateReservationData`, `ChangePasswordData`.
 - Do not make controllers assemble domain entities directly when a DTO can carry the request cleanly.
+- In TP final, separate service command DTOs from API representation DTOs unless the existing repo intentionally shares them.
 
 ## Exception Rules
 

@@ -1,0 +1,4 @@
+interface:
+  display_name: "PAW TP2 Migration"
+  short_description: "Guia migracion PAW a JPA segura"
+  default_prompt: "Use $paw-tp2-migration to plan a PAW TP2 migration from JDBC to JPA/Hibernate."

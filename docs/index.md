@@ -15,6 +15,7 @@ Estos archivos no son paginas wiki canonicas; son guias de uso para humanos y ag
 | [examples/README.md](examples/README.md) | Indice de ejemplos de uso de la wiki |
 | [examples/setup-local.md](examples/setup-local.md) | Setup desde cero: clonar, abrir en Obsidian y crear espacio privado |
 | [examples/wiki-dentro-repo-paw.md](examples/wiki-dentro-repo-paw.md) | Flujo para clonar o forkear PAW-Wiki dentro del repo PAW sin subirlo a la entrega |
+| [examples/actualizar-wiki.md](examples/actualizar-wiki.md) | Flujo para que un agente revise `origin/main` y actualice la wiki local con `git pull --ff-only` cuando sea seguro |
 | [examples/instalar-skills.md](examples/instalar-skills.md) | Instalacion opcional de skills en Codex, Claude u otros agentes |
 | [examples/ingesta-publica.md](examples/ingesta-publica.md) | Flujo para convertir una fuente publica en paginas wiki |
 | [examples/consulta-wiki.md](examples/consulta-wiki.md) | Flujo para responder preguntas usando el indice y paginas canonicas |
@@ -31,10 +32,11 @@ Estos archivos no son paginas wiki canonicas; son guias de uso para humanos y ag
 | [[resumen-enunciado]] | Especificacion oficial del TPE1: stack, requerimientos, entrega | `raw/enunciado.txt` + `raw/pdfs/Enunciado_TPE1.pdf` |
 | [[resumen-apuntes]] | Apuntes completos de la materia (11 unidades; 1-7 como base TP1 y 8 como soporte de implementacion) | `raw/apuntes.txt` + `raw/pdfs/PAW - Apuntes.pdf` |
 | [[resumen-notas]] | Notas de clase con walkthroughs practicos y advertencias del profesor | `raw/notas.txt` + `raw/pdfs/Notas clases PAW.pdf` |
-| [[resumen-notas-sprint-1]] | Feedback puntual del sprint 1 sobre producto, UX, filtros y direccion del proyecto | `raw/notas_sprint_1.txt` |
-| [[resumen-notas-sprint-2]] | Checklist de cierre del sprint 2: auth, owner/admin, UX, correcciones ya resueltas y checks manuales remanentes | `raw/notas_para_sprint_2.txt` |
+| [[resumen-clases-paw-2026]] | Ingesta detallada de PDFs nuevos de clase, ordenada por TP1, TP2 y TP final; las versiones de dependencias quedan tratadas como historicas | `raw/PAW*.pdf` |
+| [[resumen-notas-sprint-1]] | Feedback puntual del sprint 1 sobre producto, UX, filtros y direccion del proyecto | `fuente historica no incluida (raw/notas_sprint_1.txt)` |
+| [[resumen-notas-sprint-2]] | Checklist de cierre del sprint 2: auth, owner/admin, UX, correcciones ya resueltas y checks manuales remanentes | `fuente historica no incluida (raw/notas_para_sprint_2.txt)` |
 | [[resumen-transcripciones-clases-2-a-4]] | Revision cautelosa de transcripciones VTT; clases 2-3 como apoyo y clase reciente sobre agentes/formularios | `fuente historica no incluida (raw/audio_transcript/*.VTT)` |
-| [[resumen-spec-reservas]] | Ingesta del spec funcional del sistema de reservas v2 (vigente) con diff frente a v1, reglas, modalidades, slots, estados y resoluciones completas de ambiguedades v2 | `raw/specs_reserva_v2.txt` + `fuente historica no incluida (raw/reservas/spec-funcional-reservas.md)` (historico) + `fuente historica no incluida (raw/diagrama_bd.md)` |
+| [[resumen-spec-reservas]] | Ingesta del spec funcional del sistema de reservas v2 (vigente) con diff frente a v1, reglas, modalidades, slots, estados y resoluciones completas de ambiguedades v2 | `fuente historica no incluida (raw/specs_reserva_v2.txt)` + `fuente historica no incluida (raw/reservas/spec-funcional-reservas.md)` (historico) + `fuente historica no incluida (raw/diagrama_bd.md)` |
 
 ## Conceptos
 
@@ -123,8 +125,19 @@ Estos archivos no son paginas wiki canonicas; son guias de uso para humanos y ag
 - [x] `raw/apuntes.txt` -- Apuntes de la materia (~143KB, 21K lineas)
 - [x] `raw/pdfs/PAW - Apuntes.pdf` -- PDF original validado contra `raw/apuntes.txt`; pasadas editoriales ya cubren unidades 1-11, tratando la 8 como soporte de TP1 y manteniendo 9-11 fuera de foco
 - [x] `raw/notas.txt` -- Notas de clases (~175KB)
-- [x] `raw/notas_sprint_1.txt` -- Procesado en `[[resumen-notas-sprint-1]]`
-- [x] `raw/notas_para_sprint_2.txt` -- Checklist de cierre del sprint 2 procesado en `[[resumen-notas-sprint-2]]`
+- [x] `raw/PAW - clase 1 (TP1).pdf` -- Clase TP1: Spring Web, Maven, WebConfig, ViewResolver, modulos y DI; procesada en `[[resumen-clases-paw-2026]]`
+- [x] `raw/PAW - clase 2 (TP1).pdf` -- Clase TP1: Servlets, JSP, EL, JSTL y tags propios; procesada con OCR en `[[resumen-clases-paw-2026]]`
+- [x] `raw/PAW - clase 3 (TP1).pdf` -- Clase TP1: Spring JDBC, schema, HSQLDB, Mockito y tests DAO/servicio; procesada en `[[resumen-clases-paw-2026]]`
+- [x] `raw/PAW - clase 4 (TP1).pdf` -- Clase TP1: Web Forms, Bean Validation, Spring form tags e i18n; procesada en `[[resumen-clases-paw-2026]]`
+- [x] `raw/PAW - clase 5 (TP1).pdf` -- Clase TP1: Spring Security y logging inicial; procesada en `[[resumen-clases-paw-2026]]`
+- [x] `raw/PAW - clase 6 (TP1).pdf` -- Clase TP1: logging productivo, AOP, proxies y `@Transactional`; procesada en `[[resumen-clases-paw-2026]]`
+- [x] `raw/PAW - clase 7 (TP2).pdf` -- Clase TP2: introduccion a Hibernate/JPA, `EntityManager`, DAOs JPA y entidades; procesada en `[[resumen-clases-paw-2026]]`
+- [x] `raw/PAW - clase 8 (TP2).pdf` -- Clase TP2: relaciones JPA, fetch, contexto de persistencia y dirty checking; procesada en `[[resumen-clases-paw-2026]]`
+- [x] `raw/PAW - clases 9 y 10 (TP final).pdf` -- TP final: Jersey/JAX-RS, REST, DTOs y autenticacion stateless; procesada en `[[resumen-clases-paw-2026]]`
+- [x] `raw/PAW- Clase Teórica Front end (TP final).pdf` -- TP final: SPA, modulos JS, runtime, package managers, bundlers, frameworks y routing; procesada en `[[resumen-clases-paw-2026]]`
+- [x] `raw/PAW- Clase Teórica - SPAs segunda parte (TP final).pdf` -- TP final: componentes, forms, estado, auth, i18n, testing, optimizacion, hosting, SSR y cache; procesada en `[[resumen-clases-paw-2026]]`
+- [x] `fuente historica no incluida (raw/notas_sprint_1.txt)` -- Procesado en `[[resumen-notas-sprint-1]]`
+- [x] `fuente historica no incluida (raw/notas_para_sprint_2.txt)` -- Checklist de cierre del sprint 2 procesado en `[[resumen-notas-sprint-2]]`
 - [x] `raw/pdfs/Enunciado_TPE1.pdf` -- PDF original validado contra `raw/enunciado.txt`
 - [x] `raw/pdfs/Notas clases PAW.pdf` -- PDF original validado contra `raw/notas.txt`
 - [x] `fuente historica no incluida (raw/audio_transcript/audio_transcript clase 2.VTT)` -- Revisado con cautela; solo uso auxiliar
@@ -139,9 +152,9 @@ Estos archivos no son paginas wiki canonicas; son guias de uso para humanos y ag
 - [x] `fuente historica no incluida (raw/2026-04-20_deploy-bugs-remediation-plan_v1.md)` -- Plan secuencial del mismo cluster; absorbido por `[[2026-04-20_bugs-deploy-lote-0-y-plan-remediacion_v1]]`
 - [x] `fuente historica no incluida (raw/todo.md)` -- Lista fuente original de `20` bugs de deploy; absorbida por `[[2026-04-20_bugs-deploy-lote-0-y-plan-remediacion_v1]]`
 - [x] `fuente historica no incluida (raw/reservas/spec-funcional-reservas.md)` -- Spec v1 del sistema de reservas; conservado como antecedente historico, superado por v2
-- [x] `raw/specs_reserva_v2.txt` -- Spec v2 del sistema de reservas (vigente); procesado en `[[resumen-spec-reservas]]` y siendo propagado a `[[plan-implementacion-reservas]]`
+- [x] `fuente historica no incluida (raw/specs_reserva_v2.txt)` -- Spec v2 del sistema de reservas (vigente); procesado en `[[resumen-spec-reservas]]` y siendo propagado a `[[plan-implementacion-reservas]]`
 - [x] `fuente historica no incluida (raw/diagrama_bd.md)` -- Version narrativa del diagrama de reservas; absorbida por `[[resumen-spec-reservas]]`
-- [x] `raw/diagrama_bd.puml` -- Fuente editable del mismo diagrama; registrada como soporte de `[[resumen-spec-reservas]]`
+- [x] `fuente historica no incluida (raw/diagrama_bd.puml)` -- Fuente editable del mismo diagrama; registrada como soporte de `[[resumen-spec-reservas]]`
 
 ### Estado de reportes
 

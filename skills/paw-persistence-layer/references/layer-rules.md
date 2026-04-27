@@ -5,6 +5,8 @@
 Read current DAO/schema code plus:
 
 - `PAW-Wiki/docs/wiki/persistencia-jdbc.md`
+- `PAW-Wiki/docs/wiki/resumen-clases-paw-2026.md`
+- `PAW-Wiki/docs/wiki/hibernate-jpa.md` when stage is TP2.
 - `PAW-Wiki/docs/wiki/n-plus-1-joins-java.md`
 - `PAW-Wiki/docs/wiki/comparacion-testing-servicios-y-daos.md`
 - `PAW-Wiki/docs/wiki/modelo-capas.md`
@@ -37,6 +39,16 @@ Read current DAO/schema code plus:
 - Use `JOIN`, `WHERE IN`, `ORDER BY`, `LIMIT/OFFSET`, and aggregate/count SQL instead of Java-side filtering/sorting/joining.
 - Escape LIKE input for `%` and `_`.
 - Use one DAO as owner for writes to a table.
+
+## TP2 JPA Rules
+
+- Only apply these when the stage is TP2 or the user explicitly requests Hibernate/JPA migration.
+- Keep DAO contracts stable where possible; migrate implementation behind the contract.
+- Use `@PersistenceContext`/`EntityManager` inside persistence only.
+- Map ids, sequences, nullability, enum width, required vs optional relations, and table/column names against the existing schema.
+- Avoid accidental eager graph loading. Prefer explicit fetch strategy per use case and verify generated SQL.
+- Dirty checking is behavior, not magic: tests must prove intended updates and non-updates.
+- Lazy loading outside a transaction/context is a design smell unless deliberately supported by the chosen web filter strategy.
 
 ## DAO Test Rules
 

@@ -5,6 +5,7 @@
 Read current webapp code plus:
 
 - `PAW-Wiki/docs/wiki/spring-web-mvc.md`
+- `PAW-Wiki/docs/wiki/resumen-clases-paw-2026.md`
 - `PAW-Wiki/docs/wiki/jsp-jstl.md`
 - `PAW-Wiki/docs/wiki/validacion-formularios.md`
 - `PAW-Wiki/docs/wiki/comparacion-jsp-formularios-e-i18n.md`
@@ -13,6 +14,7 @@ Read current webapp code plus:
 - `PAW-Wiki/docs/wiki/auth-flows.md`
 - `PAW-Wiki/docs/wiki/xss-prevencion.md`
 - `PAW-Wiki/docs/wiki/manejo-excepciones.md`
+- `PAW-Wiki/docs/wiki/api-rest.md` and `PAW-Wiki/docs/wiki/single-page-applications.md` when stage is TP final.
 - `DESIGN.md` for visual changes.
 
 ## Controllers
@@ -21,6 +23,14 @@ Read current webapp code plus:
 - Do not put SQL, joins, business state transitions, ownership checks, or multi-service orchestration in controllers.
 - Use DTOs from `service-contracts` instead of building domain entities in controllers.
 - Use `@ControllerAdvice` for repeated model attributes and exception handling.
+
+## TP Final REST/SPA Notes
+
+- Use `$paw-tp-final-migration` before replacing JSP flows with API/SPA work.
+- REST resources should return status codes, headers, and DTOs; they should not expose domain entities by accident.
+- API auth should be stateless by design. Document token/cookie storage trade-offs before implementing.
+- Frontend validation improves UX, but backend validation remains authoritative.
+- Static asset hosting must preserve `mvn package`; cache immutable only for versioned assets, never for the root HTML entry.
 
 ## Forms And Validation
 

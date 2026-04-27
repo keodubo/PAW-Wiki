@@ -1,6 +1,6 @@
 ---
 name: paw-testing-layer
-description: Use when creating, changing, auditing, or reviewing PAW Forkd tests, Maven verification gates, test fixtures, HSQLDB persistence tests, service tests, MVC/security tests, template tests, or test failures.
+description: Use when creating, changing, auditing, or reviewing PAW Forkd tests, Maven verification gates, test fixtures, HSQLDB/JPA persistence tests, service tests, MVC/security/API tests, template/frontend tests, or test failures.
 ---
 
 # Paw Testing Layer
@@ -17,7 +17,10 @@ Choose the test type from the behavior under test:
 
 - Business rule or state transition: service test.
 - SQL, row mapping, constraints, ordering, pagination, or schema behavior: DAO/persistence test against HSQLDB.
+- TP2 JPA mapping, fetch, cascade, dirty checking, or generated SQL behavior: persistence/context test plus SQL/log inspection where useful.
 - Route, binding, validation error, security rule, redirect, or JSP model contract: webapp MVC/security test.
+- TP final REST resource status/body/header/error contract: API/MVC resource test.
+- SPA state/component/form behavior: frontend test if the repo has a frontend test runner; otherwise document manual/contract verification.
 - JSP escaping, scriptlets, i18n bundle symmetry, or rendered-template contract: template/i18n test.
 - Runtime wiring, AOP proxy, scheduler, or app startup behavior: context/integration test or Jetty smoke.
 

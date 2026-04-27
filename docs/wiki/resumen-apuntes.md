@@ -3,7 +3,7 @@ titulo: Resumen de Apuntes de la Materia
 tipo: fuente
 fuentes: [raw/apuntes.txt, raw/pdfs/PAW - Apuntes.pdf]
 creado: 2026-04-09
-actualizado: 2026-04-13
+actualizado: 2026-04-27
 ---
 
 # Resumen de Apuntes de la Materia
@@ -207,6 +207,7 @@ Nota de fuente: el `.txt` ingerido fue validado contra el PDF original; no apare
 - [[resumen-correcciones]]
 - [[resumen-enunciado]]
 - [[resumen-notas]]
+- [[resumen-clases-paw-2026]]
 - [[resumen-transcripciones-clases-2-a-4]]
 - [[modelo-capas]]
 - [[configuracion-maven]]

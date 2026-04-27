@@ -1,7 +1,7 @@
 ---
 titulo: Resumen de Notas — Sprint 1
 tipo: fuente
-fuentes: [raw/notas_sprint_1.txt]
+fuentes: [fuente historica no incluida (raw/notas_sprint_1.txt)]
 creado: 2026-04-11
 actualizado: 2026-04-13
 ---

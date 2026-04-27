@@ -3,7 +3,7 @@ titulo: Validacion de Formularios — Bean Validation y Custom Validators
 tipo: concepto
 fuentes: [raw/correcciones_tp1.md, raw/apuntes.txt, raw/notas.txt]
 creado: 2026-04-09
-actualizado: 2026-04-17
+actualizado: 2026-04-27
 ---
 
 # Validacion de Formularios — Bean Validation y Custom Validators
@@ -72,6 +72,7 @@ Tambien se elogio:
 
 ## Ver tambien
 - [[resumen-transcripciones-clases-2-a-4]]
+- [[resumen-clases-paw-2026]]
 - [[tp1-vs-tpe2-final]]
 - [[comparacion-seguridad-web]]
 - [[comparacion-jsp-formularios-e-i18n]]

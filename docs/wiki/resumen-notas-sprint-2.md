@@ -1,7 +1,7 @@
 ---
 titulo: Resumen de Notas — Sprint 2
 tipo: fuente
-fuentes: [raw/notas_para_sprint_2.txt]
+fuentes: [fuente historica no incluida (raw/notas_para_sprint_2.txt)]
 creado: 2026-04-19
 actualizado: 2026-04-19
 ---
@@ -45,7 +45,7 @@ Checklist operativo del sprint 2 con foco en cierre funcional, UX y hardening de
 ## Lectura util para el equipo
 
 - Esta fuente conviene leerla como **cierre de sprint** y no como backlog crudo.
-- Los items marcados en `raw/notas_para_sprint_2.txt` mezclan:
+- Los items marcados en `fuente historica no incluida (raw/notas_para_sprint_2.txt)` mezclan:
   - correcciones efectivamente implementadas,
   - decisiones de producto ya aceptadas,
   - checks manuales que todavia no equivalen a una garantia automatizada,

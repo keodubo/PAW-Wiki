@@ -1,5 +1,6 @@
 PAW-Wiki/docs/CLAUDE.md
 PAW-Wiki/docs/examples/README.md
+PAW-Wiki/docs/examples/actualizar-wiki.md
 PAW-Wiki/docs/examples/checklist-publicacion.md
 PAW-Wiki/docs/examples/consulta-wiki.md
 PAW-Wiki/docs/examples/ingesta-publica.md
@@ -11,17 +12,24 @@ PAW-Wiki/docs/examples/uso-con-agente.md
 PAW-Wiki/docs/examples/wiki-dentro-repo-paw.md
 PAW-Wiki/docs/index.md
 PAW-Wiki/docs/log.md
+PAW-Wiki/docs/raw/PAW - clase 1 (TP1).pdf
+PAW-Wiki/docs/raw/PAW - clase 2 (TP1).pdf
+PAW-Wiki/docs/raw/PAW - clase 3 (TP1).pdf
+PAW-Wiki/docs/raw/PAW - clase 4 (TP1).pdf
+PAW-Wiki/docs/raw/PAW - clase 5 (TP1).pdf
+PAW-Wiki/docs/raw/PAW - clase 6 (TP1).pdf
+PAW-Wiki/docs/raw/PAW - clase 7 (TP2).pdf
+PAW-Wiki/docs/raw/PAW - clase 8 (TP2).pdf
+PAW-Wiki/docs/raw/PAW - clases 9 y 10 (TP final).pdf
+PAW-Wiki/docs/raw/PAW- Clase Teórica - SPAs segunda parte (TP final).pdf
+PAW-Wiki/docs/raw/PAW- Clase Teórica Front end (TP final).pdf
 PAW-Wiki/docs/raw/apuntes.txt
 PAW-Wiki/docs/raw/correcciones_tp1.md
-PAW-Wiki/docs/raw/diagrama_bd.puml
 PAW-Wiki/docs/raw/enunciado.txt
 PAW-Wiki/docs/raw/notas.txt
-PAW-Wiki/docs/raw/notas_para_sprint_2.txt
-PAW-Wiki/docs/raw/notas_sprint_1.txt
 PAW-Wiki/docs/raw/pdfs/Enunciado_TPE1.pdf
 PAW-Wiki/docs/raw/pdfs/Notas clases PAW.pdf
 PAW-Wiki/docs/raw/pdfs/PAW - Apuntes.pdf
-PAW-Wiki/docs/raw/specs_reserva_v2.txt
 PAW-Wiki/docs/tree.txt
 PAW-Wiki/docs/wiki/2026-04-12_auditoria-y-plan-remediacion_v1.md
 PAW-Wiki/docs/wiki/2026-04-13_auditoria-repo-docs_v1.md
@@ -59,6 +67,7 @@ PAW-Wiki/docs/wiki/plan-ejecucion-remediacion-auditoria.md
 PAW-Wiki/docs/wiki/plan-implementacion-reservas.md
 PAW-Wiki/docs/wiki/remediacion-violaciones-paw.md
 PAW-Wiki/docs/wiki/resumen-apuntes.md
+PAW-Wiki/docs/wiki/resumen-clases-paw-2026.md
 PAW-Wiki/docs/wiki/resumen-correcciones.md
 PAW-Wiki/docs/wiki/resumen-enunciado.md
 PAW-Wiki/docs/wiki/resumen-notas-sprint-1.md

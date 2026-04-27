@@ -1,14 +1,16 @@
 ---
 titulo: Hibernate, JPA y ORM
 tipo: concepto
-fuentes: [raw/apuntes.txt]
+fuentes: [raw/apuntes.txt, raw/PAW - clase 7 (TP2).pdf, raw/PAW - clase 8 (TP2).pdf]
 creado: 2026-04-13
-actualizado: 2026-04-13
+actualizado: 2026-04-27
 ---
 
 # Hibernate, JPA y ORM
 
-Esta pagina resume la **unidad 9**. Es material relevante para TPE2, pero **fuera del foco de TP1**.
+Esta pagina resume la migracion a **Hibernate/JPA**. Es material relevante para **TP2**, pero **fuera del foco de TP1** salvo que el usuario pida explicitamente preparar esa migracion.
+
+Nota: las clases TP2 traen ejemplos con versiones y propiedades antiguas. No tomar esas versiones como canon; usar el checkout/enunciado vigente y conservar solo el criterio arquitectonico.
 
 ## ORM, JPA e Hibernate
 
@@ -17,6 +19,15 @@ Esta pagina resume la **unidad 9**. Es material relevante para TPE2, pero **fuer
 - **Hibernate** es un proveedor que implementa JPA.
 - La ganancia principal es simplicidad y velocidad de desarrollo.
 - El costo principal es perder parte del control fino sobre queries, timings y performance.
+
+## Migracion TP2 desde JDBC
+
+- La migracion no es "agregar Hibernate encima": cambia el contrato de persistencia de SQL explicito hacia entidades JPA managed por `EntityManager`.
+- `spring-orm` conecta Spring con JPA y el transaction manager pasa a ser `JpaTransactionManager`.
+- `LocalContainerEntityManagerFactoryBean` declara paquetes de entidades, `DataSource`, vendor adapter y propiedades del proveedor.
+- Si el proyecto ya tiene schema y datos, revisar con cuidado cualquier autogeneracion/actualizacion de schema antes de usarla en una base real.
+- Los DAOs JPA usan `@PersistenceContext` y `EntityManager`; no exponer `EntityManager` fuera de persistence.
+- Si conviven DAO JDBC y DAO Hibernate para el mismo contrato, evitar que Spring registre dos candidatos para una misma interfaz.
 
 ## Impedancia objeto-relacional
 
@@ -53,6 +64,9 @@ Esta pagina resume la **unidad 9**. Es material relevante para TPE2, pero **fuer
 - `orphanRemoval` elimina hijos que dejan de estar asociados al padre.
 - `FetchType.EAGER` trae relaciones inmediatamente y puede disparar sobrecarga.
 - `FetchType.LAZY` difiere la carga hasta acceder al atributo.
+- `optional = false/true` documenta si una relacion es requerida o nullable.
+- `EnumType.STRING` favorece legibilidad, pero exige cuidar que los nombres entren en el ancho de columna.
+- Cada cambio de mapping debe auditar el SQL generado; el hecho de que el caso funcione localmente no prueba que escale.
 
 ## Contexto de persistencia
 
@@ -61,6 +75,8 @@ Esta pagina resume la **unidad 9**. Es material relevante para TPE2, pero **fuer
 - Esa comodidad introduce menos control explicito sobre cuando salen queries.
 - Si una entidad sale de ese contexto y despues se reutiliza en otra transaccion, ya no esta automaticamente asociada.
 - Ahi aparecen problemas tipicos como lazy loading fuera de sesion.
+- El dirty checking puede persistir cambios sin una llamada explicita de update. Eso es potente, pero acopla el comportamiento al contexto JPA.
+- Operaciones simples sobre colecciones pueden generar deletes/inserts en tablas de relacion. Revisar logs SQL antes de asumir costo bajo.
 
 ## Paginacion y sesiones
 
@@ -82,6 +98,7 @@ Esta pagina resume la **unidad 9**. Es material relevante para TPE2, pero **fuer
 ## Ver tambien
 
 - [[tp1-vs-tpe2-final]]
+- [[resumen-clases-paw-2026]]
 - [[persistencia-jdbc]]
 - [[transactional]]
 - [[resumen-apuntes]]
