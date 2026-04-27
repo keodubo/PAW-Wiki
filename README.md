@@ -60,7 +60,8 @@ Este repositorio está diseñado para ser "Nativo para IA". Si eres un asistente
 - Busca conceptos específicos (ej: `spring-security`, `jdbc-patterns`) en la carpeta `docs/wiki/`.
 - Sigue los enlaces internos para navegar entre temas relacionados.
 - Esta pensado para usar desde Obsidian.
-![alt text](image-1.png)
+
+![Vista del grafo del wiki en Obsidian](./obsidian-graph-view.png)
 
 ### Para Colaboradores
 1. Agrega nuevas fuentes a `docs/raw/`.

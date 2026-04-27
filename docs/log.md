@@ -4,6 +4,12 @@ Registro cronologico de actividad del wiki.
 
 ---
 
+## [2026-04-27] docs | imagen del grafo de Obsidian
+
+- Reemplazada la captura `image-1.png` por `obsidian-graph-view.png` en la raiz del wiki.
+- Actualizado `README.md` para mostrar la vista del grafo de Obsidian con un nombre de archivo descriptivo.
+- Agregada la regla `docs/private/` a `.gitignore` para mantener el second brain privado fuera del repo publico.
+
 ## [2026-04-24] move | correcciones sprint 2 sin ingesta
 
 - Movido `docs/raw/2026-04-24_correcciones-sprint-2_v1.md` a `docs/wiki/2026-04-24_correcciones-sprint-2_v1.md` para que funcione como tracker operativo editable

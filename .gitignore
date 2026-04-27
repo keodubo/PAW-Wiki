@@ -17,6 +17,9 @@ docs/log.md.tmp
 # Superpowers local plans
 docs/superpowers/plans/
 
+# Private local second brain
+docs/private/
+
 # Backup files
 *.bak
 *~
