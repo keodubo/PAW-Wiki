@@ -12,6 +12,19 @@ Este repo no necesita servidor, base de datos ni build. Funciona como una wiki M
 
 ### 1. Clonar
 
+Uso recomendado dentro de una app PAW:
+
+```bash
+cd /ruta/a/tu-repo-paw
+printf "\n# Local PAW wiki, not part of the delivered app\n/PAW-Wiki/\n" >> .gitignore
+git clone https://github.com/keodubo/PAW-Wiki.git PAW-Wiki
+cd PAW-Wiki
+```
+
+Asi la wiki queda al lado del codigo, pero el repo principal que entregas no sube documentos auxiliares ni el historial del wiki.
+
+Si queres usarlo fuera de la app:
+
 ```bash
 git clone https://github.com/keodubo/PAW-Wiki.git
 cd PAW-Wiki
@@ -85,6 +98,7 @@ git ls-files docs/private
 Mas detalle:
 
 - [Setup local](docs/examples/setup-local.md)
+- [Wiki dentro del repo PAW](docs/examples/wiki-dentro-repo-paw.md)
 - [Instalacion de skills](docs/examples/instalar-skills.md)
 - [Uso con agentes y skills](docs/examples/uso-con-agente.md)
 - [Checklist de publicacion](docs/examples/checklist-publicacion.md)
@@ -164,6 +178,7 @@ Este repositorio está diseñado para ser "Nativo para IA". Si eres un asistente
 Ejemplos listos para usar:
 
 - [Setup local](docs/examples/setup-local.md)
+- [Wiki dentro del repo PAW](docs/examples/wiki-dentro-repo-paw.md)
 - [Ingesta publica](docs/examples/ingesta-publica.md)
 - [Consulta a la wiki](docs/examples/consulta-wiki.md)
 - [Uso con agentes](docs/examples/uso-con-agente.md)

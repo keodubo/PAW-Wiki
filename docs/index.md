@@ -14,6 +14,7 @@ Estos archivos no son paginas wiki canonicas; son guias de uso para humanos y ag
 |--------|-----|
 | [examples/README.md](examples/README.md) | Indice de ejemplos de uso de la wiki |
 | [examples/setup-local.md](examples/setup-local.md) | Setup desde cero: clonar, abrir en Obsidian y crear espacio privado |
+| [examples/wiki-dentro-repo-paw.md](examples/wiki-dentro-repo-paw.md) | Flujo para clonar o forkear PAW-Wiki dentro del repo PAW sin subirlo a la entrega |
 | [examples/instalar-skills.md](examples/instalar-skills.md) | Instalacion opcional de skills en Codex, Claude u otros agentes |
 | [examples/ingesta-publica.md](examples/ingesta-publica.md) | Flujo para convertir una fuente publica en paginas wiki |
 | [examples/consulta-wiki.md](examples/consulta-wiki.md) | Flujo para responder preguntas usando el indice y paginas canonicas |

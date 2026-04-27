@@ -7,6 +7,7 @@ Esta carpeta contiene ejemplos copy-paste para usar, mantener y extender la wiki
 | Archivo | Para que sirve |
 | --- | --- |
 | `setup-local.md` | Clonar, abrir en Obsidian y dejar listo el espacio privado. |
+| `wiki-dentro-repo-paw.md` | Clonar o forkear la wiki dentro del repo PAW sin subirla al repo de entrega. |
 | `instalar-skills.md` | Instalar las skills opcionales en Codex, Claude u otros agentes. |
 | `ingesta-publica.md` | Convertir una fuente compartible en paginas de `docs/wiki/`. |
 | `consulta-wiki.md` | Hacer preguntas usando el indice y las paginas canonicas. |
@@ -34,8 +35,9 @@ find docs -path docs/private -prune -o -type f ! -name '.DS_Store' -print | sort
 ## Camino recomendado para una persona nueva
 
 1. Leer `setup-local.md`.
-2. Abrir `../index.md`.
-3. Revisar `consulta-wiki.md`.
-4. Si va a usar un agente, leer `uso-con-agente.md`.
-5. Si va a agregar material propio, leer `second-brain-privado.md`.
-6. Antes de commitear, correr `checklist-publicacion.md`.
+2. Si trabaja en una app PAW, leer `wiki-dentro-repo-paw.md`.
+3. Abrir `../index.md`.
+4. Revisar `consulta-wiki.md`.
+5. Si va a usar un agente, leer `uso-con-agente.md`.
+6. Si va a agregar material propio, leer `second-brain-privado.md`.
+7. Antes de commitear, correr `checklist-publicacion.md`.

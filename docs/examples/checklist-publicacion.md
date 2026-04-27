@@ -30,6 +30,24 @@ rg -i "token|secret|password|localhost|credencial" README.md docs skills -g '!do
 
 Si aparece algo sensible, moverlo a `docs/private/` o reescribirlo como ejemplo generico.
 
+## 2.1 Si PAW-Wiki esta dentro del repo de la app
+
+Desde la raiz de la app PAW:
+
+```bash
+git status --short --ignored=matching
+git ls-files PAW-Wiki
+```
+
+`git ls-files PAW-Wiki` no deberia imprimir nada. Si imprime archivos, estas por subir la wiki al repo entregable.
+
+La raiz de la app deberia tener una regla como esta en `.gitignore`:
+
+```gitignore
+# Local PAW wiki, not part of the delivered app
+/PAW-Wiki/
+```
+
 ## 3. Links Markdown
 
 ```bash

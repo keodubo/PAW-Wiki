@@ -141,14 +141,17 @@ No recomendar subskills directas como primer paso salvo que el usuario ya haya a
 Cuando el usuario pregunte como instalar, clonar, abrir o poner en funcionamiento la wiki:
 
 1. Explicar que no hay servidor, build ni base de datos.
-2. Indicar `git clone`, `cd PAW-Wiki` y apertura en Obsidian.
-3. Si quiere usar agentes, linkear la instalacion opcional de skills.
-4. Si quiere agregar material propio, crear `docs/private/<proyecto>/`.
-5. Si va a publicar cambios, usar el checklist de publicacion.
+2. Recomendar clonarla o forkearla dentro del repo de la app PAW como carpeta `PAW-Wiki/`.
+3. Indicar que el repo padre de la app debe ignorar `/PAW-Wiki/` en `.gitignore` o `.git/info/exclude` para no subir docs auxiliares al `main` entregable.
+4. Indicar `git clone`, `cd PAW-Wiki` y apertura en Obsidian.
+5. Si quiere usar agentes, linkear la instalacion opcional de skills.
+6. Si quiere agregar material propio, crear `docs/private/<proyecto>/`.
+7. Si va a publicar cambios, usar el checklist de publicacion.
 
 Ejemplos completos:
 
 - [examples/setup-local.md](examples/setup-local.md)
+- [examples/wiki-dentro-repo-paw.md](examples/wiki-dentro-repo-paw.md)
 - [examples/instalar-skills.md](examples/instalar-skills.md)
 - [examples/checklist-publicacion.md](examples/checklist-publicacion.md)
 - [examples/troubleshooting.md](examples/troubleshooting.md)

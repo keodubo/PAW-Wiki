@@ -82,6 +82,35 @@ Esta mal: se esta trackeando contenido privado. Revisar con:
 git ls-files docs/private
 ```
 
+## PAW-Wiki aparece como untracked en el repo de la app
+
+Si clonaste PAW-Wiki dentro de tu repo PAW y ves algo asi desde la raiz de la app:
+
+```text
+?? PAW-Wiki/
+```
+
+Agrega la regla al `.gitignore` del repo de la app:
+
+```bash
+printf "\n# Local PAW wiki, not part of the delivered app\n/PAW-Wiki/\n" >> .gitignore
+```
+
+Verifica:
+
+```bash
+git status --short --ignored=matching
+git ls-files PAW-Wiki
+```
+
+`PAW-Wiki/` deberia aparecer como `!! PAW-Wiki/`, y `git ls-files PAW-Wiki` no deberia imprimir nada.
+
+Si no queres tocar el `.gitignore` del repo de la app, usa una regla local:
+
+```bash
+printf "\n/PAW-Wiki/\n" >> .git/info/exclude
+```
+
 ## Quiero actualizar docs/tree.txt
 
 ```bash

@@ -4,6 +4,12 @@ Registro cronologico de actividad del wiki.
 
 ---
 
+## [2026-04-27] docs | wiki dentro del repo PAW
+
+- Documentado el flujo recomendado para clonar o forkear PAW-Wiki dentro del repo de la app PAW.
+- Aclarado que el repo entregable debe ignorar `/PAW-Wiki/` en `.gitignore` o `.git/info/exclude`.
+- Agregado `docs/examples/wiki-dentro-repo-paw.md` y enlaces desde README, index, setup, checklist y troubleshooting.
+
 ## [2026-04-27] docs | uso de skills y orquestador
 
 - Documentado que `$paw-feature-master` es la skill orquestadora y debe usarse como entrada para features, bugs, auditorias y planes de una app PAW.

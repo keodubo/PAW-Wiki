@@ -16,6 +16,19 @@ Recomendado:
 
 ## 1. Clonar el repo
 
+Recomendado si estas trabajando en una app PAW:
+
+```bash
+cd /ruta/a/mi-repo-paw
+printf "\n# Local PAW wiki, not part of the delivered app\n/PAW-Wiki/\n" >> .gitignore
+git clone https://github.com/keodubo/PAW-Wiki.git PAW-Wiki
+cd PAW-Wiki
+```
+
+Esto deja la wiki dentro del repo de la app, pero ignorada por el Git del proyecto principal que se entrega.
+
+Si preferis tenerla en otra carpeta:
+
 ```bash
 git clone https://github.com/keodubo/PAW-Wiki.git
 cd PAW-Wiki
@@ -40,6 +53,15 @@ Si Git dice que no hay upstream:
 ```bash
 git branch --set-upstream-to=origin/main main
 ```
+
+Si clonaste la wiki dentro de tu app PAW, tambien verificar desde la raiz de la app:
+
+```bash
+git status --short --ignored=matching
+git ls-files PAW-Wiki
+```
+
+`git ls-files PAW-Wiki` no deberia imprimir nada.
 
 ## 3. Abrir en Obsidian
 
