@@ -6,6 +6,79 @@ Este repositorio sirve como un centro centralizado para conceptos técnicos, pat
 
 ---
 
+## Quickstart
+
+Este repo no necesita servidor, base de datos ni build. Funciona como una wiki Markdown que podes leer en GitHub, abrir en Obsidian o usar como contexto para un agente.
+
+### 1. Clonar
+
+```bash
+git clone https://github.com/keodubo/PAW-Wiki.git
+cd PAW-Wiki
+```
+
+### 2. Abrir la wiki
+
+Opcion simple:
+
+```bash
+open README.md
+```
+
+Opcion recomendada:
+
+1. Instalar Obsidian.
+2. Elegir `Open folder as vault`.
+3. Seleccionar la carpeta `PAW-Wiki`.
+4. Abrir `docs/index.md`.
+5. Usar la vista de grafo para navegar los links `[[...]]`.
+
+### 3. Usar la wiki
+
+1. Leer [docs/index.md](docs/index.md).
+2. Abrir una pagina de `docs/wiki/`.
+3. Seguir los links internos.
+4. Si vas a agregar material, usar [docs/examples/ingesta-publica.md](docs/examples/ingesta-publica.md).
+
+### 4. Configurar material privado
+
+```bash
+mkdir -p docs/private/mi-webapp/raw
+mkdir -p docs/private/mi-webapp/wiki
+mkdir -p docs/private/mi-webapp/plans
+touch docs/private/mi-webapp/README.md
+touch docs/private/mi-webapp/wiki/nexo-wiki-publica.md
+```
+
+`docs/private/` esta ignorado por Git. Todo lo personal, especifico de tu webapp o sensible debe ir ahi.
+
+### 5. Instalar skills opcionales
+
+Las skills son opcionales. Solo sirven si queres que Codex, Claude u otro agente use reglas especializadas de PAW.
+
+```bash
+mkdir -p "${CODEX_HOME:-$HOME/.codex}/skills"
+cp -R skills/paw-* "${CODEX_HOME:-$HOME/.codex}/skills/"
+```
+
+Despues abri una conversacion nueva del agente para que detecte las skills.
+
+### 6. Verificar antes de commitear
+
+```bash
+git status --short --ignored=matching
+git ls-files docs/private
+```
+
+`git ls-files docs/private` no deberia imprimir nada.
+
+Mas detalle:
+
+- [Setup local](docs/examples/setup-local.md)
+- [Instalacion de skills](docs/examples/instalar-skills.md)
+- [Checklist de publicacion](docs/examples/checklist-publicacion.md)
+- [Troubleshooting](docs/examples/troubleshooting.md)
+
 ## Arquitectura del Repositorio
 
 El proyecto sigue un esquema de conocimiento compuesto definido en [CLAUDE.md](docs/CLAUDE.md).
@@ -63,8 +136,8 @@ Este repositorio está diseñado para ser "Nativo para IA". Si eres un asistente
 ## Cómo Usar
 
 ### Para Humanos
-- Comienza explorando el [Índice Maestro](docs/index.md).
-- Busca conceptos específicos (ej: `spring-security`, `jdbc-patterns`) en la carpeta `docs/wiki/`.
+- Comenza explorando el [Indice Maestro](docs/index.md).
+- Busca conceptos especificos (ej: `spring-security`, `persistencia-jdbc`) en la carpeta `docs/wiki/`.
 - Sigue los enlaces internos para navegar entre temas relacionados.
 - Esta pensado para usar desde Obsidian.
 - Usa [docs/examples/README.md](docs/examples/README.md) cuando necesites prompts o flujos de ejemplo.
@@ -79,10 +152,13 @@ Este repositorio está diseñado para ser "Nativo para IA". Si eres un asistente
 
 Ejemplos listos para usar:
 
+- [Setup local](docs/examples/setup-local.md)
 - [Ingesta publica](docs/examples/ingesta-publica.md)
 - [Consulta a la wiki](docs/examples/consulta-wiki.md)
 - [Uso con agentes](docs/examples/uso-con-agente.md)
 - [Second brain privado](docs/examples/second-brain-privado.md)
+- [Checklist de publicacion](docs/examples/checklist-publicacion.md)
+- [Troubleshooting](docs/examples/troubleshooting.md)
 
 ### Para Instalar las Skills en Codex, Claude u otros asistentes
 
@@ -103,7 +179,7 @@ cp -R skills/paw-* "$HOME/.claude/skills/"
 Después abrí una conversación nueva y usa:
 
 ```text
-Usa $paw-feature-master para planificar esta feature de Forkd según la wiki y las capas.
+Usa $paw-feature-master para planificar esta feature de mi app PAW según la wiki y las capas.
 ```
 
 Más detalles para otros asistentes compatibles en [skills/README.md](skills/README.md).

@@ -13,10 +13,14 @@ Estos archivos no son paginas wiki canonicas; son guias de uso para humanos y ag
 | Archivo | Uso |
 |--------|-----|
 | [examples/README.md](examples/README.md) | Indice de ejemplos de uso de la wiki |
+| [examples/setup-local.md](examples/setup-local.md) | Setup desde cero: clonar, abrir en Obsidian y crear espacio privado |
+| [examples/instalar-skills.md](examples/instalar-skills.md) | Instalacion opcional de skills en Codex, Claude u otros agentes |
 | [examples/ingesta-publica.md](examples/ingesta-publica.md) | Flujo para convertir una fuente publica en paginas wiki |
 | [examples/consulta-wiki.md](examples/consulta-wiki.md) | Flujo para responder preguntas usando el indice y paginas canonicas |
 | [examples/uso-con-agente.md](examples/uso-con-agente.md) | Prompt base para Codex, Claude u otros agentes |
 | [examples/second-brain-privado.md](examples/second-brain-privado.md) | Flujo para mantener material personal en `docs/private/` |
+| [examples/checklist-publicacion.md](examples/checklist-publicacion.md) | Checklist antes de commitear o pushear |
+| [examples/troubleshooting.md](examples/troubleshooting.md) | Solucion de problemas comunes de Git, Obsidian, imagenes y skills |
 
 ## Fuentes
 

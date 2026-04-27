@@ -1,6 +1,8 @@
-# PAW Forkd Skills
+# PAW Skills
 
-Esta carpeta distribuye skills para trabajar con el proyecto PAW/Forkd usando la wiki como fuente de conocimiento.
+Esta carpeta distribuye skills para trabajar con una app PAW usando la wiki como fuente de conocimiento.
+
+Las skills nacieron del proyecto Forkd, pero se pueden adaptar a cualquier webapp de la materia si le indicas al agente donde esta tu checkout y que dominio estas implementando.
 
 ## Contenido
 
@@ -47,7 +49,7 @@ cp -R skills/paw-* "$HOME/.claude/skills/"
 Despues abri una conversacion nueva de Claude Code y pedi, por ejemplo:
 
 ```text
-Usa $paw-feature-master para planificar esta feature de Forkd segun la wiki y las capas.
+Usa $paw-feature-master para planificar esta feature de mi app PAW segun la wiki y las capas.
 ```
 
 ### Otros asistentes compatibles
@@ -79,7 +81,7 @@ Lee skills/paw-feature-master/SKILL.md y segui sus instrucciones. Cuando una tar
 Para una feature completa:
 
 ```text
-Usa $paw-feature-master para planificar esta feature de Forkd segun la wiki y las capas. Primero revisa el checkout actual y arma un plan antes de editar.
+Usa $paw-feature-master para planificar esta feature de mi app PAW segun la wiki y las capas. Primero revisa el checkout actual y arma un plan antes de editar.
 ```
 
 Para una capa puntual:
@@ -100,7 +102,7 @@ Usa $paw-testing-layer para definir los tests correctos segun la wiki antes de i
 
 ## Configuracion de ruta del proyecto
 
-Las skills intentan usar el directorio actual como checkout de la app PAW/Forkd. Si trabajas desde otro lugar, exporta:
+Las skills intentan usar el directorio actual como checkout de la app PAW. Si trabajas desde otro lugar, exporta:
 
 ```bash
 export PAW_APP_REPO="/ruta/a/tu-checkout-paw"
@@ -127,10 +129,13 @@ Reglas: lee README.md, docs/CLAUDE.md, docs/index.md y el ejemplo docs/examples/
 
 Antes de usar una skill, revisa los ejemplos publicos del wiki:
 
+- `docs/examples/setup-local.md`: como clonar y abrir la wiki.
+- `docs/examples/instalar-skills.md`: instalacion paso a paso de skills.
 - `docs/examples/uso-con-agente.md`: prompt base para agentes.
 - `docs/examples/consulta-wiki.md`: como responder usando paginas wiki.
 - `docs/examples/ingesta-publica.md`: como convertir una fuente en conocimiento publico.
 - `docs/examples/second-brain-privado.md`: como mantener material personal fuera de Git.
+- `docs/examples/troubleshooting.md`: problemas comunes de Git, Obsidian y deteccion de skills.
 
 ## Dependencia recomendada
 

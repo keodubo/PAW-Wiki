@@ -132,7 +132,24 @@ Cuando un agente use este repositorio, debe leer en este orden:
 
 Ejemplo completo: ver [examples/uso-con-agente.md](examples/uso-con-agente.md).
 
-### 5. Usar material privado
+### 5. Onboarding y setup
+
+Cuando el usuario pregunte como instalar, clonar, abrir o poner en funcionamiento la wiki:
+
+1. Explicar que no hay servidor, build ni base de datos.
+2. Indicar `git clone`, `cd PAW-Wiki` y apertura en Obsidian.
+3. Si quiere usar agentes, linkear la instalacion opcional de skills.
+4. Si quiere agregar material propio, crear `docs/private/<proyecto>/`.
+5. Si va a publicar cambios, usar el checklist de publicacion.
+
+Ejemplos completos:
+
+- [examples/setup-local.md](examples/setup-local.md)
+- [examples/instalar-skills.md](examples/instalar-skills.md)
+- [examples/checklist-publicacion.md](examples/checklist-publicacion.md)
+- [examples/troubleshooting.md](examples/troubleshooting.md)
+
+### 6. Usar material privado
 
 Si el usuario trae fuentes personales, specs de su webapp, capturas, auditorias locales o planes que no deben publicarse:
 

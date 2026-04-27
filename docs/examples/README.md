@@ -6,10 +6,14 @@ Esta carpeta contiene ejemplos copy-paste para usar, mantener y extender la wiki
 
 | Archivo | Para que sirve |
 | --- | --- |
+| `setup-local.md` | Clonar, abrir en Obsidian y dejar listo el espacio privado. |
+| `instalar-skills.md` | Instalar las skills opcionales en Codex, Claude u otros agentes. |
 | `ingesta-publica.md` | Convertir una fuente compartible en paginas de `docs/wiki/`. |
 | `consulta-wiki.md` | Hacer preguntas usando el indice y las paginas canonicas. |
 | `uso-con-agente.md` | Darle a Codex, Claude u otro agente un prompt de trabajo claro. |
 | `second-brain-privado.md` | Separar material personal en `docs/private/` sin publicarlo. |
+| `checklist-publicacion.md` | Verificar que el repo este listo antes de commitear o pushear. |
+| `troubleshooting.md` | Resolver problemas comunes de Git, Obsidian, imagenes y privacidad. |
 
 ## Regla general
 
@@ -26,3 +30,12 @@ find docs -path docs/private -prune -o -type f ! -name '.DS_Store' -print | sort
 ```
 
 `git ls-files docs/private` no deberia imprimir nada.
+
+## Camino recomendado para una persona nueva
+
+1. Leer `setup-local.md`.
+2. Abrir `../index.md`.
+3. Revisar `consulta-wiki.md`.
+4. Si va a usar un agente, leer `uso-con-agente.md`.
+5. Si va a agregar material propio, leer `second-brain-privado.md`.
+6. Antes de commitear, correr `checklist-publicacion.md`.

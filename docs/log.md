@@ -4,6 +4,12 @@ Registro cronologico de actividad del wiki.
 
 ---
 
+## [2026-04-27] docs | onboarding a prueba de errores
+
+- Ampliado `README.md` con quickstart de cero: clonar, abrir en Obsidian, crear `docs/private/`, instalar skills opcionales y verificar antes de commitear.
+- Agregados examples de setup local, instalacion de skills, checklist de publicacion y troubleshooting.
+- Actualizados `docs/CLAUDE.md`, `docs/index.md`, `skills/README.md` y `docs/tree.txt` para enlazar los nuevos flujos de onboarding.
+
 ## [2026-04-27] docs | README, CLAUDE y examples actualizados
 
 - Actualizados `README.md`, `docs/CLAUDE.md` y `skills/README.md` para reflejar la estructura actual del wiki.
