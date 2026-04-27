@@ -132,6 +132,10 @@ Cuando un agente use este repositorio, debe leer en este orden:
 
 Ejemplo completo: ver [examples/uso-con-agente.md](examples/uso-con-agente.md).
 
+Para trabajo sobre una app PAW con skills instaladas, indicar que el agente empiece por `$paw-feature-master`. Esa skill es la orquestadora: lee la app, lee PAW-Wiki, decide que capas estan afectadas y recien ahi enruta a subskills como `$paw-webapp-layer`, `$paw-services-layer`, `$paw-persistence-layer` o `$paw-testing-layer`.
+
+No recomendar subskills directas como primer paso salvo que el usuario ya haya acotado la tarea a una unica capa.
+
 ### 5. Onboarding y setup
 
 Cuando el usuario pregunte como instalar, clonar, abrir o poner en funcionamiento la wiki:

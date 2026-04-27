@@ -63,6 +63,16 @@ cp -R skills/paw-* "${CODEX_HOME:-$HOME/.codex}/skills/"
 
 Despues abri una conversacion nueva del agente para que detecte las skills.
 
+Para usarlas, empezá por la orquestadora:
+
+```text
+Usa $paw-feature-master para trabajar esta tarea de mi app PAW.
+Primero lee el checkout, CLAUDE.md, PAW-Wiki/docs/CLAUDE.md y PAW-Wiki/docs/index.md.
+Despues decidí que subskills de capa hacen falta y usalas solo si corresponden.
+```
+
+`$paw-feature-master` puede enrutar a subskills como `$paw-webapp-layer`, `$paw-services-layer`, `$paw-persistence-layer` o `$paw-testing-layer` segun la tarea. Si no sabes que capa toca, no elijas una subskill directa: usa `$paw-feature-master`.
+
 ### 6. Verificar antes de commitear
 
 ```bash
@@ -76,6 +86,7 @@ Mas detalle:
 
 - [Setup local](docs/examples/setup-local.md)
 - [Instalacion de skills](docs/examples/instalar-skills.md)
+- [Uso con agentes y skills](docs/examples/uso-con-agente.md)
 - [Checklist de publicacion](docs/examples/checklist-publicacion.md)
 - [Troubleshooting](docs/examples/troubleshooting.md)
 

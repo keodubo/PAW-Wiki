@@ -60,3 +60,70 @@ git diff --check
 git status --short --ignored=matching
 git ls-files docs/private
 ```
+
+## Prompt base para trabajar en una app PAW con skills
+
+Usa este prompt cuando la tarea toca codigo, tests, auditoria o planificacion de una app PAW:
+
+```text
+Usa $paw-feature-master para trabajar esta tarea de mi app PAW.
+
+Rutas:
+- App PAW: /ruta/a/mi-app-paw
+- Wiki PAW: /ruta/a/PAW-Wiki
+
+Primero:
+1. Resolve el checkout de la app.
+2. Lee CLAUDE.md de la app.
+3. Lee PAW-Wiki/docs/CLAUDE.md.
+4. Lee PAW-Wiki/docs/index.md.
+5. Revisa el codigo y tests afectados.
+
+Despues:
+- identifica si la tarea toca models, persistence contracts, persistence, service contracts, services, webapp o tests;
+- invoca solo las subskills necesarias;
+- si toca mas de una capa, trabaja en orden de dependencias;
+- mostra un plan corto antes de editar;
+- verifica antes de cerrar.
+```
+
+## Como `$paw-feature-master` enruta subskills
+
+`$paw-feature-master` es la entrada principal. No implementa todo a ciegas: decide que subskill conviene usar segun la capa afectada.
+
+| Capa o problema | Subskill que puede invocar |
+| --- | --- |
+| Domain models, enums, value objects | `$paw-models-layer` |
+| DAO interfaces y contratos de persistencia | `$paw-persistence-contracts-layer` |
+| SQL, schema, JDBC DAOs, HSQLDB tests | `$paw-persistence-layer` |
+| Service interfaces, command DTOs, domain exceptions | `$paw-service-contracts-layer` |
+| Business logic, transactions, mail, schedulers | `$paw-services-layer` |
+| Controllers, forms, validators, JSP/JSTL, i18n, Spring Security, CSS | `$paw-webapp-layer` |
+| Tests, fixtures, Maven gates, fallas de test | `$paw-testing-layer` |
+
+Si la tarea es una feature completa, un bug que cruza capas o una auditoria, no empieces por una subskill: empezá por `$paw-feature-master`.
+
+## Ejemplos de prompts
+
+Feature mixta:
+
+```text
+Usa $paw-feature-master para implementar esta feature.
+Primero lee el checkout, PAW-Wiki y tests afectados.
+Decidi que subskills hacen falta y mostrame un plan por capas antes de editar.
+```
+
+Auditoria:
+
+```text
+Usa $paw-feature-master para auditar este flujo contra PAW-Wiki.
+No edites todavia. Identifica paginas wiki relevantes, codigo afectado, riesgos y tests que deberian cubrirlo.
+```
+
+Bug:
+
+```text
+Usa $paw-feature-master para investigar este bug.
+Si hay comportamiento inesperado, aplica systematic debugging.
+Despues decidi que subskills de capa hacen falta para corregirlo.
+```

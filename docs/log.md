@@ -4,6 +4,12 @@ Registro cronologico de actividad del wiki.
 
 ---
 
+## [2026-04-27] docs | uso de skills y orquestador
+
+- Documentado que `$paw-feature-master` es la skill orquestadora y debe usarse como entrada para features, bugs, auditorias y planes de una app PAW.
+- Explicado el ruteo desde `$paw-feature-master` hacia subskills de capa: models, persistence, services, webapp y testing.
+- Actualizados `skills/README.md`, `docs/examples/instalar-skills.md`, `docs/examples/uso-con-agente.md`, `README.md` y `docs/CLAUDE.md` con prompts de uso.
+
 ## [2026-04-27] docs | onboarding a prueba de errores
 
 - Ampliado `README.md` con quickstart de cero: clonar, abrir en Obsidian, crear `docs/private/`, instalar skills opcionales y verificar antes de commitear.

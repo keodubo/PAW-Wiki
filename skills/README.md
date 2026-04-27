@@ -4,11 +4,37 @@ Esta carpeta distribuye skills para trabajar con una app PAW usando la wiki como
 
 Las skills nacieron del proyecto Forkd, pero se pueden adaptar a cualquier webapp de la materia si le indicas al agente donde esta tu checkout y que dominio estas implementando.
 
+## Regla principal de uso
+
+Usa siempre `$paw-feature-master` como entrada para trabajo real sobre una app PAW.
+
+`$paw-feature-master` es la skill orquestadora. Su trabajo es:
+
+1. Ubicar el checkout de la app PAW.
+2. Leer `CLAUDE.md` de la app.
+3. Leer `PAW-Wiki/docs/CLAUDE.md` y `PAW-Wiki/docs/index.md`.
+4. Revisar el codigo y tests afectados antes de confiar en planes viejos.
+5. Decidir que subskills de capa hacen falta.
+6. Activar solo las subskills necesarias.
+7. Ordenar el trabajo por dependencias de capa.
+8. Cerrar con verificaciones.
+
+No empieces con `$paw-webapp-layer`, `$paw-services-layer` o `$paw-persistence-layer` salvo que la tarea sea estrictamente de una sola capa y ya tengas claro el scope. Para features, bugs, auditorias o planes mixtos, el prompt inicial debe nombrar `$paw-feature-master`.
+
+Prompt base:
+
+```text
+Usa $paw-feature-master para trabajar esta tarea de mi app PAW.
+Primero ubica el checkout, lee CLAUDE.md, PAW-Wiki/docs/CLAUDE.md y PAW-Wiki/docs/index.md.
+Despues decide que subskills de capa hacen falta y usalas solo cuando correspondan.
+Mostrame un plan corto antes de editar si la tarea toca mas de una capa.
+```
+
 ## Contenido
 
 | Skill | Uso principal |
 | --- | --- |
-| `paw-feature-master` | Orquestar features, auditorias y planes multi-capa con PAW-Wiki y Superpowers. |
+| `paw-feature-master` | Entrada principal. Orquesta features, bugs, auditorias y planes multi-capa con PAW-Wiki, Superpowers y subskills. |
 | `paw-models-layer` | Cambios en `models`: entidades, enums, value objects, paginacion y filtros. |
 | `paw-persistence-contracts-layer` | Contratos DAO en `persistence-contracts`. |
 | `paw-persistence-layer` | SQL, schema, JDBC DAOs, migraciones y tests HSQLDB. |
@@ -78,13 +104,25 @@ Lee skills/paw-feature-master/SKILL.md y segui sus instrucciones. Cuando una tar
 
 ## Uso recomendado
 
-Para una feature completa:
+Para una feature completa, bug mixto, auditoria o plan:
 
 ```text
 Usa $paw-feature-master para planificar esta feature de mi app PAW segun la wiki y las capas. Primero revisa el checkout actual y arma un plan antes de editar.
 ```
 
-Para una capa puntual:
+La skill orquestadora decide si necesita subskills. Ejemplos de ruteo:
+
+| Si la tarea toca... | `$paw-feature-master` puede enrutar a... |
+| --- | --- |
+| Entidades, enums, value objects, paginacion | `$paw-models-layer` |
+| Interfaces DAO | `$paw-persistence-contracts-layer` |
+| SQL, schemas, DAOs JDBC, tests HSQLDB | `$paw-persistence-layer` |
+| Interfaces de servicios, DTOs, excepciones | `$paw-service-contracts-layer` |
+| Logica de negocio, transacciones, mails, schedulers | `$paw-services-layer` |
+| Controllers, forms, validators, JSP, i18n, seguridad web, CSS | `$paw-webapp-layer` |
+| Tests, fixtures, fallas Maven, estrategia de verificacion | `$paw-testing-layer` |
+
+Para una capa puntual y acotada, podes nombrar la subskill directamente:
 
 ```text
 Usa $paw-persistence-layer para agregar esta tabla, DAO y tests HSQLDB.
@@ -99,6 +137,23 @@ Para disenar o revisar tests:
 ```text
 Usa $paw-testing-layer para definir los tests correctos segun la wiki antes de implementar este cambio.
 ```
+
+Si no estas seguro de que capa toca, usa `$paw-feature-master`.
+
+## Relacion con Superpowers
+
+`$paw-feature-master` tambien decide cuando conviene aplicar flujos de Superpowers:
+
+| Situacion | Flujo recomendado |
+| --- | --- |
+| Idea nueva o comportamiento nuevo | `superpowers:brainstorming` antes de implementar |
+| Plan multi-paso | `superpowers:writing-plans` |
+| Ejecucion de checklist existente | `superpowers:executing-plans` |
+| Bug, test roto o comportamiento inesperado | `superpowers:systematic-debugging` |
+| Feature o bugfix con codigo | `superpowers:test-driven-development` |
+| Antes de declarar terminado | `superpowers:verification-before-completion` |
+
+Si tu entorno no tiene el plugin Superpowers, igual podes usar `$paw-feature-master`; ejecuta manualmente el equivalente: aclarar scope, planificar, implementar en slices chicos, testear y verificar antes de cerrar.
 
 ## Configuracion de ruta del proyecto
 
