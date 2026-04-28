@@ -3,7 +3,7 @@ titulo: Correcciones Sprint 2 - Plan secuencial
 tipo: sintesis
 fuentes: [CorreccionesSprint2.txt]
 creado: 2026-04-24
-actualizado: 2026-04-24
+actualizado: 2026-04-27
 ---
 
 # Correcciones Sprint 2 - Plan secuencial
@@ -65,7 +65,7 @@ mvn -pl webapp -am test
 - [ ] Cuando te registras, que diga cuáles son las condiciones del username.
 - [ ] Cuando creo el restaurant, en la imagen poner entre paréntesis que es opcional.
 - [ ] Arreglar título pestaña de reservas del lado del restaurant.
-- [ ] En vez de "verificado" en reviews, poner "Comió en este lugar" o texto equivalente.
+- [x] Decisión de producto: conservar "Reseña verificada" / "Verified review"; no reemplazar por "Comió en este lugar".
 
 **Archivos probables**
 
@@ -84,7 +84,7 @@ mvn -pl webapp -am test
 - [ ] Agregar ayuda debajo del username con la regla real de `RegisterForm`: 3 a 30 caracteres, minúsculas, números y guion bajo.
 - [ ] Cambiar el label/mensaje de imagen para que diga que es opcional, manteniendo el shared form de owner/admin.
 - [ ] Revisar todos los textos de reviews que todavía estén en inglés o suenen inconsistentes en castellano.
-- [ ] Reemplazar `Verificada` por `Comió en este lugar` o una variante corta y clara.
+- [x] Mantener el label de reseña verificada con traducción ES/EN; queda resuelto por decisión de producto.
 - [ ] Corregir el título literal de `profile.reservations.title` si aparece como key en la pestaña o en acciones owner.
 - [ ] Mantener simetría de keys entre `messages`, `messages_es` y `messages_en`.
 
@@ -382,7 +382,7 @@ mvn clean test
 - [ ] Los botones de qué hacer con la reserva están separados por una barra.
 - [ ] Que sea un 403 cuando quiero hacer un edit a un restaurant que no estimo. Ahora es 404.
 - [ ] Arreglar título pestaña de reservas del lado del restaurant.
-- [ ] En vez de verificado en las reviews poner "Comió en este lugar" o algo equivalente.
+- [x] Decisión final: mantener "Reseña verificada" / "Verified review" para las reviews vinculadas a reserva.
 - [ ] Estandarizar mails.
 - [ ] En reservas estaría bueno agregar quiénes fueron al restaurant. Poder ir tickeando las reservas que se concretaron.
 - [ ] En el perfil, cuando veo mis reservas, habría que filtrar entre futuras y las que ya pasaron.

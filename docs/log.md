@@ -4,6 +4,12 @@ Registro cronologico de actividad del wiki.
 
 ---
 
+## [2026-04-27] docs | decisión de copy en reseña verificada
+
+- Marcado como resuelto en `docs/wiki/2026-04-24_correcciones-sprint-2_v1.md` el item de reemplazar "verificado" en reviews.
+- Decisión de producto registrada: se conserva "Reseña verificada" / "Verified review" para reviews vinculadas a reserva, en lugar de "Comió en este lugar".
+- Actualizado `docs/index.md` para reflejar que el tracker también conserva decisiones de producto.
+
 ## [2026-04-27] docs | onboarding con actualizacion automatizable de wiki
 
 - Agregada `docs/examples/actualizar-wiki.md` para que un agente revise `origin/main`, compare `HEAD..origin/main` y haga `git pull --ff-only` solo si `PAW-Wiki` esta limpia.
