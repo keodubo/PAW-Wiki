@@ -4,6 +4,15 @@ Registro cronologico de actividad del wiki.
 
 ---
 
+## [2026-04-29] docs | tono público y guías actualizadas
+
+- Pulidos `README.md`, `docs/CLAUDE.md`, `docs/examples/README.md` y
+  `skills/README.md` para mejorar el tono público del repositorio y reducir
+  lenguaje coloquial.
+- Conservada la estructura stage-aware por `TP1`, `TP2` y `TP final`, con
+  `$paw-feature-master` como entrada recomendada para agentes.
+- Sin cambios en `docs/raw/`, `docs/wiki/` ni `docs/private/`.
+
 ## [2026-04-27] docs | decisión de copy en reseña verificada
 
 - Marcado como resuelto en `docs/wiki/2026-04-24_correcciones-sprint-2_v1.md` el item de reemplazar "verificado" en reviews.
