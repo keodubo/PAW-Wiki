@@ -1,4 +1,4 @@
 interface:
   display_name: "PAW Testing Layer"
-  short_description: "Guia tests PAW segun wiki"
-  default_prompt: "Use $paw-testing-layer to design or review PAW tests according to the wiki testing rules."
+  short_description: "Guia tests blackbox PAW"
+  default_prompt: "Use $paw-testing-layer to design, audit, or repair PAW tests according to the wiki blackbox testing rules."

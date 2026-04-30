@@ -1,6 +1,6 @@
 ---
 name: paw-testing-layer
-description: Use when creating, changing, auditing, or reviewing PAW Forkd tests, Maven verification gates, test fixtures, HSQLDB/JPA persistence tests, service tests, MVC/security/API tests, template/frontend tests, or test failures.
+description: Use when creating, changing, auditing, or repairing PAW Forkd blackbox tests, Maven verification gates, test fixtures, HSQLDB/JPA persistence tests, service tests, MVC/security/API tests, template/frontend tests, or test failures.
 ---
 
 # Paw Testing Layer
@@ -9,7 +9,7 @@ description: Use when creating, changing, auditing, or reviewing PAW Forkd tests
 
 Use this as the transversal testing skill for PAW/Forkd. It encodes the PAW-Wiki testing rules and the repo-specific Maven/test habits needed to avoid false confidence.
 
-Read `references/testing-rules.md` before writing or judging tests.
+Read `references/testing-rules.md` before writing, repairing, or judging tests.
 
 ## Test Selection
 
@@ -26,13 +26,16 @@ Choose the test type from the behavior under test:
 
 ## Core Rules
 
-- Prefer behavior and state assertions over Mockito interaction assertions.
-- Treat `verify()` / `never()` as a smell; use only when there is no cleaner observable state and explain why.
+- Tests are blackbox: assert externally observable behavior or final state, not internal calls.
+- One test covers one scenario and one action. If the name needs "and", split it.
+- Never use `Mockito.verify`, `never`, `verifyNoInteractions`, `spy`, or hand-rolled equivalents that count whether a dependency method was called.
+- Never test private methods, reflection paths, or `Class.forName` seams. Exercise private logic only through public behavior.
 - DAO tests use HSQLDB, shared schema bootstrap, SQL fixtures/direct setup, `@Rollback`, and DB state assertions.
 - Service tests mock DAOs but assert returned state, thrown exceptions, state transitions, or recorded side effects.
+- Do not test services that are pure pass-through wrappers; move/test real business behavior where it belongs.
 - MVC tests verify status, redirects, model/binding errors, security, and preserved GET state.
 - Do not use the object under test to set its own preconditions.
-- Cover happy path and unhappy/edge paths.
+- Cover happy, unhappy, and edge paths as separate tests.
 - A green build is not proof of wiki compliance; inspect test style and coverage against the rules.
 
 ## TDD Flow
@@ -64,8 +67,12 @@ Use `-am` for tests that depend on upstream modules. For targeted webapp tests, 
 ## Review Checklist
 
 - Does each test name describe a behavior, not an implementation detail?
-- Does setup avoid using the subject under test?
-- Does validation assert observable behavior or final state?
+- Does setup avoid using the method/class under test?
+- Does the test perform one public action and assert one scenario?
+- Does validation assert observable behavior or final state without another method on the same subject under test?
 - Are DAO tests checking real DB state?
+- Are DB writes validated with direct SQL/JdbcTestUtils, including the expected actor/user when relevant?
+- Are there no `verify`, `spy`, reflection, `lenient`, interaction counters, or no-assert tests?
 - Are service tests not pretending to prove Spring proxy/AOP behavior when they instantiate implementations directly?
+- Is a pass-through service test deleted or replaced by a test for real business behavior?
 - Does the final gate match the blast radius of the change?

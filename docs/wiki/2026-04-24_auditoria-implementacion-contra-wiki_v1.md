@@ -1,12 +1,19 @@
 ---
 titulo: Auditoria de Implementacion contra PAW-Wiki
 tipo: sintesis
-fuentes: [raw/enunciado.txt, raw/correcciones_tp1.md, raw/apuntes.txt, fuente historica no incluida (raw/specs_reserva_v2.txt), CLAUDE.md, README.md, pom.xml]
+fuentes: [raw/enunciado.txt, raw/correcciones_tp1.md, raw/apuntes.txt, fuente historica no incluida (raw/specs_reserva_v2.txt), CLAUDE.md, README.md, pom.xml, decision del usuario 2026-04-30]
 creado: 2026-04-24
-actualizado: 2026-04-24
+actualizado: 2026-04-30
 ---
 
 # Auditoria de Implementacion contra PAW-Wiki
+
+> Nota de actualizacion 2026-04-30: el equipo confirmo que
+> `database.properties`, `mail.properties` y `security.properties` reales deben
+> estar empaquetadas en el WAR si o si para el flujo actual de deploy TP1. Por
+> lo tanto, la presencia de esas properties en `WEB-INF/classes/` queda como
+> decision de proyecto aceptada y no debe proponerse como remediacion pendiente.
+> Ver [[decisiones-proyecto-forkd]].
 
 ## Resumen ejecutivo
 
@@ -16,7 +23,7 @@ Prioridad recomendada:
 
 1. Corregir `GET /lang/{language}` para que no persista locale en DB.
 2. Eliminar el N+1 de mesas reasignables en la vista owner de reservas.
-3. Definir estrategia de configuracion para que el WAR no transporte secretos locales.
+3. Mantener documentada la decision vigente de empaquetar properties reales en el WAR.
 4. Resolver el flujo de cambio de contrasena con contrasena actual.
 5. Reducir deuda de estilos inline en JSPs.
 
@@ -84,7 +91,7 @@ Recomendacion: dejar `GET /lang/{language}` solo como cambio de sesion. Si se qu
 
 Rollback: revertir a la version actual de `LanguageController` y tests si aparece incompatibilidad funcional.
 
-### P1 - El WAR empaqueta configuracion real potencialmente sensible
+### Decision posterior - El WAR empaqueta configuracion real por contrato del proyecto
 
 El build empaqueta estos archivos:
 
@@ -95,14 +102,15 @@ El build empaqueta estos archivos:
 
 Los archivos reales existen localmente en `webapp/src/main/resources/`. No se inspecciono ni se copia su contenido en esta auditoria. La wiki de auth indica que credenciales/secretos no deben vivir en el repo (`auth-flows.md:23-30`); aunque estan ignorados por git, **si quedan dentro del WAR** pasan a formar parte del artefacto distribuible.
 
-Riesgo: compartir/subir el WAR puede exponer credenciales de DB, SMTP o remember-me key.
+Actualizacion 2026-04-30: el usuario confirmo que, para el flujo actual de deploy TP1, estas properties **deben** estar empaquetadas en el WAR si o si. Por lo tanto, esta seccion queda como registro historico del riesgo y de la decision posterior, no como hallazgo activo a remediar.
 
-Recomendacion: elegir una estrategia unica:
+Regla operativa vigente:
 
-- Recomendada: empaquetar solo `.example` y cargar config real por archivo externo/JVM properties/env del contenedor.
-- Alternativa de catedra/local: si se acepta config dentro del WAR para deploy academico, documentar explicitamente que el WAR no debe compartirse y generar artefactos por entorno.
+- No proponer excluir `database.properties`, `mail.properties` ni `security.properties` del WAR.
+- No imprimir ni copiar valores reales de esas properties.
+- Si se quiere cambiar esta decision, pedir confirmacion explicita antes de tocar POMs, configuracion Spring o flujo de deploy.
 
-Rollback: restaurar el empaquetado actual si el contenedor academico exige properties en classpath.
+Ver tambien: [[decisiones-proyecto-forkd]].
 
 ### P2 - N+1 en mesas reasignables de reservas owner
 
@@ -219,10 +227,10 @@ Rollback: mantener el ignore si el wiki se versiona en un repositorio separado.
    - Cambiar `OwnerReservationPageSupport` para llamar una vez por pagina.
    - Testear cantidad de queries.
 
-3. Configuracion sensible fuera del WAR:
-   - Definir si el entorno academico exige properties en classpath.
-   - Si no lo exige, excluir reales del WAR y cargar externos.
-   - Mantener `.example` empaquetables/documentales.
+3. Configuracion empaquetada en WAR:
+   - Decision posterior confirmada: las properties reales deben ir dentro del WAR si o si.
+   - No proponer excluirlas como remediacion.
+   - Mantener la regla de no imprimir valores reales.
 
 4. Cambio de contrasena autenticado:
    - Crear form separado.

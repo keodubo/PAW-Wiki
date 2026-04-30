@@ -4,6 +4,13 @@ Registro cronologico de actividad del wiki.
 
 ---
 
+## [2026-04-30] docs | decisiones vigentes Forkd
+
+- Creada `wiki/decisiones-proyecto-forkd.md` para dejar como contrato vigente que `database.properties`, `mail.properties` y `security.properties` reales deben estar empaquetadas en el WAR si o si.
+- Aclarado que futuras auditorias y planes no deben volver a proponer excluir esas properties del WAR, aunque sus valores reales siguen sin poder imprimirse ni copiarse.
+- Registrado que las credenciales demo/admin del `README.md` general quedan aceptadas para el flujo QA/entrega PAW actual y no requieren rotacion dentro de `mega-refactor`.
+- Actualizada la auditoria historica del `2026-04-24` para marcar el hallazgo de properties en WAR como decision posterior aceptada, no como remediacion pendiente.
+
 ## [2026-04-29] docs | tono público y guías actualizadas
 
 - Pulidos `README.md`, `docs/CLAUDE.md`, `docs/examples/README.md` y
