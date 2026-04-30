@@ -85,7 +85,6 @@ Estos archivos no son paginas wiki canonicas; son guias de uso para humanos y ag
 |--------|-------------|
 | [[tp1-vs-tpe2-final]] | Ruta de estudio para distinguir material prioritario de TP1, AOP como soporte de implementacion y temas para TPE2/final |
 | [[buenas-practicas]] | Inventario de patrones elogiados por la catedra para reutilizar como checklist positivo al implementar o auditar |
-| [[decisiones-proyecto-forkd]] | Decisiones locales vigentes del checkout Forkd, incluyendo properties reales empaquetadas en el WAR y credenciales demo/admin |
 
 ### Auditorias y remediacion historica
 

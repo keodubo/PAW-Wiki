@@ -13,7 +13,7 @@ actualizado: 2026-04-30
 > estar empaquetadas en el WAR si o si para el flujo actual de deploy TP1. Por
 > lo tanto, la presencia de esas properties en `WEB-INF/classes/` queda como
 > decision de proyecto aceptada y no debe proponerse como remediacion pendiente.
-> Ver [[decisiones-proyecto-forkd]].
+> El detalle de esta decision queda en la documentacion privada del proyecto.
 
 ## Resumen ejecutivo
 
@@ -109,8 +109,6 @@ Regla operativa vigente:
 - No proponer excluir `database.properties`, `mail.properties` ni `security.properties` del WAR.
 - No imprimir ni copiar valores reales de esas properties.
 - Si se quiere cambiar esta decision, pedir confirmacion explicita antes de tocar POMs, configuracion Spring o flujo de deploy.
-
-Ver tambien: [[decisiones-proyecto-forkd]].
 
 ### P2 - N+1 en mesas reasignables de reservas owner
 

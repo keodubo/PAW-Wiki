@@ -49,7 +49,6 @@ PAW-Wiki/docs/wiki/comparacion-seguridad-web.md
 PAW-Wiki/docs/wiki/comparacion-testing-servicios-y-daos.md
 PAW-Wiki/docs/wiki/configuracion-maven.md
 PAW-Wiki/docs/wiki/criterios-evaluacion.md
-PAW-Wiki/docs/wiki/decisiones-proyecto-forkd.md
 PAW-Wiki/docs/wiki/hibernate-jpa.md
 PAW-Wiki/docs/wiki/http-y-sesiones.md
 PAW-Wiki/docs/wiki/internacionalizacion.md
