@@ -4,6 +4,14 @@ Registro cronologico de actividad del wiki.
 
 ---
 
+## [2026-05-11] ingest | apuntes unidades 8 en adelante
+
+- Reextraidas del PDF `docs/raw/pdfs/PAW - Apuntes.pdf` las paginas 68-96 para ampliar la cobertura de unidades 8-11.
+- Actualizado `wiki/resumen-apuntes.md` con una reingesta detallada de AOP/proxies/transacciones, Hibernate/JPA, SPA y API REST.
+- Creadas 11 paginas dedicadas por unidad: `wiki/paw-unidad-01-introduccion-scrum-mvp.md` a `wiki/paw-unidad-11-api-rest.md`; las unidades 8-11 quedan especialmente desarrolladas.
+- Actualizado `docs/index.md` para dejar asentado que las unidades 9-11 ya no quedan solo como fuera de foco, sino como base TP2/final navegable desde la fuente principal.
+- Sin cambios en `docs/raw/`; el PDF y las fuentes crudas quedan inmutables.
+
 ## [2026-04-29] docs | tono público y guías actualizadas
 
 - Pulidos `README.md`, `docs/CLAUDE.md`, `docs/examples/README.md` y

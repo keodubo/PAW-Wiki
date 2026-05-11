@@ -6,6 +6,8 @@ Read current code plus:
 
 - `PAW-Wiki/docs/wiki/resumen-clases-paw-2026.md`
 - `PAW-Wiki/docs/wiki/tp1-vs-tpe2-final.md`
+- `PAW-Wiki/docs/wiki/paw-unidad-09-hibernate-jpa.md`
+- `PAW-Wiki/docs/wiki/paw-unidad-08-aop-transacciones.md`
 - `PAW-Wiki/docs/wiki/hibernate-jpa.md`
 - `PAW-Wiki/docs/wiki/persistencia-jdbc.md`
 - `PAW-Wiki/docs/wiki/modelo-capas.md`

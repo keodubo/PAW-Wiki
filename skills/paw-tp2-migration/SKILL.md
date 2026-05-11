@@ -15,9 +15,20 @@ Read `references/migration-rules.md` before editing or judging migration work.
 
 1. Confirm the stage is `TP2` or the user explicitly asked for Hibernate/JPA.
 2. Read the app `CLAUDE.md`, `PAW-Wiki/docs/CLAUDE.md`, `PAW-Wiki/docs/index.md`, and `PAW-Wiki/docs/wiki/resumen-clases-paw-2026.md`.
-3. Read `PAW-Wiki/docs/wiki/hibernate-jpa.md`, `persistencia-jdbc.md`, `transactional.md`, and `testing-unitario.md`.
-4. Capture baseline code and tests for the DAOs/entities being migrated.
-5. State which behavior must stay identical and which persistence mechanics are allowed to change.
+3. Read `PAW-Wiki/docs/wiki/paw-unidad-09-hibernate-jpa.md`, `PAW-Wiki/docs/wiki/hibernate-jpa.md`, `persistencia-jdbc.md`, `transactional.md`, and `testing-unitario.md`.
+4. If the migration depends on transaction/proxy behavior, also read `PAW-Wiki/docs/wiki/paw-unidad-08-aop-transacciones.md`.
+5. Capture baseline code and tests for the DAOs/entities being migrated.
+6. State which behavior must stay identical and which persistence mechanics are allowed to change.
+
+## First TP2 Session Checklist
+
+When the user says TP1 is finished and they are starting TP2, do this before editing:
+
+1. Inventory current JDBC DAOs, DAO contracts, schema scripts, row mappers, service callers, and persistence tests.
+2. Identify the smallest safe first aggregate to migrate.
+3. Decide whether JDBC and JPA implementations will coexist temporarily, and how Spring bean selection will be explicit.
+4. Plan entity mappings against the existing schema before adding Hibernate config.
+5. Define verification gates for the slice: focused persistence test, affected service tests, then wider Maven gate.
 
 ## Migration Workflow
 

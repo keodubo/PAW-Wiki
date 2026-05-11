@@ -30,13 +30,31 @@ Estos archivos no son paginas wiki canonicas; son guias de uso para humanos y ag
 |--------|-------------|--------|
 | [[resumen-correcciones]] | Ingesta exhaustiva de errores, aciertos y observaciones recurrentes de correcciones previas | `raw/correcciones_tp1.md` |
 | [[resumen-enunciado]] | Especificacion oficial del TPE1: stack, requerimientos, entrega | `raw/enunciado.txt` + `raw/pdfs/Enunciado_TPE1.pdf` |
-| [[resumen-apuntes]] | Apuntes completos de la materia (11 unidades; 1-7 como base TP1 y 8 como soporte de implementacion) | `raw/apuntes.txt` + `raw/pdfs/PAW - Apuntes.pdf` |
+| [[resumen-apuntes]] | Apuntes completos de la materia (11 unidades; 1-7 como base TP1, 8 como soporte de implementacion y 9-11 reingestadas en detalle para TP2/final; incluye paginas dedicadas por unidad) | `raw/apuntes.txt` + `raw/pdfs/PAW - Apuntes.pdf` |
 | [[resumen-notas]] | Notas de clase con walkthroughs practicos y advertencias del profesor | `raw/notas.txt` + `raw/pdfs/Notas clases PAW.pdf` |
 | [[resumen-clases-paw-2026]] | Ingesta detallada de PDFs nuevos de clase, ordenada por TP1, TP2 y TP final; las versiones de dependencias quedan tratadas como historicas | `raw/PAW*.pdf` |
 | [[resumen-notas-sprint-1]] | Feedback puntual del sprint 1 sobre producto, UX, filtros y direccion del proyecto | `fuente historica no incluida (raw/notas_sprint_1.txt)` |
 | [[resumen-notas-sprint-2]] | Checklist de cierre del sprint 2: auth, owner/admin, UX, correcciones ya resueltas y checks manuales remanentes | `fuente historica no incluida (raw/notas_para_sprint_2.txt)` |
 | [[resumen-transcripciones-clases-2-a-4]] | Revision cautelosa de transcripciones VTT; clases 2-3 como apoyo y clase reciente sobre agentes/formularios | `fuente historica no incluida (raw/audio_transcript/*.VTT)` |
 | [[resumen-spec-reservas]] | Ingesta del spec funcional del sistema de reservas v2 (vigente) con diff frente a v1, reglas, modalidades, slots, estados y resoluciones completas de ambiguedades v2 | `fuente historica no incluida (raw/specs_reserva_v2.txt)` + `fuente historica no incluida (raw/reservas/spec-funcional-reservas.md)` (historico) + `fuente historica no incluida (raw/diagrama_bd.md)` |
+
+## Unidades de PAW - Apuntes
+
+Estas paginas separan `[[resumen-apuntes]]` por unidad para estudio y navegacion. Las unidades 8-11 tienen mayor detalle porque conectan directamente con AOP/transacciones, TP2 y TP final.
+
+| Unidad | Pagina | Foco |
+|--------|--------|------|
+| 1 | [[paw-unidad-01-introduccion-scrum-mvp]] | Scrum, stories, workflow, AirBnB y MVP |
+| 2 | [[paw-unidad-02-contexto-historico-web]] | HTTP, CGI, sesiones, Java server-side, mailing e imagenes |
+| 3 | [[paw-unidad-03-frontend-jsp-jstl]] | Usabilidad, CSS, JSP, EL, JSTL y tags |
+| 4 | [[paw-unidad-04-spring-mvc-capas-jdbc]] | Maven, Spring MVC, DI, capas y JDBC |
+| 5 | [[paw-unidad-05-unit-testing]] | JUnit, dobles, Mockito, HSQLDB y tests DAO/service |
+| 6 | [[paw-unidad-06-formularios-i18n]] | Form beans, Bean Validation, Spring form tags e i18n |
+| 7 | [[paw-unidad-07-seguridad-logging]] | Spring Security, roles, remember-me y Logback |
+| 8 | [[paw-unidad-08-aop-transacciones]] | AOP, proxies, restricciones y `@Transactional` |
+| 9 | [[paw-unidad-09-hibernate-jpa]] | ORM, JPA/Hibernate, mappings, contexto y paginacion |
+| 10 | [[paw-unidad-10-single-page-applications]] | SPA, auth cliente, i18n frontend, testing, hosting y cache |
+| 11 | [[paw-unidad-11-api-rest]] | Recursos REST, verbos, status codes, links, content negotiation y JWT |
 
 ## Conceptos
 
@@ -123,7 +141,7 @@ Estos archivos no son paginas wiki canonicas; son guias de uso para humanos y ag
 - [x] `raw/correcciones_tp1.md` -- Errores y aciertos recopilados de correcciones previas (~26KB)
 - [x] `raw/enunciado.txt` -- Enunciado oficial del TPE1
 - [x] `raw/apuntes.txt` -- Apuntes de la materia (~143KB, 21K lineas)
-- [x] `raw/pdfs/PAW - Apuntes.pdf` -- PDF original validado contra `raw/apuntes.txt`; pasadas editoriales ya cubren unidades 1-11, tratando la 8 como soporte de TP1 y manteniendo 9-11 fuera de foco
+- [x] `raw/pdfs/PAW - Apuntes.pdf` -- PDF original validado contra `raw/apuntes.txt`; reingesta 2026-05-11 amplia unidades 8-11 en `[[resumen-apuntes]]` y crea paginas dedicadas `[[paw-unidad-01-introduccion-scrum-mvp]]` a `[[paw-unidad-11-api-rest]]`
 - [x] `raw/notas.txt` -- Notas de clases (~175KB)
 - [x] `raw/PAW - clase 1 (TP1).pdf` -- Clase TP1: Spring Web, Maven, WebConfig, ViewResolver, modulos y DI; procesada en `[[resumen-clases-paw-2026]]`
 - [x] `raw/PAW - clase 2 (TP1).pdf` -- Clase TP1: Servlets, JSP, EL, JSTL y tags propios; procesada con OCR en `[[resumen-clases-paw-2026]]`

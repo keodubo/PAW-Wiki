@@ -62,6 +62,17 @@ PAW-Wiki/docs/wiki/manejo-excepciones.md
 PAW-Wiki/docs/wiki/manejo-imagenes.md
 PAW-Wiki/docs/wiki/modelo-capas.md
 PAW-Wiki/docs/wiki/n-plus-1-joins-java.md
+PAW-Wiki/docs/wiki/paw-unidad-01-introduccion-scrum-mvp.md
+PAW-Wiki/docs/wiki/paw-unidad-02-contexto-historico-web.md
+PAW-Wiki/docs/wiki/paw-unidad-03-frontend-jsp-jstl.md
+PAW-Wiki/docs/wiki/paw-unidad-04-spring-mvc-capas-jdbc.md
+PAW-Wiki/docs/wiki/paw-unidad-05-unit-testing.md
+PAW-Wiki/docs/wiki/paw-unidad-06-formularios-i18n.md
+PAW-Wiki/docs/wiki/paw-unidad-07-seguridad-logging.md
+PAW-Wiki/docs/wiki/paw-unidad-08-aop-transacciones.md
+PAW-Wiki/docs/wiki/paw-unidad-09-hibernate-jpa.md
+PAW-Wiki/docs/wiki/paw-unidad-10-single-page-applications.md
+PAW-Wiki/docs/wiki/paw-unidad-11-api-rest.md
 PAW-Wiki/docs/wiki/persistencia-jdbc.md
 PAW-Wiki/docs/wiki/plan-ejecucion-remediacion-auditoria.md
 PAW-Wiki/docs/wiki/plan-implementacion-reservas.md
