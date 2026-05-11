@@ -6,6 +6,7 @@ Read current DAO/schema code plus:
 
 - `PAW-Wiki/docs/wiki/persistencia-jdbc.md`
 - `PAW-Wiki/docs/wiki/resumen-clases-paw-2026.md`
+- `PAW-Wiki/docs/wiki/resumen-enunciado-tpe2.md` when stage is TP2.
 - `PAW-Wiki/docs/wiki/hibernate-jpa.md` when stage is TP2.
 - `PAW-Wiki/docs/wiki/n-plus-1-joins-java.md`
 - `PAW-Wiki/docs/wiki/comparacion-testing-servicios-y-daos.md`
@@ -26,7 +27,7 @@ Read current DAO/schema code plus:
 
 - Shared schema belongs in `persistence`, not `webapp`.
 - Keep Postgres and HSQLDB scripts equivalent.
-- Avoid data-loss changes without explicit user confirmation.
+- Avoid data-loss changes without explicit user confirmation. In TPE2, no server information loss is an explicit delivery requirement.
 - Use `ON DELETE CASCADE` where the data relation owns cleanup and the wiki/feature plan supports it.
 - Keep generated/derived local config out of schema changes.
 
@@ -49,6 +50,7 @@ Read current DAO/schema code plus:
 - Avoid accidental eager graph loading. Prefer explicit fetch strategy per use case and verify generated SQL.
 - Dirty checking is behavior, not magic: tests must prove intended updates and non-updates.
 - Lazy loading outside a transaction/context is a design smell unless deliberately supported by the chosen web filter strategy.
+- Schema/data migrations must preserve existing rows by default and include rollback notes when they affect ids, sequences, constraints, or relation ownership.
 
 ## DAO Test Rules
 

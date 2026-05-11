@@ -16,7 +16,7 @@ For TP1, the repo is Java 21, Spring Web MVC classic, Spring Security, JSP/JSTL,
 | Stage | Allowed default stack | Migration skill | Main risk |
 | --- | --- | --- | --- |
 | `TP1` | Spring MVC + JSP/JSTL + JDBC + HSQLDB + Spring Security + Logback | none by default | Accidentally introducing later-stage tools |
-| `TP2` | JPA/Hibernate persistence with Spring ORM over the existing service/web shape | `$paw-tp2-migration` | Bad mappings, hidden N+1, unsafe schema generation, dirty checking surprises |
+| `TP2` / `TPE2` | JPA/Hibernate persistence with Spring ORM over the existing service/web shape, preserving behavior and server data | `$paw-tp2-migration` | Bad mappings, hidden N+1, unsafe schema generation, dirty checking surprises, data loss, unresolved TPE1 feedback |
 | `TP final` | REST API + SPA/frontend build served by the WAR | `$paw-tp-final-migration` | Leaky API contracts, duplicated business logic, auth storage risk, broken packaging/cache |
 
 Ask or confirm stage before stack-changing work. Class PDFs in `resumen-clases-paw-2026.md` are important stage guidance, but their dependency versions are historical and not an implementation recommendation.
@@ -45,7 +45,7 @@ Always start from `PAW-Wiki/docs/index.md`, then load only relevant pages:
 - Services: `transactional.md`, `spring-aop.md`, `mailing.md`, `manejo-excepciones.md`, `logging.md`.
 - Quality: `testing-unitario.md`, `java-style.md`, `buenas-practicas.md`, `criterios-evaluacion.md`.
 - Stage source: `resumen-clases-paw-2026.md`, `tp1-vs-tpe2-final.md`.
-- TP2 migration: `hibernate-jpa.md`, plus `persistencia-jdbc.md`, `transactional.md`, `testing-unitario.md`.
+- TP2 migration: `resumen-enunciado-tpe2.md`, `hibernate-jpa.md`, plus `persistencia-jdbc.md`, `transactional.md`, `testing-unitario.md`, `criterios-evaluacion.md`, `calendario-entregas.md`.
 - TP final migration: `api-rest.md`, `single-page-applications.md`, `internacionalizacion.md`, `ux-flows.md`, `spring-security.md`.
 - Current large features: `plan-implementacion-reservas.md`, `resumen-spec-reservas.md`, `PAW-Wiki/docs/superpowers/plans/2026-04-26_social-forkd-plan_v1.md`.
 - Current compliance findings: `2026-04-24_auditoria-implementacion-contra-wiki_v1.md`, `PAW-Wiki/docs/superpowers/plans/2026-04-24_paw-remediacion-cumplimiento-wiki_v1.md`.
@@ -102,9 +102,9 @@ Checks: raw sources untouched, bidirectional links, uncertainty marked when sour
 
 Use `$paw-tp2-migration`.
 
-Order: baseline DAO/schema/tests -> entity mapping plan -> Spring ORM config -> DAO implementation -> service transaction audit -> tests -> generated SQL/fetch review.
+Order: official TPE2 contract -> baseline DAO/schema/tests/data assumptions -> TPE1 feedback inventory -> entity mapping plan -> Spring ORM config -> DAO implementation -> service transaction audit -> tests -> generated SQL/fetch review -> package/deploy check when wiring changed.
 
-Checks: no destructive schema generation without approval, no `EntityManager` leaking to services/webapp, fetch/cascade choices reviewed, current JDBC behavior preserved unless intentionally changed.
+Checks: no destructive schema generation without approval, no server data loss, no `EntityManager` leaking to services/webapp, fetch/cascade choices reviewed, current JDBC behavior preserved unless intentionally changed, prior feedback not left broken, `mvn clean package` still produces a usable WAR when relevant.
 
 ### TP final REST + SPA migration
 

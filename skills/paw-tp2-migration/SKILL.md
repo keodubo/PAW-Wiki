@@ -1,45 +1,47 @@
 ---
 name: paw-tp2-migration
-description: Use when planning, implementing, auditing, or reviewing PAW TP2 migration from TP1 JDBC persistence to JPA/Hibernate, including entity mapping, Spring ORM config, EntityManager DAOs, transaction manager changes, fetch/cascade reviews, generated SQL/performance audits, and persistence tests.
+description: Use when planning, implementing, auditing, or reviewing PAW TPE2/TP2 migration from TP1 JDBC persistence to JPA/Hibernate while preserving product behavior, data, deployability, and prior feedback corrections. Use for entity mapping, Spring ORM config, EntityManager DAOs, transaction manager changes, schema/data migration risk, fetch/cascade reviews, generated SQL/performance audits, and persistence tests.
 ---
 
 # Paw TP2 Migration
 
 ## Overview
 
-Use this when the user says the PAW project is in TP2, asks for Hibernate/JPA/ORM work, or wants to migrate persistence away from TP1 JDBC. The goal is a controlled persistence migration, not a broad rewrite of webapp or product behavior.
+Use this when the user says the PAW project is in TPE2/TP2, asks for Hibernate/JPA/ORM work, or wants to migrate persistence away from TP1 JDBC. The goal is a controlled persistence migration that preserves existing product behavior and server data, not a broad rewrite of webapp or product surface.
 
 Read `references/migration-rules.md` before editing or judging migration work.
 
 ## Required First Pass
 
-1. Confirm the stage is `TP2` or the user explicitly asked for Hibernate/JPA.
+1. Confirm the stage is `TPE2`/`TP2` or the user explicitly asked for Hibernate/JPA.
 2. Read the app `CLAUDE.md`, `PAW-Wiki/docs/CLAUDE.md`, `PAW-Wiki/docs/index.md`, and `PAW-Wiki/docs/wiki/resumen-clases-paw-2026.md`.
-3. Read `PAW-Wiki/docs/wiki/paw-unidad-09-hibernate-jpa.md`, `PAW-Wiki/docs/wiki/hibernate-jpa.md`, `persistencia-jdbc.md`, `transactional.md`, and `testing-unitario.md`.
+3. Read `PAW-Wiki/docs/wiki/resumen-enunciado-tpe2.md` as the delivery contract, then read `PAW-Wiki/docs/wiki/tp1-vs-tpe2-final.md`, `paw-unidad-09-hibernate-jpa.md`, `hibernate-jpa.md`, `persistencia-jdbc.md`, `transactional.md`, `criterios-evaluacion.md`, `calendario-entregas.md`, and `testing-unitario.md`.
 4. If the migration depends on transaction/proxy behavior, also read `PAW-Wiki/docs/wiki/paw-unidad-08-aop-transacciones.md`.
-5. Capture baseline code and tests for the DAOs/entities being migrated.
-6. State which behavior must stay identical and which persistence mechanics are allowed to change.
+5. Capture baseline code, schema, production/deploy assumptions, tests, and prior catedra feedback for the slice being migrated.
+6. State which product behavior and data must stay identical, which feedback items must be corrected, and which persistence mechanics are allowed to change.
 
 ## First TP2 Session Checklist
 
 When the user says TP1 is finished and they are starting TP2, do this before editing:
 
 1. Inventory current JDBC DAOs, DAO contracts, schema scripts, row mappers, service callers, and persistence tests.
-2. Identify the smallest safe first aggregate to migrate.
-3. Decide whether JDBC and JPA implementations will coexist temporarily, and how Spring bean selection will be explicit.
-4. Plan entity mappings against the existing schema before adding Hibernate config.
-5. Define verification gates for the slice: focused persistence test, affected service tests, then wider Maven gate.
+2. Inventory TPE1 feedback/corrections and mark which items are blockers for TP2 readiness.
+3. Identify the smallest safe first aggregate to migrate.
+4. Decide whether JDBC and JPA implementations will coexist temporarily, and how Spring bean selection will be explicit.
+5. Plan entity mappings against the existing schema and existing data before adding Hibernate config.
+6. Define verification gates for the slice: focused persistence test, affected service tests, package/deploy-sensitive gate if wiring changed, then wider Maven gate.
 
 ## Migration Workflow
 
-1. Audit existing JDBC DAO contracts, SQL, schema, row mappings, service callers, and tests.
-2. Decide whether contracts stay stable or need explicit service-facing changes.
-3. Map entities deliberately: ids/sequences, table/column names, nullability, enum storage, and relationships.
+1. Audit existing JDBC DAO contracts, SQL, schema, row mappings, service callers, deployed data assumptions, and tests.
+2. Decide whether contracts stay stable or need explicit service-facing changes. Prefer stable contracts unless the user approved a product change.
+3. Map entities deliberately: ids/sequences, table/column names, nullability, enum storage, legacy rows, constraints, and relationships.
 4. Configure Spring ORM and `JpaTransactionManager` only after the entity/DAO slice is defined.
 5. Implement one DAO or aggregate at a time with `EntityManager`.
 6. Review generated SQL, fetch behavior, cascades, orphan removal, and lazy loading boundaries.
-7. Update tests to prove persisted state and service behavior, not just compilation.
-8. Run the smallest Maven gate first, then widen when contracts or wiring changed.
+7. Define additive data/schema migrations before enabling runtime schema behavior; avoid destructive auto-generation.
+8. Update tests to prove persisted state, service behavior, and no regression of corrected feedback, not just compilation.
+9. Run the smallest Maven gate first, then widen when contracts, wiring, packaging, or deploy behavior changed.
 
 ## Coordination
 
@@ -54,10 +56,11 @@ When the user says TP1 is finished and they are starting TP2, do this before edi
 Ask before proceeding when:
 
 - The user has not confirmed TP2 and the task would introduce JPA/Hibernate.
-- Schema generation or migration can rewrite/drop production data.
+- Schema generation or migration can rewrite/drop production/server data.
 - A lazy-loading strategy would require OpenEntityManagerInView or longer-lived sessions.
 - A contract change would force broad webapp or product behavior changes.
 - Dependency versions are unclear; do not copy old PDF versions as current guidance.
+- The requested shortcut would skip required TPE1 feedback corrections, demo readiness, or deploy verification.
 
 ## Verification
 
@@ -70,10 +73,18 @@ mvn -pl persistence -am test
 mvn -pl services -am test
 mvn -pl webapp -am test
 mvn clean test
+mvn clean package
 ```
 
 For a narrow DAO test:
 
 ```bash
 mvn -pl persistence -am -Dtest=<PersistenceTestName> test
+```
+
+For TP2 closeout, also verify the deliverable shape when wiring or packaging changed:
+
+```bash
+mvn clean package
+jar tf webapp/target/webapp.war | head
 ```

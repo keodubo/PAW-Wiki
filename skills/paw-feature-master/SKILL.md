@@ -24,7 +24,7 @@ Use `references/project-map.md` for the current module map, canonical wiki pages
 ## Stage Routing
 
 - **TP1**: Keep the classic stack: Spring Web MVC, JSP/JSTL, JDBC, HSQLDB, Spring Security, Logback, Maven WAR. Do not introduce JPA/Hibernate, SPA, REST-only architecture, or frontend build tooling unless the user explicitly asks.
-- **TP2**: Treat work as persistence migration or Hibernate/JPA adaptation when it touches entities, `EntityManager`, ORM config, fetch/cascade behavior, or JDBC-to-JPA DAO changes. Use `$paw-tp2-migration` before layer skills for migration planning or implementation.
+- **TP2/TPE2**: Treat work as persistence migration or Hibernate/JPA adaptation when it touches entities, `EntityManager`, ORM config, fetch/cascade behavior, data/schema migration, TPE1 feedback corrections, or JDBC-to-JPA DAO changes. Use `$paw-tp2-migration` before layer skills for migration planning or implementation.
 - **TP final**: Treat work as REST + SPA migration when it touches Jersey/JAX-RS/resources, DTO API contracts, stateless auth, frontend build, routing, client state, cache/file revving, or static hosting. Use `$paw-tp-final-migration` before layer skills for migration planning or implementation.
 
 If the user says only "PAW" and the task is normal feature/debug work in the current Forkd checkout, default to TP1 constraints. If the user mentions Hibernate/JPA, REST, API, SPA, frontend module, Vite/React/Angular, JWT, or final delivery, stop and resolve stage before editing.
@@ -85,5 +85,6 @@ Canonical source order for PAW work:
 2. `CLAUDE.md`.
 3. `PAW-Wiki/docs/index.md` and linked wiki pages.
 4. Current durable plans under `PAW-Wiki/docs/superpowers/plans/`.
-5. `PAW-Wiki/docs/wiki/resumen-clases-paw-2026.md` for stage-specific TP1/TP2/final class guidance.
+5. `PAW-Wiki/docs/wiki/resumen-enunciado-tpe2.md` for the official TP2 delivery contract when the stage is TP2/TPE2.
+6. `PAW-Wiki/docs/wiki/resumen-clases-paw-2026.md` for stage-specific TP1/TP2/final class guidance.
 6. Historical `PAW-Wiki/docs/raw/` sources, read-only.

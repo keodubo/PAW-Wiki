@@ -12,6 +12,19 @@ Registro cronologico de actividad del wiki.
 - Actualizado `docs/index.md` para dejar asentado que las unidades 9-11 ya no quedan solo como fuera de foco, sino como base TP2/final navegable desde la fuente principal.
 - Sin cambios en `docs/raw/`; el PDF y las fuentes crudas quedan inmutables.
 
+## [2026-05-11] ingest | enunciado TPE2
+
+- Agregado `docs/raw/pdfs/Enunciado_TPE2.pdf` desde Downloads y extraido `docs/raw/enunciado_tpe2.txt` para busqueda e ingesta.
+- Creada `wiki/resumen-enunciado-tpe2.md` como fuente oficial de TPE2: migracion JDBC -> JPA/Hibernate, fechas, entrega, evaluacion, errores no recuperables y riesgos de perdida de informacion.
+- Actualizados `wiki/calendario-entregas.md`, `wiki/criterios-evaluacion.md` y `wiki/tp1-vs-tpe2-final.md` para conectar TPE2 con el canon de TP2.
+- Actualizado `docs/index.md` y `docs/tree.txt` para reflejar las fuentes nuevas.
+
+## [2026-05-11] skills | TP2 alineado al enunciado TPE2
+
+- Actualizada `$paw-tp2-migration` para usar `resumen-enunciado-tpe2` como contrato oficial antes de planificar JDBC -> JPA/Hibernate.
+- Reforzadas reglas de TP2 sobre preservacion de comportamiento, no perdida de datos del servidor, correccion de feedback TPE1, demos, `mvn clean package` y deployabilidad.
+- Actualizadas `$paw-feature-master`, `$paw-persistence-layer`, `$paw-testing-layer` y `skills/README.md` para enrutar TP2 como migracion verificable, no solo como adopcion de ORM.
+
 ## [2026-04-29] docs | tono público y guías actualizadas
 
 - Pulidos `README.md`, `docs/CLAUDE.md`, `docs/examples/README.md` y

@@ -1,14 +1,14 @@
 ---
 titulo: Criterios de Evaluacion y Penalizaciones
 tipo: concepto
-fuentes: [raw/enunciado.txt]
+fuentes: [raw/enunciado.txt, raw/enunciado_tpe2.txt, raw/pdfs/Enunciado_TPE2.pdf]
 creado: 2026-04-09
-actualizado: 2026-04-17
+actualizado: 2026-05-11
 ---
 
 # Criterios de Evaluacion y Penalizaciones
 
-La catedra evalua funcionalidad, calidad de codigo, arquitectura, y contribuciones individuales. Auditan codigo y commits.
+La catedra evalua funcionalidad, calidad de codigo, arquitectura, usabilidad, proceso y contribuciones individuales. Auditan codigo y commits.
 
 ## Penalizaciones en entrega final
 
@@ -18,6 +18,18 @@ La catedra evalua funcionalidad, calidad de codigo, arquitectura, y contribucion
 | Funcionalidad y usabilidad | **-2 puntos** | [[buenas-practicas]] |
 | Unit testing insuficiente o de baja calidad | **-1 punto** | [[testing-unitario]] |
 | Forma de entrega incorrecta | **-1 punto** | [[configuracion-maven]] |
+
+## Penalizaciones especificas TPE2
+
+| Criterio | Penalizacion maxima | Wiki relacionado |
+|----------|---------------------|------------------|
+| Incumplimiento de Scrum, Pivotal Tracker, priorizacion o valor por iteracion | **-2 puntos** | [[scrum-metodologia]] |
+| Unit testing insuficiente o de baja calidad | **-1 punto** | [[testing-unitario]] |
+| Forma de entrega incorrecta | **-1 punto** | [[configuracion-maven]] |
+| Funcionalidad y usabilidad del producto | **-4 puntos** | [[ux-flows]], [[buenas-practicas]] |
+| Arquitectura, DDD, separacion de capas, responsabilidades o buenas practicas | **-4 puntos** | [[modelo-capas]], [[hibernate-jpa]] |
+| Perdidas de informacion | **-2 puntos** | [[hibernate-jpa]], [[transactional]] |
+| Feedback anterior no corregido | **-1 punto por cada correccion no resuelta** | [[resumen-correcciones]] |
 
 ## Penalizaciones por sprint
 
@@ -53,6 +65,7 @@ Basado en el peso de penalizaciones, el orden de prioridad es:
 
 ## Ver tambien
 - [[resumen-enunciado]]
+- [[resumen-enunciado-tpe2]]
 - [[calendario-entregas]]
 - [[scrum-metodologia]]
 - [[resumen-correcciones]]

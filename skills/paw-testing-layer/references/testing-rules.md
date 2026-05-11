@@ -15,12 +15,14 @@ Read current code plus:
 - `PAW-Wiki/docs/wiki/spring-aop.md`
 - `PAW-Wiki/docs/wiki/persistencia-jdbc.md`
 - `PAW-Wiki/docs/wiki/criterios-evaluacion.md`
+- `PAW-Wiki/docs/wiki/resumen-enunciado-tpe2.md` when stage is TP2.
 - `PAW-Wiki/docs/wiki/hibernate-jpa.md` when stage is TP2.
 - `PAW-Wiki/docs/wiki/api-rest.md` and `PAW-Wiki/docs/wiki/single-page-applications.md` when stage is TP final.
 
 ## PAW-Wiki Rules
 
 - Testing quality is an evaluation criterion; insufficient or low-quality tests are penalized.
+- For TPE2/TP2, tests must also protect the migration contract: JDBC -> JPA/Hibernate without functional regression or data loss.
 - Tests are blackbox. Do not inspect private methods, internal call order, or collaborator calls as proof.
 - Each test covers one scenario with one main action. A test name with "and" is a split signal.
 - Do not leave tests without assertions. `assertDoesNotThrow` is only valid when "no exception" is the explicit public behavior.
@@ -58,6 +60,7 @@ mvn -pl services -am -Dtest=<ServiceTestName> test
 mvn -pl webapp -am -Dtest=<MvcTestName> -Dsurefire.failIfNoSpecifiedTests=false test
 mvn -pl webapp -am test
 mvn clean test
+mvn clean package
 ```
 
 Why:
@@ -65,6 +68,7 @@ Why:
 - `-am` rebuilds upstream modules so stale signatures do not produce false failures.
 - `-Dsurefire.failIfNoSpecifiedTests=false` prevents upstream modules from failing before the target webapp test runs.
 - Full `mvn clean test` is the final arbiter for multi-layer changes.
+- `mvn clean package` is required when TP2 ORM config, schema bootstrap, or webapp packaging/deploy behavior changed.
 
 ## Service Test Patterns
 

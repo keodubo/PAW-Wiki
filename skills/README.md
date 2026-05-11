@@ -12,6 +12,7 @@ Canon de contexto para cualquier skill:
 - `README.md`
 - `docs/CLAUDE.md`
 - `docs/index.md`
+- `docs/wiki/resumen-enunciado-tpe2.md` cuando la etapa sea TPE2/TP2
 - `docs/wiki/resumen-clases-paw-2026.md`
 - `docs/wiki/tp1-vs-tpe2-final.md`
 
@@ -71,7 +72,7 @@ Muéstrame un plan corto antes de editar si la tarea toca más de una capa.
 | `paw-services-layer` | Lógica de negocio, transacciones, mail, schedulers y tests de servicios. |
 | `paw-webapp-layer` | Controllers, forms, validators, JSP/JSTL, i18n, Spring Security, CSS/JS y tests MVC. |
 | `paw-testing-layer` | Tests, fixtures, HSQLDB, Maven gates, MVC/security/template checks y revisiones de calidad. |
-| `paw-tp2-migration` | Migración TP2 de JDBC a JPA/Hibernate: entidades, EntityManager, mappings, fetch/cascade, SQL generado y tests. |
+| `paw-tp2-migration` | Migración TPE2/TP2 de JDBC a JPA/Hibernate: entidades, EntityManager, mappings, migraciones sin pérdida de datos, fetch/cascade, SQL generado, feedback TPE1 y tests. |
 | `paw-tp-final-migration` | Migración TP final a REST API + SPA: recursos, DTOs, auth stateless, frontend build, routing, estado, cache y packaging. |
 
 ## Instalación
@@ -187,14 +188,14 @@ Si no estás seguro de qué capa toca, usa `$paw-feature-master`.
 | Etapa | Default recomendado |
 | --- | --- |
 | TP1 | Mantener Spring MVC + JSP/JSTL + JDBC. No introducir JPA/SPA por accidente. |
-| TP2 | Usar `$paw-tp2-migration` para migrar persistencia a JPA/Hibernate sin cambiar producto innecesariamente. |
+| TP2/TPE2 | Usar `$paw-tp2-migration` para migrar persistencia a JPA/Hibernate sin cambiar producto innecesariamente, sin perder datos y corrigiendo feedback de TPE1. |
 | TP final | Usar `$paw-tp-final-migration` para planificar REST API + SPA, build frontend, auth stateless y cache. |
 
 Prompts específicos:
 
 ```text
 Usa $paw-feature-master. Estamos en TP2.
-Si el cambio toca persistencia, usa $paw-tp2-migration para planificar entidades, mappings, EntityManager, transacciones y tests antes de editar.
+Si el cambio toca persistencia, usa $paw-tp2-migration para leer resumen-enunciado-tpe2, planificar entidades, mappings, EntityManager, migraciones de datos, transacciones, feedback pendiente y tests antes de editar.
 ```
 
 ```text

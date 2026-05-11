@@ -1,13 +1,13 @@
 ---
 name: paw-persistence-layer
-description: "Use when creating, changing, auditing, or reviewing PAW Forkd persistence: TP1 SQL schemas, migrations, JDBC DAO implementations, HSQLDB fixtures, DAO tests, or TP2 JPA/Hibernate persistence implementation after migration routing."
+description: "Use when creating, changing, auditing, or reviewing PAW Forkd persistence: TP1 SQL schemas, migrations, JDBC DAO implementations, HSQLDB fixtures, DAO tests, or TPE2/TP2 JPA/Hibernate persistence implementation after migration routing, including data-loss and schema-migration risk."
 ---
 
 # Paw Persistence Layer
 
 ## Overview
 
-Use this for the `persistence/` module. In TP1 it means schema, dialect scripts, JDBC DAOs, migrations, and persistence tests. In TP2 it may mean JPA/Hibernate DAOs and ORM config after `$paw-tp2-migration` has set the migration plan.
+Use this for the `persistence/` module. In TP1 it means schema, dialect scripts, JDBC DAOs, migrations, and persistence tests. In TPE2/TP2 it may mean JPA/Hibernate DAOs, ORM config, schema/data migrations, and generated SQL review after `$paw-tp2-migration` has set the migration plan.
 
 Read `references/layer-rules.md` before editing persistence.
 
@@ -37,7 +37,8 @@ Read `references/layer-rules.md` before editing persistence.
 - Use `$paw-tp2-migration` before introducing `EntityManager`, JPA annotations, or Spring ORM config.
 - Do not expose `EntityManager`, Hibernate `Session`, lazy proxies, or JPQL strings outside persistence.
 - Review fetch type, cascade, orphan removal, optionality, and enum mapping for each relation.
-- Treat Hibernate schema auto-update as a migration risk; do not enable destructive or production-affecting behavior without explicit approval.
+- Treat Hibernate schema auto-update as a migration risk; do not enable destructive or production/server-affecting behavior without explicit approval.
+- Preserve existing data by default. Prefer additive migrations and document rollback for any schema/data change.
 - Inspect generated SQL/logs for list pages and relationship-heavy flows.
 
 ## Test Rules

@@ -26,8 +26,10 @@ PAW-Wiki/docs/raw/PAW- Clase Teórica Front end (TP final).pdf
 PAW-Wiki/docs/raw/apuntes.txt
 PAW-Wiki/docs/raw/correcciones_tp1.md
 PAW-Wiki/docs/raw/enunciado.txt
+PAW-Wiki/docs/raw/enunciado_tpe2.txt
 PAW-Wiki/docs/raw/notas.txt
 PAW-Wiki/docs/raw/pdfs/Enunciado_TPE1.pdf
+PAW-Wiki/docs/raw/pdfs/Enunciado_TPE2.pdf
 PAW-Wiki/docs/raw/pdfs/Notas clases PAW.pdf
 PAW-Wiki/docs/raw/pdfs/PAW - Apuntes.pdf
 PAW-Wiki/docs/tree.txt
@@ -80,6 +82,7 @@ PAW-Wiki/docs/wiki/remediacion-violaciones-paw.md
 PAW-Wiki/docs/wiki/resumen-apuntes.md
 PAW-Wiki/docs/wiki/resumen-clases-paw-2026.md
 PAW-Wiki/docs/wiki/resumen-correcciones.md
+PAW-Wiki/docs/wiki/resumen-enunciado-tpe2.md
 PAW-Wiki/docs/wiki/resumen-enunciado.md
 PAW-Wiki/docs/wiki/resumen-notas-sprint-1.md
 PAW-Wiki/docs/wiki/resumen-notas-sprint-2.md

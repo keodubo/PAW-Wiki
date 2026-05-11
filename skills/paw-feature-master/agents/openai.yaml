@@ -1,4 +1,4 @@
 interface:
   display_name: "PAW Feature Master"
   short_description: "Orquesta PAW por etapa, wiki y capas"
-  default_prompt: "Use $paw-feature-master to plan a PAW task by stage (TP1, TP2, or TP final), wiki rules, and Maven layers."
+  default_prompt: "Use $paw-feature-master to plan a PAW task by stage (TP1, TPE2/TP2, or TP final), wiki rules, Maven layers, and the official stage enunciado."

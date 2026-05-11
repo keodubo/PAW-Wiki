@@ -91,6 +91,7 @@ Estas paginas separan `[[resumen-apuntes]]` por unidad para estudio y navegacion
 
 | Pagina | Descripcion |
 |--------|-------------|
+| [[resumen-enunciado-tpe2]] | Especificacion oficial del TPE2: migracion JDBC -> JPA/Hibernate, fechas, entrega, penalizaciones y riesgos de perdida de informacion |
 | [[hibernate-jpa]] | ORM, JPA, EntityManager, mapeos y contexto de persistencia fuera de TP1 |
 | [[single-page-applications]] | Thick client, frontend state, build, cache y optimizacion para la entrega final |
 | [[api-rest]] | Recursos, verbos, hipervinculos, content negotiation y JWT para la API del final |
@@ -140,6 +141,7 @@ Estas paginas separan `[[resumen-apuntes]]` por unidad para estudio y navegacion
 
 - [x] `raw/correcciones_tp1.md` -- Errores y aciertos recopilados de correcciones previas (~26KB)
 - [x] `raw/enunciado.txt` -- Enunciado oficial del TPE1
+- [x] `raw/enunciado_tpe2.txt` -- Texto extraido del enunciado oficial del TPE2; procesado en `[[resumen-enunciado-tpe2]]`
 - [x] `raw/apuntes.txt` -- Apuntes de la materia (~143KB, 21K lineas)
 - [x] `raw/pdfs/PAW - Apuntes.pdf` -- PDF original validado contra `raw/apuntes.txt`; reingesta 2026-05-11 amplia unidades 8-11 en `[[resumen-apuntes]]` y crea paginas dedicadas `[[paw-unidad-01-introduccion-scrum-mvp]]` a `[[paw-unidad-11-api-rest]]`
 - [x] `raw/notas.txt` -- Notas de clases (~175KB)
@@ -157,6 +159,7 @@ Estas paginas separan `[[resumen-apuntes]]` por unidad para estudio y navegacion
 - [x] `fuente historica no incluida (raw/notas_sprint_1.txt)` -- Procesado en `[[resumen-notas-sprint-1]]`
 - [x] `fuente historica no incluida (raw/notas_para_sprint_2.txt)` -- Checklist de cierre del sprint 2 procesado en `[[resumen-notas-sprint-2]]`
 - [x] `raw/pdfs/Enunciado_TPE1.pdf` -- PDF original validado contra `raw/enunciado.txt`
+- [x] `raw/pdfs/Enunciado_TPE2.pdf` -- PDF original del TPE2 validado contra `raw/enunciado_tpe2.txt`
 - [x] `raw/pdfs/Notas clases PAW.pdf` -- PDF original validado contra `raw/notas.txt`
 - [x] `fuente historica no incluida (raw/audio_transcript/audio_transcript clase 2.VTT)` -- Revisado con cautela; solo uso auxiliar
 - [x] `fuente historica no incluida (raw/audio_transcript/audio_transcript clase 3.VTT)` -- Revisado con cautela; solo uso auxiliar
