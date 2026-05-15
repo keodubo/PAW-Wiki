@@ -3,12 +3,14 @@ titulo: Resumen de Correcciones Previas
 tipo: fuente
 fuentes: [raw/correcciones_tp1.md]
 creado: 2026-04-09
-actualizado: 2026-04-17
+actualizado: 2026-05-15
 ---
 
 # Resumen de Correcciones Previas
 
 Segunda pasada exhaustiva sobre `raw/correcciones_tp1.md`. Esta pagina busca conservar todos los hallazgos relevantes del fuente, reorganizados por dominio para que no se pierdan entre paginas tematicas mas chicas.
+
+Para devoluciones especificas de TP2 y migracion JPA/Hibernate, leer tambien [[resumen-correcciones-tp2]].
 
 ## Hallazgos recurrentes
 
@@ -316,6 +318,7 @@ Al 2026-04-17 se ha completado una pasada de remediación exhaustiva centrada en
 - [[resumen-notas-sprint-1]]
 - [[resumen-notas-sprint-2]]
 - [[resumen-enunciado]]
+- [[resumen-correcciones-tp2]]
 - [[criterios-evaluacion]]
 - [[remediacion-violaciones-paw]]
 

@@ -3,7 +3,7 @@ titulo: Resumen del Enunciado TPE2
 tipo: fuente
 fuentes: [raw/enunciado_tpe2.txt, raw/pdfs/Enunciado_TPE2.pdf]
 creado: 2026-05-11
-actualizado: 2026-05-11
+actualizado: 2026-05-15
 ---
 
 # Resumen del Enunciado TPE2
@@ -130,6 +130,7 @@ Para implementar o auditar TPE2, tratar esta pagina como el contrato oficial de 
 - [[testing-unitario]] para calidad de tests.
 - [[criterios-evaluacion]] para priorizar riesgos.
 - [[calendario-entregas]] para fechas de demo y entrega.
+- [[resumen-correcciones-tp2]] para patrones reales de devolucion sobre migraciones TP2.
 
 ## Ver tambien
 
@@ -140,3 +141,4 @@ Para implementar o auditar TPE2, tratar esta pagina como el contrato oficial de 
 - [[calendario-entregas]]
 - [[tp1-vs-tpe2-final]]
 - [[resumen-enunciado]]
+- [[resumen-correcciones-tp2]]

@@ -1,9 +1,9 @@
 ---
 titulo: Hibernate, JPA y ORM
 tipo: concepto
-fuentes: [raw/apuntes.txt, raw/PAW - clase 7 (TP2).pdf, raw/PAW - clase 8 (TP2).pdf]
+fuentes: [raw/apuntes.txt, raw/PAW - clase 7 (TP2).pdf, raw/PAW - clase 8 (TP2).pdf, raw/correcciones_tp2.md]
 creado: 2026-04-13
-actualizado: 2026-04-27
+actualizado: 2026-05-15
 ---
 
 # Hibernate, JPA y ORM
@@ -68,6 +68,14 @@ Nota: las clases TP2 traen ejemplos con versiones y propiedades antiguas. No tom
 - `EnumType.STRING` favorece legibilidad, pero exige cuidar que los nombres entren en el ancho de columna.
 - Cada cambio de mapping debe auditar el SQL generado; el hecho de que el caso funcione localmente no prueba que escale.
 
+## Alertas desde correcciones TP2
+
+- No mapear relaciones como ids pelados si el dominio pide una relacion JPA real. Las devoluciones TP2 lo marcan como desaprovechar Hibernate y seguir pensando en columnas JDBC.
+- Evitar `FetchType.EAGER` por defecto, incluso en relaciones que hoy parecen chicas. Listados paginados pueden multiplicar queries o traer grafos innecesarios.
+- Para colecciones `toMany`, asumir crecimiento y disenar paginacion o queries especificas. No exponer getters de listas grandes si despues se materializan por accidente.
+- No acceder relaciones lazy desde `@Async` sin materializarlas previamente dentro de la transaccion o sin query con fetch controlado.
+- Usar modelo 1+1 para paginar entidades con relaciones: primero ids, despues carga del grafo necesario. Ver [[resumen-correcciones-tp2]] para ejemplos recurrentes.
+
 ## Contexto de persistencia
 
 - Dentro de una transaccion, Hibernate mantiene entidades **managed**.
@@ -102,3 +110,4 @@ Nota: las clases TP2 traen ejemplos con versiones y propiedades antiguas. No tom
 - [[persistencia-jdbc]]
 - [[transactional]]
 - [[resumen-apuntes]]
+- [[resumen-correcciones-tp2]]

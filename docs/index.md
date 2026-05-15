@@ -29,6 +29,7 @@ Estos archivos no son paginas wiki canonicas; son guias de uso para humanos y ag
 | Pagina | Descripcion | Origen |
 |--------|-------------|--------|
 | [[resumen-correcciones]] | Ingesta exhaustiva de errores, aciertos y observaciones recurrentes de correcciones previas | `raw/correcciones_tp1.md` |
+| [[resumen-correcciones-tp2]] | Ingesta estructurada de devoluciones TP2 2025 C1/C2: JPA/Hibernate, paginacion 1+1, seguridad, testing, UX y entrega | `raw/correcciones_tp2.md` + `raw/pdfs/Devolucion_TP2_2025_C1.pdf` + `raw/pdfs/Devolucion_TP2_2025_C2.pdf` |
 | [[resumen-enunciado]] | Especificacion oficial del TPE1: stack, requerimientos, entrega | `raw/enunciado.txt` + `raw/pdfs/Enunciado_TPE1.pdf` |
 | [[resumen-apuntes]] | Apuntes completos de la materia (11 unidades; 1-7 como base TP1, 8 como soporte de implementacion y 9-11 reingestadas en detalle para TP2/final; incluye paginas dedicadas por unidad) | `raw/apuntes.txt` + `raw/pdfs/PAW - Apuntes.pdf` |
 | [[resumen-notas]] | Notas de clase con walkthroughs practicos y advertencias del profesor | `raw/notas.txt` + `raw/pdfs/Notas clases PAW.pdf` |
@@ -140,6 +141,7 @@ Estas paginas separan `[[resumen-apuntes]]` por unidad para estudio y navegacion
 ### Estado de fuentes raw
 
 - [x] `raw/correcciones_tp1.md` -- Errores y aciertos recopilados de correcciones previas (~26KB)
+- [x] `raw/correcciones_tp2.md` -- Devoluciones TP2 2025 C1/C2 consolidadas en categorias de auditoria (~32 grupos)
 - [x] `raw/enunciado.txt` -- Enunciado oficial del TPE1
 - [x] `raw/enunciado_tpe2.txt` -- Texto extraido del enunciado oficial del TPE2; procesado en `[[resumen-enunciado-tpe2]]`
 - [x] `raw/apuntes.txt` -- Apuntes de la materia (~143KB, 21K lineas)
@@ -160,6 +162,8 @@ Estas paginas separan `[[resumen-apuntes]]` por unidad para estudio y navegacion
 - [x] `fuente historica no incluida (raw/notas_para_sprint_2.txt)` -- Checklist de cierre del sprint 2 procesado en `[[resumen-notas-sprint-2]]`
 - [x] `raw/pdfs/Enunciado_TPE1.pdf` -- PDF original validado contra `raw/enunciado.txt`
 - [x] `raw/pdfs/Enunciado_TPE2.pdf` -- PDF original del TPE2 validado contra `raw/enunciado_tpe2.txt`
+- [x] `raw/pdfs/Devolucion_TP2_2025_C1.pdf` -- PDF original de devoluciones TP2 2025 C1; procesado en `[[resumen-correcciones-tp2]]`
+- [x] `raw/pdfs/Devolucion_TP2_2025_C2.pdf` -- PDF original de devoluciones TP2 2025 C2; procesado en `[[resumen-correcciones-tp2]]`
 - [x] `raw/pdfs/Notas clases PAW.pdf` -- PDF original validado contra `raw/notas.txt`
 - [x] `fuente historica no incluida (raw/audio_transcript/audio_transcript clase 2.VTT)` -- Revisado con cautela; solo uso auxiliar
 - [x] `fuente historica no incluida (raw/audio_transcript/audio_transcript clase 3.VTT)` -- Revisado con cautela; solo uso auxiliar

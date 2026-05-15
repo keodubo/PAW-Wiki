@@ -4,6 +4,14 @@ Registro cronologico de actividad del wiki.
 
 ---
 
+## [2026-05-15] ingest | correcciones TP2 2025 C1/C2
+
+- Agregados `docs/raw/pdfs/Devolucion_TP2_2025_C1.pdf` y `docs/raw/pdfs/Devolucion_TP2_2025_C2.pdf` desde Downloads como fuentes originales preservadas.
+- Creado `docs/raw/correcciones_tp2.md` con la misma intencion estructural de `docs/raw/correcciones_tp1.md`: errores, reincidencias, virtudes y criterios agrupados semanticamente para auditoria.
+- Creada `wiki/resumen-correcciones-tp2.md` como pagina fuente navegable para TP2, con foco en JPA/Hibernate, modelo 1+1, seguridad, testing, UX, repo hygiene y entrega.
+- Actualizados backlinks desde `wiki/resumen-correcciones.md`, `wiki/resumen-enunciado-tpe2.md`, `wiki/hibernate-jpa.md`, `wiki/criterios-evaluacion.md` y `wiki/tp1-vs-tpe2-final.md`.
+- Actualizados `docs/index.md` y `docs/tree.txt` para registrar las nuevas fuentes y la pagina wiki.
+
 ## [2026-05-11] ingest | apuntes unidades 8 en adelante
 
 - Reextraidas del PDF `docs/raw/pdfs/PAW - Apuntes.pdf` las paginas 68-96 para ampliar la cobertura de unidades 8-11.

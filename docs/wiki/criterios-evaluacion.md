@@ -1,9 +1,9 @@
 ---
 titulo: Criterios de Evaluacion y Penalizaciones
 tipo: concepto
-fuentes: [raw/enunciado.txt, raw/enunciado_tpe2.txt, raw/pdfs/Enunciado_TPE2.pdf]
+fuentes: [raw/enunciado.txt, raw/enunciado_tpe2.txt, raw/pdfs/Enunciado_TPE2.pdf, raw/correcciones_tp2.md]
 creado: 2026-04-09
-actualizado: 2026-05-11
+actualizado: 2026-05-15
 ---
 
 # Criterios de Evaluacion y Penalizaciones
@@ -29,7 +29,7 @@ La catedra evalua funcionalidad, calidad de codigo, arquitectura, usabilidad, pr
 | Funcionalidad y usabilidad del producto | **-4 puntos** | [[ux-flows]], [[buenas-practicas]] |
 | Arquitectura, DDD, separacion de capas, responsabilidades o buenas practicas | **-4 puntos** | [[modelo-capas]], [[hibernate-jpa]] |
 | Perdidas de informacion | **-2 puntos** | [[hibernate-jpa]], [[transactional]] |
-| Feedback anterior no corregido | **-1 punto por cada correccion no resuelta** | [[resumen-correcciones]] |
+| Feedback anterior no corregido | **-1 punto por cada correccion no resuelta** | [[resumen-correcciones]], [[resumen-correcciones-tp2]] |
 
 ## Penalizaciones por sprint
 
@@ -63,12 +63,15 @@ Basado en el peso de penalizaciones, el orden de prioridad es:
 4. **Testing** (-1 pt) — cobertura y calidad
 5. **Forma de entrega** (-1 pt) — war, README, git limpio
 
+Las devoluciones TP2 consolidan que las reincidencias pesan mucho: varios grupos recibieron observaciones porque errores ya marcados en TP1 seguian abiertos en la migracion JPA/Hibernate. Ver [[resumen-correcciones-tp2]].
+
 ## Ver tambien
 - [[resumen-enunciado]]
 - [[resumen-enunciado-tpe2]]
 - [[calendario-entregas]]
 - [[scrum-metodologia]]
 - [[resumen-correcciones]]
+- [[resumen-correcciones-tp2]]
 - [[resumen-notas-sprint-1]]
 - [[buenas-practicas]]
 - [[comparacion-seguridad-web]]
