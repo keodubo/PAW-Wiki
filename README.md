@@ -9,6 +9,7 @@ criterios de cursada, ejemplos operativos y skills reutilizables para agentes.
 Está pensado para lectura humana, navegación en Obsidian y uso como contexto de
 trabajo para asistentes de IA.
 
+Dejame una estrella en github si lo usas🙏
 ---
 
 ## Quickstart
