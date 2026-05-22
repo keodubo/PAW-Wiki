@@ -99,13 +99,16 @@ Como minimo, `README.md`, `docs/CLAUDE.md`, `docs/examples/README.md`, `docs/exa
 git diff --check
 ```
 
-## 6. Tree
+## 6. Tree público
 
-Si agregaste, moviste o borraste archivos bajo `docs/`, actualizar:
+Si agregaste, moviste o borraste archivos públicos bajo `docs/`, actualizar:
 
 ```bash
-find docs -path docs/private -prune -o -type f ! -name '.DS_Store' -print | sort | sed 's#^#PAW-Wiki/#' > docs/tree.txt
+find docs \( -path docs/private -o -path docs/superpowers/plans \) -prune -o -type f ! -name '.DS_Store' -print | sort | sed 's#^#PAW-Wiki/#' > docs/tree.txt
 ```
+
+No incluir `docs/private/` ni `docs/superpowers/plans/`: son espacios locales
+ignorados por Git.
 
 ## 7. Commit y push
 

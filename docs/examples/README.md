@@ -38,10 +38,12 @@ primero indicar o resolver `TP1`, `TP2` o `TP final`.
 ```bash
 git status --short --ignored=matching
 git ls-files docs/private
-find docs -path docs/private -prune -o -type f ! -name '.DS_Store' -print | sort
+find docs \( -path docs/private -o -path docs/superpowers/plans \) -prune -o -type f ! -name '.DS_Store' -print | sort | sed 's#^#PAW-Wiki/#'
 ```
 
 `git ls-files docs/private` no debería imprimir nada.
+El listado de `docs/tree.txt` debe excluir `docs/private/` y
+`docs/superpowers/plans/`, porque ambos son locales e ignorados por Git.
 
 ## Camino Recomendado para una Persona Nueva
 

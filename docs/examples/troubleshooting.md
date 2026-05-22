@@ -31,17 +31,13 @@ Usar `reset --hard` solo si ya guardaste o no te importan los cambios locales.
 
 ## La imagen del README no aparece
 
-Verificar que exista:
+Desde la raíz del repo, verificar que exista:
 
 ```bash
 ls -lh obsidian-graph-view.png
 ```
 
-El README debe apuntar a:
-
-```markdown
-![Vista del grafo del wiki en Obsidian](./obsidian-graph-view.png)
-```
+El README debe apuntar a la ruta relativa `./obsidian-graph-view.png`.
 
 ## Codex o Claude no detecta las skills
 
@@ -143,5 +139,8 @@ printf "\n/PAW-Wiki/\n" >> .git/info/exclude
 ## Quiero actualizar docs/tree.txt
 
 ```bash
-find docs -path docs/private -prune -o -type f ! -name '.DS_Store' -print | sort | sed 's#^#PAW-Wiki/#' > docs/tree.txt
+find docs \( -path docs/private -o -path docs/superpowers/plans \) -prune -o -type f ! -name '.DS_Store' -print | sort | sed 's#^#PAW-Wiki/#' > docs/tree.txt
 ```
+
+`docs/tree.txt` representa el árbol público. No debe incluir `docs/private/` ni
+`docs/superpowers/plans/`, aunque esas carpetas existan localmente.

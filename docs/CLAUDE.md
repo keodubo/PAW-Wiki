@@ -23,11 +23,11 @@ docs/
     pdfs/                  <- PDFs originales de la cátedra cuando se distribuyen en subcarpeta.
     *.txt / *.md / *.puml  <- Apuntes, correcciones, enunciados, specs y diagramas.
   wiki/                    <- Páginas generadas y mantenidas por asistentes.
-  superpowers/plans/       <- Planes de ejecución largos.
+  superpowers/plans/       <- Planes de ejecución largos locales, ignorados por Git.
   private/                 <- Carpeta local ignorada por Git para material personal.
   index.md                 <- Índice maestro del wiki.
   log.md                   <- Registro cronológico de actividad.
-  tree.txt                 <- Snapshot plano del árbol de docs/.
+  tree.txt                 <- Snapshot plano del árbol público de docs/.
   CLAUDE.md                <- Este archivo.
 skills/
   paw-*                    <- Skills instalables para agentes que trabajan con PAW.
@@ -35,6 +35,11 @@ skills/
 
 `docs/private/` no debe trackearse. Si aparece en `git status` como ignored,
 está bien; si aparece como tracked, detenerse y corregir antes de publicar.
+
+`docs/superpowers/plans/` también es local e ignorado. Usarlo para planes largos
+de trabajo en curso. Si un plan debe publicarse, convertirlo en página pública
+bajo `docs/wiki/` o en un archivo trackeable antes de registrarlo en
+`docs/index.md`, `docs/log.md` y `docs/tree.txt`.
 
 ## Convenciones de Páginas
 
@@ -96,7 +101,8 @@ Cuando el usuario dice "ingesta esto" o agrega un archivo a `raw/`:
 5. Crear o actualizar páginas de conceptos/entidades relevantes.
 6. Actualizar `index.md` con las páginas nuevas o modificadas.
 7. Agregar una entrada en `log.md`.
-8. Actualizar `tree.txt` si cambia el árbol bajo `docs/`.
+8. Actualizar `tree.txt` si cambia el árbol público bajo `docs/`; excluir
+   `docs/private/` y `docs/superpowers/plans/`.
 
 Si una fuente muestra una evolución de setup, por ejemplo un ejemplo inicial y
 luego una versión final recomendada, documentar explícitamente el estado final y
@@ -141,7 +147,7 @@ Cuando el usuario pide una revisión de salud del wiki:
 3. Detectar conceptos mencionados sin página propia.
 4. Proponer fuentes adicionales a buscar.
 5. Verificar que el índice esté completo.
-6. Verificar que `docs/tree.txt` refleje los archivos bajo `docs/`.
+6. Verificar que `docs/tree.txt` refleje los archivos públicos bajo `docs/`.
 7. Verificar que `docs/private/` no quede trackeado.
 
 Comandos útiles:
@@ -149,7 +155,7 @@ Comandos útiles:
 ```bash
 git status --short --ignored=matching
 git ls-files docs/private
-find docs -path docs/private -prune -o -type f ! -name '.DS_Store' -print | sort
+find docs \( -path docs/private -o -path docs/superpowers/plans \) -prune -o -type f ! -name '.DS_Store' -print | sort | sed 's#^#PAW-Wiki/#'
 ```
 
 ### 4. Trabajar con agentes
@@ -262,7 +268,8 @@ Temas centrales:
 - Todo el contenido del wiki se escribe en **español**.
 - Las fuentes en `raw/` son **inmutables**: nunca modificarlas.
 - Cada ingesta pública debe tocar `index.md` y `log.md`.
-- Si se agregan, mueven o eliminan archivos bajo `docs/`, actualizar `tree.txt`.
+- Si se agregan, mueven o eliminan archivos públicos bajo `docs/`, actualizar
+  `tree.txt`; no incluir `docs/private/` ni `docs/superpowers/plans/`.
 - Preferir páginas cortas y enfocadas sobre páginas largas y genéricas.
 - Enlaces bidireccionales: si A referencia B, B debe referenciar A en
   "Ver también".

@@ -4,6 +4,14 @@ Registro cronologico de actividad del wiki.
 
 ---
 
+## [2026-05-22] docs | contrato de tree público
+
+- Aclarado en `README.md` y `docs/CLAUDE.md` que `docs/tree.txt` representa el
+  árbol público de `docs/`.
+- Alineados los checklists de `docs/examples/` para excluir `docs/private/` y
+  `docs/superpowers/plans/`, ambos locales e ignorados por Git.
+- Sin cambios en `docs/raw/`, `docs/wiki/` ni `skills/`.
+
 ## [2026-05-15] ingest | correcciones TP2 2025 C1/C2
 
 - Agregados `docs/raw/pdfs/Devolucion_TP2_2025_C1.pdf` y `docs/raw/pdfs/Devolucion_TP2_2025_C2.pdf` desde Downloads como fuentes originales preservadas.

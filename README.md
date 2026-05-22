@@ -157,10 +157,10 @@ docs/
 ├── examples/       # Ejemplos copy-paste para usar y mantener la wiki
 ├── raw/            # Fuentes inmutables o históricas
 ├── wiki/           # Páginas sintetizadas con frontmatter y enlaces Obsidian
-├── superpowers/    # Planes largos generados por Superpowers
+├── superpowers/    # Planes locales generados por Superpowers, ignorados por Git
 ├── index.md        # Índice maestro del wiki
 ├── log.md          # Registro cronológico de cambios
-├── tree.txt        # Snapshot del árbol de docs/
+├── tree.txt        # Snapshot del árbol público de docs/
 └── CLAUDE.md       # Reglas de trabajo para agentes
 skills/
 └── paw-*           # Skills instalables basadas en PAW-Wiki
@@ -168,6 +168,11 @@ skills/
 
 `docs/private/` es una carpeta local ignorada por Git. Úsala para fuentes,
 planes o notas personales que no deban publicarse.
+
+`docs/superpowers/plans/` también es local e ignorado. Sirve para planes largos
+de trabajo en curso; si un plan debe quedar publicable, moverlo a `docs/wiki/`
+o convertirlo en una página pública antes de actualizar `docs/index.md`,
+`docs/log.md` y `docs/tree.txt`.
 
 ### Componentes clave
 

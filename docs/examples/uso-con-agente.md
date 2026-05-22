@@ -18,7 +18,7 @@ Reglas:
 - docs/raw/ es inmutable;
 - las paginas sintetizadas van en docs/wiki/;
 - cada ingesta publica actualiza docs/index.md y docs/log.md;
-- si cambia el arbol bajo docs/, actualiza docs/tree.txt;
+- si cambia el arbol público bajo docs/, actualiza docs/tree.txt;
 - no commitees docs/private/;
 - usa links Obsidian con nombres de archivo sin extension.
 

@@ -26,7 +26,7 @@ Objetivo:
 - citar la fuente raw en frontmatter y en el texto cuando corresponda;
 - actualizar docs/index.md;
 - agregar una entrada en docs/log.md;
-- actualizar docs/tree.txt si cambian archivos bajo docs/.
+- actualizar docs/tree.txt si cambian archivos públicos bajo docs/.
 
 No modifiques docs/raw/clase-validacion.md.
 Si la fuente es un PDF viejo y menciona versiones de dependencias, tratalas como historicas: no las copies como recomendacion vigente sin verificar el checkout o enunciado actual.
