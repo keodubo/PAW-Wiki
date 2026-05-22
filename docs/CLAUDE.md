@@ -17,6 +17,7 @@ original existe localmente.
 README.md                 <- Guía humana principal.
 obsidian-graph-view.png   <- Captura de referencia de la vista de grafo.
 docs/
+  assets/                  <- Medios públicos usados por README y documentación.
   examples/                <- Ejemplos de prompts, flujos y checklists de uso.
   raw/                     <- Fuentes inmutables. Se leen, pero no se modifican.
     PAW*.pdf               <- PDFs de clases de la cátedra; fuentes prioritarias por etapa.

@@ -1,4 +1,6 @@
 PAW-Wiki/docs/CLAUDE.md
+PAW-Wiki/docs/assets/paw-wiki-demo-poster.png
+PAW-Wiki/docs/assets/paw-wiki-demo.mp4
 PAW-Wiki/docs/examples/README.md
 PAW-Wiki/docs/examples/actualizar-wiki.md
 PAW-Wiki/docs/examples/checklist-publicacion.md
