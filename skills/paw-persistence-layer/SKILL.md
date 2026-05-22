@@ -40,6 +40,13 @@ Read `references/layer-rules.md` before editing persistence.
 - Treat Hibernate schema auto-update as a migration risk; do not enable destructive or production/server-affecting behavior without explicit approval.
 - Preserve existing data by default. Prefer additive migrations and document rollback for any schema/data change.
 - Inspect generated SQL/logs for list pages and relationship-heavy flows.
+- For paginated JPA lists that need relationships, page root ids first and load
+  entities second. Use a native or id-only query with the filters, ordering,
+  `setFirstResult((page - 1) * pageSize)`, and `setMaxResults(pageSize)` to get
+  the ids; then use a JPA entity query with those ids to fetch/populate the
+  entities. Reorder the entities to match the id query, and use a separate count
+  query over root entities for totals. Do not paginate a fetch/join-expanded
+  entity query when row count can differ from entity count.
 
 ## Test Rules
 

@@ -43,6 +43,30 @@ When the user says TP1 is finished and they are starting TP2, do this before edi
 8. Update tests to prove persisted state, service behavior, and no regression of corrected feedback, not just compilation.
 9. Run the smallest Maven gate first, then widen when contracts, wiring, packaging, or deploy behavior changed.
 
+## JPA Pagination Rule
+
+For paginated TP2/JPA searches that load entities and relationships, do not trust a
+single entity query with SQL `LIMIT`/JPA pagination over joined rows. The PAW
+notes warn that the limit applies to SQL rows, which may not match the number of
+root entities when one entity expands into several relationship rows.
+
+Use the catedra pattern from `PAW-Wiki/docs/raw/pdfs/PAW - Apuntes.pdf`, page
+81:
+
+1. Run a native or id-only query with the exact filters and ordering to obtain
+   only the root entity ids for the requested page.
+2. Apply `setFirstResult((page - 1) * pageSize)` and
+   `setMaxResults(pageSize)` to that id query.
+3. Run a JPA entity query to load the entities for those ids and fetch/populate
+   the relationships needed by the caller.
+4. Preserve the id-query order explicitly after the JPA `IN (:ids)` load, because
+   `IN` does not guarantee result order.
+5. Compute total counts with a separate count query over root entities using the
+   same filters, not by counting fetched relationship rows.
+
+This two-step id-page-then-entity-load pattern is the default for PAW TP2 list
+pages with relationship-heavy entities. The same idea can also be used in JDBC.
+
 ## Coordination
 
 - Use `$paw-models-layer` for entity/model annotations and enum/nullability choices.
