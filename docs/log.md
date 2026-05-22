@@ -10,6 +10,8 @@ Registro cronologico de actividad del wiki.
   árbol público de `docs/`.
 - Alineados los checklists de `docs/examples/` para excluir `docs/private/` y
   `docs/superpowers/plans/`, ambos locales e ignorados por Git.
+- Actualizado `docs/tree.txt` para reflejar el árbol público actual sin
+  reintroducir páginas históricas eliminadas.
 - Sin cambios en `docs/raw/`, `docs/wiki/` ni `skills/`.
 
 ## [2026-05-15] ingest | correcciones TP2 2025 C1/C2
