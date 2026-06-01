@@ -1,9 +1,9 @@
 ---
 titulo: TP1 vs TPE2 Final — Ruta de Estudio
 tipo: sintesis
-fuentes: [raw/apuntes.txt, raw/notas.txt, raw/enunciado_tpe2.txt, raw/pdfs/Enunciado_TPE2.pdf, raw/correcciones_tp2.md, raw/pdfs/Devolucion_TP2_2025_C1.pdf, raw/pdfs/Devolucion_TP2_2025_C2.pdf, raw/PAW - clase 1 (TP1).pdf, raw/PAW - clase 2 (TP1).pdf, raw/PAW - clase 3 (TP1).pdf, raw/PAW - clase 4 (TP1).pdf, raw/PAW - clase 5 (TP1).pdf, raw/PAW - clase 6 (TP1).pdf, raw/PAW - clase 7 (TP2).pdf, raw/PAW - clase 8 (TP2).pdf, raw/PAW - clases 9 y 10 (TP final).pdf, raw/PAW- Clase Teórica Front end (TP final).pdf, raw/PAW- Clase Teórica - SPAs segunda parte (TP final).pdf, fuente historica no incluida (raw/audio_transcript/audio_transcript clase 2.VTT), fuente historica no incluida (raw/audio_transcript/audio_transcript clase 3.VTT), fuente historica no incluida (raw/audio_transcript/audio_transcript clase 4.VTT)]
+fuentes: [raw/apuntes.txt, raw/notas.txt, raw/enunciado_tpe2.txt, raw/pdfs/Enunciado_TPE2.pdf, raw/correcciones_tp2.md, raw/pdfs/Devolucion_TP2_2025_C1.pdf, raw/pdfs/Devolucion_TP2_2025_C2.pdf, raw/devolucion_tp1_2026_c1.txt, raw/pdfs/Devolucion_TP1_2026_C1.pdf, raw/PAW - clase 1 (TP1).pdf, raw/PAW - clase 2 (TP1).pdf, raw/PAW - clase 3 (TP1).pdf, raw/PAW - clase 4 (TP1).pdf, raw/PAW - clase 5 (TP1).pdf, raw/PAW - clase 6 (TP1).pdf, raw/PAW - clase 7 (TP2).pdf, raw/PAW - clase 8 (TP2).pdf, raw/PAW - clases 9 y 10 (TP final).pdf, raw/PAW- Clase Teórica Front end (TP final).pdf, raw/PAW- Clase Teórica - SPAs segunda parte (TP final).pdf, fuente historica no incluida (raw/audio_transcript/audio_transcript clase 2.VTT), fuente historica no incluida (raw/audio_transcript/audio_transcript clase 3.VTT), fuente historica no incluida (raw/audio_transcript/audio_transcript clase 4.VTT)]
 creado: 2026-04-13
-actualizado: 2026-05-15
+actualizado: 2026-05-31
 ---
 
 # TP1 vs TPE2 Final — Ruta de Estudio
@@ -31,6 +31,7 @@ Las versiones concretas de dependencias que aparecen en PDFs viejos son historic
 | TP1 — Aterrizaje practico | Maxima | Setup real, wiring, ejemplos, warnings, decisiones operativas | Nada | [[resumen-notas]] |
 | TP1 — Soporte de implementacion | Alta | AOP aplicado a proxies y `@Transactional` en services | Pointcuts complejos y usos avanzados de AspectJ | [[spring-aop]], [[transactional]] |
 | TP1 — Conceptos para implementar | Maxima | Paginas concepto ligadas a unidades 1-7 mas `transactional` | Material de SPA/REST/JPA | [[spring-web-mvc]], [[testing-unitario]], [[validacion-formularios]], [[spring-security]], [[transactional]] |
+| TP1 — Correcciones actuales | Maxima | Reincidencias 2026 C1: agentes sin supervision, controllers con logica, tests no unitarios, N+1, seguridad manual, i18n y UX de demo | Nada | [[resumen-correcciones-tp1-2026-c1]] |
 | Transcripciones VTT | Media | Solo corroborar ideas ya presentes o apoyar clase reciente de formularios/agentes | No convertirlas en fuente canonica aislada | [[resumen-transcripciones-clases-2-a-4]] |
 | TPE2 / final — Extension tecnica | Alta solo si estas en esa etapa | Nada si estas cerrando TP1 | JPA/Hibernate para TP2; SPA y API REST para final | [[hibernate-jpa]], [[single-page-applications]], [[api-rest]], [[resumen-clases-paw-2026]], [[resumen-correcciones-tp2]] |
 
@@ -42,12 +43,13 @@ Las versiones concretas de dependencias que aparecen en PDFs viejos son historic
 4. Revisar [[spring-aop]] y [[transactional]] cuando definas servicios, bordes transaccionales o tengas dudas sobre proxies.
 5. Ir a las paginas concepto del bloque que estes tocando en codigo.
 6. Usar [[resumen-correcciones]] para evitar errores recurrentes de la catedra.
-7. Si estas en TP2, sumar [[resumen-correcciones-tp2]] antes de tocar mappings, paginacion, seguridad o tests.
-8. Dejar [[single-page-applications]] y [[api-rest]] para despues de estabilizar TP2.
+7. Sumar [[resumen-correcciones-tp1-2026-c1]] para revisar las correcciones actuales antes de demo o migracion.
+8. Si estas en TP2, sumar [[resumen-correcciones-tp2]] antes de tocar mappings, paginacion, seguridad o tests.
+9. Dejar [[single-page-applications]] y [[api-rest]] para despues de estabilizar TP2.
 
 ## Regla editorial del wiki
 
-- **Canon TP1**: `resumen-enunciado` + `resumen-apuntes` (1-7 como base + unidad 8 como soporte de implementacion) + `resumen-notas` + clases TP1 de [[resumen-clases-paw-2026]].
+- **Canon TP1**: `resumen-enunciado` + `resumen-apuntes` (1-7 como base + unidad 8 como soporte de implementacion) + `resumen-notas` + clases TP1 de [[resumen-clases-paw-2026]] + [[resumen-correcciones-tp1-2026-c1]].
 - **Canon TP2**: [[resumen-enunciado-tpe2]] + clases 7-8 de [[resumen-clases-paw-2026]] + [[hibernate-jpa]] + [[resumen-correcciones-tp2]], siempre contrastadas contra checkout actual.
 - **Canon TP final**: clases 9/10 y teoricas SPA de [[resumen-clases-paw-2026]] + [[api-rest]] + [[single-page-applications]].
 - **Auxiliar**: `resumen-transcripciones-clases-2-a-4`.
@@ -62,6 +64,7 @@ Las versiones concretas de dependencias que aparecen en PDFs viejos son historic
 - [[resumen-clases-paw-2026]]
 - [[resumen-transcripciones-clases-2-a-4]]
 - [[resumen-correcciones]]
+- [[resumen-correcciones-tp1-2026-c1]]
 - [[resumen-correcciones-tp2]]
 - [[spring-aop]]
 - [[hibernate-jpa]]

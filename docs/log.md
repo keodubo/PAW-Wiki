@@ -4,6 +4,14 @@ Registro cronologico de actividad del wiki.
 
 ---
 
+## [2026-05-31] ingest | devolucion TP1 2026 C1
+
+- Agregado `docs/raw/pdfs/Devolucion_TP1_2026_C1.pdf` desde Downloads como fuente publica original preservada.
+- Extraido `docs/raw/devolucion_tp1_2026_c1.txt` para busqueda e ingesta.
+- Creada `wiki/resumen-correcciones-tp1-2026-c1.md` como pagina fuente para la devolucion actual: reincidencias de demo/codigo, uso de agentes, controllers, seguridad, N+1, testing, Maven, i18n y UX.
+- Actualizados backlinks desde `wiki/resumen-correcciones.md`, `wiki/testing-unitario.md`, `wiki/criterios-evaluacion.md` y `wiki/tp1-vs-tpe2-final.md`.
+- Actualizados `docs/index.md` y `docs/tree.txt` para registrar las fuentes nuevas y la pagina wiki.
+
 ## [2026-05-22] docs | contrato de tree público
 
 - Aclarado en `README.md` y `docs/CLAUDE.md` que `docs/tree.txt` representa el

@@ -29,6 +29,7 @@ Estos archivos no son paginas wiki canonicas; son guias de uso para humanos y ag
 | Pagina | Descripcion | Origen |
 |--------|-------------|--------|
 | [[resumen-correcciones]] | Ingesta exhaustiva de errores, aciertos y observaciones recurrentes de correcciones previas | `raw/correcciones_tp1.md` |
+| [[resumen-correcciones-tp1-2026-c1]] | Ingesta de la devolucion TP1 2026 C1: reincidencias de demo/codigo, uso de agentes, controllers, tests, seguridad, performance, i18n y UX | `raw/devolucion_tp1_2026_c1.txt` + `raw/pdfs/Devolucion_TP1_2026_C1.pdf` |
 | [[resumen-correcciones-tp2]] | Ingesta estructurada de devoluciones TP2 2025 C1/C2: JPA/Hibernate, paginacion 1+1, seguridad, testing, UX y entrega | `raw/correcciones_tp2.md` + `raw/pdfs/Devolucion_TP2_2025_C1.pdf` + `raw/pdfs/Devolucion_TP2_2025_C2.pdf` |
 | [[resumen-enunciado]] | Especificacion oficial del TPE1: stack, requerimientos, entrega | `raw/enunciado.txt` + `raw/pdfs/Enunciado_TPE1.pdf` |
 | [[resumen-apuntes]] | Apuntes completos de la materia (11 unidades; 1-7 como base TP1, 8 como soporte de implementacion y 9-11 reingestadas en detalle para TP2/final; incluye paginas dedicadas por unidad) | `raw/apuntes.txt` + `raw/pdfs/PAW - Apuntes.pdf` |
@@ -141,6 +142,8 @@ Estas paginas separan `[[resumen-apuntes]]` por unidad para estudio y navegacion
 ### Estado de fuentes raw
 
 - [x] `raw/correcciones_tp1.md` -- Errores y aciertos recopilados de correcciones previas (~26KB)
+- [x] `raw/devolucion_tp1_2026_c1.txt` -- Texto extraido de la devolucion TP1 2026 C1; procesado en `[[resumen-correcciones-tp1-2026-c1]]`
+- [x] `raw/pdfs/Devolucion_TP1_2026_C1.pdf` -- PDF original de la devolucion TP1 2026 C1; fuente validada para `[[resumen-correcciones-tp1-2026-c1]]`
 - [x] `raw/correcciones_tp2.md` -- Devoluciones TP2 2025 C1/C2 consolidadas en categorias de auditoria (~32 grupos)
 - [x] `raw/enunciado.txt` -- Enunciado oficial del TPE1
 - [x] `raw/enunciado_tpe2.txt` -- Texto extraido del enunciado oficial del TPE2; procesado en `[[resumen-enunciado-tpe2]]`

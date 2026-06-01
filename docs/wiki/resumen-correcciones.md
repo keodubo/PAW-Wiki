@@ -1,14 +1,16 @@
 ---
 titulo: Resumen de Correcciones Previas
 tipo: fuente
-fuentes: [raw/correcciones_tp1.md]
+fuentes: [raw/correcciones_tp1.md, raw/devolucion_tp1_2026_c1.txt, raw/pdfs/Devolucion_TP1_2026_C1.pdf]
 creado: 2026-04-09
-actualizado: 2026-05-15
+actualizado: 2026-05-31
 ---
 
 # Resumen de Correcciones Previas
 
 Segunda pasada exhaustiva sobre `raw/correcciones_tp1.md`. Esta pagina busca conservar todos los hallazgos relevantes del fuente, reorganizados por dominio para que no se pierdan entre paginas tematicas mas chicas.
+
+Para la devolucion TP1 del cuatrimestre 2026 C1, leer tambien [[resumen-correcciones-tp1-2026-c1]]. Esa pagina conserva el feedback actual por riesgos y agrega un checklist directo para evitar reincidencias antes de TP2.
 
 Para devoluciones especificas de TP2 y migracion JPA/Hibernate, leer tambien [[resumen-correcciones-tp2]].
 
@@ -318,6 +320,7 @@ Al 2026-04-17 se ha completado una pasada de remediación exhaustiva centrada en
 - [[resumen-notas-sprint-1]]
 - [[resumen-notas-sprint-2]]
 - [[resumen-enunciado]]
+- [[resumen-correcciones-tp1-2026-c1]]
 - [[resumen-correcciones-tp2]]
 - [[criterios-evaluacion]]
 - [[remediacion-violaciones-paw]]

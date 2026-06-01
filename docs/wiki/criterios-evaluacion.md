@@ -1,9 +1,9 @@
 ---
 titulo: Criterios de Evaluacion y Penalizaciones
 tipo: concepto
-fuentes: [raw/enunciado.txt, raw/enunciado_tpe2.txt, raw/pdfs/Enunciado_TPE2.pdf, raw/correcciones_tp2.md]
+fuentes: [raw/enunciado.txt, raw/enunciado_tpe2.txt, raw/pdfs/Enunciado_TPE2.pdf, raw/correcciones_tp2.md, raw/devolucion_tp1_2026_c1.txt, raw/pdfs/Devolucion_TP1_2026_C1.pdf]
 creado: 2026-04-09
-actualizado: 2026-05-15
+actualizado: 2026-05-31
 ---
 
 # Criterios de Evaluacion y Penalizaciones
@@ -65,12 +65,18 @@ Basado en el peso de penalizaciones, el orden de prioridad es:
 
 Las devoluciones TP2 consolidan que las reincidencias pesan mucho: varios grupos recibieron observaciones porque errores ya marcados en TP1 seguian abiertos en la migracion JPA/Hibernate. Ver [[resumen-correcciones-tp2]].
 
+La devolucion TP1 2026 C1 muestra el mismo patron desde la entrega inicial:
+controllers con logica de negocio, seguridad manual, tests no unitarios, N+1,
+configuracion versionada y uso no revisado de agentes aparecen como errores
+conceptuales graves. Ver [[resumen-correcciones-tp1-2026-c1]].
+
 ## Ver tambien
 - [[resumen-enunciado]]
 - [[resumen-enunciado-tpe2]]
 - [[calendario-entregas]]
 - [[scrum-metodologia]]
 - [[resumen-correcciones]]
+- [[resumen-correcciones-tp1-2026-c1]]
 - [[resumen-correcciones-tp2]]
 - [[resumen-notas-sprint-1]]
 - [[buenas-practicas]]

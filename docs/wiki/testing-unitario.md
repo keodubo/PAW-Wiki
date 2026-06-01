@@ -1,9 +1,9 @@
 ---
 titulo: Testing Unitario — Criterios de Evaluacion
 tipo: concepto
-fuentes: [raw/correcciones_tp1.md, raw/enunciado.txt, raw/apuntes.txt, raw/notas.txt]
+fuentes: [raw/correcciones_tp1.md, raw/enunciado.txt, raw/apuntes.txt, raw/notas.txt, raw/devolucion_tp1_2026_c1.txt, raw/pdfs/Devolucion_TP1_2026_C1.pdf]
 creado: 2026-04-09
-actualizado: 2026-04-27
+actualizado: 2026-05-31
 ---
 
 # Testing Unitario — Criterios de Evaluacion
@@ -108,6 +108,14 @@ En apuntes tambien se explica que `mock()` crea un "nice mock":
 - Lo correcto: asserts sobre el resultado retornado por el metodo testeado
 - Los controllers no tienen logica de negocio, por lo tanto no necesitan tests (si se implementan correctamente)
 
+La devolucion TP1 2026 C1 extiende esta regla a equivalentes encubiertos:
+
+- `doAnswer` usado para capturar argumentos y afirmar llamadas internas
+- `AtomicReference` / `AtomicBoolean` para simular `ArgumentCaptor` o `verify`
+- reflection para acceder a internals
+- tests de views o templates que buscan strings exactos en archivos fuente
+- tests que usan metodos de la misma clase bajo test para preparar o verificar estado
+
 ### Tests que solo buscan "que no falle"
 
 - Hay casos donde la clase muestra un `try/catch` y el assert relevante es que no se lance excepcion.
@@ -120,6 +128,7 @@ En apuntes tambien se explica que `mock()` crea un "nice mock":
 - [[persistencia-jdbc]]
 - [[buenas-practicas]]
 - [[resumen-correcciones]]
+- [[resumen-correcciones-tp1-2026-c1]]
 - [[criterios-evaluacion]]
 - [[resumen-enunciado]]
 - [[resumen-apuntes]]
