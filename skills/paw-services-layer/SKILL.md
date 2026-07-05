@@ -18,8 +18,9 @@ Read `references/layer-rules.md` before changing services.
 3. Put business decisions in one service method that controllers/resources can call once.
 4. Annotate public service methods with `@Transactional`; selectors use `@Transactional(readOnly = true)`.
 5. Let services create/update domain models and orchestrate DAOs.
-6. Keep JSP paths, request objects, controller redirects, SQL, `EntityManager`, and frontend state out of services.
-7. Add tests that assert returned state, database-observable side effects, or fake/recorded mail behavior.
+6. In TP final, return domain/use-case results and enforce business invariants; REST resources map those results to DTOs, status codes, headers, and Problem Details.
+7. Keep JSP paths, request objects, controller redirects, JAX-RS `Response`, `UriInfo`, media types, CORS/cache headers, SQL, `EntityManager`, auth transport details, and frontend state out of services.
+8. Add tests that assert returned state, database-observable side effects, or fake/recorded mail behavior.
 
 ## Business Rules
 
@@ -30,6 +31,7 @@ Read `references/layer-rules.md` before changing services.
 - In TP2, avoid relying on lazy loading side effects outside clear transaction boundaries.
 - Do not put `@Transactional` on mail-only async classes unless they use DB state deliberately.
 - Authorization and ownership should be declarative in web security when it is route access; services can enforce domain invariants that are not route permissions.
+- REST resources own HTTP mapping; services should not mint `Location`/`Link`/`ETag`, Problem Details, CORS headers, or frontend tokens.
 
 ## Test Rules
 

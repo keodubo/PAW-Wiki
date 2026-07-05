@@ -25,9 +25,9 @@ Use `references/project-map.md` for the current module map, canonical wiki pages
 
 - **TP1**: Keep the classic stack: Spring Web MVC, JSP/JSTL, JDBC, HSQLDB, Spring Security, Logback, Maven WAR. Do not introduce JPA/Hibernate, SPA, REST-only architecture, or frontend build tooling unless the user explicitly asks.
 - **TP2/TPE2**: Treat work as persistence migration or Hibernate/JPA adaptation when it touches entities, `EntityManager`, ORM config, fetch/cascade behavior, data/schema migration, TPE1 feedback corrections, or JDBC-to-JPA DAO changes. Use `$paw-tp2-migration` before layer skills for migration planning or implementation.
-- **TP final**: Treat work as REST + SPA migration when it touches Jersey/JAX-RS/resources, DTO API contracts, Basic/Bearer stateless auth, refresh tokens, frontend module/build, routing, client state, cache/file revving, base path, WAR packaging, or static hosting. Use `$paw-tp-final-migration` before layer skills for migration planning or implementation.
+- **TP final**: Treat work as REST + SPA migration when the user explicitly says `TP final`, final delivery, `pasalo al final`, REST/SPA/API/frontend migration, or when it touches Jersey/JAX-RS/resources, DTO API contracts, Basic/Bearer stateless auth, refresh tokens, frontend module/build, routing, client state, cache/file revving, base path, WAR packaging, or static hosting. Use `$paw-tp-final-migration` before layer skills for migration planning or implementation.
 
-If the user says only "PAW" and the task is normal feature/debug work in the current Forkd checkout, default to TP1 constraints. If the user mentions Hibernate/JPA, REST, API, SPA, frontend module, Vite/React/Angular, JWT, or final delivery, stop and resolve stage before editing.
+If the user says only "PAW" and the task is normal feature/debug work in the current Forkd checkout, default to TP1 constraints. If the user says only "quiero migrar" without naming TP2/JPA or TP final/REST/SPA, ask which stage. If the user mentions Hibernate/JPA, REST, API, SPA, frontend module, Vite/React/Angular, JWT, or final delivery, stop and resolve stage before editing.
 
 ## Superpowers Routing
 
@@ -47,6 +47,7 @@ If the user says only "PAW" and the task is normal feature/debug work in the cur
 - Service interfaces, command DTOs, domain exceptions: use `$paw-service-contracts-layer`.
 - Business logic, transactions, mail, schedulers, service tests: use `$paw-services-layer`.
 - Controllers, forms, validators, JSP/JSTL, i18n, Spring Security, CSS: use `$paw-webapp-layer`.
+- SPA frontend source, API clients, router, stores/composables, frontend i18n, frontend tests, Vite/React/Angular config, or base-path source config: use `$paw-frontend-layer`.
 - Any new/changed tests, test failures, Maven verification strategy, fixtures, or test-quality review: use `$paw-testing-layer`.
 - TP2 JDBC -> JPA/Hibernate migration: use `$paw-tp2-migration`, then the affected layer skills.
 - TP final REST + SPA migration: use `$paw-tp-final-migration`, then the affected layer skills.
@@ -62,10 +63,11 @@ Use the smallest reversible slice that proves the behavior:
 3. State the project stage and the allowed stack for that stage.
 4. Define contracts before implementations when a layer boundary changes.
 5. Keep controllers/resources thin and service methods transactional.
-6. In TP final, define REST resources, DTO links, status/header contracts, auth semantics, frontend packaging, and cache strategy before moving UI behavior.
-7. In TP1, keep SQL, joins, sorting, filtering, and pagination in JDBC persistence. In TP2, audit generated JPA SQL/fetches instead of assuming ORM performance.
-8. Preserve URL state (`page`, `pageSize`, `sort`, filters, redirects, SPA route/query) when editing navigation or filters.
-9. Finish with the narrowest meaningful Maven check, then broader checks when contracts, packaging, or multiple layers changed.
+6. In TP final, define REST resources, DTO links, status/header contracts, auth semantics, frontend packaging, frontend ownership, and cache strategy before moving UI behavior.
+7. For TP final migration requests, require an execution queue of vertical slices. Each slice must name the old MVC route/view, new API contract, SPA route, tests to write first, frontend runner/smoke command, verification command, auth/storage decision when touched, package output/base-path check when touched, and rollback/parallel-routing state.
+8. In TP1, keep SQL, joins, sorting, filtering, and pagination in JDBC persistence. In TP2, audit generated JPA SQL/fetches instead of assuming ORM performance.
+9. Preserve URL state (`page`, `pageSize`, `sort`, filters, redirects, SPA route/query) when editing navigation or filters.
+10. Finish with the narrowest meaningful Maven check, then broader checks when contracts, packaging, or multiple layers changed.
 
 ## Stop Conditions
 

@@ -36,8 +36,9 @@ Read current services/tests plus:
 ## Layer Rules
 
 - Services can create/modify domain models and call DAOs.
-- Services must not know JSP templates as web paths, controllers, request/response, redirects, or SQL mechanics.
-- Services must not know `EntityManager`, Hibernate sessions, lazy proxy mechanics, REST serialization annotations, frontend stores, or router state.
+- Services must not know JSP templates as web paths, controllers, request/response, redirects, JAX-RS `Response`, `UriInfo`, media types, Problem Details payloads, CORS/cache headers, auth transport headers, or SQL mechanics.
+- Services must not know `EntityManager`, Hibernate sessions, lazy proxy mechanics, REST serialization annotations, frontend stores, browser storage, or router state.
+- In TP final, services return domain/use-case results and enforce product invariants; resources translate to DTOs, status codes, `Location`, `Link`, `ETag`, and error payloads.
 - Services should not perform route authorization that belongs in Spring Security/AccessHelper, but they should enforce product invariants such as self-follow rejection or invalid state transition.
 - Mail uses recipient locale/preferred language, not sender locale or `LocaleContextHolder`.
 

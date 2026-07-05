@@ -72,13 +72,17 @@ Why:
 - Full `mvn clean test` is the final arbiter for multi-layer changes.
 - `mvn clean package` is required when TP2 ORM config, schema bootstrap, or webapp packaging/deploy behavior changed.
 - For TP final, `mvn clean package` plus WAR inspection is mandatory when REST/SPA/build/cache/static hosting changed.
+- When `frontend/` exists, read `frontend/package.json` and use the declared test/type-check/build scripts. Prefer the existing package manager and lockfile workflow; do not invent a command that bypasses project scripts.
 
 ## TP Final API, Frontend, Cache, And Package Gates
 
+- Migration work is tested per vertical slice: first failing API/resource contract test, minimal backend implementation, frontend route/client/state/form/i18n verification, then package/static-hosting checks when the slice touches build or routing.
 - API contract tests cover status/body/headers, `Location`, `Link`, `ETag`, media types, auth, validation, and Problem Details errors.
 - API 404 and SPA fallback are separate contracts: `/api/*` misses return JSON/Problem Details; non-API deep links return `index.html`.
 - Cache tests cover `ETag` issuance, `If-None-Match`, `304 Not Modified`, hashed asset `immutable` headers, and non-immutable `index.html`.
 - Frontend tests cover stores/composables, routes, forms, error states, and i18n catalog/render behavior when a runner exists.
+- Frontend tests must stay behavior-only: do not assert component internals, exact CSS classes, source snippets, exact DOM shape, implementation-specific store calls, or framework internals.
+- If no frontend runner exists, require a repeatable browser/static-hosting smoke and document the test gap.
 - Packaging checks inspect the WAR for `index.html`, JS/CSS/assets, and `WEB-INF/classes`; frontend build must run through Maven before `webapp`.
 
 ## Service Test Patterns

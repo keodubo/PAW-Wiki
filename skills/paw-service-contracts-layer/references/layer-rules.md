@@ -25,6 +25,7 @@ Read current service contracts plus:
 - JSP names, redirect targets, servlet/session/request/response types.
 - DAO implementation classes or JDBC details.
 - JPA `EntityManager`/Hibernate details or frontend framework state.
+- JAX-RS `Response`, `UriInfo`, `Link`, media types, Problem Details payloads, CORS/cache headers, auth header names, frontend route/query/store state, or browser storage details.
 - Async vs sync implementation distinction in public API unless the product behavior itself depends on it.
 - Controller form beans as service API.
 
@@ -35,6 +36,7 @@ Read current service contracts plus:
 - Keep DTO names tied to use cases: `SaveRestaurantData`, `CreateReservationData`, `ChangePasswordData`.
 - Do not make controllers assemble domain entities directly when a DTO can carry the request cleanly.
 - In TP final, separate service command DTOs from API representation DTOs unless the existing repo intentionally shares them.
+- REST resources may translate service outputs to DTOs, URIs, headers, and Problem Details; service contracts should stay HTTP-agnostic.
 
 ## Exception Rules
 

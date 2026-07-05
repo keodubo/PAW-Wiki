@@ -27,6 +27,8 @@ Read current webapp code plus:
 ## TP Final REST/SPA Notes
 
 - Use `$paw-tp-final-migration` before replacing JSP flows with API/SPA work.
+- Stay inside the current migration slice: old MVC route/view, new REST resource(s), SPA route, tests, and rollback/parallel routing should all refer to the same user-visible flow.
+- Use `$paw-frontend-layer` for SPA source under `frontend/`; webapp owns JAX-RS resources, Spring Security, API error mapping, CORS, SPA fallback/static hosting, and WAR asset integration.
 - JAX-RS resources use resource paths and HTTP verbs (`@Path`, `@GET`, `@POST`, `@PUT`, `@PATCH`, `@DELETE`) under `/api/*`; no action endpoints or `/v1` path versioning.
 - REST resources return deliberate status codes, DTO bodies, and headers; never expose domain entities or lazy proxies by accident.
 - `201 Created` includes valid `Location`; collection navigation uses `Link` headers and optional `X-Total-Count`; cacheable API responses use `ETag`/`If-None-Match`/`304`.
@@ -37,6 +39,8 @@ Read current webapp code plus:
 - Routing stays separated: `/api/*` returns API/Problem JSON, `/assets/*` or `/static/*` serves static files, and SPA fallback serves `index.html` only for non-API deep links.
 - Static asset hosting must preserve `mvn package`; cache immutable only for hashed/versioned assets, never for `index.html` or the root HTML entry.
 - Maven packaging must build the frontend before `webapp` and produce one WAR containing API classes plus `index.html`, JS/CSS, and assets.
+- Inspect WAR contents when packaging changes: `jar tf webapp/target/*.war | rg '(^|/)index.html$|assets/|static/|WEB-INF/classes'`.
+- Do not delete or hard-redirect the JSP route for a flow until the migrated API + SPA slice has passed its defined verification or the user approves the replacement.
 
 ## Forms And Validation
 

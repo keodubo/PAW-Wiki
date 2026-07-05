@@ -40,6 +40,7 @@ Choose the test type from the behavior under test:
 - API 404 tests must prove `/api/*` returns JSON/Problem Details, while SPA deep links fall back to `index.html`.
 - Cache tests prove both validator flow (`ETag` -> `If-None-Match` -> `304`) and static cache policy when cache is implemented.
 - Frontend tests cover stores/composables/routes/forms/i18n at the public UI/state contract level, not component internals.
+- Frontend tests must not assert component internals, exact CSS classes, source snippets, exact DOM shape, implementation-specific store calls, or framework internals as the target.
 - Do not use the object under test to set its own preconditions.
 - Cover happy, unhappy, and edge paths as separate tests.
 - A green build is not proof of wiki compliance; inspect test style and coverage against the rules.
@@ -54,6 +55,8 @@ When implementing a feature or bugfix, follow Superpowers `test-driven-developme
 4. Re-run the narrow command until green.
 5. Refactor only after green.
 6. Run the broader gate for the changed modules.
+
+For TP final migration, apply this per vertical slice. Start with the public API/resource contract test for the flow, then add service tests only for changed business behavior, then SPA/frontend tests for route/client/state/form/i18n behavior when a runner exists. If no frontend runner exists, define and run a repeatable browser/static-hosting smoke. Do not treat a slice as done until the API contract and user-visible SPA behavior have both been verified or an explicit gap is recorded.
 
 ## Maven Gates
 
@@ -70,6 +73,8 @@ mvn clean package
 
 Use `-am` for tests that depend on upstream modules. For targeted webapp tests, include `-Dsurefire.failIfNoSpecifiedTests=false` so upstream modules without that test pattern do not fail before the target module runs. For TP final, `mvn clean package` is a gate, not an afterthought: inspect the WAR for `index.html`, JS/CSS/assets, and backend classes.
 
+When `frontend/` exists, read `frontend/package.json` and run the declared test/type-check/build scripts that match the slice. Prefer the repo's package-manager/lockfile workflow (`npm ci` for package-lock unless the repo says otherwise). If packaging changed, follow with `mvn clean package` and WAR inspection.
+
 ## Review Checklist
 
 - Does each test name describe a behavior, not an implementation detail?
@@ -83,3 +88,5 @@ Use `-am` for tests that depend on upstream modules. For targeted webapp tests, 
 - Do TP final tests cover API headers/errors, API 404 vs SPA fallback, cache `304`, frontend stores/composables/routes/forms/i18n, and WAR contents when those surfaces exist?
 - Is a pass-through service test deleted or replaced by a test for real business behavior?
 - Does the final gate match the blast radius of the change?
+- For TP final migration, does the slice have a named first failing test, API + SPA verification, package/static-hosting gate when touched, and a rollback/parallel-route state?
+- If no frontend runner exists, is there a repeatable smoke command/result rather than a prose-only gap?

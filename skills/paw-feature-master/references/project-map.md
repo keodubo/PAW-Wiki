@@ -31,7 +31,7 @@ Real modules:
 | `service-contracts` | Service APIs, command DTOs, business exceptions | Repo split of the catedra's `interfaces` module. |
 | `services` | Business logic, transactions, mail, schedulers | Uses DAO contracts; concrete persistence is runtime. |
 | `webapp` | Controllers, forms, validators, Spring Security, JSP/tags/CSS/JS, WAR | Controllers compile against models and service contracts. |
-| `frontend` | TP final SPA module when present | Declared in parent POM; built before `webapp` so WAR packages current assets. |
+| `frontend` | TP final SPA module when present | Owned by `$paw-frontend-layer`. Declared in parent POM; built before `webapp` so WAR packages current assets. |
 
 Canonical catedra split is `webapp`, `services`, `interfaces`, `persistence`, `models`. In this repo, document `service-contracts` and `persistence-contracts` as implementation detail, not a violation.
 
@@ -111,9 +111,11 @@ Checks: no destructive schema generation without approval, no server data loss, 
 
 Use `$paw-tp-final-migration`.
 
-Order: API contract/DTOs/links -> service boundary review -> Jersey/JAX-RS resources/security/errors -> frontend app/routing/state/forms -> Maven frontend module/WAR/static hosting/base path -> cache/file revving.
+Order: migration queue -> one vertical slice at a time -> API contract/DTOs/links -> failing API/resource tests -> service boundary review -> Jersey/JAX-RS resources/security/errors -> `$paw-frontend-layer` for frontend app/routing/state/forms/API client -> frontend tests/build -> Maven frontend module/WAR/static hosting/base path -> cache/file revving.
 
 Checks: API is stateless, Basic credentials can obtain tokens and Bearer authenticates normal calls, `401` and `403` are not conflated, refresh tokens rotate on login/use, vendor media types version representations without selecting hidden operations, backend remains source of truth, frontend validates for UX only, `mvn package` still produces a usable WAR, `/api/*` errors stay JSON/status API, SPA deep links fall back to `index.html`, assets work under the context path, hashed assets can be immutable, and root HTML is not cached as immutable.
+
+Slice queue fields: current MVC route/view, current service/auth/data/i18n dependencies, target REST resources and DTOs, SPA route/client/state/form, auth storage/refresh/logout decision when touched, first failing tests, frontend runner or smoke command, narrow verification command, package output/base-path gate if needed, and rollback/parallel-routing state.
 
 ## Verification Gates
 

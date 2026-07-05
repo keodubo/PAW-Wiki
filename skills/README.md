@@ -73,6 +73,7 @@ Muéstrame un plan corto antes de editar si la tarea toca más de una capa.
 | `paw-service-contracts-layer` | Interfaces de servicio, DTOs de caso de uso y excepciones de dominio. |
 | `paw-services-layer` | Lógica de negocio, transacciones, mail, schedulers y tests de servicios. |
 | `paw-webapp-layer` | Controllers, forms, validators, JSP/JSTL, i18n, Spring Security, CSS/JS y tests MVC. |
+| `paw-frontend-layer` | SPA frontend TP final: rutas, API client, stores/composables, auth state, i18n, tests, build config y base path. |
 | `paw-testing-layer` | Tests, fixtures, HSQLDB, Maven gates, MVC/security/template checks y revisiones de calidad. |
 | `paw-tp2-migration` | Migración TPE2/TP2 de JDBC a JPA/Hibernate: entidades, EntityManager, mappings, migraciones sin pérdida de datos, fetch/cascade, SQL generado, feedback TPE1 y tests. |
 | `paw-tp-final-migration` | Migración TP final a REST API + SPA: recursos, DTOs con links, status/headers, auth Basic/Bearer stateless, frontend build, routing, estado, cache y packaging WAR. |
@@ -163,6 +164,7 @@ La skill orquestadora decide si necesita subskills. Ejemplos de ruteo:
 | Interfaces de servicios, DTOs, excepciones | `$paw-service-contracts-layer` |
 | Lógica de negocio, transacciones, mails, schedulers | `$paw-services-layer` |
 | Controllers, forms, validators, JSP, i18n, seguridad web, CSS | `$paw-webapp-layer` |
+| SPA frontend, API client, router, stores/composables, i18n frontend, Vite/React/Angular config | `$paw-frontend-layer` |
 | Tests, fixtures, fallas Maven, estrategia de verificación | `$paw-testing-layer` |
 | Migración TP2 JDBC -> JPA/Hibernate | `$paw-tp2-migration` |
 | Migración TP final REST + SPA | `$paw-tp-final-migration` |
@@ -203,6 +205,15 @@ Si el cambio toca persistencia, usa $paw-tp2-migration para leer resumen-enuncia
 ```text
 Usa $paw-feature-master. Estamos en TP final.
 Si el cambio toca API, SPA, auth stateless, build frontend, cache o packaging, usa $paw-tp-final-migration antes de las subskills de capa. Primero lee resumen-final-paw-2026 y checklist-tp-final-rest-spa.
+```
+
+Para pedir una migracion ejecutable, no solo una auditoria:
+
+```text
+Usa $paw-feature-master. Estamos en TP final y quiero migrar mi app MVC/JSP a REST API + SPA en base a PAW-Wiki.
+Primero arma una cola de slices verticales. Para cada slice indicame: ruta/vista MVC actual, contrato REST nuevo, ruta SPA, tests rojos a escribir primero, comando de verificacion y estado de rollback/ruta paralela.
+Despues implementa el primer slice con TDD usando $paw-tp-final-migration y las subskills de capa necesarias.
+Si todavia no existe modulo frontend/tooling, primero propone la forma minima compatible y no copies configuracion sensible del ejemplo.
 ```
 
 ## Relación con Superpowers

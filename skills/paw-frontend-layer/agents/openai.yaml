@@ -1,0 +1,4 @@
+interface:
+  display_name: "PAW Frontend Layer"
+  short_description: "SPA frontend rules for PAW TP final"
+  default_prompt: "Use $paw-frontend-layer to implement this TP final SPA frontend slice with PAW-Wiki rules."

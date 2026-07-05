@@ -18,14 +18,16 @@ Read `references/layer-rules.md` before changing service contracts.
 3. Design the service method as a use-case boundary, not as a direct DAO wrapper.
 4. Create command/data objects when passing many related values from webapp to services.
 5. Put domain exceptions here when webapp advice or REST resources must map them to HTTP status or inline/API errors.
-6. Keep contracts independent from JSP paths, servlet types, Spring MVC forms, JDBC/JPA classes, frontend state, and implementation details.
-7. Migrate implementations, tests, and callers in the same slice when changing existing contracts.
+6. In TP final, separate service command DTOs/use-case data from API representation DTOs unless the repo already chose otherwise.
+7. Keep contracts independent from JSP paths, servlet types, Spring MVC forms, JAX-RS `Response`/`UriInfo`/`Link`, media types, Problem Details payloads, CORS/cache headers, JDBC/JPA classes, frontend state, and implementation details.
+8. Migrate implementations, tests, and callers in the same slice when changing existing contracts.
 
 ## Contract Rules
 
 - Services own business use cases; DAOs own storage mechanics.
 - DTOs such as `SaveRestaurantData`, `CreateReservationData`, and `ChangePasswordData` make controllers thinner.
 - Exceptions should be specific enough for `ErrorHandlingAdvice` and tests to assert behavior without string parsing.
+- API resources map service results/exceptions to HTTP DTO/status/header contracts; service contracts do not return HTTP responses or frontend route state.
 - Do not split interface contracts around async implementation details such as `MailService` vs `AsyncMailService`.
 - Keep locale-sensitive mail contracts explicit about recipient locale.
 
