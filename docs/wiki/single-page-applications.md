@@ -1,9 +1,9 @@
 ---
 titulo: Single Page Applications
 tipo: concepto
-fuentes: [raw/apuntes.txt, raw/PAW - clases 9 y 10 (TP final).pdf, raw/PAW- Clase Teórica Front end (TP final).pdf, raw/PAW- Clase Teórica - SPAs segunda parte (TP final).pdf]
+fuentes: [raw/apuntes.txt, raw/PAW - clases 9 y 10 (TP final).pdf, raw/PAW- Clase Teórica Front end (TP final).pdf, raw/PAW- Clase Teórica - SPAs segunda parte (TP final).pdf, "raw/final paw/Clase 8 - FINAL.pdf", "raw/final paw/presentacion-spring-frontend.pdf", "raw/final paw/Optimización REST_ Caching Frontend y Backend.pdf", "raw/final paw/Ultima clase de PAW - v2 - Apuntes.pdf", "raw/final paw/como esta implementado el tp de ejemplo.docx", "raw/final paw/Correcciones viejas_.docx"]
 creado: 2026-04-13
-actualizado: 2026-04-27
+actualizado: 2026-07-05
 ---
 
 # Single Page Applications
@@ -34,6 +34,8 @@ Esta pagina resume el salto a **SPA** para TP final. Es material fuera del foco 
 - La capa de estado funciona como "backend del front": guarda estado, concentra llamadas asincronicas y conecta componentes.
 - El flujo unidireccional busca una unica fuente de verdad; stores como Redux/Zustand o primitives como `useState` dependen de complejidad.
 - En Angular, RxJS/Observables y `BehaviorSubject` cumplen un rol importante para datos asincronicos y estado compartido.
+- En TP final, los componentes no deberian dispersar `fetch`/`axios` crudo. La capa de servicios/API client concentra HTTP, parseo de headers, auth, errores y links.
+- Para APIs HATEOAS, el cliente necesita cache por URI e identity map. Si dos componentes piden la misma URI a la vez, deduplicar con la misma promise evita N+1 HTTP innecesario.
 
 ## Autenticacion y seguridad en SPA
 
@@ -58,6 +60,8 @@ Esta pagina resume el salto a **SPA** para TP final. Es material fuera del foco 
 - Los apuntes nombran herramientas como `Jest` y `Vitest`, y de mocking como `Nock` y `Sinon`.
 - Aun asi, la capa de servicios/estado sigue siendo la pieza que "si o si" tiene que estar testeada.
 - La clase separa tests de componentes puros y tests de capa de estado.
+- React Testing Library, Vue Testing Library, Jest, Vitest, Jasmine/Karma o equivalentes son herramientas posibles; lo importante es probar comportamiento visible, estado, formularios, rutas y errores.
+- Tests pobres o placeholders del estilo `prueba.tsx` no cubren el riesgo de TP final.
 
 ## Optimizacion
 
@@ -73,6 +77,11 @@ Esta pagina resume el salto a **SPA** para TP final. Es material fuera del foco 
 - `webapp` debe configurarse para servir los nuevos recursos estaticos.
 - Si hay un modulo frontend dedicado, deberia ejecutarse antes del empaquetado final.
 - Esta integracion no debe romper `mvn package`: el WAR final debe contener los assets listos para servir.
+- En desarrollo puede haber dos servidores con proxy `/api` o CORS; en produccion deberia haber un unico WAR que sirva API y SPA.
+- El POM padre debe declarar el modulo `frontend`; `webapp` debe depender de ese modulo para que Maven respete el orden antes de empaquetar.
+- `maven-war-plugin` tiene que incluir la carpeta exacta donde quedo `index.html`: Vite suele usar `../frontend/dist`, React `../frontend/build` y Angular `../frontend/dist/<app>/browser`.
+- El routing debe separar `/api/*` para API, `/assets/*` o `/static/*` para archivos y rutas profundas de SPA hacia `index.html`. El fallback SPA no debe convertir errores reales de API en HTML.
+- Configurar el base path del bundler (`base`, `homepage`, `baseHref`) para que los assets funcionen bajo el context path del WAR.
 
 ## SSR y limites del entorno
 
@@ -86,10 +95,16 @@ Esta pagina resume el salto a **SPA** para TP final. Es material fuera del foco 
 - Regla fuerte: el root `/` no deberia cachearse como si fuera un asset inmutable.
 - Los assets versionados usan **file revving**: cambia el nombre del archivo cuando cambia el contenido.
 - Spring tambien necesita configuracion consistente para acompañar esa estrategia.
+- Assets hasheados pueden usar cache no condicional largo e `immutable`.
+- `index.html` no debe cachearse como immutable porque es el archivo que apunta a los nombres nuevos.
+- API JSON usa cache condicional (`ETag`/`304`) cuando aplica; no confundirlo con cache largo de assets.
+- La correccion de final marca como error cachear imagenes de usuario como inmutables si actualizar la imagen no cambia su URL.
 
 ## Ver tambien
 
 - [[api-rest]]
+- [[resumen-final-paw-2026]]
+- [[checklist-tp-final-rest-spa]]
 - [[resumen-clases-paw-2026]]
 - [[internacionalizacion]]
 - [[tp1-vs-tpe2-final]]

@@ -1,9 +1,9 @@
 ---
 titulo: Resumen de Clases PAW por Etapa
 tipo: fuente
-fuentes: ["raw/PAW - clase 1 (TP1).pdf", "raw/PAW - clase 2 (TP1).pdf", "raw/PAW - clase 3 (TP1).pdf", "raw/PAW - clase 4 (TP1).pdf", "raw/PAW - clase 5 (TP1).pdf", "raw/PAW - clase 6 (TP1).pdf", "raw/PAW - clase 7 (TP2).pdf", "raw/PAW - clase 8 (TP2).pdf", "raw/PAW - clases 9 y 10 (TP final).pdf", "raw/PAW- Clase Teórica Front end (TP final).pdf", "raw/PAW- Clase Teórica - SPAs segunda parte (TP final).pdf"]
+fuentes: ["raw/PAW - clase 1 (TP1).pdf", "raw/PAW - clase 2 (TP1).pdf", "raw/PAW - clase 3 (TP1).pdf", "raw/PAW - clase 4 (TP1).pdf", "raw/PAW - clase 5 (TP1).pdf", "raw/PAW - clase 6 (TP1).pdf", "raw/PAW - clase 7 (TP2).pdf", "raw/PAW - clase 8 (TP2).pdf", "raw/PAW - clases 9 y 10 (TP final).pdf", "raw/PAW- Clase Teórica Front end (TP final).pdf", "raw/PAW- Clase Teórica - SPAs segunda parte (TP final).pdf", "raw/final paw/Clase 8 - FINAL.pdf", "raw/final paw/Ultima clase de PAW - v2 - Apuntes.pdf", "raw/final paw/presentacion-api.pdf", "raw/final paw/presentacion-spring-frontend.pdf", "raw/final paw/resumen clases.docx"]
 creado: 2026-04-27
-actualizado: 2026-04-27
+actualizado: 2026-07-05
 ---
 
 # Resumen de Clases PAW por Etapa
@@ -415,6 +415,22 @@ Esta pagina ingiere los PDFs nuevos de clases PAW agregados en `docs/raw/`. Son 
 - File revving cambia nombres de assets via hash/version para que el cache no condicional sea seguro.
 - En Spring MVC se puede configurar cache de recursos con resource handlers o filtros, pero el root `/` no debe tratarse como asset inmutable.
 
+## TP final - Ultima clase y errores frecuentes
+
+El lote `raw/final paw/` refuerza la clase final como una auditoria de errores comunes:
+
+- Ir "lo mas REST posible" significa que URLs nombran recursos, no acciones. Verbos como `/login`, `/validate`, `/uploadImage` o `?action=delete` son senales fuertes de mal modelado.
+- El cliente no deberia conocer de memoria la API: usa links, headers `Link`, `_links`, `Location`, `OPTIONS` y media types para descubrir representaciones y transiciones.
+- `200 OK` para todo con un campo `success/error` en el body es incorrecto. Los status codes son parte del contrato.
+- Paginacion en el body se marca como error; usar headers `Link` para navegacion.
+- `v1`/`v2` en path rompe identidad del recurso; versionar representaciones con `Accept`/`Content-Type`.
+- `401` y `403` no son intercambiables: uno habla de credenciales, el otro de autorizacion.
+- El build frontend no puede ser manual: el modulo frontend debe declararse en Maven y ejecutarse antes que `webapp`.
+- La SPA vive bajo el context path del WAR; configurar base path del bundler para que assets y deep links funcionen.
+- Cache inmutable solo para assets hasheados; la entrada HTML/root debe revalidarse.
+
+Para checklist operativo de entrega, ver [[checklist-tp-final-rest-spa]].
+
 ## Reglas operativas derivadas
 
 ### Si estas en TP1
@@ -441,6 +457,7 @@ Esta pagina ingiere los PDFs nuevos de clases PAW agregados en `docs/raw/`. Son 
 - Integrar build frontend al empaquetado sin romper `mvn package`.
 - Diseñar cache/file revving para assets y no cachear como inmutable la entrada HTML/root.
 - Evaluar seguridad de tokens/cookies y XSS antes de decidir storage del auth state.
+- Verificar [[checklist-tp-final-rest-spa]] antes de demo o entrega final.
 
 ## Ver tambien
 
@@ -458,6 +475,8 @@ Esta pagina ingiere los PDFs nuevos de clases PAW agregados en `docs/raw/`. Son 
 - [[transactional]]
 - [[hibernate-jpa]]
 - [[api-rest]]
+- [[resumen-final-paw-2026]]
+- [[checklist-tp-final-rest-spa]]
 - [[single-page-applications]]
 - [[resumen-apuntes]]
 - [[resumen-notas]]

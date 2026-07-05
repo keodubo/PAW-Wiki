@@ -25,7 +25,7 @@ Use `references/project-map.md` for the current module map, canonical wiki pages
 
 - **TP1**: Keep the classic stack: Spring Web MVC, JSP/JSTL, JDBC, HSQLDB, Spring Security, Logback, Maven WAR. Do not introduce JPA/Hibernate, SPA, REST-only architecture, or frontend build tooling unless the user explicitly asks.
 - **TP2/TPE2**: Treat work as persistence migration or Hibernate/JPA adaptation when it touches entities, `EntityManager`, ORM config, fetch/cascade behavior, data/schema migration, TPE1 feedback corrections, or JDBC-to-JPA DAO changes. Use `$paw-tp2-migration` before layer skills for migration planning or implementation.
-- **TP final**: Treat work as REST + SPA migration when it touches Jersey/JAX-RS/resources, DTO API contracts, stateless auth, frontend build, routing, client state, cache/file revving, or static hosting. Use `$paw-tp-final-migration` before layer skills for migration planning or implementation.
+- **TP final**: Treat work as REST + SPA migration when it touches Jersey/JAX-RS/resources, DTO API contracts, Basic/Bearer stateless auth, refresh tokens, frontend module/build, routing, client state, cache/file revving, base path, WAR packaging, or static hosting. Use `$paw-tp-final-migration` before layer skills for migration planning or implementation.
 
 If the user says only "PAW" and the task is normal feature/debug work in the current Forkd checkout, default to TP1 constraints. If the user mentions Hibernate/JPA, REST, API, SPA, frontend module, Vite/React/Angular, JWT, or final delivery, stop and resolve stage before editing.
 
@@ -62,9 +62,10 @@ Use the smallest reversible slice that proves the behavior:
 3. State the project stage and the allowed stack for that stage.
 4. Define contracts before implementations when a layer boundary changes.
 5. Keep controllers/resources thin and service methods transactional.
-6. In TP1, keep SQL, joins, sorting, filtering, and pagination in JDBC persistence. In TP2, audit generated JPA SQL/fetches instead of assuming ORM performance.
-7. Preserve GET state (`page`, `pageSize`, `sort`, filters, redirects) when editing navigation or filters.
-8. Finish with the narrowest meaningful Maven check, then broader checks when contracts or multiple layers changed.
+6. In TP final, define REST resources, DTO links, status/header contracts, auth semantics, frontend packaging, and cache strategy before moving UI behavior.
+7. In TP1, keep SQL, joins, sorting, filtering, and pagination in JDBC persistence. In TP2, audit generated JPA SQL/fetches instead of assuming ORM performance.
+8. Preserve URL state (`page`, `pageSize`, `sort`, filters, redirects, SPA route/query) when editing navigation or filters.
+9. Finish with the narrowest meaningful Maven check, then broader checks when contracts, packaging, or multiple layers changed.
 
 ## Stop Conditions
 
@@ -85,6 +86,8 @@ Canonical source order for PAW work:
 2. `CLAUDE.md`.
 3. `PAW-Wiki/docs/index.md` and linked wiki pages.
 4. Current durable plans under `PAW-Wiki/docs/superpowers/plans/`.
-5. `PAW-Wiki/docs/wiki/resumen-enunciado-tpe2.md` for the official TP2 delivery contract when the stage is TP2/TPE2.
-6. `PAW-Wiki/docs/wiki/resumen-clases-paw-2026.md` for stage-specific TP1/TP2/final class guidance.
-6. Historical `PAW-Wiki/docs/raw/` sources, read-only.
+5. `PAW-Wiki/docs/wiki/resumen-final-paw-2026.md` and `PAW-Wiki/docs/wiki/checklist-tp-final-rest-spa.md` for TP final REST + SPA canonical guidance.
+6. `PAW-Wiki/docs/wiki/api-rest.md` and `PAW-Wiki/docs/wiki/single-page-applications.md` for TP final API/frontend concepts.
+7. `PAW-Wiki/docs/wiki/resumen-enunciado-tpe2.md` for the official TP2 delivery contract when the stage is TP2/TPE2.
+8. `PAW-Wiki/docs/wiki/resumen-clases-paw-2026.md` for stage-specific TP1/TP2/final class guidance.
+9. Historical `PAW-Wiki/docs/raw/` sources, read-only and never edited.

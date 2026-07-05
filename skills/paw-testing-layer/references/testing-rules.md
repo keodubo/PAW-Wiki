@@ -17,7 +17,7 @@ Read current code plus:
 - `PAW-Wiki/docs/wiki/criterios-evaluacion.md`
 - `PAW-Wiki/docs/wiki/resumen-enunciado-tpe2.md` when stage is TP2.
 - `PAW-Wiki/docs/wiki/hibernate-jpa.md` when stage is TP2.
-- `PAW-Wiki/docs/wiki/api-rest.md` and `PAW-Wiki/docs/wiki/single-page-applications.md` when stage is TP final.
+- `PAW-Wiki/docs/wiki/api-rest.md`, `PAW-Wiki/docs/wiki/single-page-applications.md`, `PAW-Wiki/docs/wiki/resumen-final-paw-2026.md`, and `PAW-Wiki/docs/wiki/checklist-tp-final-rest-spa.md` when stage is TP final.
 
 ## PAW-Wiki Rules
 
@@ -47,8 +47,10 @@ Read current code plus:
 | Template/i18n | JSP/message bundle safety | file scan or view test | no scriptlets, escaping, keys present | treating bundle symmetry as wording audit |
 | Context/runtime | Spring wiring/AOP/startup | Spring context or Jetty | proxy/wiring/startup behavior | service unit test as proxy proof |
 | TP2 JPA persistence | Entity mapping/fetch/cascade/dirty checking | JPA context + test DB | persisted state, generated SQL shape, lazy/fetch behavior | assuming compile proves mapping safety |
-| TP final API | REST resource contract | MockMvc/Jersey test + service fakes | status, headers, DTO body, auth errors | returning domain objects directly |
-| TP final frontend | SPA state/component/forms | frontend test runner when present | state transitions, validation, render contract | relying only on backend tests |
+| TP final API | REST/JAX-RS resource contract | MockMvc/Jersey test + service fakes | status, DTO body, Problem Details, media types, auth errors, `Location`, `Link`, `ETag`, CORS-exposed headers | returning domain objects directly |
+| TP final frontend | SPA stores/composables/routes/forms/i18n | frontend test runner when present | state transitions, validation, routing, error states, translated render contract | relying only on backend tests |
+| TP final cache/hosting | API validators and static assets | API/smoke test + WAR/static inspection | `ETag`, `If-None-Match`, `304`, immutable hashed assets, revalidated `index.html` | caching root HTML as immutable |
+| TP final packaging | Maven WAR output | `mvn clean package` + archive inspection | one WAR with API classes, `index.html`, JS/CSS/assets | manual frontend build or stale assets |
 
 ## Repo-Specific Maven Notes
 
@@ -69,6 +71,15 @@ Why:
 - `-Dsurefire.failIfNoSpecifiedTests=false` prevents upstream modules from failing before the target webapp test runs.
 - Full `mvn clean test` is the final arbiter for multi-layer changes.
 - `mvn clean package` is required when TP2 ORM config, schema bootstrap, or webapp packaging/deploy behavior changed.
+- For TP final, `mvn clean package` plus WAR inspection is mandatory when REST/SPA/build/cache/static hosting changed.
+
+## TP Final API, Frontend, Cache, And Package Gates
+
+- API contract tests cover status/body/headers, `Location`, `Link`, `ETag`, media types, auth, validation, and Problem Details errors.
+- API 404 and SPA fallback are separate contracts: `/api/*` misses return JSON/Problem Details; non-API deep links return `index.html`.
+- Cache tests cover `ETag` issuance, `If-None-Match`, `304 Not Modified`, hashed asset `immutable` headers, and non-immutable `index.html`.
+- Frontend tests cover stores/composables, routes, forms, error states, and i18n catalog/render behavior when a runner exists.
+- Packaging checks inspect the WAR for `index.html`, JS/CSS/assets, and `WEB-INF/classes`; frontend build must run through Maven before `webapp`.
 
 ## Service Test Patterns
 

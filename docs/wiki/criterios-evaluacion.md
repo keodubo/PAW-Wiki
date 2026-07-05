@@ -1,9 +1,9 @@
 ---
 titulo: Criterios de Evaluacion y Penalizaciones
 tipo: concepto
-fuentes: [raw/enunciado.txt, raw/enunciado_tpe2.txt, raw/pdfs/Enunciado_TPE2.pdf, raw/correcciones_tp2.md, raw/devolucion_tp1_2026_c1.txt, raw/pdfs/Devolucion_TP1_2026_C1.pdf]
+fuentes: [raw/enunciado.txt, raw/enunciado_tpe2.txt, raw/pdfs/Enunciado_TPE2.pdf, raw/correcciones_tp2.md, raw/devolucion_tp1_2026_c1.txt, raw/pdfs/Devolucion_TP1_2026_C1.pdf, "raw/final paw/Correcciones viejas_.docx", "raw/final paw/presentacion-api.pdf", "raw/final paw/presentacion-spring-frontend.pdf", "raw/final paw/Optimización REST_ Caching Frontend y Backend.pdf"]
 creado: 2026-04-09
-actualizado: 2026-05-31
+actualizado: 2026-07-05
 ---
 
 # Criterios de Evaluacion y Penalizaciones
@@ -70,6 +70,22 @@ controllers con logica de negocio, seguridad manual, tests no unitarios, N+1,
 configuracion versionada y uso no revisado de agentes aparecen como errores
 conceptuales graves. Ver [[resumen-correcciones-tp1-2026-c1]].
 
+## Riesgos especificos TP final
+
+Las correcciones finales del lote `raw/final paw` muestran patrones que pueden costar mucho aunque la app "funcione":
+
+- API con sesion (`JSESSIONID`) o auth no stateless.
+- Endpoints con acciones, paths versionados, siempre `200 OK`, `Location` invalido o paginacion en body.
+- HATEOAS ausente: cliente construye URLs internas en vez de seguir links.
+- Vendor media types usados para elegir operaciones secretas, no para representar/versionar recursos.
+- Datos sensibles expuestos: emails masivos, flags admin, tokens o recursos ajenos sin ownership.
+- Refresh token reenviado en cada response o refresh implementado con roundtrip innecesario.
+- Cache incorrecto: assets sin cache immutable pese a file revving, o imagenes/recursos actualizables con URL estable cacheados como inmutables.
+- Browser history roto: back/forward no preserva filtros, resultados o navegacion SPA.
+- `webapp` sin dependencia explicita del frontend, generando WAR sin assets o con version vieja.
+- Tests frontend/API pobres, placeholders o no unitarios; tests que usan la misma clase bajo test como oraculo.
+- Fugas de capa: tipos servlet/web en capas no web, magic strings de queries desde controllers, conteos hechos trayendo toda la tabla, ids sueltos en relaciones no mapeadas.
+
 ## Ver tambien
 - [[resumen-enunciado]]
 - [[resumen-enunciado-tpe2]]
@@ -78,6 +94,8 @@ conceptuales graves. Ver [[resumen-correcciones-tp1-2026-c1]].
 - [[resumen-correcciones]]
 - [[resumen-correcciones-tp1-2026-c1]]
 - [[resumen-correcciones-tp2]]
+- [[resumen-final-paw-2026]]
+- [[checklist-tp-final-rest-spa]]
 - [[resumen-notas-sprint-1]]
 - [[buenas-practicas]]
 - [[comparacion-seguridad-web]]

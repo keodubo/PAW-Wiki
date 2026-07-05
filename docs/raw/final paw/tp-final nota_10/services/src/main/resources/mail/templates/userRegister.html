@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+</head>
+<body style="background-color: #f4f4f4; font-family: sans-serif; -webkit-font-smoothing: antialiased; font-size: 14px; line-height: 1.4; margin: 0; padding: 0; -ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%">
+<div style="text-align: center">
+  <a th:href="${frontendBasePath}">
+    <img style="max-width: 300px;" th:src="@{{baseLogoPath}(baseLogoPath=${baseLogoPath})}" alt="logo"/>
+  </a>
+  <div>
+    <h2 th:text="#{email.register.greeting}"/>
+    <p th:text="#{email.register.welcome (${username})}"/>
+     <p th:text="#{email.register.confirm_account}"/>
+
+     <p th:text="#{email.validation.token.instructions}"/>
+
+     <div style="background-color: #ffffff; border-radius: 12px; padding: 18px; margin: 20px auto; max-width: 360px; box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1);">
+      <p style="margin: 0; text-transform: uppercase; font-size: 12px; letter-spacing: 1px; color: #7a7a7a;"
+        th:text="#{email.validation.token.code_label}"></p>
+      <p style="margin: 12px 0 0; font-size: 28px; font-weight: bold; letter-spacing: 4px; color: #333333; font-family: 'Courier New', monospace;"
+        th:text="${tokenDisplay}"></p>
+     </div>
+
+     <p th:text="#{email.validation.token.copy_hint}"/>
+
+     <br>
+     <a th:href="${frontendValidateUrl}" th:text="#{email.register.confirm_account.button}" style="background-color: #565ac6; border: none; color: white; padding: 10px; text-align: center; border-radius: 20px; text-decoration: none"/>
+
+    <br><br>
+    <p th:text="#{email.footer}"/>
+
+    <br><br>
+
+    <p aria-hidden="true" style="max-height:0; overflow:hidden; font-size:0; line-height:0; color:transparent; margin:0;" th:text="${hiddenMarker}"></p>
+  </div>
+</div>
+</body>
+</html>

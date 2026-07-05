@@ -268,6 +268,10 @@ Temas centrales:
 
 - Todo el contenido del wiki se escribe en **español**.
 - Las fuentes en `raw/` son **inmutables**: nunca modificarlas.
+- Si una fuente cruda local trae `.env`, properties con credenciales, llaves
+  privadas o tokens reales, no publicarlos. Mantenerlos ignorados o moverlos a
+  `docs/private/` con confirmacion del usuario; la pagina wiki debe citar solo
+  la fuente no sensible o explicar que el subarbol sensible quedo local.
 - Cada ingesta pública debe tocar `index.md` y `log.md`.
 - Si se agregan, mueven o eliminan archivos públicos bajo `docs/`, actualizar
   `tree.txt`; no incluir `docs/private/` ni `docs/superpowers/plans/`.

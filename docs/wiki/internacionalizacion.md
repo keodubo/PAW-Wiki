@@ -1,9 +1,9 @@
 ---
 titulo: Internacionalizacion (i18n)
 tipo: concepto
-fuentes: [raw/correcciones_tp1.md, raw/apuntes.txt, raw/notas.txt]
+fuentes: [raw/correcciones_tp1.md, raw/apuntes.txt, raw/notas.txt, "raw/final paw/Clase 8 - FINAL.pdf", "raw/final paw/como esta implementado el tp de ejemplo.docx"]
 creado: 2026-04-09
-actualizado: 2026-04-17
+actualizado: 2026-07-05
 ---
 
 # Internacionalizacion (i18n)
@@ -59,11 +59,20 @@ La internacionalizacion nativa y completa es un requerimiento core obligatorio.
 - El atributo `arguments` acepta lista separada por comas (configurable con `argumentSeparator`)
 - `<spring:message>` tambien permite escapar para HTML/JavaScript (similar a `<c:out>`)
 
+## TP final: i18n frontend
+
+- La SPA ya no puede depender solo de `MessageSource` y JSPs: necesita catalogos del lado cliente.
+- React suele usar `react-i18next`; Angular puede usar `@angular/localize`; Vue puede usar `vue-i18n` u otra libreria equivalente.
+- Mantener pluralizacion, interpolacion, fallback y formatos por locale (fecha, hora, moneda) tambien en el frontend.
+- Las keys del frontend y backend no tienen que ser identicas, pero deben cubrir los mismos flujos visibles: formularios, errores API, estados vacios, auth y navegacion.
+- No concatenar fragmentos traducidos en componentes; usar mensajes completos con placeholders.
+
 ## Ver tambien
 - [[comparacion-jsp-formularios-e-i18n]]
 - [[auth-flows]]
-- [[mailing]]
 - [[single-page-applications]]
+- [[checklist-tp-final-rest-spa]]
+- [[mailing]]
 - [[xss-prevencion]]
 - [[jsp-jstl]]
 - [[ux-flows]]

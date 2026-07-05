@@ -19,8 +19,10 @@ Choose the test type from the behavior under test:
 - SQL, row mapping, constraints, ordering, pagination, or schema behavior: DAO/persistence test against HSQLDB.
 - TP2 JPA mapping, fetch, cascade, dirty checking, or generated SQL behavior: persistence/context test plus SQL/log inspection where useful.
 - Route, binding, validation error, security rule, redirect, or JSP model contract: webapp MVC/security test.
-- TP final REST resource status/body/header/error contract: API/MVC resource test.
-- SPA state/component/form behavior: frontend test if the repo has a frontend test runner; otherwise document manual/contract verification.
+- TP final REST resource status/body/header/error contract: API/MVC/JAX-RS resource test.
+- SPA stores/composables, routes, forms, errors, and i18n behavior: frontend test if the repo has a frontend test runner; otherwise document the gap and manual/contract verification.
+- API cache/static hosting behavior: cache/smoke test for `ETag`, `If-None-Match`, `304`, and asset cache headers.
+- TP final WAR contents and route split: packaging/smoke check.
 - JSP escaping, scriptlets, i18n bundle symmetry, or rendered-template contract: template/i18n test.
 - Runtime wiring, AOP proxy, scheduler, or app startup behavior: context/integration test or Jetty smoke.
 
@@ -34,6 +36,10 @@ Choose the test type from the behavior under test:
 - Service tests mock DAOs but assert returned state, thrown exceptions, state transitions, or recorded side effects.
 - Do not test services that are pure pass-through wrappers; move/test real business behavior where it belongs.
 - MVC tests verify status, redirects, model/binding errors, security, and preserved GET state.
+- API contract tests verify status, DTO body, Problem Details, media types, auth errors, and headers such as `Location`, `Link`, `ETag`, and CORS-exposed headers.
+- API 404 tests must prove `/api/*` returns JSON/Problem Details, while SPA deep links fall back to `index.html`.
+- Cache tests prove both validator flow (`ETag` -> `If-None-Match` -> `304`) and static cache policy when cache is implemented.
+- Frontend tests cover stores/composables/routes/forms/i18n at the public UI/state contract level, not component internals.
 - Do not use the object under test to set its own preconditions.
 - Cover happy, unhappy, and edge paths as separate tests.
 - A green build is not proof of wiki compliance; inspect test style and coverage against the rules.
@@ -62,7 +68,7 @@ mvn clean test
 mvn clean package
 ```
 
-Use `-am` for tests that depend on upstream modules. For targeted webapp tests, include `-Dsurefire.failIfNoSpecifiedTests=false` so upstream modules without that test pattern do not fail before the target module runs.
+Use `-am` for tests that depend on upstream modules. For targeted webapp tests, include `-Dsurefire.failIfNoSpecifiedTests=false` so upstream modules without that test pattern do not fail before the target module runs. For TP final, `mvn clean package` is a gate, not an afterthought: inspect the WAR for `index.html`, JS/CSS/assets, and backend classes.
 
 ## Review Checklist
 
@@ -74,5 +80,6 @@ Use `-am` for tests that depend on upstream modules. For targeted webapp tests, 
 - Are DB writes validated with direct SQL/JdbcTestUtils, including the expected actor/user when relevant?
 - Are there no `verify`, `spy`, reflection, `lenient`, interaction counters, or no-assert tests?
 - Are service tests not pretending to prove Spring proxy/AOP behavior when they instantiate implementations directly?
+- Do TP final tests cover API headers/errors, API 404 vs SPA fallback, cache `304`, frontend stores/composables/routes/forms/i18n, and WAR contents when those surfaces exist?
 - Is a pass-through service test deleted or replaced by a test for real business behavior?
 - Does the final gate match the blast radius of the change?

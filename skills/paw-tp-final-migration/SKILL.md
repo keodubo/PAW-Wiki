@@ -14,20 +14,22 @@ Read `references/migration-rules.md` before editing or judging final-stage work.
 ## Required First Pass
 
 1. Confirm the stage is `TP final` or the user explicitly asked for REST/SPA/frontend migration.
-2. Read the app `CLAUDE.md`, `PAW-Wiki/docs/CLAUDE.md`, `PAW-Wiki/docs/index.md`, and `PAW-Wiki/docs/wiki/resumen-clases-paw-2026.md`.
-3. Read `PAW-Wiki/docs/wiki/api-rest.md`, `single-page-applications.md`, `spring-security.md`, `internacionalizacion.md`, and `ux-flows.md`.
+2. Read the app `CLAUDE.md`, `PAW-Wiki/docs/CLAUDE.md`, `PAW-Wiki/docs/index.md`, `PAW-Wiki/docs/wiki/resumen-final-paw-2026.md`, and `PAW-Wiki/docs/wiki/checklist-tp-final-rest-spa.md`.
+3. Read `PAW-Wiki/docs/wiki/api-rest.md`, `single-page-applications.md`, `spring-security.md`, `internacionalizacion.md`, `ux-flows.md`, and `resumen-clases-paw-2026.md` only for the affected topics.
 4. Capture baseline MVC routes, services, auth rules, views, tests, and packaging.
 5. State whether the work is API-only, frontend-only, packaging-only, or end-to-end migration.
 
 ## Migration Workflow
 
-1. Define API resources, DTOs, status codes, error shape, pagination/linking, and auth model before frontend implementation.
-2. Keep services as business authority; REST resources deserialize/validate/delegate and translate results.
-3. Add REST tests for status, headers, body, auth, validation, and error cases.
-4. Build the SPA around routes, state, forms, error handling, i18n, and API client boundaries.
-5. Add frontend tests when the repo has a runner; otherwise document manual contract checks.
-6. Integrate the frontend build into Maven/WAR packaging only after the API/client boundary is clear.
-7. Configure static hosting and cache/file revving so versioned assets can be immutable and root HTML is revalidated.
+1. Define noun-based API resources, DTOs/forms, links/URIs, status codes, error shape, pagination headers, media types, and auth model before frontend implementation.
+2. Keep services as business authority; Jersey/JAX-RS resources deserialize/validate/delegate and translate results with `Response`, `Location`, `Link`, and DTO links built from `UriInfo`/builders.
+3. Use vendor media types for representation/version negotiation only; do not hide unrelated operations behind `PATCH` + media-type switches.
+4. Make auth stateless: initial `Authorization: Basic ...` may mint tokens, normal requests use `Authorization: Bearer <access-token>`, `401` is missing/invalid/expired credentials, `403` is authenticated-but-forbidden, and refresh tokens rotate on login/use instead of traveling in every response.
+5. Add REST tests for status, headers, body, `Location`, `Link`, media types, auth, validation, and error cases.
+6. Build the SPA around routes, state, forms, error handling, i18n, and API client boundaries.
+7. Add frontend tests when the repo has a runner; otherwise document manual contract checks.
+8. Integrate the frontend build into Maven/WAR packaging only after the API/client boundary is clear.
+9. Configure static hosting, base path, and cache/file revving so hashed assets can be immutable while `index.html`/root is revalidated.
 
 ## Coordination
 
@@ -45,6 +47,7 @@ Ask before proceeding when:
 - Auth storage trade-offs are unresolved.
 - Existing JSP routes must remain live in parallel but routing ownership is unclear.
 - The frontend build would change deploy/package commands.
+- Basic/Bearer token storage, refresh rotation, or exposed auth headers are unresolved.
 - Cache settings could make stale HTML or stale assets persist for users.
 
 ## Verification
@@ -64,3 +67,5 @@ mvn -pl webapp -am -Dtest=<ApiOrMvcTestName> -Dsurefire.failIfNoSpecifiedTests=f
 ```
 
 If a frontend module exists, run its declared package/test/build commands from the repo documentation before claiming the final migration is ready.
+
+When packaging/static hosting changed, also inspect or smoke the WAR for `index.html`, hashed JS/CSS/assets, `/api/*` JSON errors, SPA deep-link fallback, and correct context-path asset URLs.

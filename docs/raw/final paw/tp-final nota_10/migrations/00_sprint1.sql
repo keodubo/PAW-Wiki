@@ -1,0 +1,45 @@
+CREATE TABLE IF NOT EXISTS customer(
+    id SERIAL PRIMARY KEY,
+    email VARCHAR(30) UNIQUE NOT NULL,
+    address VARCHAR(100) NOT NULL
+);
+
+CREATE TABLE IF NOT EXISTS company(
+    id SERIAL PRIMARY KEY,
+    name VARCHAR(30) UNIQUE NOT NULL,
+    address VARCHAR(100) NOT NULL,
+    email VARCHAR(30) UNIQUE NOT NULL,
+    phone VARCHAR(15) NOT NULL
+);
+
+CREATE TABLE IF NOT EXISTS image(
+    id SERIAL PRIMARY KEY,
+    bytes BYTEA NOT NULL
+);
+
+CREATE TABLE IF NOT EXISTS product(
+    id SERIAL PRIMARY KEY,
+    name VARCHAR(30),
+    description VARCHAR(100) NOT NULL,
+    price DECIMAL(10,2) NOT NULL,
+    company_id INTEGER REFERENCES company(id) ON DELETE CASCADE,
+    image_id INTEGER REFERENCES image(id) ON DELETE CASCADE,
+    CONSTRAINT unique_product_for_company UNIQUE(company_id,name)
+);
+
+CREATE TABLE IF NOT EXISTS pool(
+    id SERIAL PRIMARY KEY,
+    min_quantity INTEGER NOT NULL,
+    product_id INTEGER REFERENCES product(id) ON DELETE CASCADE
+);
+
+CREATE TABLE IF NOT EXISTS request(
+    id SERIAL PRIMARY KEY,
+    quantity INTEGER NOT NULL,
+    customer_id INTEGER REFERENCES customer(id) ON DELETE CASCADE,
+    pool_id INTEGER REFERENCES pool(id) ON DELETE CASCADE
+);
+
+CREATE TABLE IF NOT EXISTS migrations(id INTEGER PRIMARY KEY);
+
+INSERT INTO migrations(id) VALUES(0);

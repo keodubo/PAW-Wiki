@@ -14,7 +14,7 @@ Read current webapp code plus:
 - `PAW-Wiki/docs/wiki/auth-flows.md`
 - `PAW-Wiki/docs/wiki/xss-prevencion.md`
 - `PAW-Wiki/docs/wiki/manejo-excepciones.md`
-- `PAW-Wiki/docs/wiki/api-rest.md` and `PAW-Wiki/docs/wiki/single-page-applications.md` when stage is TP final.
+- `PAW-Wiki/docs/wiki/api-rest.md`, `PAW-Wiki/docs/wiki/single-page-applications.md`, `PAW-Wiki/docs/wiki/resumen-final-paw-2026.md`, and `PAW-Wiki/docs/wiki/checklist-tp-final-rest-spa.md` when stage is TP final.
 - `DESIGN.md` for visual changes.
 
 ## Controllers
@@ -27,10 +27,16 @@ Read current webapp code plus:
 ## TP Final REST/SPA Notes
 
 - Use `$paw-tp-final-migration` before replacing JSP flows with API/SPA work.
-- REST resources should return status codes, headers, and DTOs; they should not expose domain entities by accident.
+- JAX-RS resources use resource paths and HTTP verbs (`@Path`, `@GET`, `@POST`, `@PUT`, `@PATCH`, `@DELETE`) under `/api/*`; no action endpoints or `/v1` path versioning.
+- REST resources return deliberate status codes, DTO bodies, and headers; never expose domain entities or lazy proxies by accident.
+- `201 Created` includes valid `Location`; collection navigation uses `Link` headers and optional `X-Total-Count`; cacheable API responses use `ETag`/`If-None-Match`/`304`.
+- Error mappers return JSON Problem Details (`type`, `title`, `status`, `detail`, `instance`) for validation, auth, negotiation, and 404 API errors.
+- Expose `Location`, `Link`, `ETag`, `X-Access-Token`, and `X-Refresh-Token` in CORS when the browser client must read them.
 - API auth should be stateless by design. Document token/cookie storage trade-offs before implementing.
 - Frontend validation improves UX, but backend validation remains authoritative.
-- Static asset hosting must preserve `mvn package`; cache immutable only for versioned assets, never for the root HTML entry.
+- Routing stays separated: `/api/*` returns API/Problem JSON, `/assets/*` or `/static/*` serves static files, and SPA fallback serves `index.html` only for non-API deep links.
+- Static asset hosting must preserve `mvn package`; cache immutable only for hashed/versioned assets, never for `index.html` or the root HTML entry.
+- Maven packaging must build the frontend before `webapp` and produce one WAR containing API classes plus `index.html`, JS/CSS, and assets.
 
 ## Forms And Validation
 

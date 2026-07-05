@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+</head>
+<body style="background-color: #f4f4f4; font-family: sans-serif; -webkit-font-smoothing: antialiased; font-size: 14px; line-height: 1.4; margin: 0; padding: 0; -ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%">
+<div style="text-align: center">
+  <a th:href="${frontendBasePath}">
+    <img style="max-width: 300px;" th:src="@{{baseLogoPath}(baseLogoPath=${baseLogoPath})}" alt="logo"/>
+  </a>
+  <div>
+    <h2 th:text="#{email.request.delivered.greeting (${quantity}, ${productName})}"/>
+    <p th:text="#{email.request.product (${productName})}"/>
+    <p th:text="#{email.request.product_category (${productCategory})}"/>
+    <p th:text="#{email.request.pool_location (${poolLocation})}"/>
+    <p th:text="#{email.request.quantity (${quantity})}"/>
+    <p th:text="#{email.request.unit_price (${unitPrice})}"/>
+    <p th:text="#{email.request.total_price (${totalPrice})}"/>
+
+    <br>
+    <p th:text="#{email.request.delivered.info}"/>
+
+    <br>
+    <a th:href="@{{frontendBasePath}/pools/{poolId}(frontendBasePath=${frontendBasePath}, poolId=${poolId})}" th:text="#{email.pool_details}" style="background-color: #565ac6; border: none; color: white; padding: 10px; text-align: center; border-radius: 20px; text-decoration: none"/>
+
+    <br><br>
+    <p th:text="#{email.footer}"/>
+
+    <br><br>
+
+    <p aria-hidden="true" style="max-height:0; overflow:hidden; font-size:0; line-height:0; color:transparent; margin:0;" th:text="${hiddenMarker}"></p>
+  </div>
+</div>
+</body>
+</html>

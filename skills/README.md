@@ -14,6 +14,8 @@ Canon de contexto para cualquier skill:
 - `docs/index.md`
 - `docs/wiki/resumen-enunciado-tpe2.md` cuando la etapa sea TPE2/TP2
 - `docs/wiki/resumen-clases-paw-2026.md`
+- `docs/wiki/resumen-final-paw-2026.md` y
+  `docs/wiki/checklist-tp-final-rest-spa.md` cuando la etapa sea TP final
 - `docs/wiki/tp1-vs-tpe2-final.md`
 
 Las versiones de dependencias mencionadas en PDFs antiguos son históricas. Las
@@ -73,7 +75,7 @@ Muéstrame un plan corto antes de editar si la tarea toca más de una capa.
 | `paw-webapp-layer` | Controllers, forms, validators, JSP/JSTL, i18n, Spring Security, CSS/JS y tests MVC. |
 | `paw-testing-layer` | Tests, fixtures, HSQLDB, Maven gates, MVC/security/template checks y revisiones de calidad. |
 | `paw-tp2-migration` | Migración TPE2/TP2 de JDBC a JPA/Hibernate: entidades, EntityManager, mappings, migraciones sin pérdida de datos, fetch/cascade, SQL generado, feedback TPE1 y tests. |
-| `paw-tp-final-migration` | Migración TP final a REST API + SPA: recursos, DTOs, auth stateless, frontend build, routing, estado, cache y packaging. |
+| `paw-tp-final-migration` | Migración TP final a REST API + SPA: recursos, DTOs con links, status/headers, auth Basic/Bearer stateless, frontend build, routing, estado, cache y packaging WAR. |
 
 ## Instalación
 
@@ -200,7 +202,7 @@ Si el cambio toca persistencia, usa $paw-tp2-migration para leer resumen-enuncia
 
 ```text
 Usa $paw-feature-master. Estamos en TP final.
-Si el cambio toca API, SPA, auth stateless, build frontend, cache o packaging, usa $paw-tp-final-migration antes de las subskills de capa.
+Si el cambio toca API, SPA, auth stateless, build frontend, cache o packaging, usa $paw-tp-final-migration antes de las subskills de capa. Primero lee resumen-final-paw-2026 y checklist-tp-final-rest-spa.
 ```
 
 ## Relación con Superpowers

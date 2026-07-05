@@ -1,9 +1,9 @@
 ---
 titulo: Spring Security — Control de Acceso Declarativo
 tipo: concepto
-fuentes: [raw/correcciones_tp1.md, raw/apuntes.txt, raw/notas.txt]
+fuentes: [raw/correcciones_tp1.md, raw/apuntes.txt, raw/notas.txt, "raw/final paw/presentacion-api.pdf", "raw/final paw/Ultima clase de PAW - v2 - Apuntes.pdf", "raw/final paw/Correcciones viejas_.docx", "raw/final paw/como esta implementado el tp de ejemplo.docx"]
 creado: 2026-04-09
-actualizado: 2026-04-27
+actualizado: 2026-07-05
 ---
 
 # Spring Security — Control de Acceso Declarativo
@@ -52,6 +52,16 @@ Estos chequeos duplican logica, usan magic strings para roles, y son fragiles.
 
 - Usuarios bloqueados: usar `accountNonLocked` de Spring Security, no chequeos manuales
 - `rememberMeKey` debe ser un `@Value` inyectado, no hardcodeado (mencionado 3 veces)
+
+## TP final: API stateless
+
+- La API REST de TP final no debe depender de `JSESSIONID` ni `HttpSession` como estado conversacional.
+- La autenticacion viaja por `Authorization`: primero `Basic` para credenciales iniciales si el flujo lo usa, luego `Bearer` para access/refresh tokens.
+- `401` indica que no hay credencial valida o expiro; `403` indica usuario autenticado sin permiso. No refrescar token ante `403`.
+- El refresh token no debe viajar en cada response ni quedar expuesto como dato comun. Rotarlo en login/uso reduce riesgo de replay.
+- Exponer emails, flags admin o datos sensibles en DTOs publicos es un problema de seguridad, aunque el endpoint este autenticado.
+- Ownership sigue siendo obligatorio: Spring Security/expressions/voters deben impedir cambios de imagen, chats u operaciones sobre recursos ajenos.
+- Si el frontend necesita leer headers de auth, `Location`, `Link` o `ETag`, configurar CORS/headers expuestos explicitamente; no relajar seguridad por comodidad de cliente.
 
 ### Flujos de cuenta
 
@@ -114,6 +124,10 @@ Estos chequeos duplican logica, usan magic strings para roles, y son fragiles.
 ## Ver tambien
 - [[comparacion-seguridad-web]]
 - [[http-y-sesiones]]
+- [[api-rest]]
+- [[single-page-applications]]
+- [[resumen-final-paw-2026]]
+- [[checklist-tp-final-rest-spa]]
 - [[spring-web-mvc]]
 - [[auth-flows]]
 - [[tp1-vs-tpe2-final]]

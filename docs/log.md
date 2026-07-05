@@ -4,6 +4,14 @@ Registro cronologico de actividad del wiki.
 
 ---
 
+## [2026-07-05] ingest | lote final PAW 2026
+
+- Agregado el lote `docs/raw/final paw/` como nueva fuente TP final: presentaciones REST/HATEOAS, integracion Frontend + Spring, cache, ultima clase, apuntes, correcciones antiguas y ejemplo `tp-final nota_10`.
+- Creadas `wiki/resumen-final-paw-2026.md` y `wiki/checklist-tp-final-rest-spa.md` para consolidar REST/HATEOAS, auth stateless, Jersey, DTOs, headers `Link`/`Location`, SPA, Maven frontend, WAR, cache y pruebas de entrega.
+- Actualizadas paginas canonicas de TP final: `api-rest`, `single-page-applications`, `spring-security`, `internacionalizacion`, `ux-flows`, `criterios-evaluacion`, `tp1-vs-tpe2-final` y `resumen-clases-paw-2026`.
+- Agregadas reglas de `.gitignore` para no publicar `.env`, properties con credenciales ni llaves locales dentro del ejemplo `tp-final nota_10`.
+- Actualizados `docs/index.md`, `docs/log.md`, `docs/tree.txt` y skills PAW de TP final para apuntar al nuevo canon.
+
 ## [2026-05-31] ingest | devolucion TP1 2026 C1
 
 - Agregado `docs/raw/pdfs/Devolucion_TP1_2026_C1.pdf` desde Downloads como fuente publica original preservada.

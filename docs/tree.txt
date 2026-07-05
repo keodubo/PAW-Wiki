@@ -23,14 +23,387 @@ PAW-Wiki/docs/raw/PAW - clase 6 (TP1).pdf
 PAW-Wiki/docs/raw/PAW - clase 7 (TP2).pdf
 PAW-Wiki/docs/raw/PAW - clase 8 (TP2).pdf
 PAW-Wiki/docs/raw/PAW - clases 9 y 10 (TP final).pdf
-PAW-Wiki/docs/raw/PAW- Clase Teórica - SPAs segunda parte (TP final).pdf
-PAW-Wiki/docs/raw/PAW- Clase Teórica Front end (TP final).pdf
+PAW-Wiki/docs/raw/PAW- Clase Teórica - SPAs segunda parte (TP final).pdf
+PAW-Wiki/docs/raw/PAW- Clase Teórica Front end (TP final).pdf
 PAW-Wiki/docs/raw/apuntes.txt
 PAW-Wiki/docs/raw/correcciones_tp1.md
 PAW-Wiki/docs/raw/correcciones_tp2.md
 PAW-Wiki/docs/raw/devolucion_tp1_2026_c1.txt
 PAW-Wiki/docs/raw/enunciado.txt
 PAW-Wiki/docs/raw/enunciado_tpe2.txt
+PAW-Wiki/docs/raw/final paw/Clase 8 - FINAL.pdf
+PAW-Wiki/docs/raw/final paw/Correcciones viejas_.docx
+PAW-Wiki/docs/raw/final paw/Optimización REST_ Caching Frontend y Backend.pdf
+PAW-Wiki/docs/raw/final paw/PAW - Apuntes.pdf
+PAW-Wiki/docs/raw/final paw/Ultima clase de PAW - v2 - Apuntes.pdf
+PAW-Wiki/docs/raw/final paw/clases grabadas.docx
+PAW-Wiki/docs/raw/final paw/como esta implementado el tp de ejemplo.docx
+PAW-Wiki/docs/raw/final paw/presentacion-api.pdf
+PAW-Wiki/docs/raw/final paw/presentacion-spring-frontend.pdf
+PAW-Wiki/docs/raw/final paw/resumen clases.docx
+PAW-Wiki/docs/raw/final paw/tp-final nota_10/.gitignore
+PAW-Wiki/docs/raw/final paw/tp-final nota_10/README.md
+PAW-Wiki/docs/raw/final paw/tp-final nota_10/frontend/.browserslistrc
+PAW-Wiki/docs/raw/final paw/tp-final nota_10/frontend/.editorconfig
+PAW-Wiki/docs/raw/final paw/tp-final nota_10/frontend/.eslintrc-auto-import.json
+PAW-Wiki/docs/raw/final paw/tp-final nota_10/frontend/.gitignore
+PAW-Wiki/docs/raw/final paw/tp-final nota_10/frontend/.prettierrc.json
+PAW-Wiki/docs/raw/final paw/tp-final nota_10/frontend/README.md
+PAW-Wiki/docs/raw/final paw/tp-final nota_10/frontend/env.d.ts
+PAW-Wiki/docs/raw/final paw/tp-final nota_10/frontend/eslint.config.js
+PAW-Wiki/docs/raw/final paw/tp-final nota_10/frontend/index.html
+PAW-Wiki/docs/raw/final paw/tp-final nota_10/frontend/package.json
+PAW-Wiki/docs/raw/final paw/tp-final nota_10/frontend/pom.xml
+PAW-Wiki/docs/raw/final paw/tp-final nota_10/frontend/public/favicon.ico
+PAW-Wiki/docs/raw/final paw/tp-final nota_10/frontend/src/App.vue
+PAW-Wiki/docs/raw/final paw/tp-final nota_10/frontend/src/assets/400-error.svg
+PAW-Wiki/docs/raw/final paw/tp-final nota_10/frontend/src/assets/403-error.svg
+PAW-Wiki/docs/raw/final paw/tp-final nota_10/frontend/src/assets/404-error.svg
+PAW-Wiki/docs/raw/final paw/tp-final nota_10/frontend/src/assets/405-error.svg
+PAW-Wiki/docs/raw/final paw/tp-final nota_10/frontend/src/assets/500-error.svg
+PAW-Wiki/docs/raw/final paw/tp-final nota_10/frontend/src/assets/business.svg
+PAW-Wiki/docs/raw/final paw/tp-final nota_10/frontend/src/assets/empty.svg
+PAW-Wiki/docs/raw/final paw/tp-final nota_10/frontend/src/assets/logo.png
+PAW-Wiki/docs/raw/final paw/tp-final nota_10/frontend/src/assets/manage-money.svg
+PAW-Wiki/docs/raw/final paw/tp-final nota_10/frontend/src/assets/saving-money.svg
+PAW-Wiki/docs/raw/final paw/tp-final nota_10/frontend/src/assets/user.svg
+PAW-Wiki/docs/raw/final paw/tp-final nota_10/frontend/src/auto-imports.d.ts
+PAW-Wiki/docs/raw/final paw/tp-final nota_10/frontend/src/components.d.ts
+PAW-Wiki/docs/raw/final paw/tp-final nota_10/frontend/src/components/AppBar.vue
+PAW-Wiki/docs/raw/final paw/tp-final nota_10/frontend/src/components/BlockStatus.vue
+PAW-Wiki/docs/raw/final paw/tp-final nota_10/frontend/src/components/BlockUserDialog.vue
+PAW-Wiki/docs/raw/final paw/tp-final nota_10/frontend/src/components/CategoryList.vue
+PAW-Wiki/docs/raw/final paw/tp-final nota_10/frontend/src/components/CompanySelectorDialog.vue
+PAW-Wiki/docs/raw/final paw/tp-final nota_10/frontend/src/components/MyPoolCard.vue
+PAW-Wiki/docs/raw/final paw/tp-final nota_10/frontend/src/components/NotificationContainer.vue
+PAW-Wiki/docs/raw/final paw/tp-final nota_10/frontend/src/components/PaginationLinks.vue
+PAW-Wiki/docs/raw/final paw/tp-final nota_10/frontend/src/components/PoolCard.vue
+PAW-Wiki/docs/raw/final paw/tp-final nota_10/frontend/src/components/ProductCard.vue
+PAW-Wiki/docs/raw/final paw/tp-final nota_10/frontend/src/components/ProductSelectorDialog.vue
+PAW-Wiki/docs/raw/final paw/tp-final nota_10/frontend/src/components/ReportsDialog.vue
+PAW-Wiki/docs/raw/final paw/tp-final nota_10/frontend/src/components/RequestList.vue
+PAW-Wiki/docs/raw/final paw/tp-final nota_10/frontend/src/components/ReviewForm.vue
+PAW-Wiki/docs/raw/final paw/tp-final nota_10/frontend/src/components/SearchBar.vue
+PAW-Wiki/docs/raw/final paw/tp-final nota_10/frontend/src/components/ValidateCompanyDialog.vue
+PAW-Wiki/docs/raw/final paw/tp-final nota_10/frontend/src/composables/useBaseSearch.ts
+PAW-Wiki/docs/raw/final paw/tp-final nota_10/frontend/src/composables/useCompaniesPage.ts
+PAW-Wiki/docs/raw/final paw/tp-final nota_10/frontend/src/composables/useLandingPage.ts
+PAW-Wiki/docs/raw/final paw/tp-final nota_10/frontend/src/composables/useMyPoolsPage.ts
+PAW-Wiki/docs/raw/final paw/tp-final nota_10/frontend/src/composables/useMyProductsPage.ts
+PAW-Wiki/docs/raw/final paw/tp-final nota_10/frontend/src/composables/useMyRequestsPage.ts
+PAW-Wiki/docs/raw/final paw/tp-final nota_10/frontend/src/composables/useNotifications.ts
+PAW-Wiki/docs/raw/final paw/tp-final nota_10/frontend/src/composables/usePoolsPage.ts
+PAW-Wiki/docs/raw/final paw/tp-final nota_10/frontend/src/composables/useProductReviews.ts
+PAW-Wiki/docs/raw/final paw/tp-final nota_10/frontend/src/composables/useProductsPage.ts
+PAW-Wiki/docs/raw/final paw/tp-final nota_10/frontend/src/composables/useTheme.ts
+PAW-Wiki/docs/raw/final paw/tp-final nota_10/frontend/src/composables/useUsersPage.ts
+PAW-Wiki/docs/raw/final paw/tp-final nota_10/frontend/src/i18n/index.ts
+PAW-Wiki/docs/raw/final paw/tp-final nota_10/frontend/src/i18n/locales/en.json
+PAW-Wiki/docs/raw/final paw/tp-final nota_10/frontend/src/i18n/locales/es.json
+PAW-Wiki/docs/raw/final paw/tp-final nota_10/frontend/src/layouts/default.vue
+PAW-Wiki/docs/raw/final paw/tp-final nota_10/frontend/src/main.ts
+PAW-Wiki/docs/raw/final paw/tp-final nota_10/frontend/src/models/Category.ts
+PAW-Wiki/docs/raw/final paw/tp-final nota_10/frontend/src/models/Company.ts
+PAW-Wiki/docs/raw/final paw/tp-final nota_10/frontend/src/models/Http.ts
+PAW-Wiki/docs/raw/final paw/tp-final nota_10/frontend/src/models/Location.ts
+PAW-Wiki/docs/raw/final paw/tp-final nota_10/frontend/src/models/Pool.ts
+PAW-Wiki/docs/raw/final paw/tp-final nota_10/frontend/src/models/Product.ts
+PAW-Wiki/docs/raw/final paw/tp-final nota_10/frontend/src/models/Report.ts
+PAW-Wiki/docs/raw/final paw/tp-final nota_10/frontend/src/models/Request.ts
+PAW-Wiki/docs/raw/final paw/tp-final nota_10/frontend/src/models/Review.ts
+PAW-Wiki/docs/raw/final paw/tp-final nota_10/frontend/src/models/Reviewer.ts
+PAW-Wiki/docs/raw/final paw/tp-final nota_10/frontend/src/models/User.ts
+PAW-Wiki/docs/raw/final paw/tp-final nota_10/frontend/src/models/UserRole.ts
+PAW-Wiki/docs/raw/final paw/tp-final nota_10/frontend/src/models/index.ts
+PAW-Wiki/docs/raw/final paw/tp-final nota_10/frontend/src/pages/companies/[id].vue
+PAW-Wiki/docs/raw/final paw/tp-final nota_10/frontend/src/pages/companies/index.vue
+PAW-Wiki/docs/raw/final paw/tp-final nota_10/frontend/src/pages/forgot-password.vue
+PAW-Wiki/docs/raw/final paw/tp-final nota_10/frontend/src/pages/index.vue
+PAW-Wiki/docs/raw/final paw/tp-final nota_10/frontend/src/pages/internal-server-error.vue
+PAW-Wiki/docs/raw/final paw/tp-final nota_10/frontend/src/pages/login.vue
+PAW-Wiki/docs/raw/final paw/tp-final nota_10/frontend/src/pages/my-pools.vue
+PAW-Wiki/docs/raw/final paw/tp-final nota_10/frontend/src/pages/my-products.vue
+PAW-Wiki/docs/raw/final paw/tp-final nota_10/frontend/src/pages/my-requests.vue
+PAW-Wiki/docs/raw/final paw/tp-final nota_10/frontend/src/pages/not-found.vue
+PAW-Wiki/docs/raw/final paw/tp-final nota_10/frontend/src/pages/pools/[id]/edit.vue
+PAW-Wiki/docs/raw/final paw/tp-final nota_10/frontend/src/pages/pools/[id]/index.vue
+PAW-Wiki/docs/raw/final paw/tp-final nota_10/frontend/src/pages/pools/create.vue
+PAW-Wiki/docs/raw/final paw/tp-final nota_10/frontend/src/pages/pools/index.vue
+PAW-Wiki/docs/raw/final paw/tp-final nota_10/frontend/src/pages/products/[id]/edit.vue
+PAW-Wiki/docs/raw/final paw/tp-final nota_10/frontend/src/pages/products/[id]/index.vue
+PAW-Wiki/docs/raw/final paw/tp-final nota_10/frontend/src/pages/products/create.vue
+PAW-Wiki/docs/raw/final paw/tp-final nota_10/frontend/src/pages/products/index.vue
+PAW-Wiki/docs/raw/final paw/tp-final nota_10/frontend/src/pages/profile/change-password.vue
+PAW-Wiki/docs/raw/final paw/tp-final nota_10/frontend/src/pages/profile/companies/create.vue
+PAW-Wiki/docs/raw/final paw/tp-final nota_10/frontend/src/pages/profile/companies/edit.vue
+PAW-Wiki/docs/raw/final paw/tp-final nota_10/frontend/src/pages/profile/edit.vue
+PAW-Wiki/docs/raw/final paw/tp-final nota_10/frontend/src/pages/profile/index.vue
+PAW-Wiki/docs/raw/final paw/tp-final nota_10/frontend/src/pages/register.vue
+PAW-Wiki/docs/raw/final paw/tp-final nota_10/frontend/src/pages/reset-password.vue
+PAW-Wiki/docs/raw/final paw/tp-final nota_10/frontend/src/pages/unauthorized.vue
+PAW-Wiki/docs/raw/final paw/tp-final nota_10/frontend/src/pages/users/index.vue
+PAW-Wiki/docs/raw/final paw/tp-final nota_10/frontend/src/pages/validate-account.vue
+PAW-Wiki/docs/raw/final paw/tp-final nota_10/frontend/src/plugins/index.ts
+PAW-Wiki/docs/raw/final paw/tp-final nota_10/frontend/src/plugins/vuetify.ts
+PAW-Wiki/docs/raw/final paw/tp-final nota_10/frontend/src/router/index.ts
+PAW-Wiki/docs/raw/final paw/tp-final nota_10/frontend/src/services/ApiClient.ts
+PAW-Wiki/docs/raw/final paw/tp-final nota_10/frontend/src/services/CategoryService.ts
+PAW-Wiki/docs/raw/final paw/tp-final nota_10/frontend/src/services/CompanyService.ts
+PAW-Wiki/docs/raw/final paw/tp-final nota_10/frontend/src/services/DocumentService.ts
+PAW-Wiki/docs/raw/final paw/tp-final nota_10/frontend/src/services/LocationService.ts
+PAW-Wiki/docs/raw/final paw/tp-final nota_10/frontend/src/services/PoolService.ts
+PAW-Wiki/docs/raw/final paw/tp-final nota_10/frontend/src/services/ProductService.ts
+PAW-Wiki/docs/raw/final paw/tp-final nota_10/frontend/src/services/ReportService.ts
+PAW-Wiki/docs/raw/final paw/tp-final nota_10/frontend/src/services/RequestService.ts
+PAW-Wiki/docs/raw/final paw/tp-final nota_10/frontend/src/services/ReviewService.ts
+PAW-Wiki/docs/raw/final paw/tp-final nota_10/frontend/src/services/UserService.ts
+PAW-Wiki/docs/raw/final paw/tp-final nota_10/frontend/src/services/api.ts
+PAW-Wiki/docs/raw/final paw/tp-final nota_10/frontend/src/services/index.ts
+PAW-Wiki/docs/raw/final paw/tp-final nota_10/frontend/src/stores/app.ts
+PAW-Wiki/docs/raw/final paw/tp-final nota_10/frontend/src/stores/auth.ts
+PAW-Wiki/docs/raw/final paw/tp-final nota_10/frontend/src/stores/categories.ts
+PAW-Wiki/docs/raw/final paw/tp-final nota_10/frontend/src/stores/companies.ts
+PAW-Wiki/docs/raw/final paw/tp-final nota_10/frontend/src/stores/index.ts
+PAW-Wiki/docs/raw/final paw/tp-final nota_10/frontend/src/stores/locations.ts
+PAW-Wiki/docs/raw/final paw/tp-final nota_10/frontend/src/stores/pools.ts
+PAW-Wiki/docs/raw/final paw/tp-final nota_10/frontend/src/stores/products.ts
+PAW-Wiki/docs/raw/final paw/tp-final nota_10/frontend/src/stores/requests.ts
+PAW-Wiki/docs/raw/final paw/tp-final nota_10/frontend/src/stores/reviewers.ts
+PAW-Wiki/docs/raw/final paw/tp-final nota_10/frontend/src/stores/users.ts
+PAW-Wiki/docs/raw/final paw/tp-final nota_10/frontend/src/styles/settings.scss
+PAW-Wiki/docs/raw/final paw/tp-final nota_10/frontend/src/test/currency.spec.ts
+PAW-Wiki/docs/raw/final paw/tp-final nota_10/frontend/src/test/setup.ts
+PAW-Wiki/docs/raw/final paw/tp-final nota_10/frontend/src/test/styleStub.ts
+PAW-Wiki/docs/raw/final paw/tp-final nota_10/frontend/src/test/useBaseSearch.spec.ts
+PAW-Wiki/docs/raw/final paw/tp-final nota_10/frontend/src/test/useCompaniesPage.spec.ts
+PAW-Wiki/docs/raw/final paw/tp-final nota_10/frontend/src/test/useLandingPage.spec.ts
+PAW-Wiki/docs/raw/final paw/tp-final nota_10/frontend/src/test/useMyPoolsPage.spec.ts
+PAW-Wiki/docs/raw/final paw/tp-final nota_10/frontend/src/test/useMyProductsPage.spec.ts
+PAW-Wiki/docs/raw/final paw/tp-final nota_10/frontend/src/test/useMyRequestsPage.spec.ts
+PAW-Wiki/docs/raw/final paw/tp-final nota_10/frontend/src/test/useNotifications.spec.ts
+PAW-Wiki/docs/raw/final paw/tp-final nota_10/frontend/src/test/usePoolsPage.spec.ts
+PAW-Wiki/docs/raw/final paw/tp-final nota_10/frontend/src/test/useProductReviews.spec.ts
+PAW-Wiki/docs/raw/final paw/tp-final nota_10/frontend/src/test/useProductsPage.spec.ts
+PAW-Wiki/docs/raw/final paw/tp-final nota_10/frontend/src/test/useTheme.spec.ts
+PAW-Wiki/docs/raw/final paw/tp-final nota_10/frontend/src/test/useUsersPage.spec.ts
+PAW-Wiki/docs/raw/final paw/tp-final nota_10/frontend/src/typed-router.d.ts
+PAW-Wiki/docs/raw/final paw/tp-final nota_10/frontend/src/types/router.d.ts
+PAW-Wiki/docs/raw/final paw/tp-final nota_10/frontend/src/utils/ResourceCache.ts
+PAW-Wiki/docs/raw/final paw/tp-final nota_10/frontend/src/utils/currency.ts
+PAW-Wiki/docs/raw/final paw/tp-final nota_10/frontend/src/utils/jwtUtils.ts
+PAW-Wiki/docs/raw/final paw/tp-final nota_10/frontend/src/utils/pagination.ts
+PAW-Wiki/docs/raw/final paw/tp-final nota_10/frontend/src/utils/validationErrors.ts
+PAW-Wiki/docs/raw/final paw/tp-final nota_10/frontend/tsconfig.app.json
+PAW-Wiki/docs/raw/final paw/tp-final nota_10/frontend/tsconfig.json
+PAW-Wiki/docs/raw/final paw/tp-final nota_10/frontend/tsconfig.node.json
+PAW-Wiki/docs/raw/final paw/tp-final nota_10/frontend/vite.config.mts
+PAW-Wiki/docs/raw/final paw/tp-final nota_10/interfaces/pom.xml
+PAW-Wiki/docs/raw/final paw/tp-final nota_10/interfaces/src/main/java/ar/edu/itba/paw/interfaces/dao/CategoryDao.java
+PAW-Wiki/docs/raw/final paw/tp-final nota_10/interfaces/src/main/java/ar/edu/itba/paw/interfaces/dao/CompanyDao.java
+PAW-Wiki/docs/raw/final paw/tp-final nota_10/interfaces/src/main/java/ar/edu/itba/paw/interfaces/dao/DocumentDao.java
+PAW-Wiki/docs/raw/final paw/tp-final nota_10/interfaces/src/main/java/ar/edu/itba/paw/interfaces/dao/LocationDao.java
+PAW-Wiki/docs/raw/final paw/tp-final nota_10/interfaces/src/main/java/ar/edu/itba/paw/interfaces/dao/PoolDao.java
+PAW-Wiki/docs/raw/final paw/tp-final nota_10/interfaces/src/main/java/ar/edu/itba/paw/interfaces/dao/ProductDao.java
+PAW-Wiki/docs/raw/final paw/tp-final nota_10/interfaces/src/main/java/ar/edu/itba/paw/interfaces/dao/ReportDao.java
+PAW-Wiki/docs/raw/final paw/tp-final nota_10/interfaces/src/main/java/ar/edu/itba/paw/interfaces/dao/RequestDao.java
+PAW-Wiki/docs/raw/final paw/tp-final nota_10/interfaces/src/main/java/ar/edu/itba/paw/interfaces/dao/ReviewDao.java
+PAW-Wiki/docs/raw/final paw/tp-final nota_10/interfaces/src/main/java/ar/edu/itba/paw/interfaces/dao/UserDao.java
+PAW-Wiki/docs/raw/final paw/tp-final nota_10/interfaces/src/main/java/ar/edu/itba/paw/interfaces/exception/CategoryNotFoundException.java
+PAW-Wiki/docs/raw/final paw/tp-final nota_10/interfaces/src/main/java/ar/edu/itba/paw/interfaces/exception/CompanyInfoNotFilledException.java
+PAW-Wiki/docs/raw/final paw/tp-final nota_10/interfaces/src/main/java/ar/edu/itba/paw/interfaces/exception/CompanyNotFoundException.java
+PAW-Wiki/docs/raw/final paw/tp-final nota_10/interfaces/src/main/java/ar/edu/itba/paw/interfaces/exception/CompanyNotValidatedException.java
+PAW-Wiki/docs/raw/final paw/tp-final nota_10/interfaces/src/main/java/ar/edu/itba/paw/interfaces/exception/DocumentNotFoundException.java
+PAW-Wiki/docs/raw/final paw/tp-final nota_10/interfaces/src/main/java/ar/edu/itba/paw/interfaces/exception/InvalidBlockLevelException.java
+PAW-Wiki/docs/raw/final paw/tp-final nota_10/interfaces/src/main/java/ar/edu/itba/paw/interfaces/exception/InvalidDocumentFileTypeException.java
+PAW-Wiki/docs/raw/final paw/tp-final nota_10/interfaces/src/main/java/ar/edu/itba/paw/interfaces/exception/InvalidDocumentVisibilityException.java
+PAW-Wiki/docs/raw/final paw/tp-final nota_10/interfaces/src/main/java/ar/edu/itba/paw/interfaces/exception/InvalidLanguageException.java
+PAW-Wiki/docs/raw/final paw/tp-final nota_10/interfaces/src/main/java/ar/edu/itba/paw/interfaces/exception/InvalidPoolStatusException.java
+PAW-Wiki/docs/raw/final paw/tp-final nota_10/interfaces/src/main/java/ar/edu/itba/paw/interfaces/exception/InvalidProductRetirementException.java
+PAW-Wiki/docs/raw/final paw/tp-final nota_10/interfaces/src/main/java/ar/edu/itba/paw/interfaces/exception/InvalidRequestStatusException.java
+PAW-Wiki/docs/raw/final paw/tp-final nota_10/interfaces/src/main/java/ar/edu/itba/paw/interfaces/exception/InvalidUriException.java
+PAW-Wiki/docs/raw/final paw/tp-final nota_10/interfaces/src/main/java/ar/edu/itba/paw/interfaces/exception/LocationNotFoundException.java
+PAW-Wiki/docs/raw/final paw/tp-final nota_10/interfaces/src/main/java/ar/edu/itba/paw/interfaces/exception/PoolNotFoundException.java
+PAW-Wiki/docs/raw/final paw/tp-final nota_10/interfaces/src/main/java/ar/edu/itba/paw/interfaces/exception/ProductNotFoundException.java
+PAW-Wiki/docs/raw/final paw/tp-final nota_10/interfaces/src/main/java/ar/edu/itba/paw/interfaces/exception/ReportNotFoundException.java
+PAW-Wiki/docs/raw/final paw/tp-final nota_10/interfaces/src/main/java/ar/edu/itba/paw/interfaces/exception/RequestNotFoundException.java
+PAW-Wiki/docs/raw/final paw/tp-final nota_10/interfaces/src/main/java/ar/edu/itba/paw/interfaces/exception/ReviewNotFoundException.java
+PAW-Wiki/docs/raw/final paw/tp-final nota_10/interfaces/src/main/java/ar/edu/itba/paw/interfaces/exception/UserAlreadyValidatedException.java
+PAW-Wiki/docs/raw/final paw/tp-final nota_10/interfaces/src/main/java/ar/edu/itba/paw/interfaces/exception/UserNotAssociatedWithCompanyException.java
+PAW-Wiki/docs/raw/final paw/tp-final nota_10/interfaces/src/main/java/ar/edu/itba/paw/interfaces/exception/UserNotFoundException.java
+PAW-Wiki/docs/raw/final paw/tp-final nota_10/interfaces/src/main/java/ar/edu/itba/paw/interfaces/exception/base/CustomBaseException.java
+PAW-Wiki/docs/raw/final paw/tp-final nota_10/interfaces/src/main/java/ar/edu/itba/paw/interfaces/exception/base/CustomRuntimeException.java
+PAW-Wiki/docs/raw/final paw/tp-final nota_10/interfaces/src/main/java/ar/edu/itba/paw/interfaces/exception/base/ResourceNotFoundException.java
+PAW-Wiki/docs/raw/final paw/tp-final nota_10/interfaces/src/main/java/ar/edu/itba/paw/interfaces/exception/utils/ExceptionUtils.java
+PAW-Wiki/docs/raw/final paw/tp-final nota_10/interfaces/src/main/java/ar/edu/itba/paw/interfaces/service/CategoryService.java
+PAW-Wiki/docs/raw/final paw/tp-final nota_10/interfaces/src/main/java/ar/edu/itba/paw/interfaces/service/CompanyService.java
+PAW-Wiki/docs/raw/final paw/tp-final nota_10/interfaces/src/main/java/ar/edu/itba/paw/interfaces/service/DocumentService.java
+PAW-Wiki/docs/raw/final paw/tp-final nota_10/interfaces/src/main/java/ar/edu/itba/paw/interfaces/service/EmailService.java
+PAW-Wiki/docs/raw/final paw/tp-final nota_10/interfaces/src/main/java/ar/edu/itba/paw/interfaces/service/LocationService.java
+PAW-Wiki/docs/raw/final paw/tp-final nota_10/interfaces/src/main/java/ar/edu/itba/paw/interfaces/service/PoolService.java
+PAW-Wiki/docs/raw/final paw/tp-final nota_10/interfaces/src/main/java/ar/edu/itba/paw/interfaces/service/ProductService.java
+PAW-Wiki/docs/raw/final paw/tp-final nota_10/interfaces/src/main/java/ar/edu/itba/paw/interfaces/service/ReportService.java
+PAW-Wiki/docs/raw/final paw/tp-final nota_10/interfaces/src/main/java/ar/edu/itba/paw/interfaces/service/RequestService.java
+PAW-Wiki/docs/raw/final paw/tp-final nota_10/interfaces/src/main/java/ar/edu/itba/paw/interfaces/service/ReviewService.java
+PAW-Wiki/docs/raw/final paw/tp-final nota_10/interfaces/src/main/java/ar/edu/itba/paw/interfaces/service/UserService.java
+PAW-Wiki/docs/raw/final paw/tp-final nota_10/interfaces/src/main/java/ar/edu/itba/paw/interfaces/utils/UriUtils.java
+PAW-Wiki/docs/raw/final paw/tp-final nota_10/migrate.sh
+PAW-Wiki/docs/raw/final paw/tp-final nota_10/migrations/00_sprint1.sql
+PAW-Wiki/docs/raw/final paw/tp-final nota_10/migrations/01_sprint2.sql
+PAW-Wiki/docs/raw/final paw/tp-final nota_10/migrations/02_sprint3.sql
+PAW-Wiki/docs/raw/final paw/tp-final nota_10/migrations/03_sprint4.sql
+PAW-Wiki/docs/raw/final paw/tp-final nota_10/migrations/04_sprint5.sql
+PAW-Wiki/docs/raw/final paw/tp-final nota_10/migrations/05_sprint6.sql
+PAW-Wiki/docs/raw/final paw/tp-final nota_10/migrations/06_sprint6.sql
+PAW-Wiki/docs/raw/final paw/tp-final nota_10/migrations/07_final.sql
+PAW-Wiki/docs/raw/final paw/tp-final nota_10/migrations/08_final.sql
+PAW-Wiki/docs/raw/final paw/tp-final nota_10/models/pom.xml
+PAW-Wiki/docs/raw/final paw/tp-final nota_10/models/src/main/java/ar/edu/itba/paw/models/db/Category.java
+PAW-Wiki/docs/raw/final paw/tp-final nota_10/models/src/main/java/ar/edu/itba/paw/models/db/Company.java
+PAW-Wiki/docs/raw/final paw/tp-final nota_10/models/src/main/java/ar/edu/itba/paw/models/db/Document.java
+PAW-Wiki/docs/raw/final paw/tp-final nota_10/models/src/main/java/ar/edu/itba/paw/models/db/Location.java
+PAW-Wiki/docs/raw/final paw/tp-final nota_10/models/src/main/java/ar/edu/itba/paw/models/db/Pool.java
+PAW-Wiki/docs/raw/final paw/tp-final nota_10/models/src/main/java/ar/edu/itba/paw/models/db/Product.java
+PAW-Wiki/docs/raw/final paw/tp-final nota_10/models/src/main/java/ar/edu/itba/paw/models/db/Report.java
+PAW-Wiki/docs/raw/final paw/tp-final nota_10/models/src/main/java/ar/edu/itba/paw/models/db/Request.java
+PAW-Wiki/docs/raw/final paw/tp-final nota_10/models/src/main/java/ar/edu/itba/paw/models/db/Review.java
+PAW-Wiki/docs/raw/final paw/tp-final nota_10/models/src/main/java/ar/edu/itba/paw/models/db/User.java
+PAW-Wiki/docs/raw/final paw/tp-final nota_10/models/src/main/java/ar/edu/itba/paw/models/paginator/Paginator.java
+PAW-Wiki/docs/raw/final paw/tp-final nota_10/persistence/pom.xml
+PAW-Wiki/docs/raw/final paw/tp-final nota_10/persistence/src/main/java/ar/edu/itba/paw/persistence/dao/CategoryDaoJpa.java
+PAW-Wiki/docs/raw/final paw/tp-final nota_10/persistence/src/main/java/ar/edu/itba/paw/persistence/dao/CompanyDaoJpa.java
+PAW-Wiki/docs/raw/final paw/tp-final nota_10/persistence/src/main/java/ar/edu/itba/paw/persistence/dao/DocumentDaoJpa.java
+PAW-Wiki/docs/raw/final paw/tp-final nota_10/persistence/src/main/java/ar/edu/itba/paw/persistence/dao/LocationDaoJpa.java
+PAW-Wiki/docs/raw/final paw/tp-final nota_10/persistence/src/main/java/ar/edu/itba/paw/persistence/dao/PoolDaoJpa.java
+PAW-Wiki/docs/raw/final paw/tp-final nota_10/persistence/src/main/java/ar/edu/itba/paw/persistence/dao/ProductDaoJpa.java
+PAW-Wiki/docs/raw/final paw/tp-final nota_10/persistence/src/main/java/ar/edu/itba/paw/persistence/dao/ReportDaoJpa.java
+PAW-Wiki/docs/raw/final paw/tp-final nota_10/persistence/src/main/java/ar/edu/itba/paw/persistence/dao/RequestDaoJpa.java
+PAW-Wiki/docs/raw/final paw/tp-final nota_10/persistence/src/main/java/ar/edu/itba/paw/persistence/dao/ReviewDaoJpa.java
+PAW-Wiki/docs/raw/final paw/tp-final nota_10/persistence/src/main/java/ar/edu/itba/paw/persistence/dao/UserDaoJpa.java
+PAW-Wiki/docs/raw/final paw/tp-final nota_10/persistence/src/test/java/ar/edu/itba/paw/persistence/CategoryDaoJpaTest.java
+PAW-Wiki/docs/raw/final paw/tp-final nota_10/persistence/src/test/java/ar/edu/itba/paw/persistence/CompanyDaoJpaTest.java
+PAW-Wiki/docs/raw/final paw/tp-final nota_10/persistence/src/test/java/ar/edu/itba/paw/persistence/DocumentDaoJpaTest.java
+PAW-Wiki/docs/raw/final paw/tp-final nota_10/persistence/src/test/java/ar/edu/itba/paw/persistence/LocationDaoJpaTest.java
+PAW-Wiki/docs/raw/final paw/tp-final nota_10/persistence/src/test/java/ar/edu/itba/paw/persistence/PoolDaoJpaTest.java
+PAW-Wiki/docs/raw/final paw/tp-final nota_10/persistence/src/test/java/ar/edu/itba/paw/persistence/ProductDaoJpaTest.java
+PAW-Wiki/docs/raw/final paw/tp-final nota_10/persistence/src/test/java/ar/edu/itba/paw/persistence/ReportDaoJpaTest.java
+PAW-Wiki/docs/raw/final paw/tp-final nota_10/persistence/src/test/java/ar/edu/itba/paw/persistence/RequestDaoJpaTest.java
+PAW-Wiki/docs/raw/final paw/tp-final nota_10/persistence/src/test/java/ar/edu/itba/paw/persistence/ReviewDaoJpaTest.java
+PAW-Wiki/docs/raw/final paw/tp-final nota_10/persistence/src/test/java/ar/edu/itba/paw/persistence/UserDaoJpaTest.java
+PAW-Wiki/docs/raw/final paw/tp-final nota_10/persistence/src/test/java/ar/edu/itba/paw/persistence/config/TestConfig.java
+PAW-Wiki/docs/raw/final paw/tp-final nota_10/persistence/src/test/resources/hsqldb.sql
+PAW-Wiki/docs/raw/final paw/tp-final nota_10/persistence/src/test/resources/inserts.sql
+PAW-Wiki/docs/raw/final paw/tp-final nota_10/persistence/src/test/resources/schema.sql
+PAW-Wiki/docs/raw/final paw/tp-final nota_10/pom.xml
+PAW-Wiki/docs/raw/final paw/tp-final nota_10/services/pom.xml
+PAW-Wiki/docs/raw/final paw/tp-final nota_10/services/src/main/java/ar/edu/itba/paw/services/CategoryServiceImpl.java
+PAW-Wiki/docs/raw/final paw/tp-final nota_10/services/src/main/java/ar/edu/itba/paw/services/CompanyServiceImpl.java
+PAW-Wiki/docs/raw/final paw/tp-final nota_10/services/src/main/java/ar/edu/itba/paw/services/DocumentServiceImpl.java
+PAW-Wiki/docs/raw/final paw/tp-final nota_10/services/src/main/java/ar/edu/itba/paw/services/EmailServiceImpl.java
+PAW-Wiki/docs/raw/final paw/tp-final nota_10/services/src/main/java/ar/edu/itba/paw/services/LocationServiceImpl.java
+PAW-Wiki/docs/raw/final paw/tp-final nota_10/services/src/main/java/ar/edu/itba/paw/services/PoolServiceImpl.java
+PAW-Wiki/docs/raw/final paw/tp-final nota_10/services/src/main/java/ar/edu/itba/paw/services/ProductServiceImpl.java
+PAW-Wiki/docs/raw/final paw/tp-final nota_10/services/src/main/java/ar/edu/itba/paw/services/ReportServiceImpl.java
+PAW-Wiki/docs/raw/final paw/tp-final nota_10/services/src/main/java/ar/edu/itba/paw/services/RequestServiceImpl.java
+PAW-Wiki/docs/raw/final paw/tp-final nota_10/services/src/main/java/ar/edu/itba/paw/services/ReviewServiceImpl.java
+PAW-Wiki/docs/raw/final paw/tp-final nota_10/services/src/main/java/ar/edu/itba/paw/services/UserServiceImpl.java
+PAW-Wiki/docs/raw/final paw/tp-final nota_10/services/src/main/resources/mail/templates/companyRegister.html
+PAW-Wiki/docs/raw/final paw/tp-final nota_10/services/src/main/resources/mail/templates/companyRegisterAdmin.html
+PAW-Wiki/docs/raw/final paw/tp-final nota_10/services/src/main/resources/mail/templates/poolCancelled.html
+PAW-Wiki/docs/raw/final paw/tp-final nota_10/services/src/main/resources/mail/templates/poolFinished.html
+PAW-Wiki/docs/raw/final paw/tp-final nota_10/services/src/main/resources/mail/templates/poolFull.html
+PAW-Wiki/docs/raw/final paw/tp-final nota_10/services/src/main/resources/mail/templates/poolStartsDelivering.html
+PAW-Wiki/docs/raw/final paw/tp-final nota_10/services/src/main/resources/mail/templates/productRetired.html
+PAW-Wiki/docs/raw/final paw/tp-final nota_10/services/src/main/resources/mail/templates/requestAccepted.html
+PAW-Wiki/docs/raw/final paw/tp-final nota_10/services/src/main/resources/mail/templates/requestDeleted.html
+PAW-Wiki/docs/raw/final paw/tp-final nota_10/services/src/main/resources/mail/templates/requestDelivered.html
+PAW-Wiki/docs/raw/final paw/tp-final nota_10/services/src/main/resources/mail/templates/requestMade.html
+PAW-Wiki/docs/raw/final paw/tp-final nota_10/services/src/main/resources/mail/templates/requestRejected.html
+PAW-Wiki/docs/raw/final paw/tp-final nota_10/services/src/main/resources/mail/templates/userPasswordReset.html
+PAW-Wiki/docs/raw/final paw/tp-final nota_10/services/src/main/resources/mail/templates/userRegister.html
+PAW-Wiki/docs/raw/final paw/tp-final nota_10/services/src/main/resources/mail/templates/validationToken.html
+PAW-Wiki/docs/raw/final paw/tp-final nota_10/services/src/test/java/ar/edu/itba/paw/services/CategoryServiceImplTest.java
+PAW-Wiki/docs/raw/final paw/tp-final nota_10/services/src/test/java/ar/edu/itba/paw/services/CompanyServiceImplTest.java
+PAW-Wiki/docs/raw/final paw/tp-final nota_10/services/src/test/java/ar/edu/itba/paw/services/DocumentServiceImplTest.java
+PAW-Wiki/docs/raw/final paw/tp-final nota_10/services/src/test/java/ar/edu/itba/paw/services/LocationServiceImplTest.java
+PAW-Wiki/docs/raw/final paw/tp-final nota_10/services/src/test/java/ar/edu/itba/paw/services/PoolServiceImplTest.java
+PAW-Wiki/docs/raw/final paw/tp-final nota_10/services/src/test/java/ar/edu/itba/paw/services/ProductServiceImplTest.java
+PAW-Wiki/docs/raw/final paw/tp-final nota_10/services/src/test/java/ar/edu/itba/paw/services/ReportServiceImplTest.java
+PAW-Wiki/docs/raw/final paw/tp-final nota_10/services/src/test/java/ar/edu/itba/paw/services/RequestServiceImplTest.java
+PAW-Wiki/docs/raw/final paw/tp-final nota_10/services/src/test/java/ar/edu/itba/paw/services/ReviewServiceImplTest.java
+PAW-Wiki/docs/raw/final paw/tp-final nota_10/services/src/test/java/ar/edu/itba/paw/services/UserServiceImplTest.java
+PAW-Wiki/docs/raw/final paw/tp-final nota_10/webapp/pom.xml
+PAW-Wiki/docs/raw/final paw/tp-final nota_10/webapp/src/main/java/ar/edu/itba/paw/webapp/CustomMediaType.java
+PAW-Wiki/docs/raw/final paw/tp-final nota_10/webapp/src/main/java/ar/edu/itba/paw/webapp/auth/AccessValidator.java
+PAW-Wiki/docs/raw/final paw/tp-final nota_10/webapp/src/main/java/ar/edu/itba/paw/webapp/auth/AuthUser.java
+PAW-Wiki/docs/raw/final paw/tp-final nota_10/webapp/src/main/java/ar/edu/itba/paw/webapp/auth/AuthoritiesResolver.java
+PAW-Wiki/docs/raw/final paw/tp-final nota_10/webapp/src/main/java/ar/edu/itba/paw/webapp/auth/JwtService.java
+PAW-Wiki/docs/raw/final paw/tp-final nota_10/webapp/src/main/java/ar/edu/itba/paw/webapp/auth/UserDetailsServiceImpl.java
+PAW-Wiki/docs/raw/final paw/tp-final nota_10/webapp/src/main/java/ar/edu/itba/paw/webapp/auth/filters/BasicAuthorizationFilter.java
+PAW-Wiki/docs/raw/final paw/tp-final nota_10/webapp/src/main/java/ar/edu/itba/paw/webapp/auth/filters/BearerAuthorizationFilter.java
+PAW-Wiki/docs/raw/final paw/tp-final nota_10/webapp/src/main/java/ar/edu/itba/paw/webapp/auth/filters/UserIntentFilter.java
+PAW-Wiki/docs/raw/final paw/tp-final nota_10/webapp/src/main/java/ar/edu/itba/paw/webapp/config/EmailConfig.java
+PAW-Wiki/docs/raw/final paw/tp-final nota_10/webapp/src/main/java/ar/edu/itba/paw/webapp/config/SecurityConfig.java
+PAW-Wiki/docs/raw/final paw/tp-final nota_10/webapp/src/main/java/ar/edu/itba/paw/webapp/config/WebConfig.java
+PAW-Wiki/docs/raw/final paw/tp-final nota_10/webapp/src/main/java/ar/edu/itba/paw/webapp/controller/CategoryController.java
+PAW-Wiki/docs/raw/final paw/tp-final nota_10/webapp/src/main/java/ar/edu/itba/paw/webapp/controller/CompanyController.java
+PAW-Wiki/docs/raw/final paw/tp-final nota_10/webapp/src/main/java/ar/edu/itba/paw/webapp/controller/DocumentController.java
+PAW-Wiki/docs/raw/final paw/tp-final nota_10/webapp/src/main/java/ar/edu/itba/paw/webapp/controller/LocationController.java
+PAW-Wiki/docs/raw/final paw/tp-final nota_10/webapp/src/main/java/ar/edu/itba/paw/webapp/controller/PoolController.java
+PAW-Wiki/docs/raw/final paw/tp-final nota_10/webapp/src/main/java/ar/edu/itba/paw/webapp/controller/ProductController.java
+PAW-Wiki/docs/raw/final paw/tp-final nota_10/webapp/src/main/java/ar/edu/itba/paw/webapp/controller/ReportController.java
+PAW-Wiki/docs/raw/final paw/tp-final nota_10/webapp/src/main/java/ar/edu/itba/paw/webapp/controller/RequestController.java
+PAW-Wiki/docs/raw/final paw/tp-final nota_10/webapp/src/main/java/ar/edu/itba/paw/webapp/controller/ReviewController.java
+PAW-Wiki/docs/raw/final paw/tp-final nota_10/webapp/src/main/java/ar/edu/itba/paw/webapp/controller/UserController.java
+PAW-Wiki/docs/raw/final paw/tp-final nota_10/webapp/src/main/java/ar/edu/itba/paw/webapp/dto/CategoryDto.java
+PAW-Wiki/docs/raw/final paw/tp-final nota_10/webapp/src/main/java/ar/edu/itba/paw/webapp/dto/CompanyDto.java
+PAW-Wiki/docs/raw/final paw/tp-final nota_10/webapp/src/main/java/ar/edu/itba/paw/webapp/dto/LocationDto.java
+PAW-Wiki/docs/raw/final paw/tp-final nota_10/webapp/src/main/java/ar/edu/itba/paw/webapp/dto/PoolDto.java
+PAW-Wiki/docs/raw/final paw/tp-final nota_10/webapp/src/main/java/ar/edu/itba/paw/webapp/dto/ProductDto.java
+PAW-Wiki/docs/raw/final paw/tp-final nota_10/webapp/src/main/java/ar/edu/itba/paw/webapp/dto/RatingsDto.java
+PAW-Wiki/docs/raw/final paw/tp-final nota_10/webapp/src/main/java/ar/edu/itba/paw/webapp/dto/ReportDto.java
+PAW-Wiki/docs/raw/final paw/tp-final nota_10/webapp/src/main/java/ar/edu/itba/paw/webapp/dto/RequestDto.java
+PAW-Wiki/docs/raw/final paw/tp-final nota_10/webapp/src/main/java/ar/edu/itba/paw/webapp/dto/RequestsStatsDto.java
+PAW-Wiki/docs/raw/final paw/tp-final nota_10/webapp/src/main/java/ar/edu/itba/paw/webapp/dto/ReviewDto.java
+PAW-Wiki/docs/raw/final paw/tp-final nota_10/webapp/src/main/java/ar/edu/itba/paw/webapp/dto/ReviewerDto.java
+PAW-Wiki/docs/raw/final paw/tp-final nota_10/webapp/src/main/java/ar/edu/itba/paw/webapp/dto/UserDto.java
+PAW-Wiki/docs/raw/final paw/tp-final nota_10/webapp/src/main/java/ar/edu/itba/paw/webapp/errors/ProblemDetails.java
+PAW-Wiki/docs/raw/final paw/tp-final nota_10/webapp/src/main/java/ar/edu/itba/paw/webapp/filters/ConditionalCacheFilter.java
+PAW-Wiki/docs/raw/final paw/tp-final nota_10/webapp/src/main/java/ar/edu/itba/paw/webapp/filters/UnconditionalCacheFilter.java
+PAW-Wiki/docs/raw/final paw/tp-final nota_10/webapp/src/main/java/ar/edu/itba/paw/webapp/form/CompanyCreateForm.java
+PAW-Wiki/docs/raw/final paw/tp-final nota_10/webapp/src/main/java/ar/edu/itba/paw/webapp/form/CompanyPatchForm.java
+PAW-Wiki/docs/raw/final paw/tp-final nota_10/webapp/src/main/java/ar/edu/itba/paw/webapp/form/DocumentForm.java
+PAW-Wiki/docs/raw/final paw/tp-final nota_10/webapp/src/main/java/ar/edu/itba/paw/webapp/form/PoolCreateForm.java
+PAW-Wiki/docs/raw/final paw/tp-final nota_10/webapp/src/main/java/ar/edu/itba/paw/webapp/form/PoolPatchForm.java
+PAW-Wiki/docs/raw/final paw/tp-final nota_10/webapp/src/main/java/ar/edu/itba/paw/webapp/form/ProductCreateForm.java
+PAW-Wiki/docs/raw/final paw/tp-final nota_10/webapp/src/main/java/ar/edu/itba/paw/webapp/form/ProductPatchForm.java
+PAW-Wiki/docs/raw/final paw/tp-final nota_10/webapp/src/main/java/ar/edu/itba/paw/webapp/form/ReportForm.java
+PAW-Wiki/docs/raw/final paw/tp-final nota_10/webapp/src/main/java/ar/edu/itba/paw/webapp/form/RequestCreateForm.java
+PAW-Wiki/docs/raw/final paw/tp-final nota_10/webapp/src/main/java/ar/edu/itba/paw/webapp/form/RequestPatchForm.java
+PAW-Wiki/docs/raw/final paw/tp-final nota_10/webapp/src/main/java/ar/edu/itba/paw/webapp/form/ReviewCreateForm.java
+PAW-Wiki/docs/raw/final paw/tp-final nota_10/webapp/src/main/java/ar/edu/itba/paw/webapp/form/ReviewPatchForm.java
+PAW-Wiki/docs/raw/final paw/tp-final nota_10/webapp/src/main/java/ar/edu/itba/paw/webapp/form/UserCreateForm.java
+PAW-Wiki/docs/raw/final paw/tp-final nota_10/webapp/src/main/java/ar/edu/itba/paw/webapp/form/UserPatchForm.java
+PAW-Wiki/docs/raw/final paw/tp-final nota_10/webapp/src/main/java/ar/edu/itba/paw/webapp/form/validations/AllowedFiletypes.java
+PAW-Wiki/docs/raw/final paw/tp-final nota_10/webapp/src/main/java/ar/edu/itba/paw/webapp/form/validations/AllowedFiletypesValidator.java
+PAW-Wiki/docs/raw/final paw/tp-final nota_10/webapp/src/main/java/ar/edu/itba/paw/webapp/form/validations/AllowedSize.java
+PAW-Wiki/docs/raw/final paw/tp-final nota_10/webapp/src/main/java/ar/edu/itba/paw/webapp/form/validations/AllowedSizeValidator.java
+PAW-Wiki/docs/raw/final paw/tp-final nota_10/webapp/src/main/java/ar/edu/itba/paw/webapp/form/validations/EmailDoesNotExist.java
+PAW-Wiki/docs/raw/final paw/tp-final nota_10/webapp/src/main/java/ar/edu/itba/paw/webapp/form/validations/EmailDoesNotExistValidator.java
+PAW-Wiki/docs/raw/final paw/tp-final nota_10/webapp/src/main/java/ar/edu/itba/paw/webapp/form/validations/ValidPoolStatus.java
+PAW-Wiki/docs/raw/final paw/tp-final nota_10/webapp/src/main/java/ar/edu/itba/paw/webapp/form/validations/ValidPoolStatusValidator.java
+PAW-Wiki/docs/raw/final paw/tp-final nota_10/webapp/src/main/java/ar/edu/itba/paw/webapp/form/validations/ValidRequestStatus.java
+PAW-Wiki/docs/raw/final paw/tp-final nota_10/webapp/src/main/java/ar/edu/itba/paw/webapp/form/validations/ValidRequestStatusValidator.java
+PAW-Wiki/docs/raw/final paw/tp-final nota_10/webapp/src/main/java/ar/edu/itba/paw/webapp/mapper/ExceptionMapper.java
+PAW-Wiki/docs/raw/final paw/tp-final nota_10/webapp/src/main/java/ar/edu/itba/paw/webapp/mapper/ValidationErrorMapper.java
+PAW-Wiki/docs/raw/final paw/tp-final nota_10/webapp/src/main/java/ar/edu/itba/paw/webapp/mapper/ValidationExceptionMapper.java
+PAW-Wiki/docs/raw/final paw/tp-final nota_10/webapp/src/main/java/ar/edu/itba/paw/webapp/servlet/SpaFallbackServlet.java
+PAW-Wiki/docs/raw/final paw/tp-final nota_10/webapp/src/main/java/ar/edu/itba/paw/webapp/servlet/filters/StaticAssetsCacheFilter.java
+PAW-Wiki/docs/raw/final paw/tp-final nota_10/webapp/src/main/resources/i18n/messages.properties
+PAW-Wiki/docs/raw/final paw/tp-final nota_10/webapp/src/main/resources/i18n/messages_en.properties
+PAW-Wiki/docs/raw/final paw/tp-final nota_10/webapp/src/main/resources/i18n/messages_es.properties
+PAW-Wiki/docs/raw/final paw/tp-final nota_10/webapp/src/main/resources/logback-test.xml
+PAW-Wiki/docs/raw/final paw/tp-final nota_10/webapp/src/main/resources/logback.xml
+PAW-Wiki/docs/raw/final paw/tp-final nota_10/webapp/src/main/webapp/WEB-INF/web.xml
 PAW-Wiki/docs/raw/notas.txt
 PAW-Wiki/docs/raw/pdfs/Devolucion_TP1_2026_C1.pdf
 PAW-Wiki/docs/raw/pdfs/Devolucion_TP2_2025_C1.pdf
@@ -45,12 +418,14 @@ PAW-Wiki/docs/wiki/auditoria-extrema-cumplimiento-paw.md
 PAW-Wiki/docs/wiki/auth-flows.md
 PAW-Wiki/docs/wiki/buenas-practicas.md
 PAW-Wiki/docs/wiki/calendario-entregas.md
+PAW-Wiki/docs/wiki/checklist-tp-final-rest-spa.md
 PAW-Wiki/docs/wiki/comparacion-capas-web-services-persistence.md
 PAW-Wiki/docs/wiki/comparacion-jsp-formularios-e-i18n.md
 PAW-Wiki/docs/wiki/comparacion-seguridad-web.md
 PAW-Wiki/docs/wiki/comparacion-testing-servicios-y-daos.md
 PAW-Wiki/docs/wiki/configuracion-maven.md
 PAW-Wiki/docs/wiki/criterios-evaluacion.md
+PAW-Wiki/docs/wiki/errores-tp1-tp2-por-tipo.md
 PAW-Wiki/docs/wiki/hibernate-jpa.md
 PAW-Wiki/docs/wiki/http-y-sesiones.md
 PAW-Wiki/docs/wiki/internacionalizacion.md
@@ -86,6 +461,7 @@ PAW-Wiki/docs/wiki/resumen-correcciones-tp2.md
 PAW-Wiki/docs/wiki/resumen-correcciones.md
 PAW-Wiki/docs/wiki/resumen-enunciado-tpe2.md
 PAW-Wiki/docs/wiki/resumen-enunciado.md
+PAW-Wiki/docs/wiki/resumen-final-paw-2026.md
 PAW-Wiki/docs/wiki/resumen-notas-sprint-1.md
 PAW-Wiki/docs/wiki/resumen-notas-sprint-2.md
 PAW-Wiki/docs/wiki/resumen-notas.md

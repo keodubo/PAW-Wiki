@@ -1,9 +1,9 @@
 ---
 titulo: UX Flows y Calidad de Interfaz
 tipo: concepto
-fuentes: [raw/correcciones_tp1.md, raw/apuntes.txt]
+fuentes: [raw/correcciones_tp1.md, raw/apuntes.txt, "raw/final paw/Correcciones viejas_.docx", "raw/final paw/Clase 8 - FINAL.pdf", "raw/final paw/Ultima clase de PAW - v2 - Apuntes.pdf"]
 creado: 2026-04-13
-actualizado: 2026-04-13
+actualizado: 2026-07-05
 ---
 
 # UX Flows y Calidad de Interfaz
@@ -52,6 +52,14 @@ La catedra no corrige solo funcionalidad: tambien mira experiencia de uso, clari
 - Los usuarios anonimos no deberian ver tabs imposibles de usar.
 - Si una reserva es cancelada por el owner, el usuario afectado deberia enterarse por mail.
 
+## TP final: SPA y URL como estado
+
+- En una SPA, back/forward del browser, refresh y links compartidos deben reconstruir la pantalla esperada.
+- Filtros, busqueda, pagina y sort no pueden vivir solo en memoria si el usuario espera compartir o volver a esa vista.
+- Una ruta profunda debe servir `index.html` y luego resolver estado en el router; una ruta `/api/*` fallida debe devolver error API, no la SPA.
+- Los estados de `401`, `403`, `404`, loading, empty y error global son parte de la experiencia, no detalle tecnico.
+- La correccion de final marca como grave que back/forward rompa filtros o borre historial forward.
+
 ## MVP, landing y comunicacion del problema
 
 - El caso AirBnB de la unidad 1 se usa para mostrar que la landing tiene que explicar el problema y la solucion.
@@ -68,9 +76,10 @@ La catedra no corrige solo funcionalidad: tambien mira experiencia de uso, clari
 
 - [[jsp-jstl]]
 - [[internacionalizacion]]
+- [[single-page-applications]]
+- [[checklist-tp-final-rest-spa]]
 - [[mailing]]
 - [[auth-flows]]
-- [[single-page-applications]]
 - [[validacion-formularios]]
 - [[scrum-metodologia]]
 - [[buenas-practicas]]

@@ -17,7 +17,7 @@ For TP1, the repo is Java 21, Spring Web MVC classic, Spring Security, JSP/JSTL,
 | --- | --- | --- | --- |
 | `TP1` | Spring MVC + JSP/JSTL + JDBC + HSQLDB + Spring Security + Logback | none by default | Accidentally introducing later-stage tools |
 | `TP2` / `TPE2` | JPA/Hibernate persistence with Spring ORM over the existing service/web shape, preserving behavior and server data | `$paw-tp2-migration` | Bad mappings, hidden N+1, unsafe schema generation, dirty checking surprises, data loss, unresolved TPE1 feedback |
-| `TP final` | REST API + SPA/frontend build served by the WAR | `$paw-tp-final-migration` | Leaky API contracts, duplicated business logic, auth storage risk, broken packaging/cache |
+| `TP final` | REST API + SPA/frontend build served by the WAR | `$paw-tp-final-migration` | Leaky API contracts, duplicated business logic, broken Basic/Bearer/refresh semantics, invalid static hosting/base path, stale cache |
 
 Ask or confirm stage before stack-changing work. Class PDFs in `resumen-clases-paw-2026.md` are important stage guidance, but their dependency versions are historical and not an implementation recommendation.
 
@@ -31,6 +31,7 @@ Real modules:
 | `service-contracts` | Service APIs, command DTOs, business exceptions | Repo split of the catedra's `interfaces` module. |
 | `services` | Business logic, transactions, mail, schedulers | Uses DAO contracts; concrete persistence is runtime. |
 | `webapp` | Controllers, forms, validators, Spring Security, JSP/tags/CSS/JS, WAR | Controllers compile against models and service contracts. |
+| `frontend` | TP final SPA module when present | Declared in parent POM; built before `webapp` so WAR packages current assets. |
 
 Canonical catedra split is `webapp`, `services`, `interfaces`, `persistence`, `models`. In this repo, document `service-contracts` and `persistence-contracts` as implementation detail, not a violation.
 
@@ -44,9 +45,9 @@ Always start from `PAW-Wiki/docs/index.md`, then load only relevant pages:
 - Persistence: `persistencia-jdbc.md`, `n-plus-1-joins-java.md`, `comparacion-testing-servicios-y-daos.md`.
 - Services: `transactional.md`, `spring-aop.md`, `mailing.md`, `manejo-excepciones.md`, `logging.md`.
 - Quality: `testing-unitario.md`, `java-style.md`, `buenas-practicas.md`, `criterios-evaluacion.md`.
-- Stage source: `resumen-clases-paw-2026.md`, `tp1-vs-tpe2-final.md`.
+- Stage source: `resumen-clases-paw-2026.md`, `resumen-final-paw-2026.md`, `tp1-vs-tpe2-final.md`.
 - TP2 migration: `resumen-enunciado-tpe2.md`, `hibernate-jpa.md`, plus `persistencia-jdbc.md`, `transactional.md`, `testing-unitario.md`, `criterios-evaluacion.md`, `calendario-entregas.md`.
-- TP final migration: `api-rest.md`, `single-page-applications.md`, `internacionalizacion.md`, `ux-flows.md`, `spring-security.md`.
+- TP final migration: `resumen-final-paw-2026.md`, `checklist-tp-final-rest-spa.md`, `api-rest.md`, `single-page-applications.md`, `spring-security.md`, `internacionalizacion.md`, `ux-flows.md`.
 - Current large features: `plan-implementacion-reservas.md`, `resumen-spec-reservas.md`, `PAW-Wiki/docs/superpowers/plans/2026-04-26_social-forkd-plan_v1.md`.
 - Current compliance findings: `2026-04-24_auditoria-implementacion-contra-wiki_v1.md`, `PAW-Wiki/docs/superpowers/plans/2026-04-24_paw-remediacion-cumplimiento-wiki_v1.md`.
 
@@ -110,9 +111,9 @@ Checks: no destructive schema generation without approval, no server data loss, 
 
 Use `$paw-tp-final-migration`.
 
-Order: API contract/DTOs -> service boundary review -> REST resources/security/errors -> frontend app/routing/state/forms -> Maven packaging/static hosting -> cache/file revving.
+Order: API contract/DTOs/links -> service boundary review -> Jersey/JAX-RS resources/security/errors -> frontend app/routing/state/forms -> Maven frontend module/WAR/static hosting/base path -> cache/file revving.
 
-Checks: API is stateless, backend remains source of truth, frontend validates for UX only, `mvn package` still produces a usable WAR, root HTML is not cached as immutable.
+Checks: API is stateless, Basic credentials can obtain tokens and Bearer authenticates normal calls, `401` and `403` are not conflated, refresh tokens rotate on login/use, vendor media types version representations without selecting hidden operations, backend remains source of truth, frontend validates for UX only, `mvn package` still produces a usable WAR, `/api/*` errors stay JSON/status API, SPA deep links fall back to `index.html`, assets work under the context path, hashed assets can be immutable, and root HTML is not cached as immutable.
 
 ## Verification Gates
 

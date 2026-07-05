@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+</head>
+<body style="background-color: #f4f4f4; font-family: sans-serif; -webkit-font-smoothing: antialiased; font-size: 14px; line-height: 1.4; margin: 0; padding: 0; -ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%">
+<div style="text-align: center">
+  <a th:href="${frontendBasePath}">
+    <img style="max-width: 300px;" th:src="@{{baseLogoPath}(baseLogoPath=${baseLogoPath})}" alt="logo"/>
+  </a>
+  <div>
+    <h2 th:text="#{email.register.company.admin.greeting (${companyName})}"/>
+    <p th:text="#{email.register.company.admin.info (${companyName})}"/>
+    <br><br>
+    <p th:text="#{email.footer}"/>
+
+    <br><br>
+
+    <p aria-hidden="true" style="max-height:0; overflow:hidden; font-size:0; line-height:0; color:transparent; margin:0;" th:text="${hiddenMarker}"></p>
+  </div>
+</div>
+</body>
+</html>

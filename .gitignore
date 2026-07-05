@@ -23,6 +23,12 @@ docs/superpowers/plans/
 # Private local second brain
 docs/private/
 
+# Sensitive files found inside local raw example projects.
+# Keep the source tree readable, but never publish real env/config secrets or keys.
+docs/raw/final\ paw/tp-final\ nota_10/frontend/.env.*
+docs/raw/final\ paw/tp-final\ nota_10/webapp/src/main/resources/config/*.properties
+docs/raw/final\ paw/tp-final\ nota_10/webapp/src/main/resources/openssl/*.key
+
 # Backup files
 *.bak
 *~

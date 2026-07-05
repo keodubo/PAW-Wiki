@@ -35,6 +35,7 @@ Estos archivos no son paginas wiki canonicas; son guias de uso para humanos y ag
 | [[resumen-apuntes]] | Apuntes completos de la materia (11 unidades; 1-7 como base TP1, 8 como soporte de implementacion y 9-11 reingestadas en detalle para TP2/final; incluye paginas dedicadas por unidad) | `raw/apuntes.txt` + `raw/pdfs/PAW - Apuntes.pdf` |
 | [[resumen-notas]] | Notas de clase con walkthroughs practicos y advertencias del profesor | `raw/notas.txt` + `raw/pdfs/Notas clases PAW.pdf` |
 | [[resumen-clases-paw-2026]] | Ingesta detallada de PDFs nuevos de clase, ordenada por TP1, TP2 y TP final; las versiones de dependencias quedan tratadas como historicas | `raw/PAW*.pdf` |
+| [[resumen-final-paw-2026]] | Ingesta del lote final PAW 2026: REST/HATEOAS, auth stateless, Jersey, SPA, Maven frontend, cache, packaging y correcciones finales recurrentes | `raw/final paw/*.pdf` + `raw/final paw/*.docx` + `raw/final paw/tp-final nota_10/` |
 | [[resumen-notas-sprint-1]] | Feedback puntual del sprint 1 sobre producto, UX, filtros y direccion del proyecto | `fuente historica no incluida (raw/notas_sprint_1.txt)` |
 | [[resumen-notas-sprint-2]] | Checklist de cierre del sprint 2: auth, owner/admin, UX, correcciones ya resueltas y checks manuales remanentes | `fuente historica no incluida (raw/notas_para_sprint_2.txt)` |
 | [[resumen-transcripciones-clases-2-a-4]] | Revision cautelosa de transcripciones VTT; clases 2-3 como apoyo y clase reciente sobre agentes/formularios | `fuente historica no incluida (raw/audio_transcript/*.VTT)` |
@@ -97,6 +98,7 @@ Estas paginas separan `[[resumen-apuntes]]` por unidad para estudio y navegacion
 | [[hibernate-jpa]] | ORM, JPA, EntityManager, mapeos y contexto de persistencia fuera de TP1 |
 | [[single-page-applications]] | Thick client, frontend state, build, cache y optimizacion para la entrega final |
 | [[api-rest]] | Recursos, verbos, hipervinculos, content negotiation y JWT para la API del final |
+| [[checklist-tp-final-rest-spa]] | Checklist operativo para auditar TP final: contrato REST, auth, SPA, build/WAR, cache, testing y smoke de entrega |
 
 ## Sintesis
 
@@ -161,6 +163,17 @@ Estas paginas separan `[[resumen-apuntes]]` por unidad para estudio y navegacion
 - [x] `raw/PAW - clases 9 y 10 (TP final).pdf` -- TP final: Jersey/JAX-RS, REST, DTOs y autenticacion stateless; procesada en `[[resumen-clases-paw-2026]]`
 - [x] `raw/PAW- Clase Teórica Front end (TP final).pdf` -- TP final: SPA, modulos JS, runtime, package managers, bundlers, frameworks y routing; procesada en `[[resumen-clases-paw-2026]]`
 - [x] `raw/PAW- Clase Teórica - SPAs segunda parte (TP final).pdf` -- TP final: componentes, forms, estado, auth, i18n, testing, optimizacion, hosting, SSR y cache; procesada en `[[resumen-clases-paw-2026]]`
+- [x] `raw/final paw/Clase 8 - FINAL.pdf` -- TP final: SPA, modulos, bundlers, routing, i18n, testing, cache, file revving, auth y Spring static hosting; procesada en `[[resumen-final-paw-2026]]`
+- [x] `raw/final paw/Ultima clase de PAW - v2 - Apuntes.pdf` -- Ultima clase 2026: HATEOAS extremo, recursos, status codes, auth headers, Maven frontend, base path y errores comunes; procesada en `[[resumen-final-paw-2026]]`
+- [x] `raw/final paw/presentacion-api.pdf` -- Presentacion REST/HATEOAS aplicada a Pet Store: recursos, verbos, status, links, paginacion y auth; procesada en `[[resumen-final-paw-2026]]`
+- [x] `raw/final paw/presentacion-spring-frontend.pdf` -- Integracion Frontend + Spring: modulo Maven, frontend plugin, WAR, routing SPA/API/static y base path; procesada en `[[resumen-final-paw-2026]]`
+- [x] `raw/final paw/Optimización REST_ Caching Frontend y Backend.pdf` -- Optimizacion TP final: cache condicional en API, cache immutable para assets hasheados, identity map y request coalescing; procesada en `[[resumen-final-paw-2026]]`
+- [x] `raw/final paw/como esta implementado el tp de ejemplo.docx` -- Guia practica Jersey/Spring del TP de ejemplo: DTOs con links, vendor media types, Problem Details, JWT, ETag y multipart; procesada en `[[resumen-final-paw-2026]]`
+- [x] `raw/final paw/Correcciones viejas_.docx` -- Devoluciones finales antiguas con errores graves de REST, cache, auth, privacy, build frontend, testing y capas; procesada en `[[resumen-final-paw-2026]]`
+- [x] `raw/final paw/resumen clases.docx` -- Resumen corto de clase API REST: stateless, URNs, headers, media types y JWT; procesado en `[[resumen-final-paw-2026]]`
+- [x] `raw/final paw/clases grabadas.docx` -- Locator a carpeta de clases grabadas; fuente auxiliar sin contenido tecnico extraido.
+- [x] `raw/final paw/PAW - Apuntes.pdf` -- Variante de apuntes incluida en el lote final; usada solo como respaldo, sin reemplazar `raw/pdfs/PAW - Apuntes.pdf`.
+- [x] `raw/final paw/tp-final nota_10/` -- Ejemplo de proyecto TP final con frontend, Jersey/Spring y tests; los `.env`, properties con credenciales y llaves locales quedan ignorados por seguridad y no forman parte del raw publico trackeado.
 - [x] `fuente historica no incluida (raw/notas_sprint_1.txt)` -- Procesado en `[[resumen-notas-sprint-1]]`
 - [x] `fuente historica no incluida (raw/notas_para_sprint_2.txt)` -- Checklist de cierre del sprint 2 procesado en `[[resumen-notas-sprint-2]]`
 - [x] `raw/pdfs/Enunciado_TPE1.pdf` -- PDF original validado contra `raw/enunciado.txt`

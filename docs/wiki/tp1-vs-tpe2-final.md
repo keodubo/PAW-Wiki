@@ -1,9 +1,9 @@
 ---
 titulo: TP1 vs TPE2 Final — Ruta de Estudio
 tipo: sintesis
-fuentes: [raw/apuntes.txt, raw/notas.txt, raw/enunciado_tpe2.txt, raw/pdfs/Enunciado_TPE2.pdf, raw/correcciones_tp2.md, raw/pdfs/Devolucion_TP2_2025_C1.pdf, raw/pdfs/Devolucion_TP2_2025_C2.pdf, raw/devolucion_tp1_2026_c1.txt, raw/pdfs/Devolucion_TP1_2026_C1.pdf, raw/PAW - clase 1 (TP1).pdf, raw/PAW - clase 2 (TP1).pdf, raw/PAW - clase 3 (TP1).pdf, raw/PAW - clase 4 (TP1).pdf, raw/PAW - clase 5 (TP1).pdf, raw/PAW - clase 6 (TP1).pdf, raw/PAW - clase 7 (TP2).pdf, raw/PAW - clase 8 (TP2).pdf, raw/PAW - clases 9 y 10 (TP final).pdf, raw/PAW- Clase Teórica Front end (TP final).pdf, raw/PAW- Clase Teórica - SPAs segunda parte (TP final).pdf, fuente historica no incluida (raw/audio_transcript/audio_transcript clase 2.VTT), fuente historica no incluida (raw/audio_transcript/audio_transcript clase 3.VTT), fuente historica no incluida (raw/audio_transcript/audio_transcript clase 4.VTT)]
+fuentes: [raw/apuntes.txt, raw/notas.txt, raw/enunciado_tpe2.txt, raw/pdfs/Enunciado_TPE2.pdf, raw/correcciones_tp2.md, raw/pdfs/Devolucion_TP2_2025_C1.pdf, raw/pdfs/Devolucion_TP2_2025_C2.pdf, raw/devolucion_tp1_2026_c1.txt, raw/pdfs/Devolucion_TP1_2026_C1.pdf, raw/PAW - clase 1 (TP1).pdf, raw/PAW - clase 2 (TP1).pdf, raw/PAW - clase 3 (TP1).pdf, raw/PAW - clase 4 (TP1).pdf, raw/PAW - clase 5 (TP1).pdf, raw/PAW - clase 6 (TP1).pdf, raw/PAW - clase 7 (TP2).pdf, raw/PAW - clase 8 (TP2).pdf, raw/PAW - clases 9 y 10 (TP final).pdf, raw/PAW- Clase Teórica Front end (TP final).pdf, raw/PAW- Clase Teórica - SPAs segunda parte (TP final).pdf, "raw/final paw/presentacion-api.pdf", "raw/final paw/presentacion-spring-frontend.pdf", "raw/final paw/Clase 8 - FINAL.pdf", "raw/final paw/Ultima clase de PAW - v2 - Apuntes.pdf", "raw/final paw/Correcciones viejas_.docx", "raw/final paw/Optimización REST_ Caching Frontend y Backend.pdf", fuente historica no incluida (raw/audio_transcript/audio_transcript clase 2.VTT), fuente historica no incluida (raw/audio_transcript/audio_transcript clase 3.VTT), fuente historica no incluida (raw/audio_transcript/audio_transcript clase 4.VTT)]
 creado: 2026-04-13
-actualizado: 2026-05-31
+actualizado: 2026-07-05
 ---
 
 # TP1 vs TPE2 Final — Ruta de Estudio
@@ -51,7 +51,7 @@ Las versiones concretas de dependencias que aparecen en PDFs viejos son historic
 
 - **Canon TP1**: `resumen-enunciado` + `resumen-apuntes` (1-7 como base + unidad 8 como soporte de implementacion) + `resumen-notas` + clases TP1 de [[resumen-clases-paw-2026]] + [[resumen-correcciones-tp1-2026-c1]].
 - **Canon TP2**: [[resumen-enunciado-tpe2]] + clases 7-8 de [[resumen-clases-paw-2026]] + [[hibernate-jpa]] + [[resumen-correcciones-tp2]], siempre contrastadas contra checkout actual.
-- **Canon TP final**: clases 9/10 y teoricas SPA de [[resumen-clases-paw-2026]] + [[api-rest]] + [[single-page-applications]].
+- **Canon TP final**: clases 9/10 y teoricas SPA de [[resumen-clases-paw-2026]] + [[resumen-final-paw-2026]] + [[api-rest]] + [[single-page-applications]] + [[checklist-tp-final-rest-spa]].
 - **Auxiliar**: `resumen-transcripciones-clases-2-a-4`.
 - **Fuera de foco TP1**: unidades 9-11, ya ingeridas pero separadas en su propio bloque.
 
@@ -62,6 +62,8 @@ Las versiones concretas de dependencias que aparecen en PDFs viejos son historic
 - [[resumen-apuntes]]
 - [[resumen-notas]]
 - [[resumen-clases-paw-2026]]
+- [[resumen-final-paw-2026]]
+- [[checklist-tp-final-rest-spa]]
 - [[resumen-transcripciones-clases-2-a-4]]
 - [[resumen-correcciones]]
 - [[resumen-correcciones-tp1-2026-c1]]
